@@ -1,0 +1,49 @@
+/* --------------------------------
+File Name: variables.css
+Purpose: to set reusable css variables
+Author: Hyunjung Joun
+-------------------------------- */
+
+:root {
+  /* Colors */
+  --color-primary: #00ff00;
+  --color-bright: #f9f6f2;
+  --color-background: #e9be7a;
+  --color-background-filter: #6a49139c;
+
+  /* Font Sizes */
+  --h0-xs: 3.1rem;
+  --h1-xs: 2.5rem;
+  --h2-xs: 1.9rem;
+  --h3-xs: 1.7rem;
+  --body-m-xs: 1.4rem;
+  --body-s-xs: 1.2rem;
+  --body-xs-xs: 1.1rem;
+
+  --h0-xl: 3.6rem;
+  --h1-xl: 3rem;
+  --h2-xl: 2.4rem;
+  --h3-xl: 2.2rem;
+  --body-m-xl: 1.9rem;
+  --body-s-xl: 1.5rem;
+  --body-xs-xl: 1.4rem;
+
+  /* Sizes */
+  --size-xs: 0.4rem;
+  --size-s: 0.8rem;
+  --size-m: 1.6rem;
+  --size-l: 3.2rem;
+  --size-xl: 4.8rem;
+  --size-2xl: 6.4rem;
+
+  /* Radius */
+
+  /* Breakpoints */
+  --break-xs: 360px;
+  --break-s: 600px;
+  --break-m: 950px;
+  --break-l: 1280px;
+  --break-xl: 1440px;
+
+  /* Z-index */
+}

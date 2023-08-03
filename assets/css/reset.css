@@ -1,0 +1,186 @@
+/* --------------------------------
+File Name: reset.css
+Purpose: to reset default styles
+-------------------------------- */
+
+/* --------------------------------
+Author: Eric Meyer
+Reference:
+- https://cssdeck.com/blog/scripts/eric-meyer-reset-css/
+-------------------------------- */
+/* Reset margin, padding, and border */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  vertical-align: baseline;
+
+  /* Written by Joun */
+  /* This is for easy caculation of the unit rem */
+  font-size: 66.5%;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* -------------------------------- 
+Author: W3schools
+Reference:
+- https://www.w3schools.blog/reset-a-tag-css
+-------------------------------- */
+/* Remove a tag style */
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/* --------------------------------
+Author: Joshua Comeau
+Reference: 
+ - https://www.joshwcomeau.com/css/custom-css-reset/
+-------------------------------- */
+/* Reset box-sizing model to border-box */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Improve text rendering */
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* Remove built-in form typography styles */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}

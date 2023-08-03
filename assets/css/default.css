@@ -1,0 +1,118 @@
+/* --------------------------------
+File Name: default.css
+Purpose: to set default styles for the theme
+Author: Hyunjung Joun
+Reference:
+- https://developer.apple.com/design/human-interface-guidelines/typography
+Description: For Typography, I tried to Apple's human interface guidelines and adjusted them for the theme.
+-------------------------------- */
+/* Mobile */
+@media (min-width: 0px) {
+  .h0 {
+    font-size: var(--h0-xs);
+    line-height: 1.225;
+  }
+
+  h1 {
+    font-size: var(--h1-xs);
+    line-height: 1.24;
+  }
+
+  h2 {
+    font-size: var(--h2-xs);
+    line-height: 1.263;
+  }
+
+  h3 {
+    font-size: var(--h3-xs);
+    line-height: 1.294;
+  }
+
+  a,
+  p,
+  body {
+    font-size: var(--body-m-xs);
+    line-height: 1.357;
+  }
+
+  .body-s {
+    font-size: var(--body-s-xs);
+    line-height: 1.333;
+  }
+
+  .body-xs {
+    font-size: var(--body-xs-xs);
+    line-height: 1.18;
+  }
+
+  .nav-menu-item {
+    font-size: var(--body-m-xs);
+    line-height: 1.357;
+    font-weight: bold;
+  }
+
+  /* Section spacing */
+  section div {
+  }
+}
+
+/* Desktop */
+@media (min-width: 900px) {
+  .h0 {
+    font-size: var(--h0-xl);
+    line-height: 1.194;
+    font-weight: bold;
+  }
+
+  h1 {
+    font-size: var(--h1-xl);
+    line-height: 1.2333;
+    font-weight: bold;
+  }
+
+  h2 {
+    font-size: var(--h2-xl);
+    line-height: 1.25;
+    font-weight: bold;
+  }
+
+  h3 {
+    font-size: var(--h3-xl);
+    line-height: 1.273;
+    font-weight: bold;
+  }
+
+  a,
+  p,
+  body {
+    font-size: var(--body-m-xl);
+    line-height: 1.263;
+  }
+
+  .body-s {
+    font-size: var(--body-s-xl);
+    line-height: 1.333;
+  }
+
+  .body-xs {
+    font-size: var(--body-xs-xl);
+    line-height: 1.357;
+  }
+
+  /* Section spacing */
+  section > div {
+    padding: 6.4rem 3.2rem;
+  }
+}
+
+/* Tablet Portrait */
+@media (min-width: 600px) {
+}
+
+/* Tablet Landscape */
+@media (min-width: 950px) {
+}
+
+/* Laptop */
+@media (min-width: 1280px) {
+}

@@ -1,0 +1,12 @@
+[
+  {
+    "id": 1,
+    "title": "title1",
+    "body": "body1",
+    "thumbnail": "data/insights/thumbnail/test.jpg",
+    "createdAt": "2022-12-01T18:25:43.511Z",
+    "authors": [
+      "Grace Kringer"
+    ]
+  }
+]

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="magazine architecture webzine insights design news"
+    />
+    <meta name="author" content="Hyunjung Joun" />
+
+    <!-- Icon -->
+    <!-- <link rel="shortcut icon" href="favicon.ico" /> -->
+
+    <!-- FontAwesome from a CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+
+    <!-- Global Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="assets/plugins/bootstrap/css/bootstrap.min.css"
+    />
+
+    <!-- Reset, Variables, and Custom CSS -->
+    <link rel="stylesheet" href="assets/css/reset.css" />
+    <link rel="stylesheet" href="assets/css/variables.css" />
+    <link rel="stylesheet" href="assets/css/default.css" />
+    <link rel="stylesheet" href="assets/css/main.css" />
+
+    <!-- Handlebars from a CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+
+    <!-- Load Data -->
+    <script>
+      fetch("../../data/insights/data.json")
+        .then((res) => res.json())
+        .then((res) => {
+          // Process the received data
+          const insights = res;
+          console.log(insights);
+        })
+        .catch((error) => console.error("ERROR - ", error));
+    </script>
+
+    <!-- Compile Template -->
+    <script>
+      // compile the template
+      const template = Handlebars.compile("Handlebars <b>{{doesWhat}}</b>");
+      // execute the compiled template and print the output to the console
+      console.log(template({ doesWhat: "rocks!" }));
+    </script>
+
+    <!-- Title -->
+    <title>ArchOn Magazine</title>
+  </head>
+
+  <body>
+    <!-- Navigation Bar-->
+    <header class="position-relative">
+      <nav id="navbar">
+        <div id="navbar-menu" class="col">
+          <img src="assets/image/logo.png" />
+          <div id="navbar-items">
+            <a href="#"> Insights </a>
+            <a href="#">Awards</a>
+            <a href="#">Quiz</a>
+            <a href="#">Authors</a>
+            <a href="#">Report</a>
+          </div>
+        </div>
+        <ul class="col-1 row nav-icon">
+          <li>
+            <i class="fa-regular fa-bookmark nav-icon"></i>
+          </li>
+          <li>
+            <i class="fa-regular fa-eye nav-icon"></i>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Page: Main -->
+      <!-- Section: Cover -->
+      <section id="cover">
+        <div id="highlight" class="col-8"></div>
+        <div id="editorspick" class="col-4">
+          <div class="section-title">
+            <p>Editor's pick</p>
+          </div>
+          <img src="./data/insights/thumbnail/test.jpg" class="section-img" />
+          <div>
+            <p class="topic">topic</p>
+          </div>
+          <h1>
+            Headline level 1 text for editor’s pick title ideally up to three
+            lines
+          </h1>
+          <hr />
+          <ul>
+            <li>
+              <h2>
+                <i class="fa-solid fa-angle-right"></i>
+                List Headline level 2 text for title up to 2 lines
+              </h2>
+            </li>
+            <li>
+              <h2>
+                <i class="fa-solid fa-angle-right"></i> List Headline level 2
+                text for title up to 2 lines
+              </h2>
+            </li>
+            <li>
+              <h2>
+                <i class="fa-solid fa-angle-right"></i> List Headline level 2
+                text for title up to 2 lines
+              </h2>
+            </li>
+          </ul>
+          <div class="viewall"></div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
