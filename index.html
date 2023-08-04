@@ -10,6 +10,31 @@
     />
     <meta name="author" content="Hyunjung Joun" />
 
+    <!-- Font from Google Fonts-->
+    <!-- Serif: Noto Serif -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- San-serif: Lato -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- San-serif: REM -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=REM:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- Icon -->
     <!-- <link rel="shortcut icon" href="favicon.ico" /> -->
 
@@ -62,22 +87,22 @@
     <!-- Navigation Bar-->
     <header class="position-relative">
       <nav id="navbar">
-        <div id="navbar-menu" class="col">
+        <div id="navbar-menu" class="col-8">
           <img src="assets/image/logo.png" />
           <div id="navbar-items">
-            <a href="#"> Insights </a>
+            <a href="#">Insights</a>
             <a href="#">Awards</a>
             <a href="#">Quiz</a>
             <a href="#">Authors</a>
             <a href="#">Report</a>
           </div>
         </div>
-        <ul class="col-1 row nav-icon">
+        <ul id="navbar-personal" class="col">
           <li>
-            <i class="fa-regular fa-bookmark nav-icon"></i>
+            <i class="fa-regular fa-bookmark"></i>
           </li>
           <li>
-            <i class="fa-regular fa-eye nav-icon"></i>
+            <i class="fa-regular fa-eye"></i>
           </li>
         </ul>
       </nav>
@@ -87,41 +112,76 @@
       <!-- Page: Main -->
       <!-- Section: Cover -->
       <section id="cover">
-        <div id="highlight" class="col-8"></div>
-        <div id="editorspick" class="col-4">
+        <!-- Highlight -->
+        <div id="highlight" class="col-8">
+          <!-- Component: Topic -->
+          <div class="section-container col-gap-m">
+            <div>
+              <p class="topic">topic</p>
+            </div>
+            <h1 class="h0 serif">
+              Building Dreams: Exploring the Timeless Beauty of Architecture
+            </h1>
+            <p>
+              An immersive celebration of architectural wonders, 'Building
+              Dreams: Exploring the Timeless Beauty of Architecture' showcases
+              iconic structures that have shaped history and continue to inspire
+              modern design. A captivating tribute to human creativity and
+              ingenuity.
+            </p>
+          </div>
+        </div>
+
+        <!-- Editor's Pick -->
+        <div id="editorspick" class="col-4 col-gap-m">
           <div class="section-title">
             <p>Editor's pick</p>
           </div>
-          <img src="./data/insights/thumbnail/test.jpg" class="section-img" />
-          <div>
-            <p class="topic">topic</p>
+          <div class="section-container">
+            <!-- primary -->
+            <div id="editorspick-primary" class="col-gap-m">
+              <div class="section-img">
+                <img src="./data/insights/thumbnail/test.jpg" />
+              </div>
+              <div>
+                <p class="topic">topic</p>
+              </div>
+              <h1 class="serif">
+                From Vision to Reality: Unveiling the Marvels of Architectural
+                Ingenuity
+              </h1>
+            </div>
+            <!-- secondary -->
+            <div class="col-gap-m">
+              <ul id="editorspick-secondary-list" class="col-gap-m">
+                <li>
+                  <h2 class="serif">
+                    Marvels of Modern Architecture: Inspiring Structures Shaping
+                    Our Cities
+                  </h2>
+                </li>
+                <li>
+                  <h2 class="serif">
+                    Timeless Elegance: Exploring the Beauty of Architectural
+                    Masterpieces
+                  </h2>
+                </li>
+                <li>
+                  <h2 class="serif">
+                    Designing the Future: Innovative Architecture Redefining
+                    Urban Landscapes
+                  </h2>
+                </li>
+              </ul>
+              <!-- Component: Viewall -->
+              <a href="#" class="viewall">
+                <p>view all insights</p>
+                <div class="button-circle-24">
+                  <i class="fa-solid fa-arrow-right fa-lg"></i>
+                </div>
+              </a>
+            </div>
           </div>
-          <h1>
-            Headline level 1 text for editor’s pick title ideally up to three
-            lines
-          </h1>
-          <hr />
-          <ul>
-            <li>
-              <h2>
-                <i class="fa-solid fa-angle-right"></i>
-                List Headline level 2 text for title up to 2 lines
-              </h2>
-            </li>
-            <li>
-              <h2>
-                <i class="fa-solid fa-angle-right"></i> List Headline level 2
-                text for title up to 2 lines
-              </h2>
-            </li>
-            <li>
-              <h2>
-                <i class="fa-solid fa-angle-right"></i> List Headline level 2
-                text for title up to 2 lines
-              </h2>
-            </li>
-          </ul>
-          <div class="viewall"></div>
         </div>
       </section>
     </main>

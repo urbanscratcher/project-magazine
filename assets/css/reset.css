@@ -184,3 +184,11 @@ h5,
 h6 {
   overflow-wrap: break-word;
 }
+
+/* --------------------------------
+Author: Hyunjung Joun
+-------------------------------- */
+/* Adjust Fontawesome icon size */
+i {
+  font-size: inherit;
+}

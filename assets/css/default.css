@@ -6,8 +6,94 @@ Reference:
 - https://developer.apple.com/design/human-interface-guidelines/typography
 Description: For Typography, I tried to Apple's human interface guidelines and adjusted them for the theme.
 -------------------------------- */
+/* Font Family */
+body {
+  font-family: "REM", "Lato", Arial, Tahoma, sans-serif;
+}
+
+.serif {
+  font-family: "Noto Serif", "Times New Roman", Times, serif;
+}
+
+/* Heading Style */
+.h0,
+h1,
+h2,
+h3 {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+p,
+a,
+body {
+  font-weight: 300;
+}
+
+/* Section Title */
+.section-title p {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Section Container */
+.section-container {
+}
+
+/* Section Image */
+.section-img > * {
+  border-radius: 2rem;
+}
+
+/* Component: View All Insights */
+.viewall {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: end;
+  align-items: center;
+}
+
+.viewall p {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+/* Component: Topic */
+.topic {
+  display: inline-block;
+  text-transform: uppercase;
+  padding: 4px 16px;
+  border-radius: 2rem;
+  outline: 2px solid #000;
+  font-weight: 400;
+}
+
+/* Button: An icon with circled button 24px */
+.button-circle-24 {
+  width: 24px;
+  height: 24px;
+  border-radius: 2rem;
+  outline: solid 2px #000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Button: An icon with circled button 32px */
+.button-circle-32 {
+  width: 32px;
+  height: 32px;
+  border-radius: 2rem;
+  outline: solid 2px #000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* Mobile */
-@media (min-width: 0px) {
+@media (min-width: 360px) {
   .h0 {
     font-size: var(--h0-xs);
     line-height: 1.225;
@@ -50,10 +136,18 @@ Description: For Typography, I tried to Apple's human interface guidelines and a
     line-height: 1.357;
     font-weight: bold;
   }
+}
 
-  /* Section spacing */
-  section div {
-  }
+/* Tablet Portrait */
+@media (min-width: 600px) {
+}
+
+/* Tablet Landscape */
+@media (min-width: 950px) {
+}
+
+/* Laptop */
+@media (min-width: 1280px) {
 }
 
 /* Desktop */
@@ -61,25 +155,21 @@ Description: For Typography, I tried to Apple's human interface guidelines and a
   .h0 {
     font-size: var(--h0-xl);
     line-height: 1.194;
-    font-weight: bold;
   }
 
   h1 {
     font-size: var(--h1-xl);
     line-height: 1.2333;
-    font-weight: bold;
   }
 
   h2 {
     font-size: var(--h2-xl);
     line-height: 1.25;
-    font-weight: bold;
   }
 
   h3 {
     font-size: var(--h3-xl);
     line-height: 1.273;
-    font-weight: bold;
   }
 
   a,
@@ -99,20 +189,31 @@ Description: For Typography, I tried to Apple's human interface guidelines and a
     line-height: 1.357;
   }
 
-  /* Section spacing */
+  /* Flex Column 16px */
+  .col-gap-m {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+
+  /* Flex Row 16px */
+  .row-gap-m {
+    display: flex;
+    gap: 1.6rem;
+  }
+
+  /* Section Spacing */
   section > div {
     padding: 6.4rem 3.2rem;
   }
-}
 
-/* Tablet Portrait */
-@media (min-width: 600px) {
-}
+  /* Navbar Spacing */
+  nav {
+    padding: 0.4rem 3.2rem;
+  }
 
-/* Tablet Landscape */
-@media (min-width: 950px) {
-}
-
-/* Laptop */
-@media (min-width: 1280px) {
+  /* Editor's pick image minimum height */
+  #editorspick-primary img {
+    /* min-height: 175px; */
+  }
 }
