@@ -8,11 +8,11 @@ Description: For Typography, I tried to Apple's human interface guidelines and a
 -------------------------------- */
 /* Font Family */
 body {
-  font-family: "REM", "Lato", Arial, Tahoma, sans-serif;
+  font-family: "Figtree", "DM Sans", Helvetica, Arial, sans-serif;
 }
 
 .serif {
-  font-family: "Noto Serif", "Times New Roman", Times, serif;
+  font-family: "DM Serif Display", "Times New Roman", Times, serif;
 }
 
 /* Heading Style */
@@ -20,19 +20,25 @@ body {
 h1,
 h2,
 h3 {
-  font-weight: bold;
+  letter-spacing: 0.7px;
   text-transform: capitalize;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: bold;
 }
 
 p,
 a,
 body {
-  font-weight: 300;
+  font-weight: 400;
 }
 
 /* Section Title */
 .section-title p {
-  font-weight: 600;
+  font-weight: bold;
   text-transform: uppercase;
 }
 
@@ -48,14 +54,14 @@ body {
 /* Component: View All Insights */
 .viewall {
   display: flex;
-  gap: 0.8rem;
+  gap: 1.2rem;
   justify-content: end;
-  align-items: center;
 }
 
 .viewall p {
   text-transform: uppercase;
-  font-weight: 500;
+  font-weight: bold;
+  letter-spacing: -0.5px;
 }
 
 /* Component: Topic */
@@ -65,13 +71,13 @@ body {
   padding: 4px 16px;
   border-radius: 2rem;
   outline: 2px solid #000;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 /* Button: An icon with circled button 24px */
 .button-circle-24 {
-  width: 24px;
-  height: 24px;
+  width: 2.4rem;
+  height: 2.4rem;
   border-radius: 2rem;
   outline: solid 2px #000;
 
@@ -210,10 +216,5 @@ body {
   /* Navbar Spacing */
   nav {
     padding: 0.4rem 3.2rem;
-  }
-
-  /* Editor's pick image minimum height */
-  #editorspick-primary img {
-    /* min-height: 175px; */
   }
 }

@@ -41,6 +41,7 @@ header {
 
 #navbar-items a {
   font-weight: 500;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
   text-align: center;
   padding-bottom: 0;
@@ -101,12 +102,22 @@ header {
 }
 
 #highlight .section-container {
-  padding: 6.4rem 3.2rem;
+  padding: 32px 32px;
+}
+
+#highlight-buttons {
+  color: #1f191075;
+}
+
+#highlight-buttons a {
+  background-color: #f9f6f232;
+  outline-style: none;
+  font-size: 1.6rem;
 }
 
 /* Editor's Pick */
 #editorspick {
-  padding: 6.4rem 3.2rem 3.2rem 3.2rem;
+  padding: 64px 32px 32px 32px;
   background-color: var(--color-background);
 }
 
@@ -117,7 +128,7 @@ header {
 }
 
 #editorspick-primary .section-img {
-  height: 28.3dvh;
+  height: 36.3dvh;
 }
 
 #editorspick-primary .section-img img {
