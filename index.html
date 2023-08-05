@@ -59,6 +59,7 @@
     <!-- Load JS files for the Handlebars Template -->
     <script src="./assets/js/util.js"></script>
     <script src="./assets/js/top-topics.js"></script>
+    <script src="./assets/js/view-all.js"></script>
 
     <!-- Title -->
     <title>ArchOn Magazine</title>
@@ -90,8 +91,6 @@
     </header>
 
     <main>
-      <!-- Page: Main -->
-
       <!-- Section: Cover -->
       <section id="cover">
         <!-- Highlight -->
@@ -123,13 +122,13 @@
         </div>
 
         <!-- Editor's Pick -->
-        <div id="editorspick" class="col-4 col-gap-m">
+        <div id="editorsPick" class="col-4 col-gap-m">
           <div class="section-title">
             <p>Editor's pick</p>
           </div>
-          <div class="section-container">
+          <div id="editorsPick-content">
             <!-- primary -->
-            <div id="editorspick-primary" class="col-gap-m">
+            <div id="editorsPick-primary" class="col-gap-m">
               <div class="section-img">
                 <img src="./data/insights/thumbnail/test.jpg" />
               </div>
@@ -142,8 +141,8 @@
               </h1>
             </div>
             <!-- secondary -->
-            <div class="col-gap-m">
-              <ul id="editorspick-secondary-list" class="col-gap-m">
+            <div id="editorsPick-secondary" class="col-gap-m">
+              <ul id="editorsPick-secondary-list" class="col-gap-m">
                 <li>
                   <h2 class="serif">
                     Marvels of Modern Architecture: Inspiring Structures Shaping
@@ -163,29 +162,141 @@
                   </h2>
                 </li>
               </ul>
-              <!-- Component: Viewall -->
-              <a href="#" class="viewall">
-                <p>view all insights</p>
-                <div class="button-circle-24">
-                  <i class="fa-solid fa-chevron-right"></i>
-                </div>
-              </a>
+              <div class="component-viewAll">
+                <!-- [Load Component] -->
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       <!-- Section: Top Topics -->
-      <section id="topTopics" class="col-gap-m">
-        <div class="section-container">
-          <div class="section-title">
-            <p>Top Topics</p>
+      <section id="topTopics" class="col-gap-m section-container">
+        <div class="section-title">
+          <p>Top Topics</p>
+        </div>
+        <div id="topTopics-content">
+          <ul id="topTopics-list">
+            <!-- [Loop Data] -->
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section: Monthly Awards -->
+      <section id="monthlyAwards" class="col-gap-m section-container">
+        <div class="section-title">
+          <p>Monthly Awards</p>
+          <div class="component-viewAll">
+            <!-- [Load Component] -->
           </div>
-          <div id="topTopics-content">
-            <ul></ul>
+        </div>
+        <div id="monthlyAwards-content">
+          <div class="component-card-awards">
+            <!-- [Load Component] -->
+            <div class="font-white">
+              <div class="col-gap-m">
+                <div class="label-square">
+                  <p class="body-s">The Winner Of July</p>
+                </div>
+                <h1 class="serif">The Campus IFA 2020</h1>
+                <p>Modern Fusion Studio</p>
+
+                <div class="donut-chart" style="--num: 8.8">
+                  <svg>
+                    <circle cx="43" cy="43" r="43"></circle>
+                    <circle cx="43" cy="43" r="43"></circle>
+                  </svg>
+                  <div class="donut-chart-number">
+                    <h1>8.8</h1>
+                  </div>
+                </div>
+                <q class="body-s italic">
+                  "An awe-inspiring masterpiece that transcends the ordinary and
+                  elevates architecture to extraordinary heights.”
+                </q>
+              </div>
+            </div>
+            <div class="font-white">
+              <div class="col-gap-m">
+                <div class="label-square">
+                  <p class="body-s">The Winner Of July</p>
+                </div>
+                <h1>The Campus IFA 2020</h1>
+                <p>Modern Fusion Studio</p>
+
+                <div class="donut-chart" style="--num: 7.2">
+                  <svg>
+                    <circle cx="43" cy="43" r="43"></circle>
+                    <circle cx="43" cy="43" r="43"></circle>
+                  </svg>
+                  <div class="donut-chart-number">
+                    <h1>7.2</h1>
+                  </div>
+                </div>
+                <q class="body-s italic">
+                  "An awe-inspiring masterpiece that transcends the ordinary and
+                  elevates architecture to extraordinary heights.”
+                </q>
+              </div>
+            </div>
+            <div class="font-white">
+              <div class="col-gap-m">
+                <div class="label-square">
+                  <p class="body-s">The Winner Of July</p>
+                </div>
+                <h1>The Campus IFA 2020</h1>
+                <p>Modern Fusion Studio</p>
+
+                <div class="donut-chart" style="--num: 5.5">
+                  <svg>
+                    <circle cx="43" cy="43" r="43"></circle>
+                    <circle cx="43" cy="43" r="43"></circle>
+                  </svg>
+                  <div class="donut-chart-number">
+                    <h1>5.5</h1>
+                  </div>
+                </div>
+                <q class="body-s italic">
+                  "An awe-inspiring masterpiece that transcends the ordinary and
+                  elevates architecture to extraordinary heights.”
+                </q>
+              </div>
+            </div>
           </div>
         </div>
       </section>
+
+      <!-- Section: Saved For Later -->
+      <section id="savedForLater" class="col-gap-m section-container">
+        <div class="section-title">
+          <p>Saved For Later</p>
+        </div>
+        <div id="savedForLater-content"></div>
+      </section>
+
+      <!-- Section: What's Trending -->
+      <section id="trending" class="col-gap-m section-container">
+        <div class="section-title">
+          <p>What's Trending</p>
+        </div>
+        <div id="trending-content"></div>
+      </section>
+
+      <!-- Section: Video -->
+      <section id="video" class="col-gap-m section-container">
+        <div class="section-title">
+          <p>Video</p>
+        </div>
+        <div id="video-content"></div>
+      </section>
+
+      <!-- Section: explore -->
+      <section id="explore" class="col-gap-m section-container">
+        <div id="explore-content"></div>
+      </section>
     </main>
+
+    <!-- Footer -->
+    <div id="footer">FOOTER</div>
   </body>
 </html>

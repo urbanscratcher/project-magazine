@@ -1,10 +1,9 @@
 /* --------------------------------
-File Name: reusable.css
-Purpose: to set default styles for the theme. Mainly used for semantic tags and classes, enhancing reusability. Globally applied.
-Author: Hyunjung Joun
-Reference:
-- https://developer.apple.com/design/human-interface-guidelines/typography
-Description: For Typography, I tried to Apple's human interface guidelines and adjusted them for the theme.
+- Purpose: to set semantic and class styles to keep the mood of a main theme and enhance reusability of styles. Mainly used for semantic tags & classes. Globally applied.
+- Author: Hyunjung Joun
+
+- Note: For responsiveness and typography, I tried to follow Apple's human interface guidelines.
+-- Reference: https://developer.apple.com/design/human-interface-guidelines/typography
 -------------------------------- */
 /* Font Family */
 body {
@@ -14,6 +13,14 @@ body {
 
 .serif {
   font-family: "DM Serif Display", "Times New Roman", Times, serif;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.font-white {
+  color: var(--color-bright);
 }
 
 /* Heading Style */
@@ -48,23 +55,18 @@ header {
   text-transform: uppercase;
 }
 
-/* Section Container */
-.section-container {
-}
-
 /* Section Image */
 .section-img > * {
   border-radius: 2rem;
 }
 
-/* Component: View All Insights */
-.viewall {
+/* Component: View All */
+.viewAll {
   display: flex;
   gap: 1.2rem;
-  justify-content: end;
 }
 
-.viewall p {
+.viewAll p {
   text-transform: capitalize;
   font-weight: 500;
   letter-spacing: -0.5px;
@@ -215,7 +217,7 @@ header {
   }
 
   /* Section Spacing */
-  section > div {
+  .section-container {
     padding: 6.4rem 3.2rem;
   }
 

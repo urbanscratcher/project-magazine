@@ -1,12 +1,10 @@
 /* --------------------------------
-File Name: reset.css
-Purpose: to reset default styles
+- Purpose: to reset default styles
 -------------------------------- */
 
 /* --------------------------------
-Author: Eric Meyer
-Reference:
-- https://cssdeck.com/blog/scripts/eric-meyer-reset-css/
+- Author: Eric Meyer
+- Reference: https://cssdeck.com/blog/scripts/eric-meyer-reset-css/
 -------------------------------- */
 /* Reset margin, padding, and border */
 html,
@@ -133,9 +131,9 @@ table {
 }
 
 /* -------------------------------- 
-Author: W3schools
-Reference:
-- https://www.w3schools.blog/reset-a-tag-css
+- Author: W3schools
+- Reference:
+https://www.w3schools.blog/reset-a-tag-css
 -------------------------------- */
 /* Remove tag style */
 a {
@@ -144,9 +142,8 @@ a {
 }
 
 /* --------------------------------
-Author: Joshua Comeau
-Reference: 
- - https://www.joshwcomeau.com/css/custom-css-reset/
+- Author: Joshua Comeau
+- Reference: https://www.joshwcomeau.com/css/custom-css-reset/
 -------------------------------- */
 /* Reset box-sizing model to border-box */
 *,
@@ -190,7 +187,7 @@ h6 {
 }
 
 /* --------------------------------
-Author: Hyunjung Joun
+- Author: Hyunjung Joun
 -------------------------------- */
 /* Adjust Fontawesome icon size */
 i {

@@ -1,3 +1,36 @@
+/* --------------------------------
+- Purpose: data looping
+- Author: Hyunjung Joun
+-------------------------------- */
+
+// Fetch the template file -----------------
+fetch("../../index.html")
+  .then((res) => res.text())
+  .then((html) => {
+    const topTopicsListEl = document
+      .getElementById("topTopics-content")
+      .querySelector("ul");
+
+    insert(topTopicsListEl, render(createTopTopics, data));
+  })
+  .catch((err) => {
+    console.error("error: ", err);
+  });
+
+// Create New HTML -----------------------------
+function createTopTopics() {
+  return `
+        {{#each topTopics}}
+          <li>
+            <a href="#">
+              <p>{{name}}</p>
+              <div><p>{{count}}</p></div>
+            </a>
+          </li>
+        {{/each}}
+  `;
+}
+
 // Data ------------------------------------
 const data = {
   topTopics: [
@@ -39,31 +72,3 @@ const data = {
     },
   ],
 };
-
-// Fetch the template file -----------------
-fetch("../../index.html")
-  .then((res) => res.text())
-  .then((html) => {
-    const topTopicsListEl = document
-      .getElementById("topTopics-content")
-      .querySelector("ul");
-
-    insert(topTopicsListEl, render(createHTML, data));
-  })
-  .catch((err) => {
-    console.error("error: ", err);
-  });
-
-// Create New HTML -----------------------------
-function createHTML() {
-  return `
-        {{#each topTopics}}
-          <li>
-            <a href="#">
-              <p>{{name}}</p>
-              <div><p>{{count}}</p></div>
-            </a>
-          </li>
-        {{/each}}
-  `;
-}

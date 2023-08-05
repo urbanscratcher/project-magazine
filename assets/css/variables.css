@@ -1,14 +1,14 @@
 /* --------------------------------
-File Name: variables.css
-Purpose: to set reusable css variables
-Author: Hyunjung Joun
+- Purpose: to set reusable css variables
+- Author: Hyunjung Joun
 -------------------------------- */
 
 :root {
   /* Colors */
-  --color-primary: #00ff00;
+  --color-primary: #ffec3e;
   --color-bright: #f9f6f2;
   --color-black: #17130c;
+  --color-background-sharp: #f9e98f;
   --color-background: #e9be7a;
   --color-background-filter: #6a49139c;
 

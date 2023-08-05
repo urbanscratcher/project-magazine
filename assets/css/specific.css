@@ -1,10 +1,9 @@
 /* --------------------------------
-File Name: specific.css
-Purpose: to set custom styles. Mainly used for specific styling through id. Locally applied.
-Author: Hyunjung Joun
+- Purpose: to set custom styles. Mainly used for specific styling through ids. Locally applied.
+- Author: Hyunjung Joun
 -------------------------------- */
 
-/* Nav */
+/* Nav ----------------------------*/
 #navbar {
   position: fixed;
   display: flex;
@@ -65,12 +64,12 @@ Author: Hyunjung Joun
   text-align: center;
 }
 
-/* Cover */
+/* Cover ----------------------------*/
 #cover {
   display: flex;
 }
 
-/* Highlight */
+/* Highlight ----------------------------*/
 #highlight {
   padding: 0;
   background-image: linear-gradient(
@@ -113,69 +112,177 @@ Author: Hyunjung Joun
   font-size: 1.6rem;
 }
 
-/* Editor's Pick */
-#editorspick {
+/* Editor's Pick ----------------------------*/
+#editorsPick {
   padding: 6.4rem 3.2rem 3.2rem 3.2rem;
   background-color: var(--color-background);
 }
 
-#editorspick-primary {
+#editorsPick-primary {
   border-bottom: solid 0.1rem #000;
   padding-bottom: 3.2rem;
   margin-bottom: 3.2rem;
 }
 
-#editorspick-primary .section-img {
+#editorsPick-primary .section-img {
   height: 36.3dvh;
 }
 
-#editorspick-primary .section-img img {
+#editorsPick-primary .section-img img {
   height: 100%;
   width: 100%;
   object-fit: cover;
   object-position: center;
 }
 
-#editorspick-secondary-list {
+#editorsPick-secondary-list {
   list-style: disc;
   margin-left: 1.6rem;
 }
 
-#editorspick-secondary-list li::marker {
+#editorsPick-secondary-list li::marker {
   font-size: initial;
 }
 
-/* Top Topics */
+#editorsPick .component-viewAll {
+  display: flex;
+  justify-content: end;
+}
 
+/* Top Topics ----------------------------*/
 #topTopics {
   background-color: #dee0ee;
 }
 
-#topTopics-content ul {
+#topTopics-list {
   display: flex;
   flex-wrap: wrap;
   row-gap: 3.2rem;
   column-gap: 14.4rem;
 }
 
-#topTopics-content li a {
+#topTopics-list li a {
   display: flex;
 }
 
-#topTopics-content li a > p {
+#topTopics-list li a > p {
   font-size: 6rem;
 }
 
-#topTopics-content li a > div {
+#topTopics-list li a > div {
   width: 3.2rem;
   height: 3.2rem;
   display: flex;
   background-color: var(--color-black);
   justify-content: center;
   align-items: center;
-  border-radius: 2rem;
+  border-radius: 50%;
 }
 
-#topTopics-content li a > div > p {
+#topTopics-list li a > div > p {
   color: var(--color-bright);
+}
+
+/* Monthly Awards ----------------------------*/
+#monthlyAwards .section-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+#monthlyAwards-content {
+}
+
+.component-card-awards {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 1.6rem;
+}
+
+.component-card-awards > div {
+  min-height: 43.2rem;
+
+  background-image: linear-gradient(
+      to left top,
+      var(--color-background-filter),
+      #121212b9
+    ),
+    url("../../data/insights/thumbnail/test.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-clip: content-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 1.6rem;
+}
+
+.component-card-awards > div > div {
+  text-align: center;
+  padding: 1.6rem;
+}
+
+.component-card-awards > div > div > h1 {
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+
+.component-card-awards > div > div > p {
+  text-transform: capitalize;
+}
+
+.label-square p {
+  display: inline-block;
+  border-top: solid 0.1rem var(--color-bright);
+  border-bottom: solid 0.1rem var(--color-bright);
+  font-weight: 500;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  padding: 0.4rem 1.6rem;
+}
+
+/* ----------------------------------
+- Purpose: circled progress bar with animation by using SVG
+- Author: OnlineTutorialsYT, modified by Hyunjung Joun
+- Reference: https://www.youtube.com/watch?v=V_G1WzPjb4o
+------------------------------------ */
+.donut-chart {
+  position: relative;
+  width: 9.6rem;
+  height: 9.6rem;
+
+  left: 50%;
+  transform: translateX(-50%);
+  /* background-color: red; */
+}
+
+.donut-chart svg {
+  position: relative;
+  width: 9.6rem;
+  height: 9.6rem;
+  transform: rotate(-90deg);
+}
+
+.donut-chart svg circle {
+  width: 100%;
+  height: 100%;
+  fill: transparent;
+  stroke-width: 8;
+  transform: translate(5px, 5px);
+}
+
+.donut-chart svg circle:nth-child(2) {
+  stroke: var(--color-bright);
+  stroke-dasharray: 270;
+  stroke-dashoffset: calc(270 - (270 * var(--num)) / 10);
+}
+
+.donut-chart-number {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
