@@ -1,6 +1,6 @@
 /* --------------------------------
-File Name: default.css
-Purpose: to set default styles for the theme
+File Name: reusable.css
+Purpose: to set default styles for the theme. Mainly used for semantic tags and classes, enhancing reusability. Globally applied.
 Author: Hyunjung Joun
 Reference:
 - https://developer.apple.com/design/human-interface-guidelines/typography
@@ -9,6 +9,7 @@ Description: For Typography, I tried to Apple's human interface guidelines and a
 /* Font Family */
 body {
   font-family: "Figtree", "DM Sans", Helvetica, Arial, sans-serif;
+  color: var(--color-black);
 }
 
 .serif {
@@ -36,6 +37,11 @@ body {
   font-weight: 400;
 }
 
+/* Header */
+header {
+  position: relative;
+}
+
 /* Section Title */
 .section-title p {
   font-weight: bold;
@@ -59,8 +65,8 @@ body {
 }
 
 .viewall p {
-  text-transform: uppercase;
-  font-weight: bold;
+  text-transform: capitalize;
+  font-weight: 500;
   letter-spacing: -0.5px;
 }
 
@@ -68,10 +74,10 @@ body {
 .topic {
   display: inline-block;
   text-transform: uppercase;
-  padding: 4px 16px;
+  padding: 0.4rem 1.6rem;
   border-radius: 2rem;
-  outline: 2px solid #000;
-  font-weight: 600;
+  outline: 0.2rem solid #000;
+  font-weight: 500;
 }
 
 /* Button: An icon with circled button 24px */
@@ -79,7 +85,7 @@ body {
   width: 2.4rem;
   height: 2.4rem;
   border-radius: 2rem;
-  outline: solid 2px #000;
+  outline: solid 0.2rem #000;
 
   display: flex;
   align-items: center;
@@ -88,10 +94,10 @@ body {
 
 /* Button: An icon with circled button 32px */
 .button-circle-32 {
-  width: 32px;
-  height: 32px;
+  width: 3.2rem;
+  height: 3.2rem;
   border-radius: 2rem;
-  outline: solid 2px #000;
+  outline: solid 0.2rem #000;
 
   display: flex;
   align-items: center;

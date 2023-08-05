@@ -98,18 +98,21 @@ video {
 
   /* Written by Joun */
   /* This is for easy caculation of the unit rem */
-  font-size: 66.5%;
+  font-size: 62.5%;
 }
 
+/* Reset line height */
 body {
   line-height: 1;
 }
 
+/* Remove list style */
 ol,
 ul {
   list-style: none;
 }
 
+/* Remove quote style */
 blockquote,
 q {
   quotes: none;
@@ -123,6 +126,7 @@ q:after {
   content: none;
 }
 
+/* Remove table style */
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -133,7 +137,7 @@ Author: W3schools
 Reference:
 - https://www.w3schools.blog/reset-a-tag-css
 -------------------------------- */
-/* Remove a tag style */
+/* Remove tag style */
 a {
   color: inherit;
   text-decoration: inherit;

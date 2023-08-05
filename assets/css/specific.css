@@ -1,17 +1,14 @@
 /* --------------------------------
-File Name: main.css
-Purpose: to set custom styles
+File Name: specific.css
+Purpose: to set custom styles. Mainly used for specific styling through id. Locally applied.
+Author: Hyunjung Joun
 -------------------------------- */
 
 /* Nav */
-header {
-  position: relative;
-}
-
 #navbar {
   position: fixed;
   display: flex;
-  height: 64px;
+  height: 6.4rem;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
@@ -26,8 +23,8 @@ header {
   align-items: end;
 }
 
-#navbar-menu img {
-  height: 38px;
+#navbar-logo {
+  height: 3.8rem;
   padding-bottom: 0.25rem;
   filter: brightness(0) invert(1);
 }
@@ -40,8 +37,8 @@ header {
 }
 
 #navbar-items a {
-  font-weight: 500;
   letter-spacing: 0.5px;
+  font-weight: 500;
   text-transform: uppercase;
   text-align: center;
   padding-bottom: 0;
@@ -49,22 +46,22 @@ header {
   color: var(--color-bright);
 }
 
-#navbar-personal {
+#navbar-personals {
   display: flex;
   justify-content: end;
-  gap: 4px;
+  gap: 0.4rem;
 }
 
-#navbar-personal li {
-  width: 32px;
-  height: 32px;
+#navbar-personals li {
+  width: 3.2rem;
+  height: 3.2rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#navbar-personal li i {
-  font-size: 24px;
+#navbar-personals li i {
+  font-size: 2.4rem;
   text-align: center;
 }
 
@@ -102,27 +99,28 @@ header {
 }
 
 #highlight .section-container {
-  padding: 32px 32px;
+  padding: 3.2rem;
 }
 
 #highlight-buttons {
-  color: #1f191075;
+  color: var(--color-black);
+  justify-content: end;
 }
 
 #highlight-buttons a {
-  background-color: #f9f6f232;
+  background-color: #f6f6f676;
   outline-style: none;
   font-size: 1.6rem;
 }
 
 /* Editor's Pick */
 #editorspick {
-  padding: 64px 32px 32px 32px;
+  padding: 6.4rem 3.2rem 3.2rem 3.2rem;
   background-color: var(--color-background);
 }
 
 #editorspick-primary {
-  border-bottom: solid 1px #000;
+  border-bottom: solid 0.1rem #000;
   padding-bottom: 3.2rem;
   margin-bottom: 3.2rem;
 }
@@ -145,4 +143,39 @@ header {
 
 #editorspick-secondary-list li::marker {
   font-size: initial;
+}
+
+/* Top Topics */
+
+#topTopics {
+  background-color: #dee0ee;
+}
+
+#topTopics-content ul {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 3.2rem;
+  column-gap: 14.4rem;
+}
+
+#topTopics-content li a {
+  display: flex;
+}
+
+#topTopics-content li a > p {
+  font-size: 6rem;
+}
+
+#topTopics-content li a > div {
+  width: 3.2rem;
+  height: 3.2rem;
+  display: flex;
+  background-color: var(--color-black);
+  justify-content: center;
+  align-items: center;
+  border-radius: 2rem;
+}
+
+#topTopics-content li a > div > p {
+  color: var(--color-bright);
 }

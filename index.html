@@ -47,34 +47,18 @@
       href="assets/plugins/bootstrap/css/bootstrap.min.css"
     />
 
-    <!-- Reset, Variables, and Custom CSS -->
+    <!-- reset, variables, reusable, and specific CSS -->
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/variables.css" />
-    <link rel="stylesheet" href="assets/css/default.css" />
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/css/reusable.css" />
+    <link rel="stylesheet" href="assets/css/specific.css" />
 
     <!-- Handlebars from a CDN -->
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
 
-    <!-- Load Data -->
-    <script>
-      fetch("../../data/insights/data.json")
-        .then((res) => res.json())
-        .then((res) => {
-          // Process the received data
-          const insights = res;
-          console.log(insights);
-        })
-        .catch((error) => console.error("ERROR - ", error));
-    </script>
-
-    <!-- Compile Template -->
-    <script>
-      // compile the template
-      const template = Handlebars.compile("Handlebars <b>{{doesWhat}}</b>");
-      // execute the compiled template and print the output to the console
-      console.log(template({ doesWhat: "rocks!" }));
-    </script>
+    <!-- Load JS files for the Handlebars Template -->
+    <script src="./assets/js/util.js"></script>
+    <script src="./assets/js/top-topics.js"></script>
 
     <!-- Title -->
     <title>ArchOn Magazine</title>
@@ -85,7 +69,7 @@
     <header class="position-relative">
       <nav id="navbar">
         <div id="navbar-menu" class="col-8">
-          <img src="assets/image/logo.png" />
+          <img id="navbar-logo" src="assets/image/logo.png" />
           <div id="navbar-items">
             <a href="#">Insights</a>
             <a href="#">Awards</a>
@@ -94,7 +78,7 @@
             <a href="#">Report</a>
           </div>
         </div>
-        <ul id="navbar-personal" class="col">
+        <ul id="navbar-personals" class="col">
           <li>
             <i class="fa-regular fa-bookmark"></i>
           </li>
@@ -107,6 +91,7 @@
 
     <main>
       <!-- Page: Main -->
+
       <!-- Section: Cover -->
       <section id="cover">
         <!-- Highlight -->
@@ -186,6 +171,18 @@
                 </div>
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Top Topics -->
+      <section id="topTopics" class="col-gap-m">
+        <div class="section-container">
+          <div class="section-title">
+            <p>Top Topics</p>
+          </div>
+          <div id="topTopics-content">
+            <ul></ul>
           </div>
         </div>
       </section>
