@@ -6,11 +6,6 @@
 -- Reference: https://developer.apple.com/design/human-interface-guidelines/typography
 -------------------------------- */
 
-/* Text white */
-.text-white {
-  color: var(--color-white);
-}
-
 /* Section Title */
 .section-title {
   color: var(--color-secondary-dark);
@@ -19,6 +14,21 @@
 .section-title > p {
   font-weight: bold;
   text-transform: uppercase;
+}
+
+/* Section Background Image */
+.section-bg-img {
+  background-image: linear-gradient(
+      to left top,
+      var(--color-primary-filter),
+      var(--color-secondary-filter)
+    ),
+    var(--bg-img);
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-clip: content-box;
 }
 
 /* Section Image */

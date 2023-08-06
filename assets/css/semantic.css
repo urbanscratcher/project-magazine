@@ -3,7 +3,7 @@
 - Author: Hyunjung Joun
 -------------------------------- */
 
-/* Font Family */
+/* Typography */
 body {
   font-family: "Figtree", "DM Sans", Helvetica, Arial, sans-serif;
   color: var(--color-secondary);
@@ -17,8 +17,8 @@ body {
   font-style: italic;
 }
 
-.font-white {
-  color: var(--color-primary-lightest);
+.text-white {
+  color: var(--color-white);
 }
 
 /* Heading Style */
