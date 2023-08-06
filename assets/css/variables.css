@@ -13,12 +13,13 @@
   --color-secondary-dark: #001b64;
   --color-secondary-background: #c7e5f4;
 
-  --color-black: #141414;
+  --color-gray-light: #bfc7dc;
+  --color-black: #131517;
   --color-black-background-filter: #121212b9;
   --color-white: #fdfff2;
 
   /* Font Sizes */
-  --h0-xs: 3.1rem;
+  --h0-xs: 5rem;
   --h1-xs: 2.5rem;
   --h2-xs: 1.9rem;
   --h3-xs: 1.7rem;
@@ -26,13 +27,28 @@
   --body-s-xs: 1.2rem;
   --body-xs-xs: 1.1rem;
 
-  --h0-xl: 3.6rem;
-  --h1-xl: 3rem;
-  --h2-xl: 2.4rem;
-  --h3-xl: 2.2rem;
-  --body-m-xl: 1.9rem;
-  --body-s-xl: 1.5rem;
-  --body-xs-xl: 1.4rem;
+  --h1-xl: 6.6rem;
+  --h1-spacing-xl: -0.05rem;
+  --h2-xl: 5.3rem;
+  --h2-spacing-xl: 0px;
+  --h3-xl: 3.8rem;
+  --h3-spacing-xl: 0.025rem;
+  --h4-xl: 2.6rem;
+  --h4-spacing-xl: 0px;
+
+  --body1-xl: 1.7rem;
+  --body1-spacing-xl: 0.05rem;
+  --body2-xl: 1.5rem;
+  --body2-spacing-xl: 0.025rem;
+
+  --button-xl: 1.5rem;
+  --button-spacing-xl: 0.125rem;
+
+  --caption-xl: 1.3rem;
+  --caption-spacing-xl: 0.04rem;
+
+  --overline-xl: 1.1rem;
+  --overline-spacing-xl: 0.15rem;
 
   /* Sizes */
   --size-xs: 0.4rem;
@@ -43,13 +59,6 @@
   --size-2xl: 6.4rem;
 
   /* Radius */
-
-  /* Breakpoints */
-  --break-xs: 360px;
-  --break-s: 600px;
-  --break-m: 950px;
-  --break-l: 1280px;
-  --break-xl: 1440px;
 
   /* Z-index */
 }

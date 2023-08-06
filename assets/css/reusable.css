@@ -11,7 +11,7 @@
   color: var(--color-black);
 }
 
-.section-title p {
+.section-title > p {
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -51,6 +51,9 @@
 }
 
 .section-img img {
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
   transition: all 0.2s ease;
 }
 
@@ -104,12 +107,7 @@
   color: var(--color-black);
   display: flex;
   gap: 1.2rem;
-}
-
-.viewAll p {
-  text-transform: capitalize;
-  font-weight: 500;
-  letter-spacing: -0.5px;
+  align-items: center;
 }
 
 /* Component: Topic */
@@ -119,7 +117,7 @@
   padding: 0.4rem 1.6rem;
   border-radius: 1.6rem;
   outline: 0.2rem solid var(--color-secondary-dark);
-  font-weight: 500;
+  font-weight: 600;
 }
 
 /* Button: An icon with circled button 24px */
@@ -144,4 +142,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+/* Button */
+.button {
+  padding: 0.8rem 0;
+  border-radius: 3rem;
 }

@@ -2,8 +2,10 @@
 - Purpose: to keep the mood of a main theme responsively by various medias. Media queries are applied.
 - Author: Hyunjung Joun
 
-- Note: For responsiveness and typography, I tried to follow Apple's human interface guidelines.
--- Reference: https://developer.apple.com/design/human-interface-guidelines/typography
+- Note: For responsiveness and typography, I tried to follow Apple's human interface guidelines and Material Design's.
+- Reference:
+-- https://developer.apple.com/design/human-interface-guidelines/typography
+-- https://m2.material.io/design/typography/the-type-system.html#applying-the-type-scale
 
 - Main Breakpoints:
 -- xs (360px) Mobile
@@ -73,41 +75,57 @@
 
 /* Desktop */
 @media (min-width: 900px) {
-  .h0 {
-    font-size: var(--h0-xl);
-    line-height: 1.194;
-  }
-
   h1 {
     font-size: var(--h1-xl);
-    line-height: 1.2333;
+    letter-spacing: var(--h1-spacing-xl);
+    line-height: 1.2;
   }
 
   h2 {
     font-size: var(--h2-xl);
+    letter-spacing: var(--h2-spacing-xl);
     line-height: 1.25;
   }
 
   h3 {
     font-size: var(--h3-xl);
-    line-height: 1.273;
+    letter-spacing: var(--h3-spacing-xl);
+    line-height: 1.25;
+  }
+
+  h4 {
+    font-size: var(--h4-xl);
+    letter-spacing: var(--h4-spacing-xl);
+    line-height: 1.27;
   }
 
   a,
   p,
-  body {
-    font-size: var(--body-m-xl);
+  body,
+  q,
+  input {
+    font-size: var(--body1-xl);
+    letter-spacing: var(--body1-spacing-xl);
     line-height: 1.263;
   }
 
+  label,
   .body-s {
-    font-size: var(--body-s-xl);
+    font-size: var(--body2-xl);
+    letter-spacing: var(--body2-spacing-xl);
     line-height: 1.333;
   }
 
-  .body-xs {
-    font-size: var(--body-xs-xl);
-    line-height: 1.357;
+  .button-text {
+    font-size: var(--button-xl);
+    letter-spacing: var(--button-spacing-xl);
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .caption {
+    font-size: var(--caption-xl);
+    letter-spacing: var(--caption-spacing-xl);
   }
 
   /* Flex Column 16px */
@@ -115,6 +133,13 @@
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
+  }
+
+  /* Flex Column 8px */
+  .col-gap-s {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
   }
 
   /* Flex Row 16px */
@@ -132,6 +157,13 @@
   /* Section Spacing */
   .section-container {
     padding: 6.4rem 3.2rem;
+  }
+
+  /* Section Aside Spacing */
+  .section-aside {
+    padding: 3.2rem 1.6rem;
+    border: solid 1px var(--color-gray-light);
+    border-radius: 1.6rem;
   }
 
   /* Navbar Spacing */

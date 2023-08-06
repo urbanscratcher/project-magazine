@@ -22,18 +22,11 @@ body {
 }
 
 /* Heading Style */
-.h0,
 h1,
 h2,
-h3 {
-  letter-spacing: 0.7px;
+h3,
+h4 {
   text-transform: capitalize;
-}
-
-h1,
-h2,
-h3 {
-  font-weight: bold;
 }
 
 p,

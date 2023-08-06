@@ -20,6 +20,12 @@
       rel="stylesheet"
     />
 
+    <!-- Serif: DM Serif Text -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+
     <!-- San-serif: DM Sans -->
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500&display=swap"
@@ -42,10 +48,10 @@
     />
 
     <!-- Global Bootstrap CSS -->
-    <link
+    <!-- <link
       rel="stylesheet"
       href="assets/plugins/bootstrap/css/bootstrap.min.css"
-    />
+    /> -->
 
     <!-- Custom CSS Files -->
     <link rel="stylesheet" href="assets/css/reset.css" />
@@ -72,7 +78,7 @@
     <!-- Navigation Bar-->
     <header class="position-relative">
       <nav id="navbar">
-        <div id="navbar-menu" class="col-8">
+        <div id="navbar-menu">
           <img id="navbar-logo" src="assets/image/logo.png" />
           <div id="navbar-items">
             <a href="#">Insights</a>
@@ -82,7 +88,7 @@
             <a href="#">Report</a>
           </div>
         </div>
-        <ul id="navbar-personals" class="col">
+        <ul id="navbar-personals">
           <li>
             <i class="fa-regular fa-bookmark"></i>
           </li>
@@ -97,22 +103,15 @@
       <!-- Section: Cover -->
       <section id="cover">
         <!-- Highlight -->
-        <div id="highlight" class="col-8">
+        <div id="highlight">
           <!-- Component: Topic -->
           <div class="section-container col-gap-m">
             <div>
-              <p class="topic">topic</p>
+              <p class="topic button-text">topic</p>
             </div>
-            <h1 class="h0 serif">
+            <h1 class="serif">
               Building Dreams: Exploring the Timeless Beauty of Architecture
             </h1>
-            <p>
-              An immersive celebration of architectural wonders, 'Building
-              Dreams: Exploring the Timeless Beauty of Architecture' showcases
-              iconic structures that have shaped history and continue to inspire
-              modern design. A captivating tribute to human creativity and
-              ingenuity.
-            </p>
             <div id="highlight-buttons" class="row-gap-m">
               <a href="#" class="button-circle-32">
                 <i class="fa-solid fa-chevron-left"></i>
@@ -125,7 +124,7 @@
         </div>
 
         <!-- Editor's Pick -->
-        <div id="editorsPick" class="col-4 col-gap-m">
+        <div id="editorsPick" class="col-gap-m">
           <div class="section-title">
             <p>Editor's pick</p>
           </div>
@@ -139,33 +138,33 @@
                 </div>
               </div>
               <div>
-                <p class="topic">topic</p>
+                <p class="topic button-text">topic</p>
               </div>
-              <h1 class="serif">
+              <h3 class="serif">
                 From Vision to Reality: Unveiling the Marvels of Architectural
                 Ingenuity
-              </h1>
+              </h3>
             </div>
             <!-- secondary -->
             <div id="editorsPick-secondary" class="col-gap-m">
               <ul id="editorsPick-secondary-list" class="col-gap-m">
                 <li>
-                  <h2 class="serif">
+                  <h4 class="serif">
                     Marvels of Modern Architecture: Inspiring Structures Shaping
                     Our Cities
-                  </h2>
+                  </h3>
                 </li>
                 <li>
-                  <h2 class="serif">
+                  <h4 class="serif">
                     Timeless Elegance: Exploring the Beauty of Architectural
                     Masterpieces
-                  </h2>
+                  </h3>
                 </li>
                 <li>
-                  <h2 class="serif">
+                  <h4 class="serif">
                     Designing the Future: Innovative Architecture Redefining
                     Urban Landscapes
-                  </h2>
+                  </h4>
                 </li>
               </ul>
               <div class="component-viewAll">
@@ -204,8 +203,8 @@
                 <div class="label-square">
                   <p class="body-s">The Winner Of July</p>
                 </div>
-                <h1 class="serif">The Campus IFA 2020</h1>
-                <p>Modern Fusion Studio</p>
+                <h2 class="serif">The Campus IFA 2020</h2>
+                <h4>Modern Fusion Studio</h4>
 
                 <div class="donut-chart" style="--num: 8.8">
                   <svg>
@@ -213,10 +212,10 @@
                     <circle cx="43" cy="43" r="43"></circle>
                   </svg>
                   <div class="donut-chart-number">
-                    <h1>8.8</h1>
+                    <h4>8.8</h4>
                   </div>
                 </div>
-                <q class="body-s italic">
+                <q class="italic">
                   "An awe-inspiring masterpiece that transcends the ordinary and
                   elevates architecture to extraordinary heights.”
                 </q>
@@ -225,9 +224,9 @@
             <div class="font-white">
               <div class="col-gap-m">
                 <div class="label-square">
-                  <p class="body-s">The Winner Of July</p>
+                  <p class="body-s">The 2nd Place Of July</p>
                 </div>
-                <h1 class="serif">The Campus IFA 2020</h1>
+                <h4 class="serif">The Campus IFA 2020</h4>
                 <p>Modern Fusion Studio</p>
 
                 <div class="donut-chart" style="--num: 8.8">
@@ -236,10 +235,10 @@
                     <circle cx="43" cy="43" r="43"></circle>
                   </svg>
                   <div class="donut-chart-number">
-                    <h1>8.8</h1>
+                    <h4>8.8</h4>
                   </div>
                 </div>
-                <q class="body-s italic">
+                <q class="italic body-s">
                   "An awe-inspiring masterpiece that transcends the ordinary and
                   elevates architecture to extraordinary heights.”
                 </q>
@@ -248,9 +247,9 @@
             <div class="font-white">
               <div class="col-gap-m">
                 <div class="label-square">
-                  <p class="body-s">The Winner Of July</p>
+                  <p class="body-s">The Honourable Of July</p>
                 </div>
-                <h1 class="serif">The Campus IFA 2020</h1>
+                <h4 class="serif">The Campus IFA 2020</h4>
                 <p>Modern Fusion Studio</p>
 
                 <div class="donut-chart" style="--num: 8.8">
@@ -259,21 +258,23 @@
                     <circle cx="43" cy="43" r="43"></circle>
                   </svg>
                   <div class="donut-chart-number">
-                    <h1>8.8</h1>
+                    <h4>8.8</h4>
                   </div>
                 </div>
-                <q class="body-s italic">
+                <q class="italic body-s">
                   "An awe-inspiring masterpiece that transcends the ordinary and
                   elevates architecture to extraordinary heights.”
                 </q>
               </div>
-            </div>
+            </div>            
           </div>
         </div>
       </section>
 
       <!-- Section: What's Trending -->
-      <section class="section-container">
+      <section id="section-trending" class="section-container">
+
+        <!-- What's Trending -->
         <div id="trending" class="col-gap-m">
           <div class="section-title">
             <p>What's Trending</p>
@@ -281,8 +282,8 @@
               <!-- [Load Component] -->
             </div>
           </div>
-          <div id="trending-content">
-            <div class="col-gap-m">
+          <div id="trending-content" class="row-gap-m">
+            <div id="trending-highlight" class="col-gap-m">
               <div class="section-img">
                 <img src="./data/insights/thumbnail/test.jpg" />
                 <div class="component-bookmark-add">
@@ -290,12 +291,11 @@
                 </div>
               </div>
               <div>
-                <p class="topic">topic</p>
+                <p class="topic button-text">topic</p>
               </div>
-              <h1>
-                Revolutionary Sustainable Architecture Unveiled: Harmonizing
-                Nature and Modern Design for a Greener Tomorrow
-              </h1>
+              <h2 class="serif">
+                Revolutionary Sustainable Architecture Unveiled
+              </h2>
               <p>
                 Architects reveal an innovative approach that integrates green
                 spaces, vertical gardens, and renewable energy systems, reducing
@@ -305,27 +305,168 @@
                 resilient and eco-friendly coexistence.
               </p>
               <div class="row-gap-s">
-                <i class="fa-regular fa-bookmark"></i>
+                <p>
+                  <i class="fa-regular fa-clock"></i>
+                </p>
                 <p>4 min read</p>
               </div>
               <div class="row-gap-s">
-                <i class="fa-regular fa-circle-user"></i>
+                <p>
+                  <i class="fa-regular fa-circle-user"></i>
+                </p>
                 <p>Eleanor Montgomery</p>
               </div>
             </div>
-            <div>
-              <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                <li>4</li>
+            <div id="trending-list">
+              <ul class="col-gap-m">
+                <li class="trending-list-item col-gap-s">
+                  <div>
+                    <p class="topic button-text">topic</p>
+                  </div>
+                  <div class="row-gap-s">
+                    <h4 class="serif">Headline level 3 text similar to body up to 2 lines</h4>
+                    <div class="section-img">
+                      <img src="./data/insights/thumbnail/test.jpg" />
+                      <div class="component-bookmark-add"></div>
+                    </div>
+                  </div>
+                  <div class="row-gap-s">
+                    <p class="body-s">4 min read</p>
+                    <p class="body-s">·</p>
+                    <p class="body-s">John Polanski</p>
+                  </div>
+                </li>
+                <li class="trending-list-item col-gap-s">
+                  <div>
+                    <p class="topic button-text">topic</p>
+                  </div>
+                  <div class="row-gap-s">
+                    <h4 class="serif">Headline level 3 text similar to body up to 2 lines</h4>
+                    <div class="section-img">
+                      <img src="./data/insights/thumbnail/test.jpg" />
+                      <div class="component-bookmark-add"></div>
+                    </div>
+                  </div>
+                  <div class="row-gap-s">
+                    <p class="body-s">4 min read</p>
+                    <p class="body-s">·</p>
+                    <p class="body-s">John Polanski</p>
+                  </div>
+                </li>
+                <li class="trending-list-item col-gap-s">
+                  <div>
+                    <p class="topic button-text">topic</p>
+                  </div>
+                  <div class="row-gap-s">
+                    <h4 class="serif">Headline level 3 text similar to body up to 2 lines</h4>
+                    <div class="section-img">
+                      <img src="./data/insights/thumbnail/test.jpg" />
+                      <div class="component-bookmark-add"></div>
+                    </div>
+                  </div>
+                  <div class="row-gap-s">
+                    <p class="body-s">4 min read</p>
+                    <p class="body-s">·</p>
+                    <p class="body-s">John Polanski</p>
+                  </div>
+                </li>
+                <li class="trending-list-item col-gap-s">
+                  <div>
+                    <p class="topic button-text">topic</p>
+                  </div>
+                  <div class="row-gap-s">
+                    <h4 class="serif">Headline level 3 text similar to body up to 2 lines</h4>
+                    <div class="section-img">
+                      <img src="./data/insights/thumbnail/test.jpg" />
+                      <div class="component-bookmark-add"></div>
+                    </div>
+                  </div>
+                  <div class="row-gap-s">
+                    <p class="body-s">4 min read</p>
+                    <p class="body-s">·</p>
+                    <p class="body-s">John Polanski</p>
+                  </div>
+                </li>
               </ul>
             </div>
           </div>
         </div>
-        <div></div>
-        <div></div>
+
+        <!-- Stay Connected -->
+        <div id="connected" class="col-gap-m section-aside">
+          <div class="section-title">
+            <p>stay connected</p>            
+          </div>
+          <div id="connected-content">
+            <ul id="connected-list" class="col-gap-s">
+              <li class="connected-list-item">
+                <a href="#">
+                  <div class="row-gap-m">
+                    <p>
+                      <i class="fa-regular fa-circle-user"></i>
+                    </p>
+                    <p>Facebook</p>
+                  </div>
+                  <p>57K Followers</p>
+                </a>
+              </li>
+              <li class="connected-list-item">
+                <a href="#">
+                  <div class="row-gap-m">
+                    <p>
+                      <i class="fa-regular fa-circle-user"></i>
+                    </p>
+                    <p>Facebook</p>
+                  </div>
+                  <p>57K Followers</p>
+                </a>
+              </li>
+              <li class="connected-list-item">
+                <a href="#">
+                  <div class="row-gap-m">
+                    <p>
+                      <i class="fa-regular fa-circle-user"></i>
+                    </p>
+                    <p>Facebook</p>
+                  </div>
+                  <p>57K Followers</p>
+                </a>
+              </li>
+              <li class="connected-list-item">
+                <a href="#">
+                  <div class="row-gap-m">
+                    <p>
+                      <i class="fa-regular fa-circle-user"></i>
+                    </p>
+                    <p>Facebook</p>
+                  </div>
+                  <p>57K Followers</p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Newsletter -->
+        <div id="newsletter" class="col-gap-m section-aside">
+          <div class="section-title">
+            <p>newsletter</p>
+          </div>
+          <div id="newsletter-content" class="col-gap-m">
+            <p>Subscribe our newsletter to get the latest updates all about architecture</p>
+            <form class="col-gap-m">
+              <input placeholder="Enter your full name" />
+              <input placeholder="Enter your email" />
+              <label for="newsletter-consent">
+                <input type="checkbox" id="newsletter-consent" />
+                By signing up, you agree to our terms and privacy policy
+              </label>
+              <button class="button button-text">subscribe</button>
+            </form>
+          </div>
+        </div>
       </section>
+
 
       <!-- Section: Saved For Later -->
       <section id="savedForLater" class="col-gap-m section-container">

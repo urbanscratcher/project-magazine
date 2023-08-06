@@ -11,7 +11,7 @@ fetch("../../index.html")
       {{#each topTopics}}
         <li>
           <a href="#">
-            <p>{{name}}</p>
+            <h1>{{name}}</h1>
             <div><p>{{count}}</p></div>
           </a>
         </li>
