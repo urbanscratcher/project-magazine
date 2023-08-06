@@ -1,67 +1,107 @@
 /* --------------------------------
-- Purpose: to set semantic and class styles to keep the mood of a main theme and enhance reusability of styles. Mainly used for semantic tags & classes. Globally applied.
+- Purpose: to enhance reusability by defining classes' styles.
 - Author: Hyunjung Joun
 
 - Note: For responsiveness and typography, I tried to follow Apple's human interface guidelines.
 -- Reference: https://developer.apple.com/design/human-interface-guidelines/typography
 -------------------------------- */
-/* Font Family */
-body {
-  font-family: "Figtree", "DM Sans", Helvetica, Arial, sans-serif;
+
+/* Section Title */
+.section-title {
   color: var(--color-black);
 }
 
-.serif {
-  font-family: "DM Serif Display", "Times New Roman", Times, serif;
-}
-
-.italic {
-  font-style: italic;
-}
-
-.font-white {
-  color: var(--color-bright);
-}
-
-/* Heading Style */
-.h0,
-h1,
-h2,
-h3 {
-  letter-spacing: 0.7px;
-  text-transform: capitalize;
-}
-
-h1,
-h2,
-h3 {
-  font-weight: bold;
-}
-
-p,
-a,
-body {
-  font-weight: 400;
-}
-
-/* Header */
-header {
-  position: relative;
-}
-
-/* Section Title */
 .section-title p {
   font-weight: bold;
   text-transform: uppercase;
 }
 
 /* Section Image */
-.section-img > * {
-  border-radius: 2rem;
+.section-img {
+  position: relative;
+  border-radius: 1.6rem;
+  overflow: hidden;
+}
+
+/* Section Image - Hover */
+.section-img:hover {
+  cursor: pointer;
+}
+
+.section-img::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+
+  background: linear-gradient(
+    to left top,
+    var(--color-primary-background-filter),
+    var(--color-black-background-filter)
+  );
+  opacity: 0;
+  transition: all 0.15s ease;
+}
+
+.section-img:hover::before {
+  opacity: 0.5;
+}
+
+.section-img img {
+  transition: all 0.2s ease;
+}
+
+.section-img:hover img {
+  transform: scale(103%);
+}
+
+.section-img .component-bookmark-add {
+  position: absolute;
+  z-index: 2;
+  right: 0;
+  top: 0;
+  transform: translate(-20%, 20%);
+
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+
+.section-img .component-bookmark-add svg {
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+
+.section-img:hover .component-bookmark-add {
+  opacity: 1;
+}
+
+.section-img:hover .component-bookmark-add svg {
+  opacity: 1;
+}
+
+/* Component: Bookmark Add */
+.component-bookmark-add {
+  background-color: var(--color-primary);
+  width: 4.8rem;
+  height: 4.8rem;
+  border-radius: 50%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.component-bookmark-add svg {
+  fill: var(--color-secondary-dark);
+  width: 2.4rem;
 }
 
 /* Component: View All */
 .viewAll {
+  color: var(--color-black);
   display: flex;
   gap: 1.2rem;
 }
@@ -77,8 +117,8 @@ header {
   display: inline-block;
   text-transform: uppercase;
   padding: 0.4rem 1.6rem;
-  border-radius: 2rem;
-  outline: 0.2rem solid #000;
+  border-radius: 1.6rem;
+  outline: 0.2rem solid var(--color-secondary-dark);
   font-weight: 500;
 }
 
@@ -87,7 +127,7 @@ header {
   width: 2.4rem;
   height: 2.4rem;
   border-radius: 2rem;
-  outline: solid 0.2rem #000;
+  outline: solid 0.2rem var(--color-black);
 
   display: flex;
   align-items: center;
@@ -99,130 +139,9 @@ header {
   width: 3.2rem;
   height: 3.2rem;
   border-radius: 2rem;
-  outline: solid 0.2rem #000;
+  outline: solid 0.2rem var(--color-black);
 
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-/* Mobile */
-@media (min-width: 360px) {
-  .h0 {
-    font-size: var(--h0-xs);
-    line-height: 1.225;
-  }
-
-  h1 {
-    font-size: var(--h1-xs);
-    line-height: 1.24;
-  }
-
-  h2 {
-    font-size: var(--h2-xs);
-    line-height: 1.263;
-  }
-
-  h3 {
-    font-size: var(--h3-xs);
-    line-height: 1.294;
-  }
-
-  a,
-  p,
-  body {
-    font-size: var(--body-m-xs);
-    line-height: 1.357;
-  }
-
-  .body-s {
-    font-size: var(--body-s-xs);
-    line-height: 1.333;
-  }
-
-  .body-xs {
-    font-size: var(--body-xs-xs);
-    line-height: 1.18;
-  }
-
-  .nav-menu-item {
-    font-size: var(--body-m-xs);
-    line-height: 1.357;
-    font-weight: bold;
-  }
-}
-
-/* Tablet Portrait */
-@media (min-width: 600px) {
-}
-
-/* Tablet Landscape */
-@media (min-width: 950px) {
-}
-
-/* Laptop */
-@media (min-width: 1280px) {
-}
-
-/* Desktop */
-@media (min-width: 900px) {
-  .h0 {
-    font-size: var(--h0-xl);
-    line-height: 1.194;
-  }
-
-  h1 {
-    font-size: var(--h1-xl);
-    line-height: 1.2333;
-  }
-
-  h2 {
-    font-size: var(--h2-xl);
-    line-height: 1.25;
-  }
-
-  h3 {
-    font-size: var(--h3-xl);
-    line-height: 1.273;
-  }
-
-  a,
-  p,
-  body {
-    font-size: var(--body-m-xl);
-    line-height: 1.263;
-  }
-
-  .body-s {
-    font-size: var(--body-s-xl);
-    line-height: 1.333;
-  }
-
-  .body-xs {
-    font-size: var(--body-xs-xl);
-    line-height: 1.357;
-  }
-
-  /* Flex Column 16px */
-  .col-gap-m {
-    display: flex;
-    flex-direction: column;
-    gap: 1.6rem;
-  }
-
-  /* Flex Row 16px */
-  .row-gap-m {
-    display: flex;
-    gap: 1.6rem;
-  }
-
-  /* Section Spacing */
-  .section-container {
-    padding: 6.4rem 3.2rem;
-  }
-
-  /* Navbar Spacing */
-  nav {
-    padding: 0.4rem 3.2rem;
-  }
 }

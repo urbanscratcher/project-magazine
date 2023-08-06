@@ -47,10 +47,12 @@
       href="assets/plugins/bootstrap/css/bootstrap.min.css"
     />
 
-    <!-- reset, variables, reusable, and specific CSS -->
+    <!-- Custom CSS Files -->
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/variables.css" />
+    <link rel="stylesheet" href="assets/css/semantic.css" />
     <link rel="stylesheet" href="assets/css/reusable.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
     <link rel="stylesheet" href="assets/css/specific.css" />
 
     <!-- Handlebars from a CDN -->
@@ -60,6 +62,7 @@
     <script src="./assets/js/util.js"></script>
     <script src="./assets/js/top-topics.js"></script>
     <script src="./assets/js/view-all.js"></script>
+    <script src="./assets/js/bookmark-add.js"></script>
 
     <!-- Title -->
     <title>ArchOn Magazine</title>
@@ -131,6 +134,9 @@
             <div id="editorsPick-primary" class="col-gap-m">
               <div class="section-img">
                 <img src="./data/insights/thumbnail/test.jpg" />
+                <div class="component-bookmark-add">
+                  <!-- [Load Component] -->
+                </div>
               </div>
               <div>
                 <p class="topic">topic</p>
@@ -221,16 +227,16 @@
                 <div class="label-square">
                   <p class="body-s">The Winner Of July</p>
                 </div>
-                <h1>The Campus IFA 2020</h1>
+                <h1 class="serif">The Campus IFA 2020</h1>
                 <p>Modern Fusion Studio</p>
 
-                <div class="donut-chart" style="--num: 7.2">
+                <div class="donut-chart" style="--num: 8.8">
                   <svg>
                     <circle cx="43" cy="43" r="43"></circle>
                     <circle cx="43" cy="43" r="43"></circle>
                   </svg>
                   <div class="donut-chart-number">
-                    <h1>7.2</h1>
+                    <h1>8.8</h1>
                   </div>
                 </div>
                 <q class="body-s italic">
@@ -244,16 +250,16 @@
                 <div class="label-square">
                   <p class="body-s">The Winner Of July</p>
                 </div>
-                <h1>The Campus IFA 2020</h1>
+                <h1 class="serif">The Campus IFA 2020</h1>
                 <p>Modern Fusion Studio</p>
 
-                <div class="donut-chart" style="--num: 5.5">
+                <div class="donut-chart" style="--num: 8.8">
                   <svg>
                     <circle cx="43" cy="43" r="43"></circle>
                     <circle cx="43" cy="43" r="43"></circle>
                   </svg>
                   <div class="donut-chart-number">
-                    <h1>5.5</h1>
+                    <h1>8.8</h1>
                   </div>
                 </div>
                 <q class="body-s italic">
@@ -266,20 +272,68 @@
         </div>
       </section>
 
+      <!-- Section: What's Trending -->
+      <section class="section-container">
+        <div id="trending" class="col-gap-m">
+          <div class="section-title">
+            <p>What's Trending</p>
+            <div class="component-viewAll">
+              <!-- [Load Component] -->
+            </div>
+          </div>
+          <div id="trending-content">
+            <div class="col-gap-m">
+              <div class="section-img">
+                <img src="./data/insights/thumbnail/test.jpg" />
+                <div class="component-bookmark-add">
+                  <!-- [Load Component] -->
+                </div>
+              </div>
+              <div>
+                <p class="topic">topic</p>
+              </div>
+              <h1>
+                Revolutionary Sustainable Architecture Unveiled: Harmonizing
+                Nature and Modern Design for a Greener Tomorrow
+              </h1>
+              <p>
+                Architects reveal an innovative approach that integrates green
+                spaces, vertical gardens, and renewable energy systems, reducing
+                the carbon footprint. Biophilic principles enhance well-being
+                and productivity, creating an awe-inspiring urban landscape in
+                harmony with the environment. A promising step towards a
+                resilient and eco-friendly coexistence.
+              </p>
+              <div class="row-gap-s">
+                <i class="fa-regular fa-bookmark"></i>
+                <p>4 min read</p>
+              </div>
+              <div class="row-gap-s">
+                <i class="fa-regular fa-circle-user"></i>
+                <p>Eleanor Montgomery</p>
+              </div>
+            </div>
+            <div>
+              <ul>
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div></div>
+        <div></div>
+      </section>
+
       <!-- Section: Saved For Later -->
       <section id="savedForLater" class="col-gap-m section-container">
         <div class="section-title">
           <p>Saved For Later</p>
+          <div class="component-viewAll"></div>
         </div>
         <div id="savedForLater-content"></div>
-      </section>
-
-      <!-- Section: What's Trending -->
-      <section id="trending" class="col-gap-m section-container">
-        <div class="section-title">
-          <p>What's Trending</p>
-        </div>
-        <div id="trending-content"></div>
       </section>
 
       <!-- Section: Video -->

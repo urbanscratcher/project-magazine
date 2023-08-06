@@ -1,0 +1,48 @@
+/* --------------------------------
+- Purpose: to keep the mood of a main theme by defining semantic tag styles globally.
+- Author: Hyunjung Joun
+-------------------------------- */
+
+/* Font Family */
+body {
+  font-family: "Figtree", "DM Sans", Helvetica, Arial, sans-serif;
+  color: var(--color-secondary-dark);
+}
+
+.serif {
+  font-family: "DM Serif Display", "Times New Roman", Times, serif;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.font-white {
+  color: var(--color-white);
+}
+
+/* Heading Style */
+.h0,
+h1,
+h2,
+h3 {
+  letter-spacing: 0.7px;
+  text-transform: capitalize;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: bold;
+}
+
+p,
+a,
+body {
+  font-weight: 400;
+}
+
+/* Header */
+header {
+  position: relative;
+}

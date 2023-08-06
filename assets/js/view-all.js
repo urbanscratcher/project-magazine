@@ -1,5 +1,5 @@
 /* --------------------------------
-- Purpose: component
+- Purpose: Load Component
 - Author: Hyunjung Joun
 -------------------------------- */
 
@@ -7,19 +7,7 @@
 fetch("../../index.html")
   .then((res) => res.text())
   .then((html) => {
-    const viewAllEls = document.getElementsByClassName("component-viewAll");
-
-    for (let i = 0; i < viewAllEls.length; i++) {
-      insert(viewAllEls[i], render(createHTML, {}));
-    }
-  })
-  .catch((err) => {
-    console.error("error: ", err);
-  });
-
-// Create New HTML -----------------------------
-function createHTML() {
-  return `
+    const newHtml = () => `
     <a href="#" class="viewAll">
       <p>view all</p>
       <div class="button-circle-24">
@@ -27,4 +15,13 @@ function createHTML() {
       </div>
     </a>
   `;
-}
+
+    const parentEls = document.getElementsByClassName("component-viewAll");
+
+    for (let i = 0; i < parentEls.length; i++) {
+      insert(parentEls[i], render(newHtml, {}));
+    }
+  })
+  .catch((err) => {
+    console.error("error: ", err);
+  });

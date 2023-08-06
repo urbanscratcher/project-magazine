@@ -3,7 +3,7 @@
 - Author: Hyunjung Joun
 -------------------------------- */
 
-// Refactored functions for HandleBars Template
+// Refactored functions for HandleBars -------------
 function compile(fn) {
   return Handlebars.compile(fn);
 }

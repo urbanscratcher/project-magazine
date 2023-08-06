@@ -5,12 +5,17 @@
 
 :root {
   /* Colors */
-  --color-primary: #ffec3e;
-  --color-bright: #f9f6f2;
-  --color-black: #17130c;
-  --color-background-sharp: #f9e98f;
-  --color-background: #e9be7a;
-  --color-background-filter: #6a49139c;
+  --color-primary: #c7ff57;
+  --color-primary-background: #e7f3ad;
+  --color-primary-background-filter: #47572871;
+
+  --color-secondary: #094aff;
+  --color-secondary-dark: #001b64;
+  --color-secondary-background: #c7e5f4;
+
+  --color-black: #141414;
+  --color-black-background-filter: #121212b9;
+  --color-white: #fdfff2;
 
   /* Font Sizes */
   --h0-xs: 3.1rem;

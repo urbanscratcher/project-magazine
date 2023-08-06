@@ -1,0 +1,141 @@
+/* -----------------------------------
+- Purpose: to keep the mood of a main theme responsively by various medias. Media queries are applied.
+- Author: Hyunjung Joun
+
+- Note: For responsiveness and typography, I tried to follow Apple's human interface guidelines.
+-- Reference: https://developer.apple.com/design/human-interface-guidelines/typography
+
+- Main Breakpoints:
+-- xs (360px) Mobile
+-- s (600px) Tablet Portrait
+-- m (950px) Tablet Landscape
+-- l (1280px) Laptop
+-- xl (1440px) Desktop
+------------------------------------- */
+
+/* Mobile */
+@media (min-width: 360px) {
+  .h0 {
+    font-size: var(--h0-xs);
+    line-height: 1.225;
+  }
+
+  h1 {
+    font-size: var(--h1-xs);
+    line-height: 1.24;
+  }
+
+  h2 {
+    font-size: var(--h2-xs);
+    line-height: 1.263;
+  }
+
+  h3 {
+    font-size: var(--h3-xs);
+    line-height: 1.294;
+  }
+
+  a,
+  p,
+  body {
+    font-size: var(--body-m-xs);
+    line-height: 1.357;
+  }
+
+  .body-s {
+    font-size: var(--body-s-xs);
+    line-height: 1.333;
+  }
+
+  .body-xs {
+    font-size: var(--body-xs-xs);
+    line-height: 1.18;
+  }
+
+  .nav-menu-item {
+    font-size: var(--body-m-xs);
+    line-height: 1.357;
+    font-weight: bold;
+  }
+}
+
+/* Tablet Portrait */
+@media (min-width: 600px) {
+}
+
+/* Tablet Landscape */
+@media (min-width: 950px) {
+}
+
+/* Laptop */
+@media (min-width: 1280px) {
+}
+
+/* Desktop */
+@media (min-width: 900px) {
+  .h0 {
+    font-size: var(--h0-xl);
+    line-height: 1.194;
+  }
+
+  h1 {
+    font-size: var(--h1-xl);
+    line-height: 1.2333;
+  }
+
+  h2 {
+    font-size: var(--h2-xl);
+    line-height: 1.25;
+  }
+
+  h3 {
+    font-size: var(--h3-xl);
+    line-height: 1.273;
+  }
+
+  a,
+  p,
+  body {
+    font-size: var(--body-m-xl);
+    line-height: 1.263;
+  }
+
+  .body-s {
+    font-size: var(--body-s-xl);
+    line-height: 1.333;
+  }
+
+  .body-xs {
+    font-size: var(--body-xs-xl);
+    line-height: 1.357;
+  }
+
+  /* Flex Column 16px */
+  .col-gap-m {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+
+  /* Flex Row 16px */
+  .row-gap-m {
+    display: flex;
+    gap: 1.6rem;
+  }
+
+  /* Flex Row 8px */
+  .row-gap-s {
+    display: flex;
+    gap: 0.8rem;
+  }
+
+  /* Section Spacing */
+  .section-container {
+    padding: 6.4rem 3.2rem;
+  }
+
+  /* Navbar Spacing */
+  nav {
+    padding: 0.4rem 3.2rem;
+  }
+}

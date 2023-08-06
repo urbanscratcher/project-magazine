@@ -1,5 +1,5 @@
 /* --------------------------------
-- Purpose: data looping
+- Purpose: Loop Data
 - Author: Hyunjung Joun
 -------------------------------- */
 
@@ -7,29 +7,26 @@
 fetch("../../index.html")
   .then((res) => res.text())
   .then((html) => {
-    const topTopicsListEl = document
+    const newHtml = () => `
+      {{#each topTopics}}
+        <li>
+          <a href="#">
+            <p>{{name}}</p>
+            <div><p>{{count}}</p></div>
+          </a>
+        </li>
+      {{/each}}
+    `;
+
+    const parentEl = document
       .getElementById("topTopics-content")
       .querySelector("ul");
 
-    insert(topTopicsListEl, render(createTopTopics, data));
+    insert(parentEl, render(newHtml, data));
   })
   .catch((err) => {
     console.error("error: ", err);
   });
-
-// Create New HTML -----------------------------
-function createTopTopics() {
-  return `
-        {{#each topTopics}}
-          <li>
-            <a href="#">
-              <p>{{name}}</p>
-              <div><p>{{count}}</p></div>
-            </a>
-          </li>
-        {{/each}}
-  `;
-}
 
 // Data ------------------------------------
 const data = {

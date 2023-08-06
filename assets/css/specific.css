@@ -1,5 +1,5 @@
 /* --------------------------------
-- Purpose: to set custom styles. Mainly used for specific styling through ids. Locally applied.
+- Purpose: to set specific custom styles through ids locally.
 - Author: Hyunjung Joun
 -------------------------------- */
 
@@ -13,7 +13,7 @@
   width: 100%;
   align-items: center;
 
-  /* background-color: var(--color-bright); */
+  /* background-color: var(--color-white); */
 }
 
 #navbar-menu {
@@ -42,7 +42,7 @@
   text-align: center;
   padding-bottom: 0;
 
-  color: var(--color-bright);
+  color: var(--color-white);
 }
 
 #navbar-personals {
@@ -74,8 +74,8 @@
   padding: 0;
   background-image: linear-gradient(
       to left top,
-      var(--color-background-filter),
-      #121212b9
+      var(--color-primary-background-filter),
+      var(--color-black-background-filter)
     ),
     url("../../data/insights/thumbnail/test.jpg");
   background-size: cover;
@@ -90,11 +90,11 @@
 
 #highlight h1,
 #highlight p {
-  color: var(--color-bright);
+  color: var(--color-white);
 }
 
 #highlight .topic {
-  outline-color: var(--color-bright);
+  outline-color: var(--color-white);
 }
 
 #highlight .section-container {
@@ -102,7 +102,7 @@
 }
 
 #highlight-buttons {
-  color: var(--color-black);
+  color: var(--color-secondary-dark);
   justify-content: end;
 }
 
@@ -115,7 +115,7 @@
 /* Editor's Pick ----------------------------*/
 #editorsPick {
   padding: 6.4rem 3.2rem 3.2rem 3.2rem;
-  background-color: var(--color-background);
+  background-color: var(--color-primary-background);
 }
 
 #editorsPick-primary {
@@ -151,7 +151,7 @@
 
 /* Top Topics ----------------------------*/
 #topTopics {
-  background-color: #dee0ee;
+  background-color: var(--color-secondary-background);
 }
 
 #topTopics-list {
@@ -173,14 +173,14 @@
   width: 3.2rem;
   height: 3.2rem;
   display: flex;
-  background-color: var(--color-black);
+  background-color: var(--color-secondary-dark);
   justify-content: center;
   align-items: center;
   border-radius: 50%;
 }
 
 #topTopics-list li a > div > p {
-  color: var(--color-bright);
+  color: var(--color-white);
 }
 
 /* Monthly Awards ----------------------------*/
@@ -203,7 +203,7 @@
 
   background-image: linear-gradient(
       to left top,
-      var(--color-background-filter),
+      var(--color-primary-background-filter),
       #121212b9
     ),
     url("../../data/insights/thumbnail/test.jpg");
@@ -236,8 +236,8 @@
 
 .label-square p {
   display: inline-block;
-  border-top: solid 0.1rem var(--color-bright);
-  border-bottom: solid 0.1rem var(--color-bright);
+  border-top: solid 0.1rem var(--color-white);
+  border-bottom: solid 0.1rem var(--color-white);
   font-weight: 500;
   letter-spacing: 1.2px;
   text-transform: uppercase;
@@ -275,7 +275,7 @@
 }
 
 .donut-chart svg circle:nth-child(2) {
-  stroke: var(--color-bright);
+  stroke: var(--color-white);
   stroke-dasharray: 270;
   stroke-dashoffset: calc(270 - (270 * var(--num)) / 10);
 }
@@ -285,4 +285,16 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+}
+
+/* What's Trending ----------------------------*/
+#trending .section-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Saved For Later ----------------------------*/
+#savedForLater .section-title {
+  display: flex;
+  justify-content: space-between;
 }
