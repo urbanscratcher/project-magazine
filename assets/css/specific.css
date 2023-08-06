@@ -13,7 +13,7 @@
   width: 100%;
   align-items: center;
 
-  /* background-color: var(--color-white); */
+  /* background-color: var(--color-primary-lightest); */
 }
 
 #navbar-menu {
@@ -79,8 +79,8 @@
   padding: 0;
   background-image: linear-gradient(
       to left top,
-      var(--color-primary-background-filter),
-      var(--color-black-background-filter)
+      var(--color-primary-filter),
+      var(--color-secondary-filter)
     ),
     url("../../data/insights/thumbnail/test.jpg");
   background-size: cover;
@@ -93,21 +93,12 @@
   justify-content: flex-end;
 }
 
-#highlight h1,
-#highlight p {
-  color: var(--color-white);
-}
-
-#highlight .topic {
-  outline-color: var(--color-white);
-}
-
 #highlight .section-container {
   padding: 3.2rem;
 }
 
 #highlight-buttons {
-  color: var(--color-secondary-dark);
+  color: var(--color-secondary);
   justify-content: end;
 }
 
@@ -121,7 +112,7 @@
 #editorsPick {
   width: 33.33333%;
   padding: 6.4rem 3.2rem 3.2rem 3.2rem;
-  background-color: var(--color-primary-background);
+  background-color: var(--color-primary-light);
 }
 
 #editorsPick-primary {
@@ -157,7 +148,7 @@
 
 /* Top Topics ----------------------------*/
 #topTopics {
-  background-color: var(--color-secondary-background);
+  background-color: var(--color-secondary-light);
 }
 
 #topTopics-list {
@@ -175,14 +166,14 @@
   width: 3.2rem;
   height: 3.2rem;
   display: flex;
-  background-color: var(--color-secondary-dark);
+  background-color: var(--color-secondary);
   justify-content: center;
   align-items: center;
   border-radius: 50%;
 }
 
 #topTopics-list li a > div > p {
-  color: var(--color-white);
+  color: var(--color-primary-lightest);
 }
 
 /* Monthly Awards ----------------------------*/
@@ -202,7 +193,7 @@
 
   background-image: linear-gradient(
       to left top,
-      var(--color-primary-background-filter),
+      var(--color-primary-filter),
       #121212b9
     ),
     url("../../data/insights/thumbnail/test.jpg");
@@ -235,8 +226,8 @@
 
 .label-square p {
   display: inline-block;
-  border-top: solid 0.1rem var(--color-white);
-  border-bottom: solid 0.1rem var(--color-white);
+  border-top: solid 0.1rem var(--color-primary-lightest);
+  border-bottom: solid 0.1rem var(--color-primary-lightest);
   font-weight: 500;
   letter-spacing: 1.5px;
   text-transform: uppercase;
@@ -274,7 +265,7 @@
 }
 
 .donut-chart svg circle:nth-child(2) {
-  stroke: var(--color-white);
+  stroke: var(--color-primary-lightest);
   stroke-dasharray: 270;
   stroke-dashoffset: calc(270 - (270 * var(--num)) / 10);
 }
@@ -288,6 +279,7 @@
 
 /* Trending Section ----------------------------*/
 #section-trending {
+  background-color: var(--color-primary-lightest);
   display: grid;
 
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -298,22 +290,29 @@
 #trending {
   grid-column: 1 / 4;
   grid-row: 1 / -1;
-
-  padding-right: 1.6rem;
-  border-right: solid 1px var(--color-gray-light);
 }
 
 #trending-highlight {
-  width: 66.6666%;
+  width: 63%;
 }
 
 #trending-list {
-  width: 33.3333%;
+  width: 37%;
+
+  padding-left: 1.6rem;
+  border-left: solid 1px var(--color-secondary-light);
+
+  padding-right: 1.6rem;
+  border-right: solid 1px var(--color-secondary-light);
 }
 
 .trending-list-item {
   padding-bottom: 0.8rem;
-  border-bottom: solid 1px var(--color-gray-light);
+  border-bottom: solid 1px var(--color-secondary-light);
+}
+
+.trending-list-item:last-child {
+  border-bottom: none;
 }
 
 .trending-list-item .section-img {

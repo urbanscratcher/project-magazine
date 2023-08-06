@@ -6,9 +6,14 @@
 -- Reference: https://developer.apple.com/design/human-interface-guidelines/typography
 -------------------------------- */
 
+/* Text white */
+.text-white {
+  color: var(--color-white);
+}
+
 /* Section Title */
 .section-title {
-  color: var(--color-black);
+  color: var(--color-secondary-dark);
 }
 
 .section-title > p {
@@ -39,8 +44,8 @@
 
   background: linear-gradient(
     to left top,
-    var(--color-primary-background-filter),
-    var(--color-black-background-filter)
+    var(--color-primary-filter),
+    var(--color-secondary-filter)
   );
   opacity: 0;
   transition: all 0.15s ease;
@@ -98,13 +103,13 @@
 }
 
 .component-bookmark-add svg {
-  fill: var(--color-secondary-dark);
+  fill: var(--color-secondary);
   width: 2.4rem;
 }
 
 /* Component: View All */
 .viewAll {
-  color: var(--color-black);
+  color: var(--color-secondary-dark);
   display: flex;
   gap: 1.2rem;
   align-items: center;
@@ -116,8 +121,12 @@
   text-transform: uppercase;
   padding: 0.4rem 1.6rem;
   border-radius: 1.6rem;
-  outline: 0.2rem solid var(--color-secondary-dark);
+  outline: 0.2rem solid var(--color-secondary);
   font-weight: 600;
+}
+
+.topic-white {
+  outline: 0.2rem solid var(--color-white);
 }
 
 /* Button: An icon with circled button 24px */
@@ -125,7 +134,7 @@
   width: 2.4rem;
   height: 2.4rem;
   border-radius: 2rem;
-  outline: solid 0.2rem var(--color-black);
+  outline: solid 0.2rem var(--color-secondary-dark);
 
   display: flex;
   align-items: center;
@@ -137,15 +146,26 @@
   width: 3.2rem;
   height: 3.2rem;
   border-radius: 2rem;
-  outline: solid 0.2rem var(--color-black);
+  outline: solid 0.2rem var(--color-secondary-dark);
 
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Button */
-.button {
-  padding: 0.8rem 0;
+/* Button Primary */
+.btn-primary {
+  background-color: var(--color-secondary);
+  color: var(--color-primary-lightest);
+
+  padding: 1.2rem 0;
   border-radius: 3rem;
+  border: none;
+
+  transition: background-color 0.1s ease;
+}
+
+.btn-primary:hover {
+  cursor: pointer;
+  background-color: var(--color-secondary-dark);
 }

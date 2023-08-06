@@ -107,9 +107,9 @@
           <!-- Component: Topic -->
           <div class="section-container col-gap-m">
             <div>
-              <p class="topic button-text">topic</p>
+              <p class="button-text text-white topic topic-white">topic</p>
             </div>
-            <h1 class="serif">
+            <h1 class="serif text-white">
               Building Dreams: Exploring the Timeless Beauty of Architecture
             </h1>
             <div id="highlight-buttons" class="row-gap-m">
@@ -271,6 +271,8 @@
         </div>
       </section>
 
+      
+
       <!-- Section: What's Trending -->
       <section id="section-trending" class="section-container">
 
@@ -331,9 +333,9 @@
                     </div>
                   </div>
                   <div class="row-gap-s">
-                    <p class="body-s">4 min read</p>
-                    <p class="body-s">·</p>
-                    <p class="body-s">John Polanski</p>
+                    <p class="body-s text-gray">4 min read</p>
+                    <p class="body-s text-gray">·</p>
+                    <p class="body-s text-gray">John Polanski</p>
                   </div>
                 </li>
                 <li class="trending-list-item col-gap-s">
@@ -348,9 +350,9 @@
                     </div>
                   </div>
                   <div class="row-gap-s">
-                    <p class="body-s">4 min read</p>
-                    <p class="body-s">·</p>
-                    <p class="body-s">John Polanski</p>
+                    <p class="body-s text-gray">4 min read</p>
+                    <p class="body-s text-gray">·</p>
+                    <p class="body-s text-gray">John Polanski</p>
                   </div>
                 </li>
                 <li class="trending-list-item col-gap-s">
@@ -365,9 +367,9 @@
                     </div>
                   </div>
                   <div class="row-gap-s">
-                    <p class="body-s">4 min read</p>
-                    <p class="body-s">·</p>
-                    <p class="body-s">John Polanski</p>
+                    <p class="body-s text-gray">4 min read</p>
+                    <p class="body-s text-gray">·</p>
+                    <p class="body-s text-gray">John Polanski</p>
                   </div>
                 </li>
                 <li class="trending-list-item col-gap-s">
@@ -382,9 +384,9 @@
                     </div>
                   </div>
                   <div class="row-gap-s">
-                    <p class="body-s">4 min read</p>
-                    <p class="body-s">·</p>
-                    <p class="body-s">John Polanski</p>
+                    <p class="body-s text-gray">4 min read</p>
+                    <p class="body-s text-gray">·</p>
+                    <p class="body-s text-gray">John Polanski</p>
                   </div>
                 </li>
               </ul>
@@ -461,7 +463,7 @@
                 <input type="checkbox" id="newsletter-consent" />
                 By signing up, you agree to our terms and privacy policy
               </label>
-              <button class="button button-text">subscribe</button>
+              <input type="submit" class="btn-primary button-text" value="subscribe"/>
             </form>
           </div>
         </div>
@@ -472,9 +474,31 @@
       <section id="savedForLater" class="col-gap-m section-container">
         <div class="section-title">
           <p>Saved For Later</p>
-          <div class="component-viewAll"></div>
+          <div class="component-viewAll">
+            <!-- [Load Component] -->
+          </div>
         </div>
-        <div id="savedForLater-content"></div>
+        <div id="savedForLater-content">
+          <ul id="savedForLater-list">
+            <li class="savedForLater-list-item">
+              <div classe="savedForLater-card">
+                <label class="topic button-text">topic</label>
+                <div class="savedForLater-text">
+                  <h3 class="serif">List Headline level 2 text for title up to 2 lines</h3>
+                  <div class="avatar row-gap-s">
+                    <p>
+                      <i class="fa-regular fa-circle-user"></i>
+                    </p>
+                    <p>Eleanor Montgomery</p>
+                  </div>
+                </div>
+              </div>
+            </li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+        </div>
       </section>
 
       <!-- Section: Video -->
