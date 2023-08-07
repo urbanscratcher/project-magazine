@@ -72,13 +72,13 @@
 }
 
 /* Section Background Image */
-.section-bg-img {
+.bg--img {
   background-image: linear-gradient(
       to left top,
       var(--color-primary-filter),
       var(--color-secondary-filter)
     ),
-    var(--bg-img);
+    var(--img-url);
 
   background-size: cover;
   background-repeat: no-repeat;
@@ -211,20 +211,23 @@
 
 /* Component: Topic */
 .topic {
-  display: inline-block;
   text-transform: uppercase;
   padding: 0.4rem 1.6rem;
   border-radius: 1.6rem;
-  outline: 0.2rem solid var(--color-secondary);
   font-weight: 600;
+  outline: 0.2rem solid var(--color-secondary);
 }
 
-.topic-white {
+.topic--white {
+  text-transform: uppercase;
+  padding: 0.4rem 1.6rem;
+  border-radius: 1.6rem;
+  font-weight: 600;
   outline: 0.2rem solid var(--color-white);
 }
 
 /* Button: An icon with circled button 24px */
-.button-circle-24 {
+.btn--circle-m {
   width: 2.4rem;
   height: 2.4rem;
   border-radius: 50%;
@@ -236,7 +239,7 @@
 }
 
 /* Button: An icon with circled button 32px */
-.button-circle-32 {
+.btn--circle-l {
   width: 3.2rem;
   height: 3.2rem;
   border-radius: 50%;

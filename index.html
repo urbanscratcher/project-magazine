@@ -66,7 +66,10 @@
 
     <!-- Load JS files for the Handlebars Template -->
     <script src="./assets/js/util.js"></script>
+        
     <script src="./assets/js/top-topics.js"></script>
+    <script src="./assets/js/posts.js"></script>
+
     <script src="./assets/js/view-all.js"></script>
     <script src="./assets/js/bookmark-add.js"></script>
 
@@ -97,32 +100,34 @@
       </nav>
     </header>
 
-    <main>
-      <!-- Section: Cover -->
-      <section id="cover">
-        <!-- Highlight -->
-        <div id="highlight" class="section-bg-img" style="--bg-img: url(../../data/insights/thumbnail/test.jpg)">
-          <!-- Component: Topic -->
-          <div class="section-container col gap--m">
-            <div>
-              <label class="ts--btn tc--white topic topic-white">topic</label>
+    <main id="main">
+      <!-- Highlights -->
+      <div class="highlights--wrapper">
+        
+        <!-- Section: Coverage -->
+        <section id="cover">
+          <div class="cover__wrapper-bg col bg--img" style="--img-url: url(../../data/insights/thumbnail/test.jpg)">
+            <div class="cover__wrapper col gap--m tc--white">
+              <div class="topic__wrapper">
+                <span class="topic--white ts--btn">topic</span>
+              </div>
+              <h1 class="cover__headline serif">
+                Building Dreams: Exploring the Timeless Beauty of Architecture
+              </h1>
+              <div class="slider__controller row gap--m">
+                <a href="#" class="controller__btn btn--circle-l">
+                  <i class="fa-solid fa-chevron-left"></i>
+                </a>
+                <a href="#" class="controller__btn btn--circle-l">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </a>
+              </div>
             </div>
-            <h1 class="serif tc--white">
-              Building Dreams: Exploring the Timeless Beauty of Architecture
-            </h1>
-            <div id="highlight-buttons" class="row gap--m">
-              <a href="#" class="button-circle-32">
-                <i class="fa-solid fa-chevron-left"></i>
-              </a>
-              <a href="#" class="button-circle-32">
-                <i class="fa-solid fa-chevron-right"></i>
-              </a>
-            </div>
-          </div>
         </div>
+        </section>
 
         <!-- Editor's Pick -->
-        <div id="editorsPick" class="col gap--m">
+        <section id="editorsPick" class="col gap--m">
           <div class="section-title">
             <p>Editor's pick</p>
           </div>
@@ -168,8 +173,8 @@
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       <!-- Section: Top Topics -->
       <section id="topTopics" class="col gap--m section-container">
@@ -192,7 +197,7 @@
         </div>
         <div id="monthlyAwards-content">
           <div id="awards-list">
-            <div class="card-awards tc--white section-bg-img" style="--bg-img: url(../../data/insights/thumbnail/test.jpg)">
+            <div class="card-awards tc--white bg--img" style="--img-url: url(../../data/insights/thumbnail/test.jpg)">
               <div class="card-awards-container col gap--m">
                 <div class="card-awards-label">
                   <label class="ts--body-s">The Winner Of July</label>
@@ -214,7 +219,7 @@
                 </q>
               </div>
             </div>
-            <div class="card-awards tc--white section-bg-img" style="--bg-img: url(../../data/insights/thumbnail/test.jpg)">
+            <div class="card-awards tc--white bg--img" style="--img-url: url(../../data/insights/thumbnail/test.jpg)">
               <div class="card-awards-container col gap--m">
                 <div class="card-awards-label">
                   <label class="ts--body-s">The Winner Of July</label>
@@ -236,7 +241,7 @@
                 </q>
               </div>
             </div>
-            <div class="card-awards tc--white section-bg-img" style="--bg-img: url(../../data/insights/thumbnail/test.jpg)">
+            <div class="card-awards tc--white bg--img" style="--img-url: url(../../data/insights/thumbnail/test.jpg)">
               <div class="card-awards-container col gap--m">
                 <div class="card-awards-label">
                   <label class="ts--body-s">The Winner Of July</label>
@@ -261,8 +266,6 @@
           </div>
         </div>
       </section>
-
-      
 
       <!-- Section: What's Trending -->
       <section id="section-trending" class="section-container">
@@ -456,7 +459,6 @@
         </div>
       </section>
 
-
       <!-- Section: Saved For Later -->
       <section id="savedForLater" class="col gap--m section-container">
         <div class="section-title">
@@ -466,10 +468,10 @@
         </div>
         <div id="savedForLater-content">
           <ul id="savedForLater-list" class="row gap--m">
-            <li class="card-savedForLater col gap--m tc--white savedForLater-list-item section-bg-img" style="--bg-img: url(../../data/insights/thumbnail/test.jpg)">
+            <li class="card-savedForLater col gap--m tc--white savedForLater-list-item bg--img" style="--img-url: url(../../data/insights/thumbnail/test.jpg)">
               <div class="card-savedForLater-text col gap--m" >
                 <div>
-                  <label class="topic topic-white ts--btn">topic</label>
+                  <label class="topic topic--white ts--btn">topic</label>
                 </div>
                 <div class="card-savedForLater-title col gap--m">
                   <h3 class="serif">List Headline level 2 text for title up to 2 lines</h3>
@@ -482,10 +484,10 @@
                 </div>
               </div>
             </li>
-            <li class="card-savedForLater col gap--m tc--white savedForLater-list-item section-bg-img" style="--bg-img: url(../../data/insights/thumbnail/test.jpg)">
+            <li class="card-savedForLater col gap--m tc--white savedForLater-list-item bg--img" style="--img-url: url(../../data/insights/thumbnail/test.jpg)">
               <div class="card-savedForLater-text col gap--m" >
                 <div>
-                  <label class="topic topic-white ts--btn">topic</label>
+                  <label class="topic topic--white ts--btn">topic</label>
                 </div>
                 <div class="card-savedForLater-title col gap--m">
                   <h3 class="serif">List Headline level 2 text for title up to 2 lines</h3>
@@ -498,10 +500,10 @@
                 </div>
               </div>
             </li>
-            <li class="card-savedForLater col gap--m tc--white savedForLater-list-item section-bg-img" style="--bg-img: url(../../data/insights/thumbnail/test.jpg)">
+            <li class="card-savedForLater col gap--m tc--white savedForLater-list-item bg--img" style="--img-url: url(../../data/insights/thumbnail/test.jpg)">
               <div class="card-savedForLater-text col gap--m" >
                 <div>
-                  <label class="topic topic-white ts--btn">topic</label>
+                  <label class="topic topic--white ts--btn">topic</label>
                 </div>
                 <div class="card-savedForLater-title col gap--m">
                   <h3 class="serif">List Headline level 2 text for title up to 2 lines</h3>
@@ -514,10 +516,10 @@
                 </div>
               </div>
             </li>
-            <li class="card-savedForLater col gap--m tc--white savedForLater-list-item section-bg-img" style="--bg-img: url(../../data/insights/thumbnail/test.jpg)">
+            <li class="card-savedForLater col gap--m tc--white savedForLater-list-item bg--img" style="--img-url: url(../../data/insights/thumbnail/test.jpg)">
               <div class="card-savedForLater-text col gap--m" >
                 <div>
-                  <label class="topic topic-white ts--btn">topic</label>
+                  <label class="topic topic--white ts--btn">topic</label>
                 </div>
                 <div class="card-savedForLater-title col gap--m">
                   <h3 class="serif">List Headline level 2 text for title up to 2 lines</h3>
@@ -534,7 +536,6 @@
         </div>
       </section>
 
-
       <!-- Section: explore -->
       <section id="explore" class="section-container row gap--m">
 
@@ -549,27 +550,27 @@
             <ul id="inspirations-list">
                 <li class="inspirations-item section-img">
                   <img src="./data/insights/thumbnail/test.jpg" />
-                  <label class="topic topic-white ts--btn tc--white">topic</label>
+                  <label class="topic topic--white ts--btn tc--white">topic</label>
                 </li>
                 <li class="inspirations-item section-img">
                   <img src="./data/insights/thumbnail/test.jpg" />
-                  <label class="topic topic-white ts--btn tc--white">topic</label>
+                  <label class="topic topic--white ts--btn tc--white">topic</label>
                 </li>
                 <li class="inspirations-item section-img">
                   <img src="./data/insights/thumbnail/test.jpg" />
-                  <label class="topic topic-white ts--btn tc--white">topic</label>
+                  <label class="topic topic--white ts--btn tc--white">topic</label>
                 </li>
                 <li class="inspirations-item section-img">
                   <img src="./data/insights/thumbnail/test.jpg" />
-                  <label class="topic topic-white ts--btn tc--white">topic</label>
+                  <label class="topic topic--white ts--btn tc--white">topic</label>
                 </li>
                 <li class="inspirations-item section-img">
                   <img src="./data/insights/thumbnail/test.jpg" />
-                  <label class="topic topic-white ts--btn tc--white">topic</label>
+                  <label class="topic topic--white ts--btn tc--white">topic</label>
                 </li>
                 <li class="inspirations-item section-img">
                   <img src="./data/insights/thumbnail/test.jpg" />
-                  <label class="topic topic-white ts--btn tc--white">topic</label>
+                  <label class="topic topic--white ts--btn tc--white">topic</label>
                 </li>
             </ul>
           </div>
@@ -589,7 +590,7 @@
                   <img src="./data/insights/thumbnail/test.jpg" />
                   <div class="component-bookmark-add">
                   </div>
-                  <label class="topic topic-white tc--white ts--btn">topic</label>
+                  <label class="topic topic--white tc--white ts--btn">topic</label>
                 </div>
                 <div class="latest-list-text col gap--s">
                   <h3 class="serif">Headline level 3 text for editor’s pick title</h3>
@@ -614,7 +615,7 @@
                   <img src="./data/insights/thumbnail/test.jpg" />
                   <div class="component-bookmark-add">
                   </div>
-                  <label class="topic topic-white tc--white ts--btn">topic</label>
+                  <label class="topic topic--white tc--white ts--btn">topic</label>
                 </div>
                 <div class="latest-list-text col gap--s">
                   <h3 class="serif">Headline level 3 text for editor’s pick title</h3>
@@ -639,7 +640,7 @@
                   <img src="./data/insights/thumbnail/test.jpg" />
                   <div class="component-bookmark-add">
                   </div>
-                  <label class="topic topic-white tc--white ts--btn">topic</label>
+                  <label class="topic topic--white tc--white ts--btn">topic</label>
                 </div>
                 <div class="latest-list-text col gap--s">
                   <h3 class="serif">Headline level 3 text for editor’s pick title</h3>
@@ -664,7 +665,7 @@
                   <img src="./data/insights/thumbnail/test.jpg" />
                   <div class="component-bookmark-add">
                   </div>
-                  <label class="topic topic-white tc--white ts--btn">topic</label>
+                  <label class="topic topic--white tc--white ts--btn">topic</label>
                 </div>
                 <div class="latest-list-text col gap--s">
                   <h3 class="serif">Headline level 3 text for editor’s pick title</h3>
@@ -764,17 +765,16 @@
           </div>
       </section>
 
-
       <!-- Section: Video -->
       <section id="video" class="col gap--m section-container">
         <div class="section-title">
           <p>Video</p>
         </div>
         <div id="video-content" class="col gap--l">
-          <div id="video-highlight" class="section-bg-img col" style="--bg-img: url(../../data/insights/thumbnail/test.jpg)">
+          <div id="video-highlight" class="bg--img col" style="--img-url: url(../../data/insights/thumbnail/test.jpg)">
             <div id="video-highlight-text" class="col gap--m tc--white">
               <div>
-                <label class="topic topic-white ts--btn">topic</label>
+                <label class="topic topic--white ts--btn">topic</label>
               </div>
               <h2 class="serif">Headline level 1 text for cover title ideally up to three lines</h2>
               <p>Body small text summary text goes here up to three lines, body small text summary text goes here up to three lines...</p>

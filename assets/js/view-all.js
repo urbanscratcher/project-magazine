@@ -10,7 +10,7 @@ fetch("../../index.html")
     const newHtml = () => `
     <a href="#" class="viewAll">
       <p class="ts--btn">view all</p>
-      <div class="button-circle-24">
+      <div class="btn--circle-m">
         <i class="fa-solid fa-chevron-right"></i>
       </div>
     </a>

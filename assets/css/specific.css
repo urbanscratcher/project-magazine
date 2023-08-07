@@ -37,38 +37,35 @@
   font: inherit;
 }
 
-/* Cover ----------------------------*/
-#cover {
-  display: flex;
+/* Cover -------------------------- */
+.highlights--wrapper {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
 }
 
 /* Highlight ----------------------------*/
-
-#highlight {
-  width: 66.66666%;
-  display: flex;
-  flex-direction: column;
+.cover__wrapper-bg {
   justify-content: flex-end;
+  height: 100%;
 }
 
-#highlight .section-container {
+.cover__wrapper {
   padding: 3.2rem;
 }
 
-#highlight-buttons {
-  color: var(--color-secondary);
+.slider__controller {
+  color: var(--color-secondary-dark);
   justify-content: end;
 }
 
-#highlight-buttons a {
-  background-color: #f6f6f676;
+.controller__btn {
+  background-color: var(--color-white);
   outline-style: none;
   font-size: 1.6rem;
 }
 
 /* Editor's Pick ----------------------------*/
 #editorsPick {
-  width: 33.33333%;
   padding: 6.4rem 3.2rem 3.2rem 3.2rem;
   background-color: var(--color-primary-light);
 }
