@@ -119,8 +119,9 @@ use <div class="block mod"> and define .block.mod in CSS
   position: absolute;
   z-index: 2;
   right: 0;
-  top: 0;
-  transform: translate(-20%, 20%);
+  bottom: 0;
+  margin: 0.8rem;
+  /* transform: translate(-20%, 20%); */
 
   opacity: 0;
   transition: opacity 0.1s ease;
@@ -143,8 +144,8 @@ use <div class="block mod"> and define .block.mod in CSS
   position: absolute;
   left: 0;
   top: 0;
-  margin: 1.6rem;
-  z-index: 1;
+  margin: 0.8rem;
+  z-index: 2;
 
   opacity: 0;
   transition: opacity 0.1s ease;
