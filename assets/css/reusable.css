@@ -139,6 +139,21 @@ use <div class="block mod"> and define .block.mod in CSS
   opacity: 1;
 }
 
+.section-img .topic {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 1.6rem;
+  z-index: 1;
+
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+
+.section-img:hover .topic {
+  opacity: 1;
+}
+
 /* Component: Bookmark Add */
 .component-bookmark-add {
   background-color: var(--color-primary);
@@ -217,12 +232,4 @@ use <div class="block mod"> and define .block.mod in CSS
 .btn-primary:hover {
   cursor: pointer;
   background-color: var(--color-secondary-dark);
-}
-
-.section-img .topic {
-  position: absolute;
-  left: 0;
-  top: 0;
-  margin: 1.6rem;
-  z-index: 1;
 }
