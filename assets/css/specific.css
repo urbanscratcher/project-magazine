@@ -405,3 +405,7 @@
 .featured-authors-item:last-child {
   border-bottom: none;
 }
+
+.featured-authors-viewAll {
+  justify-content: flex-end;
+}
