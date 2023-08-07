@@ -396,3 +396,12 @@
 .featured-authors-text {
   justify-content: center;
 }
+
+.featured-authors-item {
+  padding-bottom: 0.8rem;
+  border-bottom: solid 1px var(--color-secondary-light);
+}
+
+.featured-authors-item:last-child {
+  border-bottom: none;
+}
