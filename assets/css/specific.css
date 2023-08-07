@@ -393,3 +393,6 @@
 }
 
 /* Featured Authors */
+.featured-authors-text {
+  justify-content: center;
+}
