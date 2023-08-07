@@ -144,8 +144,20 @@ use <div class="block mod"> and define .block.mod in CSS
   position: absolute;
   left: 0;
   top: 0;
-  margin: 0.8rem;
+  margin: 1.2rem;
   z-index: 2;
+
+  opacity: 0;
+  transition: opacity 0.1s ease;
+}
+
+.inspirations-item.section-img .topic {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+  transform: translate(-50%, -50%);
+  margin: 0;
 
   opacity: 0;
   transition: opacity 0.1s ease;
