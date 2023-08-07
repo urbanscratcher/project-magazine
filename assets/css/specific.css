@@ -362,7 +362,6 @@
 /* Explore ------------------------- */
 #explore {
   background-color: var(--color-mint-light);
-  align-items: flex-start;
 }
 
 #inspirations {
@@ -373,7 +372,7 @@
   width: 50%;
 }
 
-#featured-authors {
+#explore-aside {
   width: 25%;
 }
 
