@@ -250,6 +250,16 @@
   justify-content: center;
 }
 
+/* Hover change bg */
+.hover--light {
+  background-color: transparent;
+}
+
+.hover--light:hover {
+  color: var(--color-secondary);
+  background-color: var(--color-primary);
+}
+
 /* Button Primary */
 .btn-primary {
   background-color: var(--color-secondary);
@@ -265,6 +275,18 @@
 .btn-primary:hover {
   cursor: pointer;
   background-color: var(--color-secondary-dark);
+}
+
+/* Button icon hover */
+.icon-btn--hover {
+  display: none;
+}
+
+.icon-btn:hover .icon-btn--default {
+  display: none;
+}
+.icon-btn:hover .icon-btn--hover {
+  display: inline;
 }
 
 /* Logo */

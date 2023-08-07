@@ -4,8 +4,13 @@
 -------------------------------- */
 
 /* Nav ----------------------------*/
+#header {
+  color: var(--color-secondary-dark);
+}
+
 .navbar__wrapper {
   position: fixed;
+  z-index: 10;
   height: 6.4rem;
   left: 50%;
   transform: translateX(-50%);
@@ -18,8 +23,7 @@
 }
 
 .navbar__logo {
-  height: 3.8rem;
-  padding-bottom: 0.25rem;
+  cursor: pointer;
 }
 
 .menu__item {
@@ -27,6 +31,35 @@
   font-weight: 500;
   text-transform: uppercase;
   padding-bottom: 0;
+  position: relative;
+  color: var(--color-white);
+
+  opacity: 1;
+  transition: opacity 0.15s ease;
+}
+
+.menu__item:hover {
+  opacity: 0.7;
+}
+
+.menu__item::after {
+  position: absolute;
+  z-index: 20;
+  content: "";
+  width: 0.6rem;
+  height: 0.6rem;
+  border-radius: 50%;
+  bottom: -50%;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background-color: var(--color-white);
+  opacity: 0;
+}
+
+.menu__item:hover::after {
+  transition: opacity 0.15s ease;
+  opacity: 1;
 }
 
 .navbar__personal {
@@ -37,28 +70,42 @@
   font: inherit;
 }
 
-/* Cover -------------------------- */
+.personal__item.btn--circle-l {
+  outline: none;
+}
+
+/* Highlight -------------------------- */
 .highlights--wrapper {
   display: grid;
   grid-template-columns: 2fr 1fr;
 }
 
-/* Highlight ----------------------------*/
-.cover__wrapper-bg {
-  justify-content: flex-end;
-  height: 100%;
+/* Coverage ----------------------------*/
+#cover {
+  position: relative;
 }
 
-.cover__wrapper {
-  padding: 3.2rem;
+.cover__bg {
+  height: 80rem;
 }
 
-.slider__controller {
+.cover__txt {
+  position: absolute;
+  bottom: 0;
+}
+
+.cover__slide-controller {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 3.2rem;
+}
+
+.slide-controller {
   color: var(--color-secondary-dark);
-  justify-content: end;
 }
 
-.controller__btn {
+.slide-controller__btn {
   background-color: var(--color-white);
   outline-style: none;
   font-size: 1.6rem;

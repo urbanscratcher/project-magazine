@@ -89,13 +89,14 @@
           <a class="menu__item" href="#">Authors</a>
           <a class="menu__item" href="#">Report</a>
         </div>
-        <div class="navbar__personal row gap--s ts--h4">
-          <a href="#" class="personal__item bookmark">
-            <i class="fa-regular fa-bookmark"></i>
-          </a>
-          <a href="#" class="personal__item setting">
+        <div class="navbar__personal row gap--s ts--body">
+          <button class="personal__item btn--circle-l hover--light">
+            <i class="fa-regular fa-bookmark"></i>            
+          </button>
+          <button href="#" class="personal__item btn--circle-l hover--light">
             <i class="fa-regular fa-eye"></i>
-          </a>
+            
+          </button>
         </div>
       </nav>
     </header>
@@ -105,7 +106,21 @@
       <div class="highlights--wrapper">
         
         <!-- Section: Coverage -->
-        <section id="cover"></section>
+        <section>
+          <div id="cover" class="col">
+            <!-- [cover__bg] -->
+            <!-- [cover__txt] -->
+            <div class="cover__slide-controller slide-controller row gap--m">
+              <button class="slide-controller__btn btn--circle-l">
+                <i class="fa-solid fa-chevron-left"></i>
+              </button>
+              <button href="#" class="slide-controller__btn btn--circle-l">
+                <i class="fa-solid fa-chevron-right"></i>
+              </button>
+            </div>
+          </div>
+         
+        </section>
 
         <!-- Editor's Pick -->
         <section id="editorsPick" class="col gap--m">
@@ -158,7 +173,7 @@
       </div>
 
       <!-- Section: Top Topics -->
-      <section id="topTopics" class="col gap--m section-container">
+      <section id="topTopics" class="col gap--m container--m">
         <div class="section-title">
           <p>Top Topics</p>
         </div>
@@ -170,7 +185,7 @@
       </section>
 
       <!-- Section: Monthly Awards -->
-      <section id="monthlyAwards" class="col gap--m section-container">
+      <section id="monthlyAwards" class="col gap--m container--m">
         <div class="section-title">
           <p>Monthly Awards</p>
           <div class="component-viewAll">
@@ -249,7 +264,7 @@
       </section>
 
       <!-- Section: What's Trending -->
-      <section id="section-trending" class="section-container">
+      <section id="section-trending" class="container--m">
 
         <!-- What's Trending -->
         <div id="trending" class="col gap--m">
@@ -441,7 +456,7 @@
       </section>
 
       <!-- Section: Saved For Later -->
-      <section id="savedForLater" class="col gap--m section-container">
+      <section id="savedForLater" class="col gap--m container--m">
         <div class="section-title">
           <p>Saved For Later</p>
           <div class="component-viewAll">
@@ -518,7 +533,7 @@
       </section>
 
       <!-- Section: explore -->
-      <section id="explore" class="section-container row gap--m">
+      <section id="explore" class="container--m row gap--m">
 
         <!-- Inspirations -->
           <div id="inspirations" class="section-aside col gap--m">
@@ -747,7 +762,7 @@
       </section>
 
       <!-- Section: Video -->
-      <section id="video" class="col gap--m section-container">
+      <section id="video" class="col gap--m container--m">
         <div class="section-title">
           <p>Video</p>
         </div>
@@ -815,7 +830,7 @@
     </main>
 
     <!-- Footer -->
-    <div id="footer" class="col section-container">
+    <div id="footer" class="col container--m">
       <div id="footer-sitemap" class="row gap--m">
       <!-- logo -->
         <div id="footer-logo" class="col gap--m">

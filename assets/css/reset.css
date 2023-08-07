@@ -232,3 +232,15 @@ header {
 i {
   font-size: inherit;
 }
+
+/* Reset button */
+button {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  color: inherit;
+}
+
+button:hover {
+  cursor: pointer;
+}

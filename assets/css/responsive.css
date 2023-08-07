@@ -149,8 +149,12 @@
   }
 
   /* Section Spacing --------------- */
-  .section-container {
+  .container--m {
     padding: 6.4rem 3.2rem;
+  }
+
+  .container--s {
+    padding: 3.2rem 1.6rem;
   }
 
   /* Section Aside Spacing --------- */

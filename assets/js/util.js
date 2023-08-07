@@ -15,5 +15,9 @@ function render(fn, data) {
 }
 
 function insert(el, html) {
-  el.innerHTML = html;
+  el.innerHTML += html;
+}
+
+function insertFirstChild(el, html) {
+  el.insertAdjacentHTML("afterbegin", html);
 }
