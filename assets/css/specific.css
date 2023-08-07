@@ -375,3 +375,10 @@
 }
 
 /* The Latest */
+#latest-list .section-img {
+  width: 33.3333%;
+}
+
+#latest-list .latest-list-text {
+  width: 66.6666%;
+}
