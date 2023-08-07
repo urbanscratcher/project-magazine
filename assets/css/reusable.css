@@ -13,7 +13,7 @@ instead of <div class="block block--mod">,
 use <div class="block mod"> and define .block.mod in CSS
 -------------------------------- */
 
-/* Basic Utils - font */
+/* Basic Utils - font -----------------*/
 .italic {
   font-style: italic;
 }
@@ -30,7 +30,7 @@ use <div class="block mod"> and define .block.mod in CSS
   font-weight: bold;
 }
 
-/* Basic Utils - display */
+/* Basic Utils - display --------------*/
 .col {
   display: flex;
   flex-direction: column;
@@ -38,6 +38,22 @@ use <div class="block mod"> and define .block.mod in CSS
 
 .row {
   display: flex;
+}
+
+.col.v-center {
+  justify-content: center;
+}
+
+.row.v-center {
+  align-items: center;
+}
+
+.col.h-center {
+  align-items: center;
+}
+
+.row.h-center {
+  justify-content: center;
 }
 
 .col.between {

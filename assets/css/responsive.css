@@ -128,45 +128,47 @@
     letter-spacing: var(--caption-spacing-xl);
   }
 
-  /* Flex Column 16px */
+  /* Column gap -------------- */
   .col-gap-l {
     display: flex;
     flex-direction: column;
     gap: 3.2rem;
   }
 
-  /* Flex Column 16px */
   .col-gap-m {
     display: flex;
     flex-direction: column;
     gap: 1.6rem;
   }
 
-  /* Flex Column 8px */
   .col-gap-s {
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
   }
 
-  /* Flex Row 16px */
+  /* Row gap */
+  .row-gap-l {
+    display: flex;
+    gap: 3.2rem;
+  }
+
   .row-gap-m {
     display: flex;
     gap: 1.6rem;
   }
 
-  /* Flex Row 8px */
   .row-gap-s {
     display: flex;
     gap: 0.8rem;
   }
 
-  /* Section Spacing */
+  /* Section Spacing --------------- */
   .section-container {
     padding: 6.4rem 3.2rem;
   }
 
-  /* Section Aside Spacing */
+  /* Section Aside Spacing --------- */
   .section-aside {
     padding: 3.2rem 1.6rem;
     border: solid 1px var(--color-gray-light);

@@ -78,14 +78,14 @@
     <!-- Navigation Bar-->
     <header class="position-relative">
       <nav id="navbar" class="row">
-        <div id="navbar-menu">
+        <div id="navbar-menu" class="row">
           <img id="navbar-logo" src="assets/image/logo.png" />
-          <div id="navbar-items">
-            <a href="#">Insights</a>
-            <a href="#">Awards</a>
-            <a href="#">Quiz</a>
-            <a href="#">Authors</a>
-            <a href="#">Report</a>
+          <div class="navbar-items row-gap-l text-white ">
+            <a class="menu-item" href="#">Insights</a>
+            <a class="menu-item" href="#">Awards</a>
+            <a class="menu-item" href="#">Quiz</a>
+            <a class="menu-item" href="#">Authors</a>
+            <a class="menu-item" href="#">Report</a>
           </div>
         </div>
         <ul id="navbar-personals">
@@ -179,7 +179,7 @@
           <p>Top Topics</p>
         </div>
         <div id="topTopics-content">
-          <ul id="topTopics-list">
+          <ul class="topics-list">
             <!-- [Loop Data] -->
           </ul>
         </div>
@@ -297,16 +297,18 @@
                 harmony with the environment. A promising step towards a
                 resilient and eco-friendly coexistence.
               </p>
-              <div class="row-gap-s">
-                <p>
+              <div class="latest-time row-gap-s row v-center">
+                <h4>
                   <i class="fa-regular fa-clock"></i>
-                </p>
-                <p>4 min read</p>
+                </h4>
+                <p>1 day ago</p>
+                <p>·</p>
+                <p>1 min read</p>
               </div>
-              <div class="row-gap-s">
-                <p>
+              <div class="row v-center row-gap-s">
+                <h4>
                   <i class="fa-regular fa-circle-user"></i>
-                </p>
+                </h4>
                 <p>Eleanor Montgomery</p>
               </div>
             </div>
@@ -834,6 +836,81 @@
     </main>
 
     <!-- Footer -->
-    <div id="footer">FOOTER</div>
+    <div id="footer" class="col section-container">
+      <div id="footer-sitemap" class="row-gap-m">
+      <!-- logo -->
+        <div id="footer-logo" class="col-gap-m">
+          <img src="assets/image/logo.png" />
+          <p class="bold">Welcome to ArchOn - Where Imagination Builds</p>
+          <p class="body-s">We believe in the power of imagination to shape a better tomorrow. Our team of visionary writers, architects, and urban planners curates a diverse collection of articles, interviews, and visual journeys that delve into the minds of the brightest creatives in the field.</p>
+        </div>
+
+        <!-- information -->
+        <div id="footer-info" class="col-gap-m">
+          <div class="section-title">
+            <p>information</p>
+          </div>
+          <div class="info-content col-gap-m">
+            <p>1234 Elm Street, Cityville, Stateville 56789, Architopia Land</p>          
+            <p>support@archon.com</p>
+            <p>(555) 123 4567</p>
+            <div class="component-socials">
+              social icons here
+            </div>
+          </div>
+        </div>
+
+        <!-- menu -->
+        <div id="footer-menu" class="col-gap-m">
+          <div class="section-title">
+            <p>menu</p>
+          </div>
+          <div class="col-gap-s">
+            <a class="menu-item" href="#">Insights</a>
+            <a class="menu-item" href="#">Awards</a>
+            <a class="menu-item" href="#">Quiz</a>
+            <a class="menu-item" href="#">Authors</a>
+            <a class="menu-item" href="#">Report</a>
+          </div>
+        </div>
+
+        <!-- topics -->
+        <div id="footer-topics" class="col-gap-m">
+          <div class="section-title">
+            <p>topics</p>
+          </div>
+          <ul class="topics-list col-gap-s">
+            <!-- [Loop Data] -->
+          </ul>
+        </div>
+
+        <!-- newsletter -->
+        <div id="footer-newsletter" class="col-gap-m">
+          <div class="section-title">
+            <p>newletter</p>
+          </div>
+          <div class="component-newsletter">
+            <div id="newsletter-content" class="col-gap-m">
+              <p>Subscribe our newsletter to get the latest updates all about architecture</p>
+              <form class="col-gap-m">
+                <input placeholder="Enter your full name" />
+                <input placeholder="Enter your email" />
+                <label for="newsletter-consent-footer">
+                  <input type="checkbox" id="newsletter-consent-footer" />
+                  By signing up, you agree to our terms and privacy policy
+                </label>
+                <input type="submit" class="btn-primary button-text" value="subscribe"/>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+       <!-- Copyright -->
+       <div id="footer-copyright" class="caption">
+        Developed and Designed by Hyunjung Joun © 2023 Copyrights All Rights Reserved
+       </div>
+    </div>
   </body>
 </html>

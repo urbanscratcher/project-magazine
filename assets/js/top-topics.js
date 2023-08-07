@@ -7,7 +7,17 @@
 fetch("../../index.html")
   .then((res) => res.text())
   .then((html) => {
-    const newHtml = () => `
+    loadTopTopicsToSection();
+
+    // Footer -----------------------
+  })
+  .catch((err) => {
+    console.error("error: ", err);
+  });
+
+// Functions
+function loadTopTopicsToSection() {
+  const newHtml = () => `
       {{#each topTopics}}
         <li>
           <a href="#">
@@ -18,15 +28,12 @@ fetch("../../index.html")
       {{/each}}
     `;
 
-    const parentEl = document
-      .getElementById("topTopics-content")
-      .querySelector("ul");
+  const parentEls = document.getElementsByClassName("topics-list");
 
+  for (parentEl of parentEls) {
     insert(parentEl, render(newHtml, data));
-  })
-  .catch((err) => {
-    console.error("error: ", err);
-  });
+  }
+}
 
 // Data ------------------------------------
 const data = {
