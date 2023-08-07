@@ -375,6 +375,15 @@
 }
 
 /* The Latest */
+.latest-list-item {
+  padding-bottom: 1.6rem;
+  border-bottom: solid 1px var(--color-secondary-light);
+}
+
+.latest-list-item:last-child {
+  border-bottom: none;
+}
+
 #latest-list .section-img {
   width: 33.3333%;
 }
