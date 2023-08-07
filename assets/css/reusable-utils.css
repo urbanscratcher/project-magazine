@@ -1,24 +1,21 @@
 /* --------------------------------
-- Purpose: to enhance reusability by defining classes' styles.
+- Purpose: to enhance reusability by defining utility classes in the atomic level.
 - Author: Hyunjung Joun
 
-- Note: For responsiveness and typography, I tried to follow Apple's human interface guidelines.
--- Reference: https://developer.apple.com/design/human-interface-guidelines/typography
-
-- Note: For naming, I tried follow BEM (.block_element-modifier)
+- Note: For naming, I tried follow BEM. (.block_element-modifier)
 -- Reference: https://getbem.com/
 
---- e.g.
-instead of <div class="block block--mod">,
-use <div class="block mod"> and define .block.mod in CSS
+* Acronym
+1. tc: text color
+2. ts: text size
 -------------------------------- */
 
-/* Basic Utils - font -----------------*/
+/* Basic Utils - Text -----------------*/
 .italic {
   font-style: italic;
 }
 
-.text-white {
+.tc--white {
   color: var(--color-white);
 }
 
@@ -30,7 +27,7 @@ use <div class="block mod"> and define .block.mod in CSS
   font-weight: bold;
 }
 
-/* Basic Utils - display --------------*/
+/* Basic Utils - Display --------------*/
 .col {
   display: flex;
   flex-direction: column;
@@ -265,4 +262,9 @@ use <div class="block mod"> and define .block.mod in CSS
 .btn-primary:hover {
   cursor: pointer;
   background-color: var(--color-secondary-dark);
+}
+
+/* Logo */
+.logo--white {
+  filter: brightness(0) invert(1);
 }

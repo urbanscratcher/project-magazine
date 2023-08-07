@@ -56,9 +56,9 @@
     <!-- Custom CSS Files -->
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/variables.css" />
-    <link rel="stylesheet" href="assets/css/theme.css" />
-    <link rel="stylesheet" href="assets/css/reusable.css" />
+    <link rel="stylesheet" href="assets/css/reusable-utils.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="assets/css/reusable-elements.css" />
     <link rel="stylesheet" href="assets/css/specific.css" />
 
     <!-- Handlebars from a CDN -->
@@ -76,26 +76,24 @@
 
   <body>
     <!-- Navigation Bar-->
-    <header class="position-relative">
-      <nav id="navbar" class="row">
-        <div id="navbar-menu" class="row">
-          <img id="navbar-logo" src="assets/image/logo.png" />
-          <div class="navbar-items row-gap-l text-white ">
-            <a class="menu-item" href="#">Insights</a>
-            <a class="menu-item" href="#">Awards</a>
-            <a class="menu-item" href="#">Quiz</a>
-            <a class="menu-item" href="#">Authors</a>
-            <a class="menu-item" href="#">Report</a>
-          </div>
+    <header id="header">
+      <nav class="navbar__wrapper">
+        <img class="navbar__logo logo--white" src="assets/image/logo.png" />
+        <div class="navbar__menu row gap--l tc--white">
+          <a class="menu__item" href="#">Insights</a>
+          <a class="menu__item" href="#">Awards</a>
+          <a class="menu__item" href="#">Quiz</a>
+          <a class="menu__item" href="#">Authors</a>
+          <a class="menu__item" href="#">Report</a>
         </div>
-        <ul id="navbar-personals">
-          <li>
+        <div class="navbar__personal row gap--s ts--h4">
+          <a href="#" class="personal__item bookmark">
             <i class="fa-regular fa-bookmark"></i>
-          </li>
-          <li>
+          </a>
+          <a href="#" class="personal__item setting">
             <i class="fa-regular fa-eye"></i>
-          </li>
-        </ul>
+          </a>
+        </div>
       </nav>
     </header>
 
@@ -105,14 +103,14 @@
         <!-- Highlight -->
         <div id="highlight" class="section-bg-img" style="--bg-img: url(../../data/insights/thumbnail/test.jpg)">
           <!-- Component: Topic -->
-          <div class="section-container col-gap-m">
+          <div class="section-container col gap--m">
             <div>
-              <label class="button-text text-white topic topic-white">topic</label>
+              <label class="ts--btn tc--white topic topic-white">topic</label>
             </div>
-            <h1 class="serif text-white">
+            <h1 class="serif tc--white">
               Building Dreams: Exploring the Timeless Beauty of Architecture
             </h1>
-            <div id="highlight-buttons" class="row-gap-m">
+            <div id="highlight-buttons" class="row gap--m">
               <a href="#" class="button-circle-32">
                 <i class="fa-solid fa-chevron-left"></i>
               </a>
@@ -124,20 +122,20 @@
         </div>
 
         <!-- Editor's Pick -->
-        <div id="editorsPick" class="col-gap-m">
+        <div id="editorsPick" class="col gap--m">
           <div class="section-title">
             <p>Editor's pick</p>
           </div>
           <div id="editorsPick-content">
             <!-- primary -->
-            <div id="editorsPick-primary" class="col-gap-m">
+            <div id="editorsPick-primary" class="col gap--m">
               <div class="section-img">
                 <img src="./data/insights/thumbnail/test.jpg" />
                 <div class="component-bookmark-add">
                 </div>
               </div>
               <div>
-                <p class="topic button-text">topic</p>
+                <p class="topic ts--btn">topic</p>
               </div>
               <h3 class="serif">
                 From Vision to Reality: Unveiling the Marvels of Architectural
@@ -145,8 +143,8 @@
               </h3>
             </div>
             <!-- secondary -->
-            <div id="editorsPick-secondary" class="col-gap-m">
-              <ul id="editorsPick-secondary-list" class="col-gap-m">
+            <div id="editorsPick-secondary" class="col gap--m">
+              <ul id="editorsPick-secondary-list" class="col gap--m">
                 <li>
                   <h4 class="serif">
                     Marvels of Modern Architecture: Inspiring Structures Shaping
@@ -174,7 +172,7 @@
       </section>
 
       <!-- Section: Top Topics -->
-      <section id="topTopics" class="col-gap-m section-container">
+      <section id="topTopics" class="col gap--m section-container">
         <div class="section-title">
           <p>Top Topics</p>
         </div>
@@ -186,7 +184,7 @@
       </section>
 
       <!-- Section: Monthly Awards -->
-      <section id="monthlyAwards" class="col-gap-m section-container">
+      <section id="monthlyAwards" class="col gap--m section-container">
         <div class="section-title">
           <p>Monthly Awards</p>
           <div class="component-viewAll">
@@ -194,10 +192,10 @@
         </div>
         <div id="monthlyAwards-content">
           <div id="awards-list">
-            <div class="card-awards text-white section-bg-img" style="--bg-img: url(../../data/insights/thumbnail/test.jpg)">
-              <div class="card-awards-container col-gap-m">
+            <div class="card-awards tc--white section-bg-img" style="--bg-img: url(../../data/insights/thumbnail/test.jpg)">
+              <div class="card-awards-container col gap--m">
                 <div class="card-awards-label">
-                  <label class="body-s">The Winner Of July</label>
+                  <label class="ts--body-s">The Winner Of July</label>
                 </div>
                 <h3 class="serif">The Campus IFA 2020</h3>
                 <h4>Modern Fusion Studio</h4>
@@ -216,10 +214,10 @@
                 </q>
               </div>
             </div>
-            <div class="card-awards text-white section-bg-img" style="--bg-img: url(../../data/insights/thumbnail/test.jpg)">
-              <div class="card-awards-container col-gap-m">
+            <div class="card-awards tc--white section-bg-img" style="--bg-img: url(../../data/insights/thumbnail/test.jpg)">
+              <div class="card-awards-container col gap--m">
                 <div class="card-awards-label">
-                  <label class="body-s">The Winner Of July</label>
+                  <label class="ts--body-s">The Winner Of July</label>
                 </div>
                 <h3 class="serif">The Campus IFA 2020</h3>
                 <h4>Modern Fusion Studio</h4>
@@ -238,10 +236,10 @@
                 </q>
               </div>
             </div>
-            <div class="card-awards text-white section-bg-img" style="--bg-img: url(../../data/insights/thumbnail/test.jpg)">
-              <div class="card-awards-container col-gap-m">
+            <div class="card-awards tc--white section-bg-img" style="--bg-img: url(../../data/insights/thumbnail/test.jpg)">
+              <div class="card-awards-container col gap--m">
                 <div class="card-awards-label">
-                  <label class="body-s">The Winner Of July</label>
+                  <label class="ts--body-s">The Winner Of July</label>
                 </div>
                 <h3 class="serif">The Campus IFA 2020</h3>
                 <h4>Modern Fusion Studio</h4>
@@ -270,21 +268,21 @@
       <section id="section-trending" class="section-container">
 
         <!-- What's Trending -->
-        <div id="trending" class="col-gap-m">
+        <div id="trending" class="col gap--m">
           <div class="section-title">
             <p>What's Trending</p>
             <div class="component-viewAll">
             </div>
           </div>
-          <div id="trending-content" class="row-gap-m">
-            <div id="trending-highlight" class="col-gap-m">
+          <div id="trending-content" class="row gap--m">
+            <div id="trending-highlight" class="col gap--m">
               <div class="section-img">
                 <img src="./data/insights/thumbnail/test.jpg" />
                 <div class="component-bookmark-add">
                 </div>
               </div>
               <div>
-                <p class="topic button-text">topic</p>
+                <p class="topic ts--btn">topic</p>
               </div>
               <h2 class="serif">
                 Revolutionary Sustainable Architecture Unveiled
@@ -297,7 +295,7 @@
                 harmony with the environment. A promising step towards a
                 resilient and eco-friendly coexistence.
               </p>
-              <div class="latest-time row-gap-s row v-center">
+              <div class="latest-time row gap--s row v-center">
                 <h4>
                   <i class="fa-regular fa-clock"></i>
                 </h4>
@@ -305,7 +303,7 @@
                 <p>·</p>
                 <p>1 min read</p>
               </div>
-              <div class="row v-center row-gap-s">
+              <div class="row v-center row gap--s">
                 <h4>
                   <i class="fa-regular fa-circle-user"></i>
                 </h4>
@@ -313,69 +311,69 @@
               </div>
             </div>
             <div id="trending-list">
-              <ul class="col-gap-m">
-                <li class="trending-list-item col-gap-s">
+              <ul class="col gap--m">
+                <li class="trending-list-item col gap--s">
                   <div>
-                    <p class="topic button-text">topic</p>
+                    <p class="topic ts--btn">topic</p>
                   </div>
-                  <div class="row-gap-s">
+                  <div class="row gap--s">
                     <h4 class="serif">Headline level 3 text similar to body up to 2 lines</h4>
                     <div class="section-img">
                       <img src="./data/insights/thumbnail/test.jpg" />
                       <div class="component-bookmark-add"></div>
                     </div>
                   </div>
-                  <div class="row-gap-s">
-                    <p class="body-s text-gray">By</p>
-                    <p class="body-s text-gray">John Polanski</p>
+                  <div class="row gap--s">
+                    <p class="ts--body-s text-gray">By</p>
+                    <p class="ts--body-s text-gray">John Polanski</p>
                   </div>
                 </li>
-                <li class="trending-list-item col-gap-s">
+                <li class="trending-list-item col gap--s">
                   <div>
-                    <p class="topic button-text">topic</p>
+                    <p class="topic ts--btn">topic</p>
                   </div>
-                  <div class="row-gap-s">
+                  <div class="row gap--s">
                     <h4 class="serif">Headline level 3 text similar to body up to 2 lines</h4>
                     <div class="section-img">
                       <img src="./data/insights/thumbnail/test.jpg" />
                       <div class="component-bookmark-add"></div>
                     </div>
                   </div>
-                  <div class="row-gap-s">
-                    <p class="body-s text-gray">By</p>
-                    <p class="body-s text-gray">John Polanski</p>
+                  <div class="row gap--s">
+                    <p class="ts--body-s text-gray">By</p>
+                    <p class="ts--body-s text-gray">John Polanski</p>
                   </div>
                 </li>
-                <li class="trending-list-item col-gap-s">
+                <li class="trending-list-item col gap--s">
                   <div>
-                    <p class="topic button-text">topic</p>
+                    <p class="topic ts--btn">topic</p>
                   </div>
-                  <div class="row-gap-s">
+                  <div class="row gap--s">
                     <h4 class="serif">Headline level 3 text similar to body up to 2 lines</h4>
                     <div class="section-img">
                       <img src="./data/insights/thumbnail/test.jpg" />
                       <div class="component-bookmark-add"></div>
                     </div>
                   </div>
-                  <div class="row-gap-s">
-                    <p class="body-s text-gray">By</p>
-                    <p class="body-s text-gray">John Polanski</p>
+                  <div class="row gap--s">
+                    <p class="ts--body-s text-gray">By</p>
+                    <p class="ts--body-s text-gray">John Polanski</p>
                   </div>
                 </li>
-                <li class="trending-list-item col-gap-s">
+                <li class="trending-list-item col gap--s">
                   <div>
-                    <p class="topic button-text">topic</p>
+                    <p class="topic ts--btn">topic</p>
                   </div>
-                  <div class="row-gap-s">
+                  <div class="row gap--s">
                     <h4 class="serif">Headline level 3 text similar to body up to 2 lines</h4>
                     <div class="section-img">
                       <img src="./data/insights/thumbnail/test.jpg" />
                       <div class="component-bookmark-add"></div>
                     </div>
                   </div>
-                  <div class="row-gap-s">
-                    <p class="body-s text-gray">By</p>
-                    <p class="body-s text-gray">John Polanski</p>
+                  <div class="row gap--s">
+                    <p class="ts--body-s text-gray">By</p>
+                    <p class="ts--body-s text-gray">John Polanski</p>
                   </div>
                 </li>
               </ul>
@@ -384,15 +382,15 @@
         </div>
 
         <!-- Stay Connected -->
-        <div id="connected" class="col-gap-m section-aside">
+        <div id="connected" class="col gap--m section-aside">
           <div class="section-title">
             <p>stay connected</p>            
           </div>
           <div id="connected-content">
-            <ul id="connected-list" class="col-gap-s">
+            <ul id="connected-list" class="col gap--s">
               <li class="connected-list-item">
                 <a href="#">
-                  <div class="row-gap-m">
+                  <div class="row gap--m">
                     <p>
                       <i class="fa-regular fa-circle-user"></i>
                     </p>
@@ -403,7 +401,7 @@
               </li>
               <li class="connected-list-item">
                 <a href="#">
-                  <div class="row-gap-m">
+                  <div class="row gap--m">
                     <p>
                       <i class="fa-regular fa-circle-user"></i>
                     </p>
@@ -414,7 +412,7 @@
               </li>
               <li class="connected-list-item">
                 <a href="#">
-                  <div class="row-gap-m">
+                  <div class="row gap--m">
                     <p>
                       <i class="fa-regular fa-circle-user"></i>
                     </p>
@@ -425,7 +423,7 @@
               </li>
               <li class="connected-list-item">
                 <a href="#">
-                  <div class="row-gap-m">
+                  <div class="row gap--m">
                     <p>
                       <i class="fa-regular fa-circle-user"></i>
                     </p>
@@ -439,20 +437,20 @@
         </div>
 
         <!-- Newsletter -->
-        <div id="newsletter" class="col-gap-m section-aside">
+        <div id="newsletter" class="col gap--m section-aside">
           <div class="section-title">
             <p>newsletter</p>
           </div>
-          <div id="newsletter-content" class="col-gap-m">
+          <div id="newsletter-content" class="col gap--m">
             <p>Subscribe our newsletter to get the latest updates all about architecture</p>
-            <form class="col-gap-m">
+            <form class="col gap--m">
               <input placeholder="Enter your full name" />
               <input placeholder="Enter your email" />
               <label for="newsletter-consent">
                 <input type="checkbox" id="newsletter-consent" />
                 By signing up, you agree to our terms and privacy policy
               </label>
-              <input type="submit" class="btn-primary button-text" value="subscribe"/>
+              <input type="submit" class="btn-primary ts--btn" value="subscribe"/>
             </form>
           </div>
         </div>
@@ -460,22 +458,22 @@
 
 
       <!-- Section: Saved For Later -->
-      <section id="savedForLater" class="col-gap-m section-container">
+      <section id="savedForLater" class="col gap--m section-container">
         <div class="section-title">
           <p>Saved For Later</p>
           <div class="component-viewAll">
           </div>
         </div>
         <div id="savedForLater-content">
-          <ul id="savedForLater-list" class="row-gap-m">
-            <li class="card-savedForLater col-gap-m text-white savedForLater-list-item section-bg-img" style="--bg-img: url(../../data/insights/thumbnail/test.jpg)">
-              <div class="card-savedForLater-text col-gap-m" >
+          <ul id="savedForLater-list" class="row gap--m">
+            <li class="card-savedForLater col gap--m tc--white savedForLater-list-item section-bg-img" style="--bg-img: url(../../data/insights/thumbnail/test.jpg)">
+              <div class="card-savedForLater-text col gap--m" >
                 <div>
-                  <label class="topic topic-white button-text">topic</label>
+                  <label class="topic topic-white ts--btn">topic</label>
                 </div>
-                <div class="card-savedForLater-title col-gap-m">
+                <div class="card-savedForLater-title col gap--m">
                   <h3 class="serif">List Headline level 2 text for title up to 2 lines</h3>
-                  <div class="avatar row-gap-s">
+                  <div class="avatar row gap--s">
                     <p>
                       <i class="fa-regular fa-circle-user"></i>
                     </p>
@@ -484,14 +482,14 @@
                 </div>
               </div>
             </li>
-            <li class="card-savedForLater col-gap-m text-white savedForLater-list-item section-bg-img" style="--bg-img: url(../../data/insights/thumbnail/test.jpg)">
-              <div class="card-savedForLater-text col-gap-m" >
+            <li class="card-savedForLater col gap--m tc--white savedForLater-list-item section-bg-img" style="--bg-img: url(../../data/insights/thumbnail/test.jpg)">
+              <div class="card-savedForLater-text col gap--m" >
                 <div>
-                  <label class="topic topic-white button-text">topic</label>
+                  <label class="topic topic-white ts--btn">topic</label>
                 </div>
-                <div class="card-savedForLater-title col-gap-m">
+                <div class="card-savedForLater-title col gap--m">
                   <h3 class="serif">List Headline level 2 text for title up to 2 lines</h3>
-                  <div class="avatar row-gap-s">
+                  <div class="avatar row gap--s">
                     <p>
                       <i class="fa-regular fa-circle-user"></i>
                     </p>
@@ -500,14 +498,14 @@
                 </div>
               </div>
             </li>
-            <li class="card-savedForLater col-gap-m text-white savedForLater-list-item section-bg-img" style="--bg-img: url(../../data/insights/thumbnail/test.jpg)">
-              <div class="card-savedForLater-text col-gap-m" >
+            <li class="card-savedForLater col gap--m tc--white savedForLater-list-item section-bg-img" style="--bg-img: url(../../data/insights/thumbnail/test.jpg)">
+              <div class="card-savedForLater-text col gap--m" >
                 <div>
-                  <label class="topic topic-white button-text">topic</label>
+                  <label class="topic topic-white ts--btn">topic</label>
                 </div>
-                <div class="card-savedForLater-title col-gap-m">
+                <div class="card-savedForLater-title col gap--m">
                   <h3 class="serif">List Headline level 2 text for title up to 2 lines</h3>
-                  <div class="avatar row-gap-s">
+                  <div class="avatar row gap--s">
                     <p>
                       <i class="fa-regular fa-circle-user"></i>
                     </p>
@@ -516,14 +514,14 @@
                 </div>
               </div>
             </li>
-            <li class="card-savedForLater col-gap-m text-white savedForLater-list-item section-bg-img" style="--bg-img: url(../../data/insights/thumbnail/test.jpg)">
-              <div class="card-savedForLater-text col-gap-m" >
+            <li class="card-savedForLater col gap--m tc--white savedForLater-list-item section-bg-img" style="--bg-img: url(../../data/insights/thumbnail/test.jpg)">
+              <div class="card-savedForLater-text col gap--m" >
                 <div>
-                  <label class="topic topic-white button-text">topic</label>
+                  <label class="topic topic-white ts--btn">topic</label>
                 </div>
-                <div class="card-savedForLater-title col-gap-m">
+                <div class="card-savedForLater-title col gap--m">
                   <h3 class="serif">List Headline level 2 text for title up to 2 lines</h3>
-                  <div class="avatar row-gap-s">
+                  <div class="avatar row gap--s">
                     <p>
                       <i class="fa-regular fa-circle-user"></i>
                     </p>
@@ -538,10 +536,10 @@
 
 
       <!-- Section: explore -->
-      <section id="explore" class="section-container row-gap-m">
+      <section id="explore" class="section-container row gap--m">
 
         <!-- Inspirations -->
-          <div id="inspirations" class="section-aside col-gap-m">
+          <div id="inspirations" class="section-aside col gap--m">
             <div class="section-title row between">
               <p>inspirations</p>   
               <p>
@@ -551,33 +549,33 @@
             <ul id="inspirations-list">
                 <li class="inspirations-item section-img">
                   <img src="./data/insights/thumbnail/test.jpg" />
-                  <label class="topic topic-white button-text text-white">topic</label>
+                  <label class="topic topic-white ts--btn tc--white">topic</label>
                 </li>
                 <li class="inspirations-item section-img">
                   <img src="./data/insights/thumbnail/test.jpg" />
-                  <label class="topic topic-white button-text text-white">topic</label>
+                  <label class="topic topic-white ts--btn tc--white">topic</label>
                 </li>
                 <li class="inspirations-item section-img">
                   <img src="./data/insights/thumbnail/test.jpg" />
-                  <label class="topic topic-white button-text text-white">topic</label>
+                  <label class="topic topic-white ts--btn tc--white">topic</label>
                 </li>
                 <li class="inspirations-item section-img">
                   <img src="./data/insights/thumbnail/test.jpg" />
-                  <label class="topic topic-white button-text text-white">topic</label>
+                  <label class="topic topic-white ts--btn tc--white">topic</label>
                 </li>
                 <li class="inspirations-item section-img">
                   <img src="./data/insights/thumbnail/test.jpg" />
-                  <label class="topic topic-white button-text text-white">topic</label>
+                  <label class="topic topic-white ts--btn tc--white">topic</label>
                 </li>
                 <li class="inspirations-item section-img">
                   <img src="./data/insights/thumbnail/test.jpg" />
-                  <label class="topic topic-white button-text text-white">topic</label>
+                  <label class="topic topic-white ts--btn tc--white">topic</label>
                 </li>
             </ul>
           </div>
 
           <!-- The latest -->
-          <div id="latest" class="section-aside col-gap-m">
+          <div id="latest" class="section-aside col gap--m">
             <div class="section-title row between">
               <p>
                 the latest
@@ -585,17 +583,17 @@
               <div class="component-viewAll">
               </div>
             </div>
-            <ul id="latest-list" class="col-gap-m">
-              <li class="latest-list-item row-gap-m">
+            <ul id="latest-list" class="col gap--m">
+              <li class="latest-list-item row gap--m">
                 <div class="section-img">
                   <img src="./data/insights/thumbnail/test.jpg" />
                   <div class="component-bookmark-add">
                   </div>
-                  <label class="topic topic-white text-white button-text">topic</label>
+                  <label class="topic topic-white tc--white ts--btn">topic</label>
                 </div>
-                <div class="latest-list-text col-gap-s">
+                <div class="latest-list-text col gap--s">
                   <h3 class="serif">Headline level 3 text for editor’s pick title</h3>
-                  <div class="latest-time row-gap-s">
+                  <div class="latest-time row gap--s">
                     <p>
                       <i class="fa-regular fa-clock"></i>
                     </p>
@@ -603,7 +601,7 @@
                     <p>·</p>
                     <p>1 min read</p>
                   </div>
-                  <div class="latest-author row-gap-s">
+                  <div class="latest-author row gap--s">
                     <p>
                       <i class="fa-regular fa-circle-user"></i>
                     </p>
@@ -611,16 +609,16 @@
                   </div>
                 </div>                
               </li>
-              <li class="latest-list-item row-gap-m">
+              <li class="latest-list-item row gap--m">
                 <div class="section-img">
                   <img src="./data/insights/thumbnail/test.jpg" />
                   <div class="component-bookmark-add">
                   </div>
-                  <label class="topic topic-white text-white button-text">topic</label>
+                  <label class="topic topic-white tc--white ts--btn">topic</label>
                 </div>
-                <div class="latest-list-text col-gap-s">
+                <div class="latest-list-text col gap--s">
                   <h3 class="serif">Headline level 3 text for editor’s pick title</h3>
-                  <div class="latest-time row-gap-s">
+                  <div class="latest-time row gap--s">
                     <p>
                       <i class="fa-regular fa-clock"></i>
                     </p>
@@ -628,7 +626,7 @@
                     <p>·</p>
                     <p>1 min read</p>
                   </div>
-                  <div class="latest-author row-gap-s">
+                  <div class="latest-author row gap--s">
                     <p>
                       <i class="fa-regular fa-circle-user"></i>
                     </p>
@@ -636,16 +634,16 @@
                   </div>
                 </div>                
               </li>
-              <li class="latest-list-item row-gap-m">
+              <li class="latest-list-item row gap--m">
                 <div class="section-img">
                   <img src="./data/insights/thumbnail/test.jpg" />
                   <div class="component-bookmark-add">
                   </div>
-                  <label class="topic topic-white text-white button-text">topic</label>
+                  <label class="topic topic-white tc--white ts--btn">topic</label>
                 </div>
-                <div class="latest-list-text col-gap-s">
+                <div class="latest-list-text col gap--s">
                   <h3 class="serif">Headline level 3 text for editor’s pick title</h3>
-                  <div class="latest-time row-gap-s">
+                  <div class="latest-time row gap--s">
                     <p>
                       <i class="fa-regular fa-clock"></i>
                     </p>
@@ -653,7 +651,7 @@
                     <p>·</p>
                     <p>1 min read</p>
                   </div>
-                  <div class="latest-author row-gap-s">
+                  <div class="latest-author row gap--s">
                     <p>
                       <i class="fa-regular fa-circle-user"></i>
                     </p>
@@ -661,16 +659,16 @@
                   </div>
                 </div>                
               </li>
-              <li class="latest-list-item row-gap-m">
+              <li class="latest-list-item row gap--m">
                 <div class="section-img">
                   <img src="./data/insights/thumbnail/test.jpg" />
                   <div class="component-bookmark-add">
                   </div>
-                  <label class="topic topic-white text-white button-text">topic</label>
+                  <label class="topic topic-white tc--white ts--btn">topic</label>
                 </div>
-                <div class="latest-list-text col-gap-s">
+                <div class="latest-list-text col gap--s">
                   <h3 class="serif">Headline level 3 text for editor’s pick title</h3>
-                  <div class="latest-time row-gap-s">
+                  <div class="latest-time row gap--s">
                     <p>
                       <i class="fa-regular fa-clock"></i>
                     </p>
@@ -678,7 +676,7 @@
                     <p>·</p>
                     <p>1 min read</p>
                   </div>
-                  <div class="latest-author row-gap-s">
+                  <div class="latest-author row gap--s">
                     <p>
                       <i class="fa-regular fa-circle-user"></i>
                     </p>
@@ -690,62 +688,62 @@
           </div>
 
           <!-- Aside -->
-          <div id="explore-aside" class="col-gap-m">
+          <div id="explore-aside" class="col gap--m">
           <!-- Fatured Authors -->
-            <div id="featured-authors" class="section-aside col-gap-m">
+            <div id="featured-authors" class="section-aside col gap--m">
               <div class="section-title">
                 <p>featured authors</p>
               </div>
-              <ul class="featured-authors-list col-gap-m">
-                <li class="featured-authors-item row-gap-m">
+              <ul class="featured-authors-list col gap--m">
+                <li class="featured-authors-item row gap--m">
                   <h3>
                     <i class="fa-regular fa-circle-user"></i>
                   </h3>
                   <div class="featured-authors-text col">
                     <p class="bold">Grace Bennett</p>
                     <ul class="row">
-                      <li class="body-s">Urban</li>
-                      <li class="body-s">&nbsp;·&nbsp;</li>
-                      <li class="body-s">Cultural</li>
+                      <li class="ts--body-s">Urban</li>
+                      <li class="ts--body-s">&nbsp;·&nbsp;</li>
+                      <li class="ts--body-s">Cultural</li>
                     </ul>
                   </div>
                 </li>
-                <li class="featured-authors-item row-gap-m">
+                <li class="featured-authors-item row gap--m">
                   <h3>
                     <i class="fa-regular fa-circle-user"></i>
                   </h3>
                   <div class="featured-authors-text col">
                     <p class="bold">Grace Bennett</p>
                     <ul class="row">
-                      <li class="body-s">Urban</li>
-                      <li class="body-s">&nbsp;·&nbsp;</li>
-                      <li class="body-s">Cultural</li>
+                      <li class="ts--body-s">Urban</li>
+                      <li class="ts--body-s">&nbsp;·&nbsp;</li>
+                      <li class="ts--body-s">Cultural</li>
                     </ul>
                   </div>
                 </li>
-                <li class="featured-authors-item row-gap-m">
+                <li class="featured-authors-item row gap--m">
                   <h3>
                     <i class="fa-regular fa-circle-user"></i>
                   </h3>
                   <div class="featured-authors-text col">
                     <p class="bold">Grace Bennett</p>
                     <ul class="row">
-                      <li class="body-s">Urban</li>
-                      <li class="body-s">&nbsp;·&nbsp;</li>
-                      <li class="body-s">Cultural</li>
+                      <li class="ts--body-s">Urban</li>
+                      <li class="ts--body-s">&nbsp;·&nbsp;</li>
+                      <li class="ts--body-s">Cultural</li>
                     </ul>
                   </div>
                 </li>
-                <li class="featured-authors-item row-gap-m">
+                <li class="featured-authors-item row gap--m">
                   <h3>
                     <i class="fa-regular fa-circle-user"></i>
                   </h3>
                   <div class="featured-authors-text col">
                     <p class="bold">Grace Bennett</p>
                     <ul class="row">
-                      <li class="body-s">Urban</li>
-                      <li class="body-s">&nbsp;·&nbsp;</li>
-                      <li class="body-s">Cultural</li>
+                      <li class="ts--body-s">Urban</li>
+                      <li class="ts--body-s">&nbsp;·&nbsp;</li>
+                      <li class="ts--body-s">Cultural</li>
                     </ul>
                   </div>
                 </li>
@@ -755,7 +753,7 @@
           </div>
 
             <!-- Ad -->
-            <div id="ad" class="section-aside col-gap-m">
+            <div id="ad" class="section-aside col gap--m">
               <div class="section-title">
                 <p>ad</p>
               </div>
@@ -768,19 +766,19 @@
 
 
       <!-- Section: Video -->
-      <section id="video" class="col-gap-m section-container">
+      <section id="video" class="col gap--m section-container">
         <div class="section-title">
           <p>Video</p>
         </div>
-        <div id="video-content" class="col-gap-l">
+        <div id="video-content" class="col gap--l">
           <div id="video-highlight" class="section-bg-img col" style="--bg-img: url(../../data/insights/thumbnail/test.jpg)">
-            <div id="video-highlight-text" class="col-gap-m text-white">
+            <div id="video-highlight-text" class="col gap--m tc--white">
               <div>
-                <label class="topic topic-white button-text">topic</label>
+                <label class="topic topic-white ts--btn">topic</label>
               </div>
               <h2 class="serif">Headline level 1 text for cover title ideally up to three lines</h2>
               <p>Body small text summary text goes here up to three lines, body small text summary text goes here up to three lines...</p>
-              <a href="#" class="row-gap-s">
+              <a href="#" class="row gap--s">
                 <h4>
                   <i class="fa-regular fa-circle-play"></i>
                 </h4>
@@ -788,9 +786,9 @@
               </a>
             </div>
           </div>
-          <ul id="video-list" class="row-gap-m">
-            <li class="video-list-item row-gap-s">
-              <div class="video-list-text col-gap-s">
+          <ul id="video-list" class="row gap--m">
+            <li class="video-list-item row gap--s">
+              <div class="video-list-text col gap--s">
                 <div>
                   <label class="topic">topic</label>
                 </div>
@@ -799,8 +797,8 @@
               <div class="video-list-embedded">
               </div>
             </li>
-            <li class="video-list-item row-gap-s">
-              <div class="video-list-text col-gap-s">
+            <li class="video-list-item row gap--s">
+              <div class="video-list-text col gap--s">
                 <div>
                   <label class="topic">topic</label>
                 </div>
@@ -809,8 +807,8 @@
               <div class="video-list-embedded">
               </div>
             </li>
-            <li class="video-list-item row-gap-s">
-              <div class="video-list-text col-gap-s">
+            <li class="video-list-item row gap--s">
+              <div class="video-list-text col gap--s">
                 <div>
                   <label class="topic">topic</label>
                 </div>
@@ -819,8 +817,8 @@
               <div class="video-list-embedded">
               </div>
             </li>
-            <li class="video-list-item row-gap-s">
-              <div class="video-list-text col-gap-s">
+            <li class="video-list-item row gap--s">
+              <div class="video-list-text col gap--s">
                 <div>
                   <label class="topic">topic</label>
                 </div>
@@ -837,20 +835,20 @@
 
     <!-- Footer -->
     <div id="footer" class="col section-container">
-      <div id="footer-sitemap" class="row-gap-m">
+      <div id="footer-sitemap" class="row gap--m">
       <!-- logo -->
-        <div id="footer-logo" class="col-gap-m">
+        <div id="footer-logo" class="col gap--m">
           <img src="assets/image/logo.png" />
           <p class="bold">Welcome to ArchOn - Where Imagination Builds</p>
-          <p class="body-s">We believe in the power of imagination to shape a better tomorrow. Our team of visionary writers, architects, and urban planners curates a diverse collection of articles, interviews, and visual journeys that delve into the minds of the brightest creatives in the field.</p>
+          <p class="ts--body-s">We believe in the power of imagination to shape a better tomorrow. Our team of visionary writers, architects, and urban planners curates a diverse collection of articles, interviews, and visual journeys that delve into the minds of the brightest creatives in the field.</p>
         </div>
 
         <!-- information -->
-        <div id="footer-info" class="col-gap-m">
+        <div id="footer-info" class="col gap--m">
           <div class="section-title">
             <p>information</p>
           </div>
-          <div class="info-content col-gap-m">
+          <div class="info-content col gap--m">
             <p>1234 Elm Street, Cityville, Stateville 56789, Architopia Land</p>          
             <p>support@archon.com</p>
             <p>(555) 123 4567</p>
@@ -861,45 +859,45 @@
         </div>
 
         <!-- menu -->
-        <div id="footer-menu" class="col-gap-m">
+        <div id="footer-menu" class="col gap--m">
           <div class="section-title">
             <p>menu</p>
           </div>
-          <div class="col-gap-s">
-            <a class="menu-item" href="#">Insights</a>
-            <a class="menu-item" href="#">Awards</a>
-            <a class="menu-item" href="#">Quiz</a>
-            <a class="menu-item" href="#">Authors</a>
-            <a class="menu-item" href="#">Report</a>
+          <div class="col gap--s">
+            <a class="menu__item" href="#">Insights</a>
+            <a class="menu__item" href="#">Awards</a>
+            <a class="menu__item" href="#">Quiz</a>
+            <a class="menu__item" href="#">Authors</a>
+            <a class="menu__item" href="#">Report</a>
           </div>
         </div>
 
         <!-- topics -->
-        <div id="footer-topics" class="col-gap-m">
+        <div id="footer-topics" class="col gap--m">
           <div class="section-title">
             <p>topics</p>
           </div>
-          <ul class="topics-list col-gap-s">
+          <ul class="topics-list col gap--s">
             <!-- [Loop Data] -->
           </ul>
         </div>
 
         <!-- newsletter -->
-        <div id="footer-newsletter" class="col-gap-m">
+        <div id="footer-newsletter" class="col gap--m">
           <div class="section-title">
             <p>newletter</p>
           </div>
           <div class="component-newsletter">
-            <div id="newsletter-content" class="col-gap-m">
+            <div id="newsletter-content" class="col gap--m">
               <p>Subscribe our newsletter to get the latest updates all about architecture</p>
-              <form class="col-gap-m">
+              <form class="col gap--m">
                 <input placeholder="Enter your full name" />
                 <input placeholder="Enter your email" />
                 <label for="newsletter-consent-footer">
                   <input type="checkbox" id="newsletter-consent-footer" />
                   By signing up, you agree to our terms and privacy policy
                 </label>
-                <input type="submit" class="btn-primary button-text" value="subscribe"/>
+                <input type="submit" class="btn-primary ts--btn" value="subscribe"/>
               </form>
             </div>
           </div>
@@ -908,7 +906,7 @@
       </div>
 
        <!-- Copyright -->
-       <div id="footer-copyright" class="caption">
+       <div id="footer-copyright" class="ts--caption">
         Developed and Designed by Hyunjung Joun © 2023 Copyrights All Rights Reserved
        </div>
     </div>

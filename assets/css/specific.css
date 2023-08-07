@@ -4,55 +4,37 @@
 -------------------------------- */
 
 /* Nav ----------------------------*/
-#navbar {
+.navbar__wrapper {
   position: fixed;
   height: 6.4rem;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
   align-items: center;
+
+  display: grid;
+  grid-template-columns: 2fr 9fr 1fr;
+  align-items: flex-end;
 }
 
-#navbar-menu {
-  width: 66.66666%;
-  display: flex;
-  justify-content: start;
-  gap: 6.4rem;
-  align-items: end;
-}
-
-#navbar-logo {
+.navbar__logo {
   height: 3.8rem;
   padding-bottom: 0.25rem;
-  filter: brightness(0) invert(1);
 }
 
-.menu-item {
+.menu__item {
   letter-spacing: 0.5px;
   font-weight: 500;
   text-transform: uppercase;
   padding-bottom: 0;
 }
 
-#navbar-personals {
-  width: 33.33333%;
-
-  display: flex;
+.navbar__personal {
   justify-content: end;
-  gap: 0.4rem;
 }
 
-#navbar-personals li {
-  width: 3.2rem;
-  height: 3.2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-#navbar-personals li i {
-  font-size: 2.4rem;
-  text-align: center;
+.personal__item {
+  font: inherit;
 }
 
 /* Cover ----------------------------*/
@@ -337,6 +319,10 @@
   padding-right: 1.6rem;
   border-right: solid 1px var(--color-secondary-light);
   flex-grow: 1;
+}
+
+.video-list-item:last-child {
+  border-right: none;
 }
 
 .video-list-text {

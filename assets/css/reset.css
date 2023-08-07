@@ -187,8 +187,47 @@ h6 {
 }
 
 /* --------------------------------
+- Purpose: to keep the mood of a main theme by defining semantic tag and basic styles globally.
 - Author: Hyunjung Joun
 -------------------------------- */
+body {
+  font-family: "Figtree", "DM Sans", Helvetica, Arial, sans-serif;
+  color: var(--color-secondary);
+}
+
+.serif {
+  font-family: "DM Serif Display", "Times New Roman", Times, serif;
+}
+
+/* Heading Style */
+h1,
+h2,
+h3,
+h4 {
+  text-transform: capitalize;
+}
+
+p,
+a,
+body {
+  font-weight: 500;
+}
+
+/* Header */
+header {
+  position: relative;
+}
+
+.text-gray {
+  color: var(--color-gray);
+}
+
+/* selection color */
+*::selection {
+  background-color: var(--color-primary);
+  color: var(--color-secondary);
+}
+
 /* Adjust Fontawesome icon size */
 i {
   font-size: inherit;

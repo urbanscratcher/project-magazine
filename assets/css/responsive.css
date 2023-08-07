@@ -13,6 +13,13 @@
 -- m (950px) Tablet Landscape
 -- l (1280px) Laptop
 -- xl (1440px) Desktop
+
+- Note: For naming, I tried follow BEM. (.block_element-modifier)
+-- Reference: https://getbem.com/
+
+* Acronym
+1. tc: text color
+2. ts: text size
 ------------------------------------- */
 
 /* Mobile */
@@ -44,20 +51,14 @@
     line-height: 1.357;
   }
 
-  .body-s {
-    font-size: var(--body-s-xs);
+  .ts--body-s {
+    font-size: var(--ts--body-s-xs);
     line-height: 1.333;
   }
 
   .body-xs {
     font-size: var(--body-xs-xs);
     line-height: 1.18;
-  }
-
-  .nav-menu-item {
-    font-size: var(--body-m-xs);
-    line-height: 1.357;
-    font-weight: bold;
   }
 }
 
@@ -75,25 +76,29 @@
 
 /* Desktop */
 @media (min-width: 900px) {
-  h1 {
+  h1,
+  .ts--h1 {
     font-size: var(--h1-xl);
     letter-spacing: var(--h1-spacing-xl);
     line-height: 1.2;
   }
 
-  h2 {
+  h2,
+  .ts--h2 {
     font-size: var(--h2-xl);
     letter-spacing: var(--h2-spacing-xl);
     line-height: 1.25;
   }
 
-  h3 {
+  h3,
+  .ts--h3 {
     font-size: var(--h3-xl);
     letter-spacing: var(--h3-spacing-xl);
     line-height: 1.25;
   }
 
-  h4 {
+  h4,
+  .ts--h4 {
     font-size: var(--h4-xl);
     letter-spacing: var(--h4-spacing-xl);
     line-height: 1.27;
@@ -103,63 +108,43 @@
   p,
   body,
   q,
-  input {
+  input,
+  .ts--body {
     font-size: var(--body1-xl);
     letter-spacing: var(--body1-spacing-xl);
     line-height: 1.263;
   }
 
   label,
-  .body-s {
+  .ts--body-s {
     font-size: var(--body2-xl);
     letter-spacing: var(--body2-spacing-xl);
     line-height: 1.333;
   }
 
-  .button-text {
+  .ts--btn {
     font-size: var(--button-xl);
     letter-spacing: var(--button-spacing-xl);
     text-transform: uppercase;
     font-weight: bold;
   }
 
-  .caption {
+  .ts--caption {
     font-size: var(--caption-xl);
     letter-spacing: var(--caption-spacing-xl);
   }
 
   /* Column gap -------------- */
-  .col-gap-l {
-    display: flex;
-    flex-direction: column;
-    gap: 3.2rem;
-  }
-
-  .col-gap-m {
-    display: flex;
-    flex-direction: column;
-    gap: 1.6rem;
-  }
-
-  .col-gap-s {
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-
   /* Row gap */
-  .row-gap-l {
-    display: flex;
+  .gap--l {
     gap: 3.2rem;
   }
 
-  .row-gap-m {
-    display: flex;
+  .gap--m {
     gap: 1.6rem;
   }
 
-  .row-gap-s {
-    display: flex;
+  .gap--s {
     gap: 0.8rem;
   }
 
