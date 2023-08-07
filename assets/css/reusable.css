@@ -108,6 +108,7 @@ use <div class="block mod"> and define .block.mod in CSS
   object-position: center;
   height: 100%;
   transition: all 0.2s ease;
+  aspect-ratio: 6 / 4;
 }
 
 .section-img:hover img {
@@ -181,7 +182,7 @@ use <div class="block mod"> and define .block.mod in CSS
 .button-circle-24 {
   width: 2.4rem;
   height: 2.4rem;
-  border-radius: 2rem;
+  border-radius: 50%;
   outline: solid 0.2rem var(--color-secondary-dark);
 
   display: flex;
@@ -193,7 +194,7 @@ use <div class="block mod"> and define .block.mod in CSS
 .button-circle-32 {
   width: 3.2rem;
   height: 3.2rem;
-  border-radius: 2rem;
+  border-radius: 50%;
   outline: solid 0.2rem var(--color-secondary-dark);
 
   display: flex;
@@ -216,4 +217,12 @@ use <div class="block mod"> and define .block.mod in CSS
 .btn-primary:hover {
   cursor: pointer;
   background-color: var(--color-secondary-dark);
+}
+
+.section-img .topic {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 1.6rem;
+  z-index: 1;
 }

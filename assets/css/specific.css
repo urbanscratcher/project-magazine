@@ -355,15 +355,23 @@
 
 .video-list-embedded {
   width: 40%;
-  padding-top: 33.3333%;
   background-color: red;
   border-radius: var(--rad-img);
 }
 
 /* Explore ------------------------- */
+#explore {
+  background-color: var(--color-mint-light);
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 1.6rem;
+}
+
 /* Inspirations */
 #inspirations-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.8rem;
 }
+
+/* The Latest */
