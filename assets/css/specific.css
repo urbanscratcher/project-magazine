@@ -6,7 +6,6 @@
 /* Nav ----------------------------*/
 #navbar {
   position: fixed;
-  display: flex;
   height: 6.4rem;
   left: 50%;
   transform: translateX(-50%);
@@ -183,7 +182,7 @@
   justify-content: center;
   align-items: center;
 
-  border-radius: 1.6rem;
+  border-radius: var(--rad-img);
 }
 
 .card-awards:first-child .card-awards-container {
@@ -317,15 +316,29 @@
   justify-content: space-between;
 }
 
-.savedForLater-card {
-  background-image: linear-gradient(
-      to left top,
-      var(--color-primary-filter),
-      var(--color-secondary-filter)
-    ),
-    url("../../data/insights/thumbnail/test.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-clip: content-box;
+.card-savedForLater {
+  min-height: 55rem;
+  border-radius: var(--rad-img);
+}
+
+.card-savedForLater-text {
+  padding: 2.4rem;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Video ------------------------------- */
+#video-highlight {
+  min-height: 85rem;
+  border-radius: var(--rad-img);
+
+  justify-content: center;
+  align-items: center;
+}
+
+#video-highlight-text {
+  max-width: 75rem;
+
+  justify-content: center;
+  align-items: center;
 }

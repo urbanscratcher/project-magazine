@@ -1,5 +1,5 @@
 /* --------------------------------
-- Purpose: to keep the mood of a main theme by defining semantic tag styles globally.
+- Purpose: to keep the mood of a main theme by defining semantic tag and basic styles globally.
 - Author: Hyunjung Joun
 -------------------------------- */
 
@@ -11,14 +11,6 @@ body {
 
 .serif {
   font-family: "DM Serif Display", "Times New Roman", Times, serif;
-}
-
-.italic {
-  font-style: italic;
-}
-
-.text-white {
-  color: var(--color-white);
 }
 
 /* Heading Style */

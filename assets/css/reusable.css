@@ -4,7 +4,37 @@
 
 - Note: For responsiveness and typography, I tried to follow Apple's human interface guidelines.
 -- Reference: https://developer.apple.com/design/human-interface-guidelines/typography
+
+- Note: For naming, I tried follow BEM (.block_element-modifier)
+-- Reference: https://getbem.com/
+
+--- e.g.
+instead of <div class="block block--mod">,
+use <div class="block mod"> and define .block.mod in CSS
 -------------------------------- */
+
+/* Basics - font */
+.italic {
+  font-style: italic;
+}
+
+.text-white {
+  color: var(--color-white);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+/* Basics - display */
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+}
 
 /* Section Title */
 .section-title {
