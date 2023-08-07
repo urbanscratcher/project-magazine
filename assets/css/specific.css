@@ -362,12 +362,22 @@
 /* Explore ------------------------- */
 #explore {
   background-color: var(--color-mint-light);
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  gap: 1.6rem;
+  align-items: flex-start;
 }
 
-/* Inspirations */
+#inspirations {
+  width: 25%;
+}
+
+#latest {
+  width: 50%;
+}
+
+#featured-authors {
+  width: 25%;
+}
+
+/* Inspirations --------------- */
 #inspirations-list {
   display: grid;
   grid-template-columns: 1fr 1fr;
