@@ -13,22 +13,28 @@ fetch("../../data/insights/data.json")
       .then((html) => {
         // Cover -------------------------------
         const newHtml = () => `
-          {{#each insights}}
-            <li>
-              <a href="#">
-                <h1>{{title}}</h1>
+          <div class="cover__wrapper-bg col bg--img" style="--img-url: url({{thumbnail}})">
+          <div class="cover__wrapper col gap--m tc--white">
+            <div class="topic__wrapper">
+              <a href="#" class="topic--white ts--btn">{{topic}}</a>
+            </div>
+            <a href="#" class="cover__headline ts--h1 serif">
+              {{title}}
+            </a>
+            <div class="slider__controller row gap--m">
+              <a href="#" class="controller__btn btn--circle-l">
+                <i class="fa-solid fa-chevron-left"></i>
               </a>
-            </li>
-          {{/each}}
+              <a href="#" class="controller__btn btn--circle-l">
+                <i class="fa-solid fa-chevron-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
         `;
 
-        console.log(data);
-
-        // const parentEls = document.getElementsByClassName("topics-list");
-
-        // for (parentEl of parentEls) {
-        //   insert(parentEl, render(newHtml, data));
-        // }
+        const parentEl = document.getElementById("cover");
+        insert(parentEl, render(newHtml, data.insights[0]));
       })
       .catch((err) => {
         console.error("error: ", err);
