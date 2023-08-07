@@ -18,7 +18,7 @@ fetch("../../data/insights/data.json")
             <div class="topic__wrapper">
               <a href="#" class="topic--white ts--btn">{{topic}}</a>
             </div>
-            <a href="#" class="cover__headline ts--h1 serif">
+            <a href="#" class="cover__headline ts--h1 serif hover--txt">
               {{title}}
             </a>
           </div>          

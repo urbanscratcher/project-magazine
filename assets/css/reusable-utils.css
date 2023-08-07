@@ -260,6 +260,15 @@
   background-color: var(--color-primary);
 }
 
+.hover--txt {
+}
+
+.hover--txt:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
 /* Button Primary */
 .btn-primary {
   background-color: var(--color-secondary);
