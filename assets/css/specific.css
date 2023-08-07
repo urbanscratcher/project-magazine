@@ -342,3 +342,28 @@
   justify-content: center;
   align-items: center;
 }
+
+.video-list-item {
+  padding-right: 1.6rem;
+  border-right: solid 1px var(--color-secondary-light);
+  flex-grow: 1;
+}
+
+.video-list-text {
+  width: 60%;
+}
+
+.video-list-embedded {
+  width: 40%;
+  padding-top: 33.3333%;
+  background-color: red;
+  border-radius: var(--rad-img);
+}
+
+/* Explore ------------------------- */
+/* Inspirations */
+#inspirations-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}

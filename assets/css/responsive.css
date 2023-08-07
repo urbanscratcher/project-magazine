@@ -129,6 +129,13 @@
   }
 
   /* Flex Column 16px */
+  .col-gap-l {
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+  }
+
+  /* Flex Column 16px */
   .col-gap-m {
     display: flex;
     flex-direction: column;

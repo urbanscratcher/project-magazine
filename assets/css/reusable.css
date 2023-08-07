@@ -13,7 +13,7 @@ instead of <div class="block block--mod">,
 use <div class="block mod"> and define .block.mod in CSS
 -------------------------------- */
 
-/* Basics - font */
+/* Basic Utils - font */
 .italic {
   font-style: italic;
 }
@@ -26,7 +26,7 @@ use <div class="block mod"> and define .block.mod in CSS
   text-transform: uppercase;
 }
 
-/* Basics - display */
+/* Basic Utils - display */
 .col {
   display: flex;
   flex-direction: column;
@@ -34,6 +34,14 @@ use <div class="block mod"> and define .block.mod in CSS
 
 .row {
   display: flex;
+}
+
+.col.between {
+  justify-content: space-between;
+}
+
+.row.between {
+  justify-content: space-between;
 }
 
 /* Section Title */
