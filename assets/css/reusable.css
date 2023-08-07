@@ -26,6 +26,10 @@ use <div class="block mod"> and define .block.mod in CSS
   text-transform: uppercase;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 /* Basic Utils - display */
 .col {
   display: flex;

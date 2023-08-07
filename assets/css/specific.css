@@ -374,7 +374,7 @@
   gap: 0.8rem;
 }
 
-/* The Latest */
+/* The Latest ------------------------- */
 .latest-list-item {
   padding-bottom: 1.6rem;
   border-bottom: solid 1px var(--color-secondary-light);
@@ -392,7 +392,7 @@
   width: 66.6666%;
 }
 
-/* Featured Authors */
+/* Featured Authors -------------------- */
 .featured-authors-text {
   justify-content: center;
 }
