@@ -15,7 +15,7 @@ fetch("../../data/insights/data.json")
         const newHtml = () => `
           <div class="cover__bg bg--img" style="--img-url: url({{thumbnail}})"></div>
           <div class="cover__txt col container--m gap--m tc--white">
-            <div class="topic__wrapper">
+            <div class="cover__topic">
               <a href="#" class="topic--white ts--btn">{{topic}}</a>
             </div>
             <a href="#" class="cover__headline ts--h1 serif hover--txt">
