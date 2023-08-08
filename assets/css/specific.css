@@ -340,21 +340,17 @@
   position: relative;
 }
 
-.newsletter__checkbox:checked {
-  background: var(--color-secondary);
-  color: var(--color-white);
-}
-
 .newsletter__checkbox:checked::after {
   font-size: 1.4rem;
   content: "\2714";
-  background: var(--color-secondary);
+  background: transparent;
+  color: var(--color-secondary);
 
   position: absolute;
   top: 50%;
   left: 50%;
   overflow: hidden;
-  transform: translate(-50%, -50%);
+  transform: scale(2) translate(0%, -50%);
   line-height: 1;
 }
 
