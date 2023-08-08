@@ -109,10 +109,15 @@
   background-color: var(--color-white);
   outline-style: none;
   font-size: 1.6rem;
+  opacity: 0.5;
+
+  transition: all 0.1s ease;
 }
 
 .slide-controller__btn:hover {
-  opacity: 0.8;
+  opacity: 1;
+  background-color: var(--color-secondary);
+  color: var(--color-white);
 }
 
 /* Editor's Pick ----------------------------*/
@@ -121,7 +126,7 @@
   background-color: var(--color-primary-light);
 }
 
-.editorsPick__cover {
+.editorsPick__main {
   border-bottom: solid 0.1rem var(--color-secondary);
   padding-bottom: 3.2rem;
   margin-bottom: 3.2rem;
@@ -256,14 +261,12 @@
   transform: translate(-50%, -50%);
 }
 
-/* Trending Section ----------------------------*/
-#section-trending {
+/* Trending Layout ----------------------------*/
+#trending__layout {
   background-color: var(--color-primary-lightest);
   display: grid;
-
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: auto auto auto;
-  gap: 1.6rem;
 }
 
 #trending {
@@ -271,51 +274,40 @@
   grid-row: 1 / -1;
 }
 
-#trending-highlight {
-  width: 63%;
-}
-
-#trending-list {
-  width: 37%;
-
-  padding-left: 1.6rem;
-  border-left: solid 1px var(--color-secondary-light);
-
-  padding-right: 1.6rem;
-  border-right: solid 1px var(--color-secondary-light);
-}
-
-.trending-list-item {
-  padding-bottom: 0.8rem;
-  border-bottom: solid 1px var(--color-secondary-light);
-}
-
-.trending-list-item:last-child {
-  border-bottom: none;
-}
-
-.trending-list-item .section__img {
-  width: 30rem;
-}
-
-.trending-list-item .section__img img {
-}
-
 #newsletter {
   grid-column: 4 / 5;
   grid-row: 2 / 3;
 }
 
-#trending .section__title {
-  display: flex;
-  justify-content: space-between;
+/* Trending --------------------------------- */
+.trending__main {
+  width: 63%;
+}
+
+.trending__list {
+  width: 37%;
+
+  padding-left: 1.6rem;
+  border-left: solid 1px var(--color-secondary);
+
+  padding-right: 1.6rem;
+  border-right: solid 1px var(--color-secondary);
+}
+
+.trending__item {
+  padding-bottom: 0.8rem;
+  border-bottom: solid 1px var(--color-secondary);
+}
+
+.trending__item:last-child {
+  border-bottom: none;
+}
+
+.title-row__img {
+  width: 30rem;
 }
 
 /* Stay Connected ----------------------------- */
-#connected .connected-list-item a {
-  display: flex;
-  justify-content: space-between;
-}
 
 /* Saved For Later ----------------------------*/
 #savedForLater .section__title {

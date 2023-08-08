@@ -97,10 +97,10 @@
           <a class="menu__item" href="#">Report</a>
         </div>
         <div class="navbar__personal row gap--s ts--body">
-          <button class="personal__item btn--circle-l hover--light">
+          <button class="personal__item btn--circle-l hover--primary">
             <i class="fa-regular fa-bookmark"></i>
           </button>
-          <button href="#" class="personal__item btn--circle-l hover--light">
+          <button href="#" class="personal__item btn--circle-l hover--primary">
             <i class="fa-regular fa-eye"></i>
           </button>
         </div>
@@ -108,7 +108,7 @@
     </header>
 
     <main id="main">
-      <!-- Highlights -->
+      <!-- highlights -->
       <div id="highlights">
         <!-- Section: Cover -->
         <section id="cover" class="col">
@@ -133,8 +133,8 @@
             <p>Editor's pick</p>
           </div>
           <div class="section__content">
-            <!-- cover -->
-            <div class="editorsPick__cover col gap--m">
+            <!-- main -->
+            <div class="editorsPick__main col gap--m">
               <div class="editorsPick__img section__img">
                 <!-- [editorsPick__img] -->
                 <div class="component-bookmark-add"></div>
@@ -298,26 +298,26 @@
       </section>
 
       <!-- Section: What's Trending -->
-      <section id="section-trending" class="container--m">
+      <div id="trending__layout" class="container--m gap--m">
         <!-- What's Trending -->
-        <div id="trending" class="col gap--m">
-          <div class="section__title">
+        <section id="trending" class="col gap--m">
+          <div class="section__title row between">
             <p>What's Trending</p>
             <div class="component-viewAll"></div>
           </div>
-          <div id="trending-content" class="row gap--m">
-            <div id="trending-highlight" class="col gap--m">
-              <div class="section__img">
+          <div class="section__content row gap--m">
+            <div class="trending__main col gap--m">
+              <div class="main__img section__img">
                 <img src="./data/insights/thumbnail/test.jpg" />
                 <div class="component-bookmark-add"></div>
               </div>
-              <div>
-                <p class="topic ts--btn">topic</p>
+              <div class="topic__wrapper">
+                <a href="#" class="topic ts--btn">topic</a>
               </div>
-              <h2 class="serif">
+              <a href="#" class="main__title ts--h2 serif hover--txt">
                 Revolutionary Sustainable Architecture Unveiled
-              </h2>
-              <p>
+              </a>
+              <p class="main__summary">
                 Architects reveal an innovative approach that integrates green
                 spaces, vertical gardens, and renewable energy systems, reducing
                 the carbon footprint. Biophilic principles enhance well-being
@@ -325,157 +325,171 @@
                 harmony with the environment. A promising step towards a
                 resilient and eco-friendly coexistence.
               </p>
-              <div class="latest-time row gap--s row v-center">
-                <h4>
-                  <i class="fa-regular fa-clock"></i>
+              <div class="time__wrapper row gap--s v-center">
+                <h4 class="icon__time-wrapper">
+                  <i class="icon__time fa-regular fa-clock"></i>
                 </h4>
-                <p>1 day ago</p>
-                <p>·</p>
-                <p>1 min read</p>
+                <p class="createdAt">1 day ago</p>
+                <p class="separator">·</p>
+                <p class="ttr__box"><span class="ttr">1 min</span> read</p>
               </div>
-              <div class="row v-center row gap--s">
-                <h4>
-                  <i class="fa-regular fa-circle-user"></i>
+              <div class="author-row--icon v-center row gap--s">
+                <h4 class="icon__avatar-wrapper">
+                  <i class="icon__avatar fa-regular fa-circle-user"></i>
                 </h4>
-                <p>Eleanor Montgomery</p>
+                <p class="author__name">Eleanor Montgomery</p>
               </div>
             </div>
-            <div id="trending-list">
-              <ul class="col gap--m">
-                <li class="trending-list-item col gap--s">
-                  <div>
-                    <p class="topic ts--btn">topic</p>
+            <ul class="trending__list col gap--m">
+              <li class="trending__item col gap--s">
+                <div class="topic__wrapper">
+                  <a href="#" class="topic ts--btn">topic</a>
+                </div>
+                <div class="title-row row gap--s">
+                  <p class="title-row__txt ts--h4 hover--txt serif">
+                    Headline level 3 text similar to body up to 2 lines
+                  </p>
+                  <div class="title-row__img section__img">
+                    <img src="./data/insights/thumbnail/test.jpg" />
+                    <div class="component-bookmark-add"></div>
                   </div>
-                  <div class="row gap--s">
-                    <h4 class="serif">
-                      Headline level 3 text similar to body up to 2 lines
-                    </h4>
-                    <div class="section__img">
-                      <img src="./data/insights/thumbnail/test.jpg" />
-                      <div class="component-bookmark-add"></div>
-                    </div>
+                </div>
+                <p class="author-row ts--body-s text-gray row gap--s">
+                  By <span class="author__name">John Polansky</span>
+                </p>
+              </li>
+              <li class="trending__item col gap--s">
+                <div class="topic__wrapper">
+                  <a href="#" class="topic ts--btn">topic</a>
+                </div>
+                <div class="title-row row gap--s">
+                  <p class="title-row__txt ts--h4 hover--txt serif">
+                    Headline level 3 text similar to body up to 2 lines
+                  </p>
+                  <div class="title-row__img section__img">
+                    <img src="./data/insights/thumbnail/test.jpg" />
+                    <div class="component-bookmark-add"></div>
                   </div>
-                  <div class="row gap--s">
-                    <p class="ts--body-s text-gray">By</p>
-                    <p class="ts--body-s text-gray">John Polanski</p>
+                </div>
+                <p class="author-row ts--body-s text-gray row gap--s">
+                  By <span class="author__name">John Polansky</span>
+                </p>
+              </li>
+              <li class="trending__item col gap--s">
+                <div class="topic__wrapper">
+                  <a href="#" class="topic ts--btn">topic</a>
+                </div>
+                <div class="title-row row gap--s">
+                  <p class="title-row__txt ts--h4 hover--txt serif">
+                    Headline level 3 text similar to body up to 2 lines
+                  </p>
+                  <div class="title-row__img section__img">
+                    <img src="./data/insights/thumbnail/test.jpg" />
+                    <div class="component-bookmark-add"></div>
                   </div>
-                </li>
-                <li class="trending-list-item col gap--s">
-                  <div>
-                    <p class="topic ts--btn">topic</p>
+                </div>
+                <p class="author-row ts--body-s text-gray row gap--s">
+                  By <span class="author__name">John Polansky</span>
+                </p>
+              </li>
+              <li class="trending__item col gap--s">
+                <div class="topic__wrapper">
+                  <a href="#" class="topic ts--btn">topic</a>
+                </div>
+                <div class="title-row row gap--s">
+                  <p class="title-row__txt ts--h4 hover--txt serif">
+                    Headline level 3 text similar to body up to 2 lines
+                  </p>
+                  <div class="title-row__img section__img">
+                    <img src="./data/insights/thumbnail/test.jpg" />
+                    <div class="component-bookmark-add"></div>
                   </div>
-                  <div class="row gap--s">
-                    <h4 class="serif">
-                      Headline level 3 text similar to body up to 2 lines
-                    </h4>
-                    <div class="section__img">
-                      <img src="./data/insights/thumbnail/test.jpg" />
-                      <div class="component-bookmark-add"></div>
-                    </div>
-                  </div>
-                  <div class="row gap--s">
-                    <p class="ts--body-s text-gray">By</p>
-                    <p class="ts--body-s text-gray">John Polanski</p>
-                  </div>
-                </li>
-                <li class="trending-list-item col gap--s">
-                  <div>
-                    <p class="topic ts--btn">topic</p>
-                  </div>
-                  <div class="row gap--s">
-                    <h4 class="serif">
-                      Headline level 3 text similar to body up to 2 lines
-                    </h4>
-                    <div class="section__img">
-                      <img src="./data/insights/thumbnail/test.jpg" />
-                      <div class="component-bookmark-add"></div>
-                    </div>
-                  </div>
-                  <div class="row gap--s">
-                    <p class="ts--body-s text-gray">By</p>
-                    <p class="ts--body-s text-gray">John Polanski</p>
-                  </div>
-                </li>
-                <li class="trending-list-item col gap--s">
-                  <div>
-                    <p class="topic ts--btn">topic</p>
-                  </div>
-                  <div class="row gap--s">
-                    <h4 class="serif">
-                      Headline level 3 text similar to body up to 2 lines
-                    </h4>
-                    <div class="section__img">
-                      <img src="./data/insights/thumbnail/test.jpg" />
-                      <div class="component-bookmark-add"></div>
-                    </div>
-                  </div>
-                  <div class="row gap--s">
-                    <p class="ts--body-s text-gray">By</p>
-                    <p class="ts--body-s text-gray">John Polanski</p>
-                  </div>
-                </li>
-              </ul>
-            </div>
+                </div>
+                <p class="author-row ts--body-s text-gray row gap--s">
+                  By <span class="author__name">John Polansky</span>
+                </p>
+              </li>
+            </ul>
           </div>
-        </div>
+        </section>
 
         <!-- Stay Connected -->
-        <div id="connected" class="col gap--m section-aside">
+        <section id="connected" class="col gap--m section-aside">
           <div class="section__title">
             <p>stay connected</p>
           </div>
-          <div id="connected-content">
-            <ul id="connected-list" class="col gap--s">
-              <li class="connected-list-item">
-                <a href="#">
-                  <div class="row gap--m">
-                    <p>
-                      <i class="fa-regular fa-circle-user"></i>
+          <div class="section__content">
+            <ul class="connected__list col gap--s">
+              <li class="connected__item">
+                <a
+                  href="#"
+                  class="connected__item-link row between hover--darker"
+                >
+                  <div class="social row gap--m">
+                    <p class="social__icon">
+                      <i class="fa-brands fa-facebook"></i>
                     </p>
-                    <p>Facebook</p>
+                    <p class="social__txt">Facebook</p>
                   </div>
-                  <p>57K Followers</p>
+                  <p class="social__follower">
+                    <span class="social__follower-count">57K</span> Followers
+                  </p>
                 </a>
               </li>
-              <li class="connected-list-item">
-                <a href="#">
-                  <div class="row gap--m">
-                    <p>
-                      <i class="fa-regular fa-circle-user"></i>
+              <li class="connected__item">
+                <a
+                  class="connected__item-link row between hover--darker"
+                  href="#"
+                >
+                  <div class="social row gap--m">
+                    <p class="social__icon">
+                      <i class="fa-brands fa-pinterest"></i>
                     </p>
-                    <p>Facebook</p>
+                    <p class="social__txt">Pinterest</p>
                   </div>
-                  <p>57K Followers</p>
+                  <p class="social__follower">
+                    <span class="social__follower-count">57K</span> Followers
+                  </p>
                 </a>
               </li>
-              <li class="connected-list-item">
-                <a href="#">
-                  <div class="row gap--m">
-                    <p>
-                      <i class="fa-regular fa-circle-user"></i>
+              <li class="connected__item">
+                <a
+                  class="connected__item-link row between hover--darker"
+                  href="#"
+                >
+                  <div class="social row gap--m">
+                    <p class="social__icon">
+                      <i class="fa-brands fa-twitter"></i>
                     </p>
-                    <p>Facebook</p>
+                    <p class="social__txt">Twitter</p>
                   </div>
-                  <p>57K Followers</p>
+                  <p class="social__follower">
+                    <span class="social__follower-count">57K</span> Followers
+                  </p>
                 </a>
               </li>
-              <li class="connected-list-item">
-                <a href="#">
-                  <div class="row gap--m">
-                    <p>
-                      <i class="fa-regular fa-circle-user"></i>
+              <li class="connected__item">
+                <a
+                  class="connected__item-link row between hover--darker"
+                  href="#"
+                >
+                  <div class="social row gap--m">
+                    <p class="social__icon">
+                      <i class="fa-brands fa-instagram"></i>
                     </p>
-                    <p>Facebook</p>
+                    <p class="social__txt">Instagram</p>
                   </div>
-                  <p>57K Followers</p>
+                  <p class="social__follower">
+                    <span class="social__follower-count">57K</span> Followers
+                  </p>
                 </a>
               </li>
             </ul>
           </div>
-        </div>
+        </section>
 
         <!-- Newsletter -->
-        <div id="newsletter" class="col gap--m section-aside">
+        <section id="newsletter" class="col gap--m section-aside">
           <div class="section__title">
             <p>newsletter</p>
           </div>
@@ -498,8 +512,8 @@
               />
             </form>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
 
       <!-- Section: Saved For Later -->
       <section id="savedForLater" class="col gap--m container--m">

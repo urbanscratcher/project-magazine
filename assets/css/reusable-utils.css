@@ -274,22 +274,36 @@
 }
 
 /* Hover change bg */
-.hover--light {
+.hover--primary {
   background-color: transparent;
 }
 
-.hover--light:hover {
+.hover--primary:hover {
   color: var(--color-secondary);
   background-color: var(--color-primary);
-}
-
-.hover--txt {
 }
 
 .hover--txt:hover {
   cursor: pointer;
   text-decoration: underline;
   text-decoration-thickness: 2px;
+}
+
+.hover--darker {
+  transition: all 0.15s ease;
+}
+
+.hover--darker:hover {
+  color: var(--color-secondary-dark);
+}
+
+.hover--lighter {
+  opacity: 1;
+  transition: opacity 0.15s ease;
+}
+
+.hover--lighter:hover {
+  opacity: 0.8;
 }
 
 /* Button Primary */
