@@ -11,39 +11,30 @@ fetch("../../index.html")
       topTopics: [
         {
           name: "Design",
-          count: 15,
         },
         {
           name: "Technology",
-          count: 8,
         },
         {
           name: "Residential",
-          count: 6,
         },
         {
           name: "Interior",
-          count: 9,
         },
         {
           name: "Landscape",
-          count: 4,
         },
         {
           name: "Urban",
-          count: 15,
         },
         {
           name: "Cultural",
-          count: 10,
         },
         {
           name: "Exhibition",
-          count: 12,
         },
         {
           name: "Narrative",
-          count: 15,
         },
       ],
     };

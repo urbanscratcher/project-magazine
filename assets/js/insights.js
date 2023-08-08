@@ -81,9 +81,6 @@ fetch("../../data/insights/data.json")
       const counted = countTopics();
 
       for (const t of topicNameEls) {
-        console.log(t.textContent);
-        console.log(counted[t.textContent.toLowerCase()]);
-
         const newHtml = () => `
         <p class="topics__count tc--white">
           ${counted[t.textContent.toLowerCase()] ?? 0}
@@ -91,7 +88,6 @@ fetch("../../data/insights/data.json")
         `;
 
         const parentEl = t.nextElementSibling;
-        console.log(parentEl);
         insert(parentEl, render(newHtml, {}));
       }
     }
