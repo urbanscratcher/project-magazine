@@ -54,7 +54,7 @@ fetch("../../index.html")
             <a class="topics__item-wrapper" href="#">
               <h1 class="topics__name ts--h1">{{name}}</h1>
               <div class="topics__count-box">
-                <p class="topics__count tc--white">{{count}}</p>
+                <p class="topics__count tc--white">0</p>
               </div>
             </a>
           </li>

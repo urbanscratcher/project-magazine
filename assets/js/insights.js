@@ -74,6 +74,46 @@ fetch("../../data/insights/data.json")
       );
     }
 
+    function renderTopicCounts() {
+      const topicNameEls = document.querySelectorAll(
+        ".topTopics__list .topics__name"
+      );
+      const counted = countTopics();
+
+      for (const t of topicNameEls) {
+        console.log(t.textContent);
+        console.log(counted[t.textContent.toLowerCase()]);
+
+        const newHtml = () => `
+        <p class="topics__count tc--white">
+          ${counted[t.textContent.toLowerCase()] ?? 0}
+        </p>
+        `;
+
+        const parentEl = t.nextElementSibling;
+        console.log(parentEl);
+        insert(parentEl, render(newHtml, {}));
+      }
+    }
+
+    function countTopics() {
+      // Create an object to store category counts
+      const result = {};
+
+      // Iterate through the array
+      for (const d of data.insights) {
+        const category = d.topic;
+        // If category doesn't exist in the object, initialize it with a count of 1
+        if (!result[category]) {
+          result[category] = 1;
+        } else {
+          // Increment the count if category already exists
+          result[category]++;
+        }
+      }
+      return result;
+    }
+
     // Fetch the template file -----------------
     fetch("../../index.html")
       .then((res) => res.text())
@@ -83,7 +123,9 @@ fetch("../../data/insights/data.json")
         editorsPickTopic();
         editorsPickTitle();
         eidtorsPickList();
+        renderTopicCounts();
       })
+
       .catch((err) => {
         console.error("error: ", err);
       });
