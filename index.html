@@ -57,9 +57,9 @@
     <link rel="stylesheet" href="assets/css/reset.css" />
     <link rel="stylesheet" href="assets/css/variables.css" />
     <link rel="stylesheet" href="assets/css/reusable-utils.css" />
-    <link rel="stylesheet" href="assets/css/responsive.css" />
     <link rel="stylesheet" href="assets/css/reusable-elements.css" />
     <link rel="stylesheet" href="assets/css/specific.css" />
+    <link rel="stylesheet" href="assets/css/responsive.css" />
 
     <!-- Handlebars from a CDN -->
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
@@ -102,64 +102,70 @@
 
     <main id="main">
       <!-- Highlights -->
-      <div class="highlights--wrapper">
-        <!-- Section: Coverage -->
+      <div id="highlights">
+        <!-- Section: Cover -->
         <section id="cover" class="col">
           <!-- [cover__bg] -->
           <!-- [cover__txt] -->
           <div class="cover__slide-controller slide-controller row gap--m">
-            <button class="slide-controller__btn btn--circle-l">
+            <button class="slide-controller__btn btn--prev btn--circle-l">
               <i class="fa-solid fa-chevron-left"></i>
             </button>
-            <button href="#" class="slide-controller__btn btn--circle-l">
+            <button
+              href="#"
+              class="slide-controller__btn btn--next btn--circle-l"
+            >
               <i class="fa-solid fa-chevron-right"></i>
             </button>
           </div>
         </section>
 
-        <!-- Editor's Pick -->
-        <section id="editorsPick" class="col gap--m">
-          <div class="section-title">
+        <!-- Section: Editor's Pick -->
+        <section id="editorsPick" class="col gap--m container--m">
+          <div class="section__title">
             <p>Editor's pick</p>
           </div>
-          <div id="editorsPick-content">
-            <!-- primary -->
-            <div id="editorsPick-primary" class="col gap--m">
-              <div class="section-img">
-                <img src="./data/insights/thumbnail/test.jpg" />
+          <div class="section__content">
+            <!-- cover -->
+            <div class="editorsPick__cover col gap--m">
+              <div class="editorsPick__img section__img">
+                <img
+                  src="/data/insights/thumbnail/test.jpg"
+                  class="img--ratio-169"
+                />
                 <div class="component-bookmark-add"></div>
               </div>
-              <div>
-                <p class="topic ts--btn">topic</p>
+              <div class="editorsPick__topic">
+                <a href="#" class="topic ts--btn">topic</a>
               </div>
-              <a href="#" class="serif hover--txt ts--h3">
+              <a class="editorsPick__title serif hover--txt ts--h3" href="#">
                 From Vision to Reality: Unveiling the Marvels of Architectural
                 Ingenuity
               </a>
             </div>
-            <!-- secondary -->
-            <div id="editorsPick-secondary" class="col gap--m">
-              <ul id="editorsPick-secondary-list" class="col gap--m">
-                <li>
-                  <a href="#" class="serif hover--txt ts--h4">
+            <!-- list -->
+            <div class="editorsPick__list-wrapper" class="col gap--m">
+              <ul class="editorsPick__list col gap--m">
+                <li class="editorsPick__list-item ts--h4 serif">
+                  <a href="#" class="editorsPick__list-txt hover--txt">
                     Marvels of Modern Architecture: Inspiring Structures Shaping
                     Our Cities
                   </a>
                 </li>
-                <li>
-                  <a href="#" class="serif hover--txt ts--h4">
+                <li class="editorsPick__list-item ts--h4 serif">
+                  <a href="#" class="editorsPick__list-txt hover--txt">
                     Timeless Elegance: Exploring the Beauty of Architectural
                     Masterpieces
                   </a>
                 </li>
-                <li>
-                  <a href="#" class="serif hover--txt ts--h4">
+                <li class="editorsPick__list-item ts--h4 serif">
+                  <a href="#" class="editorsPick__list-txt hover--txt">
                     Designing the Future: Innovative Architecture Redefining
                     Urban Landscapes
                   </a>
                 </li>
               </ul>
-              <div class="component-viewAll"></div>
+              <div class="editorsPick__viewAll component-viewAll row end"></div>
             </div>
           </div>
         </section>
@@ -167,7 +173,7 @@
 
       <!-- Section: Top Topics -->
       <section id="topTopics" class="col gap--m container--m">
-        <div class="section-title">
+        <div class="section__title">
           <p>Top Topics</p>
         </div>
         <div id="topTopics-content">
@@ -179,7 +185,7 @@
 
       <!-- Section: Monthly Awards -->
       <section id="monthlyAwards" class="col gap--m container--m">
-        <div class="section-title">
+        <div class="section__title">
           <p>Monthly Awards</p>
           <div class="component-viewAll"></div>
         </div>
@@ -268,13 +274,13 @@
       <section id="section-trending" class="container--m">
         <!-- What's Trending -->
         <div id="trending" class="col gap--m">
-          <div class="section-title">
+          <div class="section__title">
             <p>What's Trending</p>
             <div class="component-viewAll"></div>
           </div>
           <div id="trending-content" class="row gap--m">
             <div id="trending-highlight" class="col gap--m">
-              <div class="section-img">
+              <div class="section__img">
                 <img src="./data/insights/thumbnail/test.jpg" />
                 <div class="component-bookmark-add"></div>
               </div>
@@ -317,7 +323,7 @@
                     <h4 class="serif">
                       Headline level 3 text similar to body up to 2 lines
                     </h4>
-                    <div class="section-img">
+                    <div class="section__img">
                       <img src="./data/insights/thumbnail/test.jpg" />
                       <div class="component-bookmark-add"></div>
                     </div>
@@ -335,7 +341,7 @@
                     <h4 class="serif">
                       Headline level 3 text similar to body up to 2 lines
                     </h4>
-                    <div class="section-img">
+                    <div class="section__img">
                       <img src="./data/insights/thumbnail/test.jpg" />
                       <div class="component-bookmark-add"></div>
                     </div>
@@ -353,7 +359,7 @@
                     <h4 class="serif">
                       Headline level 3 text similar to body up to 2 lines
                     </h4>
-                    <div class="section-img">
+                    <div class="section__img">
                       <img src="./data/insights/thumbnail/test.jpg" />
                       <div class="component-bookmark-add"></div>
                     </div>
@@ -371,7 +377,7 @@
                     <h4 class="serif">
                       Headline level 3 text similar to body up to 2 lines
                     </h4>
-                    <div class="section-img">
+                    <div class="section__img">
                       <img src="./data/insights/thumbnail/test.jpg" />
                       <div class="component-bookmark-add"></div>
                     </div>
@@ -388,7 +394,7 @@
 
         <!-- Stay Connected -->
         <div id="connected" class="col gap--m section-aside">
-          <div class="section-title">
+          <div class="section__title">
             <p>stay connected</p>
           </div>
           <div id="connected-content">
@@ -443,7 +449,7 @@
 
         <!-- Newsletter -->
         <div id="newsletter" class="col gap--m section-aside">
-          <div class="section-title">
+          <div class="section__title">
             <p>newsletter</p>
           </div>
           <div id="newsletter-content" class="col gap--m">
@@ -470,7 +476,7 @@
 
       <!-- Section: Saved For Later -->
       <section id="savedForLater" class="col gap--m container--m">
-        <div class="section-title">
+        <div class="section__title">
           <p>Saved For Later</p>
           <div class="component-viewAll"></div>
         </div>
@@ -568,34 +574,34 @@
       <section id="explore" class="container--m row gap--m">
         <!-- Inspirations -->
         <div id="inspirations" class="section-aside col gap--m">
-          <div class="section-title row between">
+          <div class="section__title row between">
             <p>inspirations</p>
             <p>
               <i class="fa-solid fa-shuffle"></i>
             </p>
           </div>
           <ul id="inspirations-list">
-            <li class="inspirations-item section-img">
+            <li class="inspirations-item section__img">
               <img src="./data/insights/thumbnail/test.jpg" />
               <label class="topic topic--white ts--btn tc--white">topic</label>
             </li>
-            <li class="inspirations-item section-img">
+            <li class="inspirations-item section__img">
               <img src="./data/insights/thumbnail/test.jpg" />
               <label class="topic topic--white ts--btn tc--white">topic</label>
             </li>
-            <li class="inspirations-item section-img">
+            <li class="inspirations-item section__img">
               <img src="./data/insights/thumbnail/test.jpg" />
               <label class="topic topic--white ts--btn tc--white">topic</label>
             </li>
-            <li class="inspirations-item section-img">
+            <li class="inspirations-item section__img">
               <img src="./data/insights/thumbnail/test.jpg" />
               <label class="topic topic--white ts--btn tc--white">topic</label>
             </li>
-            <li class="inspirations-item section-img">
+            <li class="inspirations-item section__img">
               <img src="./data/insights/thumbnail/test.jpg" />
               <label class="topic topic--white ts--btn tc--white">topic</label>
             </li>
-            <li class="inspirations-item section-img">
+            <li class="inspirations-item section__img">
               <img src="./data/insights/thumbnail/test.jpg" />
               <label class="topic topic--white ts--btn tc--white">topic</label>
             </li>
@@ -604,13 +610,13 @@
 
         <!-- The latest -->
         <div id="latest" class="section-aside col gap--m">
-          <div class="section-title row between">
+          <div class="section__title row between">
             <p>the latest</p>
             <div class="component-viewAll"></div>
           </div>
           <ul id="latest-list" class="col gap--m">
             <li class="latest-list-item row gap--m">
-              <div class="section-img">
+              <div class="section__img">
                 <img src="./data/insights/thumbnail/test.jpg" />
                 <div class="component-bookmark-add"></div>
                 <label class="topic topic--white tc--white ts--btn"
@@ -638,7 +644,7 @@
               </div>
             </li>
             <li class="latest-list-item row gap--m">
-              <div class="section-img">
+              <div class="section__img">
                 <img src="./data/insights/thumbnail/test.jpg" />
                 <div class="component-bookmark-add"></div>
                 <label class="topic topic--white tc--white ts--btn"
@@ -666,7 +672,7 @@
               </div>
             </li>
             <li class="latest-list-item row gap--m">
-              <div class="section-img">
+              <div class="section__img">
                 <img src="./data/insights/thumbnail/test.jpg" />
                 <div class="component-bookmark-add"></div>
                 <label class="topic topic--white tc--white ts--btn"
@@ -694,7 +700,7 @@
               </div>
             </li>
             <li class="latest-list-item row gap--m">
-              <div class="section-img">
+              <div class="section__img">
                 <img src="./data/insights/thumbnail/test.jpg" />
                 <div class="component-bookmark-add"></div>
                 <label class="topic topic--white tc--white ts--btn"
@@ -728,7 +734,7 @@
         <div id="explore-aside" class="col gap--m">
           <!-- Fatured Authors -->
           <div id="featured-authors" class="section-aside col gap--m">
-            <div class="section-title">
+            <div class="section__title">
               <p>featured authors</p>
             </div>
             <ul class="featured-authors-list col gap--m">
@@ -790,10 +796,10 @@
 
           <!-- Ad -->
           <div id="ad" class="section-aside col gap--m">
-            <div class="section-title">
+            <div class="section__title">
               <p>ad</p>
             </div>
-            <a href="#" class="section-img">
+            <a href="#" class="section__img">
               <img src="./data/insights/thumbnail/test.jpg" />
             </a>
           </div>
@@ -802,7 +808,7 @@
 
       <!-- Section: Video -->
       <section id="video" class="col gap--m container--m">
-        <div class="section-title">
+        <div class="section__title">
           <p>Video</p>
         </div>
         <div id="video-content" class="col gap--l">
@@ -890,7 +896,7 @@
 
         <!-- information -->
         <div id="footer-info" class="col gap--m">
-          <div class="section-title">
+          <div class="section__title">
             <p>information</p>
           </div>
           <div class="info-content col gap--m">
@@ -903,7 +909,7 @@
 
         <!-- menu -->
         <div id="footer-menu" class="col gap--m">
-          <div class="section-title">
+          <div class="section__title">
             <p>menu</p>
           </div>
           <div class="col gap--s">
@@ -917,7 +923,7 @@
 
         <!-- topics -->
         <div id="footer-topics" class="col gap--m">
-          <div class="section-title">
+          <div class="section__title">
             <p>topics</p>
           </div>
           <ul class="topics-list col gap--s">
@@ -927,7 +933,7 @@
 
         <!-- newsletter -->
         <div id="footer-newsletter" class="col gap--m">
-          <div class="section-title">
+          <div class="section__title">
             <p>newletter</p>
           </div>
           <div class="component-newsletter">

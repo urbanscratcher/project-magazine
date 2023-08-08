@@ -4,20 +4,29 @@
 
 - Note: For responsiveness and typography, I tried to follow Apple's human interface guidelines and Material Design's.
 - Reference:
--- https://developer.apple.com/design/human-interface-guidelines/typography
--- https://m2.material.io/design/typography/the-type-system.html#applying-the-type-scale
+* https://developer.apple.com/design/human-interface-guidelines/typography
+* https://m2.material.io/design/typography/the-type-system.html#applying-the-type-scale
 
 - Main Breakpoints:
--- xs (360px) Mobile
--- s (600px) Tablet Portrait
--- m (950px) Tablet Landscape
--- l (1280px) Laptop
--- xl (1440px) Desktop
+* xs (360px) Mobile
+* s (600px) Tablet Portrait
+* m (950px) Tablet Landscape
+* l (1280px) Laptop
+* xl (1440px) Desktop
+
+- Specific Desktop Size:
+* 1280×720
+* 1366×768
+* 1440×900
+* 1536×864
+* 1600×900
+* 1920×1080
 
 - Note: For naming, I tried follow BEM. (.block_element-modifier)
--- Reference: https://getbem.com/
+- Reference:
+* https://getbem.com/
 
-* Acronym
+- Acronym
 1. tc: text color
 2. ts: text size
 ------------------------------------- */

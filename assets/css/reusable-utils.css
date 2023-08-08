@@ -37,6 +37,10 @@
   display: flex;
 }
 
+.row.end {
+  justify-content: end;
+}
+
 .col.v-center {
   justify-content: center;
 }
@@ -62,11 +66,11 @@
 }
 
 /* Section Title */
-.section-title {
+.section__title {
   color: var(--color-secondary-dark);
 }
 
-.section-title > p {
+.section__title > p {
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -87,18 +91,18 @@
 }
 
 /* Section Image */
-.section-img {
+.section__img {
   position: relative;
-  border-radius: 1.6rem;
+  border-radius: var(--rad-img);
   overflow: hidden;
 }
 
 /* Section Image - Hover */
-.section-img:hover {
+.section__img:hover {
   cursor: pointer;
 }
 
-.section-img::before {
+.section__img::before {
   position: absolute;
   content: "";
   top: 0;
@@ -116,48 +120,53 @@
   transition: all 0.15s ease;
 }
 
-.section-img:hover::before {
+.section__img:hover::before {
   opacity: 0.5;
 }
 
-.section-img img {
+.section__img img {
   object-fit: cover;
   object-position: center;
+  max-width: 100%;
   height: 100%;
   transition: all 0.2s ease;
-  aspect-ratio: 6 / 4;
 }
 
-.section-img:hover img {
+.img--ratio-64 {
+  aspect-ratio: 6 / 4;
+}
+.img--ratio-169 {
+  aspect-ratio: 16 / 9;
+}
+
+.section__img:hover img {
   transform: scale(103%);
 }
 
-.section-img .component-bookmark-add {
+.section__img .component-bookmark-add {
   position: absolute;
   z-index: 2;
   right: 0;
   bottom: 0;
   margin: 0.8rem;
-  /* transform: translate(-20%, 20%); */
-
   opacity: 0;
   transition: opacity 0.1s ease;
 }
 
-.section-img .component-bookmark-add svg {
+.section__img .component-bookmark-add svg {
   opacity: 0;
   transition: opacity 0.1s ease;
 }
 
-.section-img:hover .component-bookmark-add {
+.section__img:hover .component-bookmark-add {
   opacity: 1;
 }
 
-.section-img:hover .component-bookmark-add svg {
+.section__img:hover .component-bookmark-add svg {
   opacity: 1;
 }
 
-.section-img .topic {
+.section__img .topic {
   position: absolute;
   left: 0;
   top: 0;
@@ -168,7 +177,7 @@
   transition: opacity 0.1s ease;
 }
 
-.inspirations-item.section-img .topic {
+.inspirations-item.section__img .topic {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -180,7 +189,7 @@
   transition: opacity 0.1s ease;
 }
 
-.section-img:hover .topic {
+.section__img:hover .topic {
   opacity: 1;
 }
 
@@ -207,6 +216,12 @@
   display: flex;
   gap: 1.2rem;
   align-items: center;
+  opacity: 0.8;
+  transition: opacity 0.1s ease;
+}
+
+.viewAll:hover {
+  opacity: 1;
 }
 
 /* Component: Topic */
