@@ -163,55 +163,62 @@
 }
 
 /* Monthly Awards ----------------------------*/
-#monthlyAwards .section__title {
-  display: flex;
-  justify-content: space-between;
-}
-
-#awards-list {
+.awards__list {
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   gap: 1.6rem;
+  min-height: 55rem;
 }
 
-.card-awards {
-  min-height: 55rem;
-
-  display: flex;
-  flex-direction: column;
+.awards__item {
   justify-content: center;
   align-items: center;
-
+  position: relative;
+  overflow: hidden;
   border-radius: var(--rad-img);
 }
 
-.card-awards:first-child .card-awards-container {
-  padding: 12rem;
-  transform: scale(1.3);
+.awards__bg {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
 }
 
-.card-awards-container {
+.awards__wrapper {
+  position: absolute;
   text-align: center;
   padding: 1.6rem;
 }
 
-.card-awards-label label {
-  text-transform: capitalize;
+.awards__item:first-child .awards__wrapper {
+  width: 70%;
+  height: 70%;
+}
+
+.awards__item:first-child .awards__name-box,
+.awards__item:first-child .awards__project,
+.awards__item:first-child .awards__comment {
+  transform: scale(1.3);
+}
+
+.awards__name {
+  padding: 0.4rem 1.6rem;
   display: inline-block;
   border-top: solid 0.1rem var(--color-primary-lightest);
   border-bottom: solid 0.1rem var(--color-primary-lightest);
+
   font-weight: 600;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  padding: 0.4rem 1.6rem;
 }
 
-/* ----------------------------------
+/* Donut Chart ----------------------------------
 - Purpose: circled progress bar with animation by using SVG
 - Author: OnlineTutorialsYT, modified by Hyunjung Joun
 - Reference: https://www.youtube.com/watch?v=V_G1WzPjb4o
 ------------------------------------ */
-.donut-chart {
+.donutChart {
   position: relative;
   width: 9.6rem;
   height: 9.6rem;
@@ -221,14 +228,14 @@
   /* background-color: red; */
 }
 
-.donut-chart svg {
+.donutChart__circle-box {
   position: relative;
   width: 9.6rem;
   height: 9.6rem;
   transform: rotate(-90deg);
 }
 
-.donut-chart svg circle {
+.donutChart__circle {
   width: 100%;
   height: 100%;
   fill: transparent;
@@ -236,13 +243,13 @@
   transform: translate(5px, 5px);
 }
 
-.donut-chart svg circle:nth-child(2) {
+.donutChart__circle:nth-child(2) {
   stroke: var(--color-primary-lightest);
   stroke-dasharray: 270;
-  stroke-dashoffset: calc(270 - (270 * var(--num)) / 10);
+  stroke-dashoffset: calc(270 - (270 * var(--donutChart-content)) / 10);
 }
 
-.donut-chart-number {
+.donutChart__content-box {
   position: absolute;
   left: 50%;
   top: 50%;

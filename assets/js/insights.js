@@ -7,7 +7,7 @@
 fetch("../../data/insights/data.json")
   .then((res) => res.json())
   .then((data) => {
-    function coverTxt() {
+    function cover() {
       const newHtml = () => `
       <div class="cover__bg bg--img" style="--img-url: url({{thumbnail}})"></div>
       <div class="cover__txt col container--m gap--m tc--white">
@@ -97,8 +97,8 @@ fetch("../../data/insights/data.json")
       const result = {};
 
       // Iterate through the array
-      for (const d of data.insights) {
-        const category = d.topic;
+      for (const insight of data.insights) {
+        const category = insight.topic;
         // If category doesn't exist in the object, initialize it with a count of 1
         if (!result[category]) {
           result[category] = 1;
@@ -114,7 +114,7 @@ fetch("../../data/insights/data.json")
     fetch("../../index.html")
       .then((res) => res.text())
       .then((html) => {
-        coverTxt();
+        cover();
         editorsPickCoverImg();
         editorsPickTopic();
         editorsPickTitle();
