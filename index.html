@@ -340,7 +340,7 @@
                 <p class="author__name">Eleanor Montgomery</p>
               </div>
             </div>
-            <ul class="trending__list col gap--m">
+            <ul class="trending__list col gap--l">
               <li class="trending__item col gap--s">
                 <div class="topic__wrapper">
                   <a href="#" class="topic ts--btn">topic</a>
@@ -414,7 +414,7 @@
         </section>
 
         <!-- Stay Connected -->
-        <section id="connected" class="col gap--m section-aside">
+        <section id="connected" class="col gap--m container--s aside__box">
           <div class="section__title">
             <p>stay connected</p>
           </div>
@@ -489,25 +489,37 @@
         </section>
 
         <!-- Newsletter -->
-        <section id="newsletter" class="col gap--m section-aside">
+        <section id="newsletter" class="col gap--m container--s aside__box">
           <div class="section__title">
             <p>newsletter</p>
           </div>
-          <div id="newsletter-content" class="col gap--m">
-            <p>
+          <div class="section__content col gap--m">
+            <p class="newsletter__description">
               Subscribe our newsletter to get the latest updates all about
               architecture
             </p>
-            <form class="col gap--m">
-              <input placeholder="Enter your full name" />
-              <input placeholder="Enter your email" />
-              <label for="newsletter-consent">
-                <input type="checkbox" id="newsletter-consent" />
+            <form class="newsletter__form col gap--m">
+              <div class="newsletter__inputs col gap--s">
+                <input
+                  class="newsletter__input"
+                  placeholder="Enter your full name"
+                />
+                <input
+                  class="newsletter__input"
+                  placeholder="Enter your email"
+                />
+              </div>
+              <label for="newsletter__consent" class="newsletter__consent">
+                <input
+                  type="checkbox"
+                  id="newsletter__consent"
+                  class="newsletter__checkbox"
+                />
                 By signing up, you agree to our terms and privacy policy
               </label>
               <input
                 type="submit"
-                class="btn-primary ts--btn"
+                class="newsletter__submit btn-primary ts--btn"
                 value="subscribe"
               />
             </form>
@@ -614,7 +626,7 @@
       <!-- Section: explore -->
       <section id="explore" class="container--m row gap--m">
         <!-- Inspirations -->
-        <div id="inspirations" class="section-aside col gap--m">
+        <div id="inspirations" class="aside__box col gap--m">
           <div class="section__title row between">
             <p>inspirations</p>
             <p>
@@ -650,7 +662,7 @@
         </div>
 
         <!-- The latest -->
-        <div id="latest" class="section-aside col gap--m">
+        <div id="latest" class="aside__box col gap--m">
           <div class="section__title row between">
             <p>the latest</p>
             <div class="component-viewAll"></div>
@@ -774,7 +786,7 @@
         <!-- Aside -->
         <div id="explore-aside" class="col gap--m">
           <!-- Fatured Authors -->
-          <div id="featured-authors" class="section-aside col gap--m">
+          <div id="featured-authors" class="aside__box col gap--m">
             <div class="section__title">
               <p>featured authors</p>
             </div>
@@ -836,7 +848,7 @@
           </div>
 
           <!-- Ad -->
-          <div id="ad" class="section-aside col gap--m">
+          <div id="ad" class="aside__box col gap--m">
             <div class="section__title">
               <p>ad</p>
             </div>
