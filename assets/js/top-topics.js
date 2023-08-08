@@ -7,72 +7,66 @@
 fetch("../../index.html")
   .then((res) => res.text())
   .then((html) => {
-    loadTopTopicsToSection();
+    const data = {
+      topTopics: [
+        {
+          name: "Design",
+          count: 15,
+        },
+        {
+          name: "Technology",
+          count: 8,
+        },
+        {
+          name: "Residential",
+          count: 6,
+        },
+        {
+          name: "Interior",
+          count: 9,
+        },
+        {
+          name: "Landscape",
+          count: 4,
+        },
+        {
+          name: "Urban",
+          count: 15,
+        },
+        {
+          name: "Cultural",
+          count: 10,
+        },
+        {
+          name: "Exhibition",
+          count: 12,
+        },
+        {
+          name: "Narrative",
+          count: 15,
+        },
+      ],
+    };
 
-    // Footer -----------------------
+    const newHtml = () => `
+        {{#each topTopics}}
+          <li class="topics__item">
+            <a class="topics__item-wrapper" href="#">
+              <h1 class="topics__name ts--h1">{{name}}</h1>
+              <div class="topics__count-box">
+                <p class="topics__count tc--white">{{count}}</p>
+              </div>
+            </a>
+          </li>
+        {{/each}}
+      `;
+
+    const parentEls = document.getElementsByClassName("topics__list");
+
+    for (parentEl of parentEls) {
+      insert(parentEl, render(newHtml, data));
+    }
   })
   .catch((err) => {
     console.error("error: ", err);
   });
-
-// Functions
-function loadTopTopicsToSection() {
-  const newHtml = () => `
-      {{#each topTopics}}
-        <li>
-          <a href="#">
-            <h1>{{name}}</h1>
-            <div><p>{{count}}</p></div>
-          </a>
-        </li>
-      {{/each}}
-    `;
-
-  const parentEls = document.getElementsByClassName("topics-list");
-
-  for (parentEl of parentEls) {
-    insert(parentEl, render(newHtml, data));
-  }
-}
-
-// Data ------------------------------------
-const data = {
-  topTopics: [
-    {
-      name: "Design",
-      count: 15,
-    },
-    {
-      name: "Technology",
-      count: 8,
-    },
-    {
-      name: "Residential",
-      count: 6,
-    },
-    {
-      name: "Interior",
-      count: 9,
-    },
-    {
-      name: "Landscape",
-      count: 4,
-    },
-    {
-      name: "Urban",
-      count: 15,
-    },
-    {
-      name: "Cultural",
-      count: 10,
-    },
-    {
-      name: "Exhibition",
-      count: 12,
-    },
-    {
-      name: "Narrative",
-      count: 15,
-    },
-  ],
-};

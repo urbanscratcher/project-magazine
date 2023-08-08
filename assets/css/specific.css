@@ -141,18 +141,18 @@
   background-color: var(--color-secondary-light);
 }
 
-#topTopics-content .topics-list {
+.topTopics__list {
   display: flex;
   flex-wrap: wrap;
   row-gap: 3.2rem;
   column-gap: 14.4rem;
 }
 
-#topTopics-content .topics-list li a {
+.topics__item-wrapper {
   display: flex;
 }
 
-#topTopics-content .topics-list li a > div {
+.topics__count-box {
   width: 3.2rem;
   height: 3.2rem;
   display: flex;
@@ -160,10 +160,6 @@
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-}
-
-#topTopics-content .topics-list li a > div > p {
-  color: var(--color-primary-lightest);
 }
 
 /* Monthly Awards ----------------------------*/
@@ -448,11 +444,11 @@
   width: 14rem;
 }
 
-#footer-topics .topics-list li a > div {
+#footer-topics .topics__list li a > div {
   display: none;
 }
 
-#footer-topics .topics-list li a > h1 {
+#footer-topics .topics__list li a > h1 {
   font-size: inherit;
   letter-spacing: inherit;
 }
