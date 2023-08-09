@@ -392,7 +392,7 @@
   width: 50%;
 }
 
-#explore-aside {
+.explore__aside {
   width: 25%;
 }
 
@@ -426,21 +426,17 @@
 }
 
 /* Featured Authors -------------------- */
-.featured-authors-text {
+.featured-authors__txt {
   justify-content: center;
 }
 
-.featured-authors-item {
+.featured-authors__item {
   padding-bottom: 0.8rem;
   border-bottom: solid 1px var(--color-secondary-light);
 }
 
-.featured-authors-item:last-child {
+.featured-authors__item:last-child {
   border-bottom: none;
-}
-
-.featured-authors-viewAll {
-  justify-content: flex-end;
 }
 
 /* Video ------------------------------- */
