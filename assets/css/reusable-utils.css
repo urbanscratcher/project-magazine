@@ -66,11 +66,11 @@
 }
 
 /* Section Title */
-.section__title {
+.section__title-wrapper {
   color: var(--color-secondary-dark);
 }
 
-.section__title > p {
+.section__title {
   font-weight: bold;
   text-transform: uppercase;
 }

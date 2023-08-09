@@ -129,8 +129,8 @@
 
         <!-- Section: Editor's Pick -->
         <section id="editorsPick" class="col gap--m container--m">
-          <div class="section__title">
-            <p>Editor's pick</p>
+          <div class="section__title-wrapper">
+            <p class="section__title">Editor's pick</p>
           </div>
           <div class="section__content">
             <!-- main -->
@@ -159,7 +159,7 @@
 
       <!-- Section: Top Topics -->
       <section id="topTopics" class="col gap--m container--m">
-        <div class="section__title">
+        <div class="section__title-wrapper">
           <p>Top Topics</p>
         </div>
         <div class="section__content">
@@ -171,7 +171,7 @@
 
       <!-- Section: Monthly Awards -->
       <section id="awards" class="col gap--m container--m">
-        <div class="section__title">
+        <div class="section__title-wrapper">
           <p>Monthly Awards</p>
         </div>
         <div class="section__content">
@@ -301,8 +301,8 @@
       <div id="trending__layout" class="container--m gap--m">
         <!-- What's Trending -->
         <section id="trending" class="col gap--m">
-          <div class="section__title row between">
-            <p>What's Trending</p>
+          <div class="section__title-wrapper row between">
+            <p class="section__title">What's Trending</p>
             <div class="component-viewAll"></div>
           </div>
           <div class="section__content row gap--m">
@@ -415,8 +415,8 @@
 
         <!-- Stay Connected -->
         <section id="connected" class="col gap--m container--s aside__box">
-          <div class="section__title">
-            <p>stay connected</p>
+          <div class="section__title-wrapper">
+            <p class="section__title">stay connected</p>
           </div>
           <div class="section__content">
             <ul class="connected__list col gap--s">
@@ -490,7 +490,7 @@
 
         <!-- Newsletter -->
         <section id="newsletter" class="col gap--m container--s aside__box">
-          <div class="section__title">
+          <div class="section__title-wrapper">
             <p>newsletter</p>
           </div>
           <div class="section__content col gap--m">
@@ -529,8 +529,8 @@
 
       <!-- Section: Saved For Later -->
       <section id="savedForLater" class="col gap--m container--m">
-        <div class="section__title row between">
-          <p>Saved For Later</p>
+        <div class="section__title-wrapper row between">
+          <p class="section__title">Saved For Later</p>
           <div class="component-viewAll"></div>
         </div>
         <div class="seciton__content">
@@ -642,157 +642,193 @@
       <!-- Section: explore -->
       <section id="explore" class="container--m row gap--m">
         <!-- Inspirations -->
-        <div id="inspirations" class="aside__box col gap--m">
-          <div class="section__title row between">
-            <p>inspirations</p>
-            <p>
+        <div id="inspirations" class="aside__box col gap--m container--s">
+          <div class="section__title-wrapper row between">
+            <p class="section__title">inspirations</p>
+            <div class="icon__wrapper ts--body">
               <i class="fa-solid fa-shuffle"></i>
-            </p>
+            </div>
           </div>
-          <ul id="inspirations-list">
-            <li class="inspirations-item section__img">
-              <img src="./data/insights/thumbnail/test.jpg" />
-              <label class="topic topic--white ts--btn tc--white">topic</label>
+          <ul class="inspirations__list">
+            <li class="inspirations__img section__img">
+              <img
+                class="inspirations__img"
+                src="./data/insights/thumbnail/test.jpg"
+              />
+              <label
+                class="inspirations__topic topic topic--white ts--btn tc--white"
+                >topic</label
+              >
             </li>
-            <li class="inspirations-item section__img">
-              <img src="./data/insights/thumbnail/test.jpg" />
-              <label class="topic topic--white ts--btn tc--white">topic</label>
+            <li class="inspirations__img section__img">
+              <img
+                class="inspirations__img"
+                src="./data/insights/thumbnail/test.jpg"
+              />
+              <label
+                class="inspirations__topic topic topic--white ts--btn tc--white"
+                >topic</label
+              >
             </li>
-            <li class="inspirations-item section__img">
-              <img src="./data/insights/thumbnail/test.jpg" />
-              <label class="topic topic--white ts--btn tc--white">topic</label>
+            <li class="inspirations__img section__img">
+              <img
+                class="inspirations__img"
+                src="./data/insights/thumbnail/test.jpg"
+              />
+              <label
+                class="inspirations__topic topic topic--white ts--btn tc--white"
+                >topic</label
+              >
             </li>
-            <li class="inspirations-item section__img">
-              <img src="./data/insights/thumbnail/test.jpg" />
-              <label class="topic topic--white ts--btn tc--white">topic</label>
+            <li class="inspirations__img section__img">
+              <img
+                class="inspirations__img"
+                src="./data/insights/thumbnail/test.jpg"
+              />
+              <label
+                class="inspirations__topic topic topic--white ts--btn tc--white"
+                >topic</label
+              >
             </li>
-            <li class="inspirations-item section__img">
-              <img src="./data/insights/thumbnail/test.jpg" />
-              <label class="topic topic--white ts--btn tc--white">topic</label>
+            <li class="inspirations__img section__img">
+              <img
+                class="inspirations__img"
+                src="./data/insights/thumbnail/test.jpg"
+              />
+              <label
+                class="inspirations__topic topic topic--white ts--btn tc--white"
+                >topic</label
+              >
             </li>
-            <li class="inspirations-item section__img">
-              <img src="./data/insights/thumbnail/test.jpg" />
-              <label class="topic topic--white ts--btn tc--white">topic</label>
+            <li class="inspirations__img section__img">
+              <img
+                class="inspirations__img"
+                src="./data/insights/thumbnail/test.jpg"
+              />
+              <label
+                class="inspirations__topic topic topic--white ts--btn tc--white"
+                >topic</label
+              >
             </li>
           </ul>
         </div>
 
         <!-- The latest -->
-        <div id="latest" class="aside__box col gap--m">
-          <div class="section__title row between">
-            <p>the latest</p>
+        <div id="latest" class="aside__box col gap--m container--s">
+          <div class="section__title-wrapper row between">
+            <p class="section__title">the latest</p>
             <div class="component-viewAll"></div>
           </div>
-          <ul id="latest-list" class="col gap--m">
-            <li class="latest-list-item row gap--m">
-              <div class="section__img">
+          <ul class="latest__list col gap--m">
+            <li class="latest__item row gap--m">
+              <div class="latest__img section__img">
                 <img src="./data/insights/thumbnail/test.jpg" />
                 <div class="component-bookmark-add"></div>
                 <label class="topic topic--white tc--white ts--btn"
                   >topic</label
                 >
               </div>
-              <div class="latest-list-text col gap--s">
-                <h3 class="serif">
+              <div class="latest__txt col gap--s">
+                <p class="latest__title serif ts--h3">
                   Headline level 3 text for editor’s pick title
-                </h3>
-                <div class="latest-time row gap--s">
-                  <p>
-                    <i class="fa-regular fa-clock"></i>
+                </p>
+                <div class="time-row row gap--s v-center">
+                  <p class="icon__time-wrapper">
+                    <i class="icon__time fa-regular fa-clock"></i>
                   </p>
-                  <p>1 day ago</p>
-                  <p>·</p>
-                  <p>1 min read</p>
+                  <p class="createdAt">1 day ago</p>
+                  <p class="separator">·</p>
+                  <p class="ttr__box"><span class="ttr">1 min</span> read</p>
                 </div>
-                <div class="latest-author row gap--s">
-                  <p>
-                    <i class="fa-regular fa-circle-user"></i>
+                <div class="author-row--icon v-center row gap--s">
+                  <p class="icon__avatar-wrapper">
+                    <i class="icon__avatar fa-regular fa-circle-user"></i>
                   </p>
-                  <p>Eleanor Montgomery</p>
+                  <p class="author__name">Eleanor Montgomery</p>
                 </div>
               </div>
             </li>
-            <li class="latest-list-item row gap--m">
-              <div class="section__img">
+            <li class="latest__item row gap--m">
+              <div class="latest__img section__img">
                 <img src="./data/insights/thumbnail/test.jpg" />
                 <div class="component-bookmark-add"></div>
                 <label class="topic topic--white tc--white ts--btn"
                   >topic</label
                 >
               </div>
-              <div class="latest-list-text col gap--s">
-                <h3 class="serif">
+              <div class="latest__txt col gap--s">
+                <p class="latest__title serif ts--h3">
                   Headline level 3 text for editor’s pick title
-                </h3>
-                <div class="latest-time row gap--s">
-                  <p>
-                    <i class="fa-regular fa-clock"></i>
+                </p>
+                <div class="time-row row gap--s v-center">
+                  <p class="icon__time-wrapper">
+                    <i class="icon__time fa-regular fa-clock"></i>
                   </p>
-                  <p>1 day ago</p>
-                  <p>·</p>
-                  <p>1 min read</p>
+                  <p class="createdAt">1 day ago</p>
+                  <p class="separator">·</p>
+                  <p class="ttr__box"><span class="ttr">1 min</span> read</p>
                 </div>
-                <div class="latest-author row gap--s">
-                  <p>
-                    <i class="fa-regular fa-circle-user"></i>
+                <div class="author-row--icon v-center row gap--s">
+                  <p class="icon__avatar-wrapper">
+                    <i class="icon__avatar fa-regular fa-circle-user"></i>
                   </p>
-                  <p>Eleanor Montgomery</p>
+                  <p class="author__name">Eleanor Montgomery</p>
                 </div>
               </div>
             </li>
-            <li class="latest-list-item row gap--m">
-              <div class="section__img">
+            <li class="latest__item row gap--m">
+              <div class="latest__img section__img">
                 <img src="./data/insights/thumbnail/test.jpg" />
                 <div class="component-bookmark-add"></div>
                 <label class="topic topic--white tc--white ts--btn"
                   >topic</label
                 >
               </div>
-              <div class="latest-list-text col gap--s">
-                <h3 class="serif">
+              <div class="latest__txt col gap--s">
+                <p class="latest__title serif ts--h3">
                   Headline level 3 text for editor’s pick title
-                </h3>
-                <div class="latest-time row gap--s">
-                  <p>
-                    <i class="fa-regular fa-clock"></i>
+                </p>
+                <div class="time-row row gap--s v-center">
+                  <p class="icon__time-wrapper">
+                    <i class="icon__time fa-regular fa-clock"></i>
                   </p>
-                  <p>1 day ago</p>
-                  <p>·</p>
-                  <p>1 min read</p>
+                  <p class="createdAt">1 day ago</p>
+                  <p class="separator">·</p>
+                  <p class="ttr__box"><span class="ttr">1 min</span> read</p>
                 </div>
-                <div class="latest-author row gap--s">
-                  <p>
-                    <i class="fa-regular fa-circle-user"></i>
+                <div class="author-row--icon v-center row gap--s">
+                  <p class="icon__avatar-wrapper">
+                    <i class="icon__avatar fa-regular fa-circle-user"></i>
                   </p>
-                  <p>Eleanor Montgomery</p>
+                  <p class="author__name">Eleanor Montgomery</p>
                 </div>
               </div>
             </li>
-            <li class="latest-list-item row gap--m">
-              <div class="section__img">
+            <li class="latest__item row gap--m">
+              <div class="latest__img section__img">
                 <img src="./data/insights/thumbnail/test.jpg" />
                 <div class="component-bookmark-add"></div>
                 <label class="topic topic--white tc--white ts--btn"
                   >topic</label
                 >
               </div>
-              <div class="latest-list-text col gap--s">
-                <h3 class="serif">
+              <div class="latest__txt col gap--s">
+                <p class="latest__title serif ts--h3">
                   Headline level 3 text for editor’s pick title
-                </h3>
-                <div class="latest-time row gap--s">
-                  <p>
-                    <i class="fa-regular fa-clock"></i>
+                </p>
+                <div class="time-row row gap--s v-center">
+                  <p class="icon__time-wrapper">
+                    <i class="icon__time fa-regular fa-clock"></i>
                   </p>
-                  <p>1 day ago</p>
-                  <p>·</p>
-                  <p>1 min read</p>
+                  <p class="createdAt">1 day ago</p>
+                  <p class="separator">·</p>
+                  <p class="ttr__box"><span class="ttr">1 min</span> read</p>
                 </div>
-                <div class="latest-author row gap--s">
-                  <p>
-                    <i class="fa-regular fa-circle-user"></i>
+                <div class="author-row--icon v-center row gap--s">
+                  <p class="icon__avatar-wrapper">
+                    <i class="icon__avatar fa-regular fa-circle-user"></i>
                   </p>
-                  <p>Eleanor Montgomery</p>
+                  <p class="author__name">Eleanor Montgomery</p>
                 </div>
               </div>
             </li>
@@ -803,7 +839,7 @@
         <div id="explore-aside" class="col gap--m">
           <!-- Fatured Authors -->
           <div id="featured-authors" class="aside__box col gap--m">
-            <div class="section__title">
+            <div class="section__title-wrapper">
               <p>featured authors</p>
             </div>
             <ul class="featured-authors-list col gap--m">
@@ -865,7 +901,7 @@
 
           <!-- Ad -->
           <div id="ad" class="aside__box col gap--m">
-            <div class="section__title">
+            <div class="section__title-wrapper">
               <p>ad</p>
             </div>
             <a href="#" class="section__img">
@@ -877,10 +913,10 @@
 
       <!-- Section: Video -->
       <section id="video" class="col gap--m container--m">
-        <div class="section__title">
+        <div class="section__title-wrapper">
           <p>Video</p>
         </div>
-        <div id="video-content" class="col gap--l">
+        <div class="section__content col gap--l">
           <div
             id="video-highlight"
             class="bg--img col"
@@ -965,7 +1001,7 @@
 
         <!-- information -->
         <div id="footer-info" class="col gap--m">
-          <div class="section__title">
+          <div class="section__title-wrapper">
             <p>information</p>
           </div>
           <div class="info-content col gap--m">
@@ -978,7 +1014,7 @@
 
         <!-- menu -->
         <div id="footer-menu" class="col gap--m">
-          <div class="section__title">
+          <div class="section__title-wrapper">
             <p>menu</p>
           </div>
           <div class="col gap--s">
@@ -991,7 +1027,7 @@
 
         <!-- topics -->
         <div id="footer-topics" class="col gap--m">
-          <div class="section__title">
+          <div class="section__title-wrapper">
             <p>topics</p>
           </div>
           <ul class="topics__list col gap--s">
@@ -1001,7 +1037,7 @@
 
         <!-- newsletter -->
         <div id="footer-newsletter" class="col gap--m">
-          <div class="section__title">
+          <div class="section__title-wrapper">
             <p>newletter</p>
           </div>
           <div class="component-newsletter">

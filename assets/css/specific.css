@@ -379,6 +379,70 @@
   padding: 3.2rem;
 }
 
+/* Explore ------------------------- */
+#explore {
+  background-color: var(--color-mint-light);
+}
+
+#inspirations {
+  width: 25%;
+}
+
+#latest {
+  width: 50%;
+}
+
+#explore-aside {
+  width: 25%;
+}
+
+/* Inspirations --------------- */
+.inspirations__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.8rem;
+}
+
+.inspirations__img {
+  aspect-ratio: 6 / 4;
+}
+
+/* The Latest ------------------------- */
+.latest__item {
+  padding-bottom: 1.6rem;
+  border-bottom: solid 1px var(--color-secondary-light);
+}
+
+.latest__item:last-child {
+  border-bottom: none;
+}
+
+.latest__img {
+  width: 33.3333%;
+}
+
+.latest__txt {
+  width: 66.6666%;
+}
+
+/* Featured Authors -------------------- */
+.featured-authors-text {
+  justify-content: center;
+}
+
+.featured-authors-item {
+  padding-bottom: 0.8rem;
+  border-bottom: solid 1px var(--color-secondary-light);
+}
+
+.featured-authors-item:last-child {
+  border-bottom: none;
+}
+
+.featured-authors-viewAll {
+  justify-content: flex-end;
+}
+
 /* Video ------------------------------- */
 #video-highlight {
   min-height: 85rem;
@@ -413,66 +477,6 @@
   width: 40%;
   background-color: red;
   border-radius: var(--rad-img);
-}
-
-/* Explore ------------------------- */
-#explore {
-  background-color: var(--color-mint-light);
-}
-
-#inspirations {
-  width: 25%;
-}
-
-#latest {
-  width: 50%;
-}
-
-#explore-aside {
-  width: 25%;
-}
-
-/* Inspirations --------------- */
-#inspirations-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.8rem;
-}
-
-/* The Latest ------------------------- */
-.latest-list-item {
-  padding-bottom: 1.6rem;
-  border-bottom: solid 1px var(--color-secondary-light);
-}
-
-.latest-list-item:last-child {
-  border-bottom: none;
-}
-
-#latest-list .section__img {
-  width: 33.3333%;
-}
-
-#latest-list .latest-list-text {
-  width: 66.6666%;
-}
-
-/* Featured Authors -------------------- */
-.featured-authors-text {
-  justify-content: center;
-}
-
-.featured-authors-item {
-  padding-bottom: 0.8rem;
-  border-bottom: solid 1px var(--color-secondary-light);
-}
-
-.featured-authors-item:last-child {
-  border-bottom: none;
-}
-
-.featured-authors-viewAll {
-  justify-content: flex-end;
 }
 
 /* Footer --------------------- */
