@@ -42,12 +42,12 @@ fetch("../../index.html")
     const newHtml = () => `
         {{#each topTopics}}
           <li class="topics__item">
-            <a class="topics__item-wrapper" href="#">
+            <div class="topics__item-wrapper">
               <h1 class="topics__name ts--h1">{{name}}</h1>
               <div class="topics__count-box">
                 <p class="topics__count tc--white">0</p>
               </div>
-            </a>
+            </div>
           </li>
         {{/each}}
       `;

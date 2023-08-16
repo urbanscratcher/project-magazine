@@ -249,6 +249,10 @@
   color: var(--color-white);
 }
 
+.topics__item-wrapper:hover {
+  cursor: pointer;
+}
+
 /* Button: An icon with circled button 24px */
 .btn--circle-m {
   width: 2.4rem;
@@ -279,6 +283,7 @@
 }
 
 .hover--primary:hover {
+  cursor: pointer;
   color: var(--color-secondary);
   background-color: var(--color-primary);
 }
@@ -290,20 +295,22 @@
 }
 
 .hover--darker {
-  transition: all 0.15s ease;
+  transition: all 0.1s ease-out;
 }
 
 .hover--darker:hover {
-  color: var(--color-secondary-dark);
+  cursor: pointer;
+  filter: brightness(0.6);
 }
 
 .hover--lighter {
   opacity: 1;
-  transition: opacity 0.15s ease;
+  transition: all 0.1s ease-out;
 }
 
 .hover--lighter:hover {
-  opacity: 0.8;
+  cursor: pointer;
+  filter: brightness(1.2);
 }
 
 /* Button Primary */

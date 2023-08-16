@@ -1029,12 +1029,13 @@
 
     <!-- Footer -->
     <div id="footer" class="col container--m">
-      <div id="footer-sitemap" class="row gap--m">
-        <!-- logo -->
-        <div id="footer-logo" class="col gap--m">
-          <img src="assets/image/logo.png" />
-          <p class="bold">Welcome to ArchOn - Where Imagination Builds</p>
-          <p class="ts--body-s">
+      <div class="footer__sitemap row gap--m">
+        <div class="footer__logo col gap--m">
+          <img class="footer__logo-img" src="assets/image/logo.png" />
+          <p class="footer__welcome bold">
+            Welcome to ArchOn - Where Imagination Builds
+          </p>
+          <p class="footer__welcome-description ts--body-s">
             We believe in the power of imagination to shape a better tomorrow.
             Our team of visionary writers, architects, and urban planners
             curates a diverse collection of articles, interviews, and visual
@@ -1044,45 +1045,68 @@
         </div>
 
         <!-- information -->
-        <div id="footer-info" class="col gap--m">
+        <div class="footer__information col gap--m">
           <div class="section__title-wrapper">
-            <p>information</p>
+            <p class="section__title">information</p>
           </div>
-          <div class="info-content col gap--m">
-            <p>1234 Elm Street, Cityville, Stateville 56789, Architopia Land</p>
-            <p>support@archon.com</p>
-            <p>(555) 123 4567</p>
-            <div class="component-socials">social icons here</div>
-          </div>
+          <address class="information__content col gap--m">
+            <p class="information__address">
+              1234 Elm Street, Cityville, Stateville 56789, Architopia Land
+            </p>
+            <p class="information__email">support@archon.com</p>
+            <p class="information__phone">(555) 123 4567</p>
+            <ul class="information__socials row gap--m">
+              <li class="social__icon ts--body hover--darker">
+                <i class="fa-brands fa-facebook"></i>
+              </li>
+              <li class="social__icon ts--body hover--darker">
+                <i class="fa-brands fa-pinterest"></i>
+              </li>
+              <li class="social__icon ts--body hover--darker">
+                <i class="fa-brands fa-twitter"></i>
+              </li>
+              <li class="social__icon ts--body hover--darker">
+                <i class="fa-brands fa-instagram"></i>
+              </li>
+            </ul>
+          </address>
         </div>
 
         <!-- menu -->
-        <div id="footer-menu" class="col gap--m">
+        <div class="footer__menu col gap--m">
           <div class="section__title-wrapper">
-            <p>menu</p>
+            <p class="section__title">menu</p>
           </div>
-          <div class="col gap--s">
-            <a class="menu__item" href="#">Insights</a>
-            <a class="menu__item" href="#">Quiz</a>
-            <a class="menu__item" href="#">Authors</a>
-            <a class="menu__item" href="#">Report</a>
-          </div>
+          <ul class="footer__menu-list col gap--s uppercase">
+            <li class="footer__menu-item">
+              <a class="footer__menu-link hover--darker" href="#">Insights</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-txt hover--darker" href="#">Quiz</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-txt hover--darker" href="#">Authors</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-txt hover--darker" href="#">Report</a>
+            </li>
+          </ul>
         </div>
 
         <!-- topics -->
-        <div id="footer-topics" class="col gap--m">
+        <div class="footer__topics col gap--m">
           <div class="section__title-wrapper">
-            <p>topics</p>
+            <p class="section__title">topics</p>
           </div>
-          <ul class="topics__list col gap--s">
+          <ul class="topics__list col gap--s ts--body">
             <!-- [Loop Data] -->
           </ul>
         </div>
 
         <!-- newsletter -->
-        <div id="footer-newsletter" class="col gap--m">
+        <div class="footer__newsletter col gap--m">
           <div class="section__title-wrapper">
-            <p>newletter</p>
+            <p class="section__title">newletter</p>
           </div>
           <div class="component-newsletter">
             <div id="newsletter-content" class="col gap--m">
@@ -1109,9 +1133,13 @@
       </div>
 
       <!-- Copyright -->
-      <div id="footer-copyright" class="ts--caption">
-        Developed and Designed by Hyunjung Joun © 2023 Copyrights All Rights
-        Reserved
+      <div class="footer__copyright ts--caption">
+        &copy; 2023 Developed and Designed by
+        <a
+          href="mailto:urbanscratcher@gmail.com"
+          class="copyright__contact ts--caption hover--darker"
+          >Hyunjung Joun</a
+        >. All Rights Reserved.
       </div>
     </div>
   </body>
