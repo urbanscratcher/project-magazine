@@ -24,10 +24,9 @@ fetch("../../index.html")
             placeholder="Enter your email"
           />
         </div>
-        <label for="newsletter__consent" class="newsletter__consent">
+        <label class="newsletter__consent">
           <input
-            type="checkbox"
-            id="newsletter__consent"
+            type="checkbox"            
             class="newsletter__checkbox"
           />
           By signing up, you agree to our terms and privacy policy
