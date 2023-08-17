@@ -144,11 +144,12 @@ fetch("/data/insights/data.json")
     }
 
     function trendingMainCreatedAt(data) {
+      const dateDifference = printDateDifference(data.createdAt);
       const newHtml = () => `
-        {{createdAt}}
+       ${printDateDifference(data.createdAt)}
       `;
       const parentEl = document.querySelector(".trending__main .createdAt");
-      insert(parentEl, render(newHtml, data));
+      insert(parentEl, render(newHtml, {}));
     }
 
     function trendingMainSummary(data) {
