@@ -7,6 +7,30 @@
 fetch("/data/insights/data.json")
   .then((res) => res.json())
   .then((data) => {
+    const insightsData = data.insights.map((el) => {
+      const dateObj = new Date(el.createdAt);
+
+      const options = {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        hour: "numeric",
+        minute: "numeric",
+        second: "numeric",
+        timeZoneName: "short",
+      };
+      const formattedDate = new Intl.DateTimeFormat("en-US", options).format(
+        dateObj
+      );
+
+      const mappedEl = {
+        ...el,
+        createdAt: dateObj,
+      };
+
+      return mappedEl;
+    });
+
     // public functions --------------------------
     function renderCover() {
       const newHtml = () => `
@@ -29,7 +53,7 @@ fetch("/data/insights/data.json")
         .then((res) => res.json())
         .then((coverData) => {
           const coverId = coverData.insightsCover[0].id;
-          const matchedData = data.insights.find((el) => el.id === coverId);
+          const matchedData = insightsData.find((el) => el.id === coverId);
           insertFirstChild(parentEl, render(newHtml, matchedData));
         })
         .catch((error) => {
@@ -41,24 +65,17 @@ fetch("/data/insights/data.json")
       fetch("/data/insights/data-editorsPick.json")
         .then((res) => res.json())
         .then((editorsPickData) => {
-          const editorsPickId = editorsPickData.insightsEditorsPick;
+          const coverId = editorsPickData.insightsEditorsPick?.cover ?? 1;
+          const sub1Id = editorsPickData.insightsEditorsPick?.sub1 ?? 1;
+          const sub2Id = editorsPickData.insightsEditorsPick?.sub2 ?? 1;
+          const sub3Id = editorsPickData.insightsEditorsPick?.sub3 ?? 1;
+
           const editorsPick = {
-            cover: data.insights.find(
-              (el) =>
-                el.id === editorsPickId.cover ??
-                data.insights[1] ??
-                data.insights[1]
-            ),
+            cover: insightsData.find((el) => el.id === coverId),
             list: [
-              data.insights.find(
-                (el) => el.id === editorsPickId.sub1 ?? data.insights[1]
-              ),
-              data.insights.find(
-                (el) => el.id === editorsPickId.sub2 ?? data.insights[1]
-              ),
-              data.insights.find(
-                (el) => el.id === editorsPickId.sub3 ?? data.insights[1]
-              ),
+              insightsData.find((el) => el.id === sub1Id),
+              insightsData.find((el) => el.id === sub2Id),
+              insightsData.find((el) => el.id === sub3Id),
             ],
           };
 
@@ -66,7 +83,8 @@ fetch("/data/insights/data.json")
           editorsPickTopic(editorsPick.cover);
           editorsPickTitle(editorsPick.cover);
           eidtorsPickList(editorsPick.list);
-        });
+        })
+        .catch((err) => console.error("error: " + err));
     }
 
     function renderTopicCounts() {
@@ -87,7 +105,34 @@ fetch("/data/insights/data.json")
       }
     }
 
+    function renderTrending() {
+      fetch("/data/insights/data-trending.json")
+        .then((res) => res.json())
+        .then((trendingData) => {
+          const trendingIds = trendingData?.insightsTrending ?? [{ id: 1 }];
+          const trendings = [];
+
+          for (trendingId of trendingIds) {
+            const trending = insightsData.find((el) => el.id === trendingId.id);
+            trendings.push(trending);
+          }
+
+          trendings.sort((a, b) => b.createdAt - a.createdAt);
+
+          trendingMainImg(trendings[0]);
+        })
+        .catch((err) => console.error("error: " + err));
+    }
+
     // private functions --------------------------
+    function trendingMainImg(data) {
+      const newHtml = () => `
+        <img src="{{thumbnail}}" class="img--ratio-169" />
+      `;
+      const parentEl = document.querySelector(".trending__main .main__img");
+      insertFirstChild(parentEl, render(newHtml, data));
+    }
+
     function editorsPickCoverImg(data) {
       const newHtml = () => `
       <img
@@ -155,12 +200,13 @@ fetch("/data/insights/data.json")
     }
 
     // Fetch the template file -----------------
-    fetch("../../index.html")
+    fetch("/index.html")
       .then((res) => res.text())
       .then((html) => {
         renderCover();
         renderEditorsPick();
         renderTopicCounts();
+        renderTrending();
       })
 
       .catch((err) => {

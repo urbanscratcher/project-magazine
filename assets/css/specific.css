@@ -296,10 +296,6 @@
   width: 63%;
 }
 
-.main__img {
-  aspect-ratio: 16 / 9;
-}
-
 .trending__list {
   width: 37%;
   padding-left: 1.6rem;

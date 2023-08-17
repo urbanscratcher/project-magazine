@@ -18,7 +18,7 @@
       "summary": "In a world marked by fleeting trends and rapid transformations, one element stands as a testament to enduring artistry: architecture1.",
       "ttr": "2 min",
       "thumbnail": "/data/insights/thumbnail/2.jpg",
-      "createdAt": "2022-12-01T18:25:43.511Z",
+      "createdAt": "2022-12-18T18:25:43.511Z",
       "authors": [{ "id": 1, "name": "Grace Kringer" }],
       "viewCount": 15
     },
@@ -29,7 +29,7 @@
       "summary": "In a world marked by fleeting trends and rapid transformations, one element stands as a testament to enduring artistry: architecture.",
       "ttr": "2 min",
       "thumbnail": "/data/insights/thumbnail/test.jpg",
-      "createdAt": "2022-12-01T18:25:43.511Z",
+      "createdAt": "2022-11-01T18:25:43.511Z",
       "authors": [{ "id": 2, "name": "Holland Polanski" }],
       "viewCount": 44
     },
@@ -40,7 +40,7 @@
       "summary": "In a world marked by fleeting trends and rapid transformations, one element stands as a testament to enduring artistry: architecture.",
       "ttr": "2 min",
       "thumbnail": "/data/insights/thumbnail/test.jpg",
-      "createdAt": "2022-12-01T18:25:43.511Z",
+      "createdAt": "2022-11-15T18:25:43.511Z",
       "authors": [{ "id": 1, "name": "Grace Kringer" }],
       "viewCount": 410
     },
@@ -51,7 +51,7 @@
       "summary": "In a world marked by fleeting trends and rapid transformations, one element stands as a testament to enduring artistry: architecture.",
       "ttr": "2 min",
       "thumbnail": "/data/insights/thumbnail/test.jpg",
-      "createdAt": "2022-12-01T18:25:43.511Z",
+      "createdAt": "2022-12-04T18:25:43.511Z",
       "authors": [
         { "id": 1, "name": "Grace Kringer" },
         { "id": 2, "name": "Holland Polanski" }
@@ -65,7 +65,7 @@
       "summary": "In a world marked by fleeting trends and rapid transformations, one element stands as a testament to enduring artistry: architecture.",
       "ttr": "2 min",
       "thumbnail": "/data/insights/thumbnail/test.jpg",
-      "createdAt": "2021-12-03T18:25:43.511Z",
+      "createdAt": "2021-12-25T18:25:43.511Z",
       "authors": [{ "id": 3, "name": "Demian Steinberg" }],
       "viewCount": 443
     }
