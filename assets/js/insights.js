@@ -120,16 +120,47 @@ fetch("/data/insights/data.json")
           trendings.sort((a, b) => b.createdAt - a.createdAt);
 
           trendingMainImg(trendings[0]);
+          trendingMainTopic(trendings[0]);
+          trendingMainTitle(trendings[0]);
+          trendingMainSummary(trendings[0]);
         })
         .catch((err) => console.error("error: " + err));
     }
 
     // private functions --------------------------
+    function trendingMainSummary(data) {
+      const newHtml = () => `
+        {{title}}
+      `;
+      const parentEl = document.querySelector(".main__summary .main__title");
+      insertFirstChild(parentEl, render(newHtml, data));
+    }
+
+    function trendingMainTitle(data) {
+      const newHtml = () => `
+        {{title}}
+      `;
+      const parentEl = document.querySelector(".trending__main .main__title");
+      insertFirstChild(parentEl, render(newHtml, data));
+    }
+
+    function trendingMainTopic(data) {
+      const newHtml = () => `
+      <a href="#" class="topic ts--btn">
+        {{topic}}
+      </a>
+      `;
+      const parentEl = document.querySelector(
+        ".trending__main .topic__wrapper"
+      );
+      insert(parentEl, render(newHtml, data));
+    }
+
     function trendingMainImg(data) {
       const newHtml = () => `
         <img src="{{thumbnail}}" class="img--ratio-169" />
       `;
-      const parentEl = document.querySelector(".trending__main .main__img");
+      const parentEl = document.querySelector(".trending__main .section__img");
       insertFirstChild(parentEl, render(newHtml, data));
     }
 
