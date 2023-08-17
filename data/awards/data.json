@@ -2,8 +2,7 @@
   "awards": [
     {
       "id": 1,
-      "award": "the winner",
-      "month": 7,
+      "awardName": "the winner of july",
       "project": "The Campus IFA 2023",
       "architect": "modern fusion studio",
       "averageRating": "8.8",
@@ -12,8 +11,7 @@
     },
     {
       "id": 2,
-      "award": "the 2nd place",
-      "month": 7,
+      "awardName": "the 2nd place of july",
       "project": "symphony hotel sydney",
       "architect": "AWT Lab",
       "averageRating": "7.4",
@@ -22,8 +20,7 @@
     },
     {
       "id": 3,
-      "award": "the 3rd place",
-      "month": 7,
+      "awardName": "the 3rd place of july",
       "project": "farm house 2.0",
       "architect": "Northern Design",
       "averageRating": "7.1",

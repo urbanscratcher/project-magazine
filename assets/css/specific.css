@@ -180,7 +180,7 @@
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   gap: 1.6rem;
-  min-height: 55rem;
+  min-height: 60rem;
 }
 
 .awards__item {
@@ -207,6 +207,10 @@
 .awards__item:first-child .awards__wrapper {
   width: 70%;
   height: 70%;
+}
+
+.awards__item:first-child .awards__comment {
+  margin-top: 1.6rem;
 }
 
 .awards__item:first-child .awards__name-box,

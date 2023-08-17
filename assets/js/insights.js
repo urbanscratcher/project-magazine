@@ -1,5 +1,5 @@
 /* --------------------------------
-- Purpose: Get cover data and render
+- Purpose: Get data and render
 - Author: Hyunjung Joun
 -------------------------------- */
 

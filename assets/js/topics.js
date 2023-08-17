@@ -1,5 +1,5 @@
 /* --------------------------------
-- Purpose: Loop Data
+- Purpose: Loop data and render
 - Author: Hyunjung Joun
 -------------------------------- */
 
