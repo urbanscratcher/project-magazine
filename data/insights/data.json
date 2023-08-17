@@ -2,22 +2,22 @@
   "insights": [
     {
       "id": 1,
-      "topic": "design",
-      "title": "Building Dreams: Exploring The Timeless Beauty Of Architecture",
-      "summary": "In a world marked by fleeting trends and rapid transformations, one element stands as a testament to enduring artistry: architecture.",
+      "topic": "urban",
+      "title": "A Shared Kitchen Seamlessly Blending into the Urban Fabric, Crafting a Community Oasis",
+      "summary": "Amid the bustling urban landscape, a shared kitchen space has unveiled a captivating blend of architectural innovation and community synergy, organically extending itself into the fabric of the street and evolving into a spirited hub for the neighborhood. Beyond culinary creations, this inventive kitchen nurtures a sense of unity among locals and newcomers alike.",
       "ttr": "2 min",
-      "thumbnail": "/data/insights/thumbnail/test.jpg",
+      "thumbnail": "/data/insights/thumbnail/1.jpg",
       "createdAt": "2022-12-01T18:25:43.511Z",
       "authors": [{ "id": 1, "name": "Grace Kringer" }],
       "viewCount": 5
     },
     {
       "id": 2,
-      "topic": "narrative",
-      "title": "From Vision To Reality: Unveiling The Marvels Of Architectural Ingenuity",
+      "topic": "technology",
+      "title": "The Passive Cooling Strategy of a Brick Office in Taiwan for climate control",
       "summary": "In a world marked by fleeting trends and rapid transformations, one element stands as a testament to enduring artistry: architecture1.",
       "ttr": "2 min",
-      "thumbnail": "/data/insights/thumbnail/test.jpg",
+      "thumbnail": "/data/insights/thumbnail/2.jpg",
       "createdAt": "2022-12-01T18:25:43.511Z",
       "authors": [{ "id": 1, "name": "Grace Kringer" }],
       "viewCount": 15
