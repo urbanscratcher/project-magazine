@@ -8,7 +8,7 @@ fetch("/data/insights/data.json")
   .then((res) => res.json())
   .then((data) => {
     // public functions --------------------------
-    function cover() {
+    function renderCover() {
       const newHtml = () => `
       <div class="cover__bg bg--img" style="--img-url: url({{thumbnail}})"></div>
       <div class="cover__txt col container--m gap--m tc--white">
@@ -37,12 +37,36 @@ fetch("/data/insights/data.json")
         });
     }
 
-    function editorsPick() {
-      // fetch("/data/insights/data-editorsPick.json")
-      editorsPickCoverImg();
-      editorsPickTopic();
-      editorsPickTitle();
-      eidtorsPickList();
+    function renderEditorsPick() {
+      fetch("/data/insights/data-editorsPick.json")
+        .then((res) => res.json())
+        .then((editorsPickData) => {
+          const editorsPickId = editorsPickData.insightsEditorsPick;
+          const editorsPick = {
+            cover: data.insights.find(
+              (el) =>
+                el.id === editorsPickId.cover ??
+                data.insights[1] ??
+                data.insights[1]
+            ),
+            list: [
+              data.insights.find(
+                (el) => el.id === editorsPickId.sub1 ?? data.insights[1]
+              ),
+              data.insights.find(
+                (el) => el.id === editorsPickId.sub2 ?? data.insights[1]
+              ),
+              data.insights.find(
+                (el) => el.id === editorsPickId.sub3 ?? data.insights[1]
+              ),
+            ],
+          };
+
+          editorsPickCoverImg(editorsPick.cover);
+          editorsPickTopic(editorsPick.cover);
+          editorsPickTitle(editorsPick.cover);
+          eidtorsPickList(editorsPick.list);
+        });
     }
 
     function renderTopicCounts() {
@@ -64,7 +88,7 @@ fetch("/data/insights/data.json")
     }
 
     // private functions --------------------------
-    function editorsPickCoverImg() {
+    function editorsPickCoverImg(data) {
       const newHtml = () => `
       <img
         src="{{thumbnail}}"
@@ -74,28 +98,28 @@ fetch("/data/insights/data.json")
 
       const parentEl = document.querySelector(".editorsPick__img");
 
-      insertFirstChild(parentEl, render(newHtml, data.insights[1]));
+      insertFirstChild(parentEl, render(newHtml, data));
     }
 
-    function editorsPickTopic() {
+    function editorsPickTopic(data) {
       const newHtml = () => `
       <a href="#" class="topic ts--btn">{{topic}}</a>
       `;
 
       const parentEl = document.querySelector(".editorsPick__topic");
 
-      insertFirstChild(parentEl, render(newHtml, data.insights[1]));
+      insertFirstChild(parentEl, render(newHtml, data));
     }
 
-    function editorsPickTitle() {
+    function editorsPickTitle(data) {
       const newHtml = () => `
       <a class="serif hover--txt ts--h3" href="#">{{title}}</a>
       `;
       const parentEl = document.querySelector(".editorsPick__title");
-      insertFirstChild(parentEl, render(newHtml, data.insights[1]));
+      insertFirstChild(parentEl, render(newHtml, data));
     }
 
-    function eidtorsPickList() {
+    function eidtorsPickList(list) {
       const newHtml = () => `
       {{#each insights}}
       <li class="editorsPick__list-item ts--h4 serif">
@@ -107,7 +131,7 @@ fetch("/data/insights/data.json")
       insert(
         parentEl,
         render(newHtml, {
-          insights: [data.insights[2], data.insights[3], data.insights[4]],
+          insights: list,
         })
       );
     }
@@ -134,8 +158,8 @@ fetch("/data/insights/data.json")
     fetch("../../index.html")
       .then((res) => res.text())
       .then((html) => {
-        cover();
-        editorsPick();
+        renderCover();
+        renderEditorsPick();
         renderTopicCounts();
       })
 
