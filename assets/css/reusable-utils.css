@@ -127,6 +127,7 @@
 .section__img img {
   object-fit: cover;
   object-position: center;
+  height: 100%;
   transition: all 0.2s ease;
 }
 

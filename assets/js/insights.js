@@ -119,21 +119,44 @@ fetch("/data/insights/data.json")
 
           trendings.sort((a, b) => b.createdAt - a.createdAt);
 
-          trendingMainImg(trendings[0]);
-          trendingMainTopic(trendings[0]);
-          trendingMainTitle(trendings[0]);
-          trendingMainSummary(trendings[0]);
+          trendingMain(trendings[0]);
         })
         .catch((err) => console.error("error: " + err));
     }
 
     // private functions --------------------------
+    function trendingMain(data) {
+      trendingMainImg(data);
+      trendingMainTopic(data);
+      trendingMainTitle(data);
+      trendingMainSummary(data);
+      trendingMainCreatedAt(data);
+      trendingMainTtr(data);
+    }
+
+    function trendingMainTtr(data) {
+      const newHtml = () => `
+        {{ttr}}
+      `;
+      const parentEl = document.querySelector(".trending__main .ttr");
+
+      insert(parentEl, render(newHtml, data));
+    }
+
+    function trendingMainCreatedAt(data) {
+      const newHtml = () => `
+        {{createdAt}}
+      `;
+      const parentEl = document.querySelector(".trending__main .createdAt");
+      insert(parentEl, render(newHtml, data));
+    }
+
     function trendingMainSummary(data) {
       const newHtml = () => `
-        {{title}}
+        {{summary}}
       `;
-      const parentEl = document.querySelector(".main__summary .main__title");
-      insertFirstChild(parentEl, render(newHtml, data));
+      const parentEl = document.querySelector(".trending__main .main__summary");
+      insert(parentEl, render(newHtml, data));
     }
 
     function trendingMainTitle(data) {
