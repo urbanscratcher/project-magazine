@@ -4,9 +4,10 @@
 -------------------------------- */
 
 // Fetch Data
-fetch("../../data/insights/data.json")
+fetch("/data/insights/data.json")
   .then((res) => res.json())
   .then((data) => {
+    // public functions --------------------------
     function cover() {
       const newHtml = () => `
       <div class="cover__bg bg--img" style="--img-url: url({{thumbnail}})"></div>
@@ -15,17 +16,54 @@ fetch("../../data/insights/data.json")
           <a href="#" class="topic--white ts--btn">{{topic}}</a>
         </div>
         <div class="cover__headline">
-          <a href="#" class="ts--h1 serif hover--txt">
+          <h1 href="#" class="serif hover--txt">
             {{title}}
-          </a>
+          </h1>
         </div>
       </div>          
     `;
 
       const parentEl = document.getElementById("cover");
-      insertFirstChild(parentEl, render(newHtml, data.insights[0]));
+
+      fetch("/data/insights/data-cover.json")
+        .then((res) => res.json())
+        .then((coverData) => {
+          const coverId = coverData.insightsCover[0].id;
+          const matchedData = data.insights.find((el) => el.id === coverId);
+          insertFirstChild(parentEl, render(newHtml, matchedData));
+        })
+        .catch((error) => {
+          console.error("error: ", err);
+        });
     }
 
+    function editorsPick() {
+      // fetch("/data/insights/data-editorsPick.json")
+      editorsPickCoverImg();
+      editorsPickTopic();
+      editorsPickTitle();
+      eidtorsPickList();
+    }
+
+    function renderTopicCounts() {
+      const topicNameEls = document.querySelectorAll(
+        ".topTopics__list .topics__name"
+      );
+      const counted = countTopics();
+
+      for (const t of topicNameEls) {
+        const newHtml = () => `
+        <p class="topics__count tc--white">
+          ${counted[t.textContent.toLowerCase()] ?? 0}
+        </p>
+        `;
+
+        const parentEl = t.nextElementSibling;
+        insert(parentEl, render(newHtml, {}));
+      }
+    }
+
+    // private functions --------------------------
     function editorsPickCoverImg() {
       const newHtml = () => `
       <img
@@ -74,24 +112,6 @@ fetch("../../data/insights/data.json")
       );
     }
 
-    function renderTopicCounts() {
-      const topicNameEls = document.querySelectorAll(
-        ".topTopics__list .topics__name"
-      );
-      const counted = countTopics();
-
-      for (const t of topicNameEls) {
-        const newHtml = () => `
-        <p class="topics__count tc--white">
-          ${counted[t.textContent.toLowerCase()] ?? 0}
-        </p>
-        `;
-
-        const parentEl = t.nextElementSibling;
-        insert(parentEl, render(newHtml, {}));
-      }
-    }
-
     function countTopics() {
       // Create an object to store category counts
       const result = {};
@@ -115,10 +135,7 @@ fetch("../../data/insights/data.json")
       .then((res) => res.text())
       .then((html) => {
         cover();
-        editorsPickCoverImg();
-        editorsPickTopic();
-        editorsPickTitle();
-        eidtorsPickList();
+        editorsPick();
         renderTopicCounts();
       })
 
