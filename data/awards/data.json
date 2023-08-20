@@ -6,7 +6,7 @@
       "project": "The Campus IFA 2023",
       "architect": "modern fusion studio",
       "averageRating": "8.8",
-      "thumbnail": "/data/awards/thumbnail/campus.jpg",
+      "thumbnail": "/data/awards/thumbnail/campus.webp",
       "comment": "This building encapsulates the very essence of visionary design and functional brilliance. From the moment you approach the building, its striking façade commands attention and intrigue, hinting at the innovative spaces within!"
     },
     {
@@ -15,7 +15,7 @@
       "project": "symphony hotel sydney",
       "architect": "AWT Lab",
       "averageRating": "7.4",
-      "thumbnail": "/data/awards/thumbnail/hotel.jpg",
+      "thumbnail": "/data/awards/thumbnail/hotel.webp",
       "comment": "This building is a true symphony of modern aesthetics, where each element plays in perfect harmony to create a breathtaking architectural composition."
     },
     {
@@ -24,7 +24,7 @@
       "project": "farm house 2.0",
       "architect": "Northern Design",
       "averageRating": "7.1",
-      "thumbnail": "/data/awards/thumbnail/farmhouse.jpg",
+      "thumbnail": "/data/awards/thumbnail/farmhouse.webp",
       "comment": "The farm House shows an exceptional embodiment of innovation, sustainability, and a deep understanding of the surrounding landscape. The structure is more than a farmhouse."
     }
   ]
