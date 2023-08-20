@@ -437,6 +437,12 @@
 }
 
 /* Featured Authors -------------------- */
+.featured-authors__icon {
+  border-radius: 50%;
+  width: var(--size-2xl);
+  height: var(--size-2xl);
+}
+
 .featured-authors__txt {
   justify-content: center;
 }

@@ -60,8 +60,10 @@
 
     <script type="text/javascript" src="/assets/js/topics.js"></script>
     <script type="text/javascript" src="/assets/js/insights.js"></script>
-    <script type="text/javascript" src="/assets/js/awards.js"></script>
     <script type="text/javascript" src="/assets/js/saved.js"></script>
+    <script type="text/javascript" src="/assets/js/awards.js"></script>
+    <script type="text/javascript" src="/assets/js/authors.js"></script>
+
     <script
       defer
       type="text/javascript"
@@ -604,66 +606,24 @@
               <p class="section__title">featured authors</p>
             </div>
             <ul class="section__content featured-authors__list col gap--m">
-              <li class="featured-authors__item row gap--m">
-                <p class="featured-authors__icon ts--h3">
-                  <i class="fa-regular fa-circle-user"></i>
-                </p>
-                <div class="featured-authors__txt col">
-                  <p class="featured-authors__name bold">Grace Bennett</p>
-                  <ul class="fatured-authors__row row">
-                    <li class="featured-authors__topic ts--body-s">Urban</li>
-                    <li class="featured-authors__separator ts--body-s">
-                      &nbsp;·&nbsp;
-                    </li>
-                    <li class="featured-authors__topic ts--body-s">Cultural</li>
-                  </ul>
-                </div>
-              </li>
-              <li class="featured-authors__item row gap--m">
-                <p class="featured-authors__icon ts--h3">
-                  <i class="fa-regular fa-circle-user"></i>
-                </p>
-                <div class="featured-authors__txt col">
-                  <p class="featured-authors__name bold">Grace Bennett</p>
-                  <ul class="fatured-authors__row row">
-                    <li class="featured-authors__topic ts--body-s">Urban</li>
-                    <li class="featured-authors__separator ts--body-s">
-                      &nbsp;·&nbsp;
-                    </li>
-                    <li class="featured-authors__topic ts--body-s">Cultural</li>
-                  </ul>
-                </div>
-              </li>
-              <li class="featured-authors__item row gap--m">
-                <p class="featured-authors__icon ts--h3">
-                  <i class="fa-regular fa-circle-user"></i>
-                </p>
-                <div class="featured-authors__txt col">
-                  <p class="featured-authors__name bold">Grace Bennett</p>
-                  <ul class="fatured-authors__row row">
-                    <li class="featured-authors__topic ts--body-s">Urban</li>
-                    <li class="featured-authors__separator ts--body-s">
-                      &nbsp;·&nbsp;
-                    </li>
-                    <li class="featured-authors__topic ts--body-s">Cultural</li>
-                  </ul>
-                </div>
-              </li>
-              <li class="featured-authors__item row gap--m">
-                <p class="featured-authors__icon ts--h3">
-                  <i class="fa-regular fa-circle-user"></i>
-                </p>
-                <div class="featured-authors__txt col">
-                  <p class="featured-authors__name bold">Grace Bennett</p>
-                  <ul class="fatured-authors__row row">
-                    <li class="featured-authors__topic ts--body-s">Urban</li>
-                    <li class="featured-authors__separator ts--body-s">
-                      &nbsp;·&nbsp;
-                    </li>
-                    <li class="featured-authors__topic ts--body-s">Cultural</li>
-                  </ul>
-                </div>
-              </li>
+              <script
+                id="featuredAuthorsTemplate"
+                type="text/x-handlebars-template"
+              >
+                {{#each data}}
+                  <li class="featured-authors__item row gap--m">
+                    <img src="{{avatar}}" class="featured-authors__icon"></img>
+                    <div class="featured-authors__txt col">
+                      <p class="featured-authors__name bold">{{name}}</p>
+                      <ul class="fatured-authors__row row">
+                        <span class="featured-authors__topic ts--body-s">
+                          {{{topicsOneline}}}
+                        </span>
+                      </ul>
+                    </div>
+                  </li>
+                {{/each}}
+              </script>
             </ul>
             <div class="component-viewAll row end"></div>
           </div>
