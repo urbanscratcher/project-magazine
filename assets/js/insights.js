@@ -163,8 +163,9 @@ fetch("/data/insights/data.json")
             renderEditorsPick();
             renderTopicCounts();
             renderTrendings();
-          })
 
+            loadBookmark();
+          })
           .catch((err) => {
             console.error("error: ", err);
           });
