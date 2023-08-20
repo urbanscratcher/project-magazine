@@ -10,19 +10,6 @@ fetch("/data/insights/data.json")
     const insightsData = data.insights.map((el) => {
       const dateObj = new Date(el.createdAt);
 
-      const options = {
-        year: "numeric",
-        month: "long",
-        day: "numeric",
-        hour: "numeric",
-        minute: "numeric",
-        second: "numeric",
-        timeZoneName: "short",
-      };
-      const formattedDate = new Intl.DateTimeFormat("en-US", options).format(
-        dateObj
-      );
-
       const mappedEl = {
         ...el,
         createdAt: dateObj,
@@ -132,6 +119,24 @@ fetch("/data/insights/data.json")
       trendingMainSummary(data);
       trendingMainCreatedAt(data);
       trendingMainTtr(data);
+      trendingMainAuthor(data);
+    }
+
+    function trendingMainAuthor(data) {
+      getAuthor(data.author.id).then((author) => {
+        if (!author) {
+          author = { name: "Anonymous" };
+        }
+
+        const newHtml = () => `
+        {{name}}
+      `;
+        const parentEl = document.querySelector(
+          ".trending__main .author__name"
+        );
+
+        insert(parentEl, render(newHtml, author));
+      });
     }
 
     function trendingMainTtr(data) {
