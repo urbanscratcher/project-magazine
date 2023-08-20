@@ -118,10 +118,7 @@ fetch("/data/insights/data.json")
           insertAfterTemplate("trendingMainTtrTemplate", data);
           trendingMainCreatedAt(data);
 
-          insertAfterTemplate(
-            "trendingMainAuthorTemplate",
-            getAuthor(data.author.id)
-          );
+          insertAfterTemplate("trendingMainAuthor", getAuthor(data.author.id));
         }
 
         function trendingMainCreatedAt(data) {

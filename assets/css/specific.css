@@ -440,13 +440,15 @@
   border-radius: 50%;
   width: var(--size-l);
   height: var(--size-l);
+  outline: solid 1px var(--color-secondary);
 }
 
 /* Featured Authors -------------------- */
-.featured-authors__icon {
+.featured-authors__avatar {
   border-radius: 50%;
   width: var(--size-2xl);
   height: var(--size-2xl);
+  outline: solid 1px var(--color-secondary);
 }
 
 .featured-authors__txt {

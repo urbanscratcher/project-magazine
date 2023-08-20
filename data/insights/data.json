@@ -8,7 +8,7 @@
       "ttr": "2 min",
       "thumbnail": "/data/insights/thumbnail/1.webp",
       "createdAt": "2023-08-16T18:25:43.511Z",
-      "author": { "id": 1 },
+      "author": { "id": 9 },
       "viewCount": 5
     },
     {
@@ -19,7 +19,7 @@
       "ttr": "2 min",
       "thumbnail": "/data/insights/thumbnail/2.webp",
       "createdAt": "2023-08-17T18:25:43.511Z",
-      "author": { "id": 7 },
+      "author": { "id": 4 },
       "viewCount": 15
     },
     {
@@ -41,7 +41,7 @@
       "ttr": "2 min",
       "thumbnail": "/data/insights/thumbnail/test.webp",
       "createdAt": "2022-11-15T18:25:43.511Z",
-      "author": { "id": 7 },
+      "author": { "id": 3 },
       "viewCount": 410
     },
     {
@@ -52,7 +52,7 @@
       "ttr": "2 min",
       "thumbnail": "/data/insights/thumbnail/test.webp",
       "createdAt": "2023-08-17T18:25:43.511Z",
-      "author": { "id": 7 },
+      "author": { "id": 2 },
       "viewCount": 214
     },
     {
@@ -63,7 +63,7 @@
       "ttr": "2 min",
       "thumbnail": "/data/insights/thumbnail/test.webp",
       "createdAt": "2023-08-16T18:25:43.511Z",
-      "author": { "id": 7 },
+      "author": { "id": 8 },
       "viewCount": 443
     }
   ]

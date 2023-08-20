@@ -74,11 +74,9 @@
   <body>
     <!-- Template html texts (Component) -->
     <template id="viewAllTemplate">
-      <a href="#" class="viewAll">
-        <p class="ts--btn">view all</p>
-        <div class="btn--circle-m">
-          <i class="fa-solid fa-chevron-right"></i>
-        </div>
+      <a href="#" class="viewAll row gap--s">
+        <p class="viewAll__txt ts--btn">view all</p>
+        <i class="fa-solid fa-chevron-right ts--body-s"></i>
       </a>
     </template>
 
@@ -371,14 +369,10 @@
                 </p>
               </div>
               <div class="author-row--icon v-center row gap--s">
-                <h4 class="icon__avatar-wrapper">
-                  <i class="icon__avatar fa-regular fa-circle-user"></i>
-                </h4>
-                <p class="author__name">
-                  <template id="trendingMainAuthorTemplate">
-                    {{name}}
-                  </template>
-                </p>
+                <template id="trendingMainAuthor">
+                  <img src="{{avatar}}" class="author__avatar" />
+                  <p class="author__name">{{name}}</p>
+                </template>
               </div>
             </div>
             <ul class="trending__list col gap--l">
@@ -610,7 +604,7 @@
               >
                 {{#each data}}
                   <li class="featured-authors__item row gap--m">
-                    <img src="{{avatar}}" class="featured-authors__icon"></img>
+                    <img src="{{avatar}}" class="featured-authors__avatar"></img>
                     <div class="featured-authors__txt col">
                       <p class="featured-authors__name bold">{{name}}</p>
                       <ul class="fatured-authors__row row">
