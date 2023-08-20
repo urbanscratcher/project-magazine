@@ -10,6 +10,9 @@
     />
     <meta name="author" content="Hyunjung Joun" />
 
+    <!-- Title -->
+    <title>ArchOn Magazine</title>
+
     <!-- Font from Google Fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,18 +20,6 @@
     <!-- Serif: DM Serif Display -->
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Serif: DM Serif Text -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- San-serif: DM Sans -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100;0,9..40,200;0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;1,9..40,100;1,9..40,200;1,9..40,300;1,9..40,400;1,9..40,500&display=swap"
       rel="stylesheet"
     />
 
@@ -55,44 +46,128 @@
       crossorigin="anonymous"
     />
 
-    <!-- Global Bootstrap CSS -->
+    <!-- Bootstrap CSS -->
     <!-- <link
       rel="stylesheet"
       href="assets/plugins/bootstrap/css/bootstrap.min.css"
     /> -->
 
     <!-- Custom CSS Files -->
-    <link rel="stylesheet" href="assets/css/reset.css" />
-    <link rel="stylesheet" href="assets/css/variables.css" />
-    <link rel="stylesheet" href="assets/css/reusable-utils.css" />
-    <link rel="stylesheet" href="assets/css/reusable-elements.css" />
-    <link rel="stylesheet" href="assets/css/specific.css" />
-    <link rel="stylesheet" href="assets/css/responsive.css" />
+    <link rel="stylesheet" href="/assets/css/reset.css" />
+    <link rel="stylesheet" href="/assets/css/variables.css" />
+    <link rel="stylesheet" href="/assets/css/reusable-utils.css" />
+    <link rel="stylesheet" href="/assets/css/reusable-elements.css" />
+    <link rel="stylesheet" href="/assets/css/specific.css" />
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
 
     <!-- Handlebars from a CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.min.js"></script>
 
-    <!-- Load JS files for the Handlebars Template -->
-    <script src="./assets/js/util.js"></script>
+    <!-- Load JS files -->
+    <script src="/assets/js/util.js"></script>
 
-    <script src="./assets/js/topics.js"></script>
-    <script src="./assets/js/authors.js"></script>
-    <script src="./assets/js/insights.js"></script>
-    <script src="./assets/js/awards.js"></script>
+    <script src="/assets/js/topics.js"></script>
+    <script src="/assets/js/authors.js"></script>
+    <script src="/assets/js/insights.js"></script>
+    <script src="/assets/js/awards.js"></script>
 
-    <script src="./assets/js/view-all.js"></script>
-    <script src="./assets/js/newsletter.js"></script>
-    <script src="./assets/js/bookmark-add.js"></script>
-
-    <!-- Title -->
-    <title>ArchOn Magazine</title>
+    <script defer src="/assets/js/view-all.js"></script>
+    <script defer src="/assets/js/newsletter.js"></script>
+    <script src="/assets/js/bookmark-add.js"></script>
   </head>
 
   <body>
+    <!-- Template html texts (Component) -->
+    <template id="viewAllTemplate">
+      <a href="#" class="viewAll">
+        <p class="ts--btn">view all</p>
+        <div class="btn--circle-m">
+          <i class="fa-solid fa-chevron-right"></i>
+        </div>
+      </a>
+    </template>
+
+    <template id="newsletterTemplate">
+      <div class="col gap--m">
+        <p class="newsletter__description">
+          Subscribe our newsletter to get the latest updates all about
+          architecture
+        </p>
+        <form class="newsletter__form col gap--m">
+          <div class="newsletter__inputs col gap--s">
+            <input
+              class="newsletter__input"
+              placeholder="Enter your full name"
+            />
+            <input class="newsletter__input" placeholder="Enter your email" />
+          </div>
+          <label class="newsletter__consent">
+            <input type="checkbox" class="newsletter__checkbox" />
+            By signing up, you agree to our terms and privacy policy
+          </label>
+          <input
+            type="submit"
+            class="newsletter__submit btn-primary ts--btn"
+            value="subscribe"
+          />
+        </form>
+      </div>
+    </template>
+
+    <template id="bookmarkTemplate">
+      <svg
+        version="1.1"
+        id="Layer_1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        x="0px"
+        y="0px"
+        viewBox="0 0 512 512"
+        style="enable-background: new 0 0 512 512"
+        xml:space="preserve"
+      >
+        <style type="text/css">
+          .st0 {
+            fill-rule: evenodd;
+            clip-rule: evenodd;
+          }
+        </style>
+        <g>
+          <path
+            class="st0"
+            d="M78.6,35.5c-9.8,0-17.7,7.9-17.7,17.7v392.5l141.9-94.6l141.9,94.6V266c0-9.8,7.9-17.7,17.7-17.7
+  c9.8,0,17.7,7.9,17.7,17.7v246L202.8,393.8L25.4,512V53.2C25.4,23.8,49.3,0,78.6,0h141.9c9.8,0,17.7,7.9,17.7,17.7
+  s-7.9,17.7-17.7,17.7H78.6z M397.9,0c9.8,0,17.7,7.9,17.7,17.7v70.9c0,9.8-7.9,17.7-17.7,17.7h-70.9c-9.8,0-17.7-7.9-17.7-17.7
+  s7.9-17.7,17.7-17.7h53.2V17.7C380.2,7.9,388.1,0,397.9,0z"
+          />
+          <path
+            class="st0"
+            d="M380.2,88.7c0-9.8,7.9-17.7,17.7-17.7h70.9c9.8,0,17.7,7.9,17.7,17.7s-7.9,17.7-17.7,17.7h-53.2v53.2
+  c0,9.8-7.9,17.7-17.7,17.7s-17.7-7.9-17.7-17.7V88.7z"
+          />
+        </g>
+      </svg>
+    </template>
+
+    <template id="coverTemplate">
+      <div
+        class="cover__bg bg--img"
+        style="--img-url: url({{thumbnail}})"
+      ></div>
+      <div class="cover__txt col container--m gap--m tc--white">
+        <div class="cover__topic">
+          <a href="#" class="topic--white ts--btn">{{topic}}</a>
+        </div>
+        <div class="cover__headline">
+          <h1 href="#" class="serif hover--txt">{{title}}</h1>
+        </div>
+      </div>
+    </template>
+
     <!-- Navigation Bar-->
     <header id="header">
       <nav class="navbar__wrapper">
-        <img class="navbar__logo logo--white" src="assets/image/logo.png" />
+        <img class="navbar__logo logo--white" src="/assets/image/logo.png" />
         <div class="navbar__menu row gap--l tc--white">
           <a class="menu__item" href="#">Insights</a>
           <a class="menu__item" href="#">Quiz</a>
@@ -115,8 +190,24 @@
       <div id="highlights">
         <!-- Section: Cover -->
         <section id="cover" class="col">
-          <!-- [cover__bg] -->
-          <!-- [cover__txt] -->
+          <template id="coverThumbnailTemplate">
+            <div
+              class="cover__bg bg--img"
+              style="--img-url: url({{thumbnail}})"
+            ></div>
+          </template>
+          <div class="cover__txt col container--m gap--m tc--white">
+            <div class="cover__topic">
+              <a href="#" class="topic--white ts--btn">
+                <template id="coverTopicTemplate"> {{topic}} </template>
+              </a>
+            </div>
+            <div class="cover__headline">
+              <h1 href="#" class="serif hover--txt">
+                <template id="coverTitleTemplate"> {{title}} </template>
+              </h1>
+            </div>
+          </div>
           <div class="cover__slide-controller slide-controller row gap--m">
             <button class="slide-controller__btn btn--prev btn--circle-l">
               <i class="fa-solid fa-chevron-left"></i>

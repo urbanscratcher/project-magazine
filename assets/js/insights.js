@@ -20,19 +20,14 @@ fetch("/data/insights/data.json")
 
     // public functions --------------------------
     function renderCover() {
-      const newHtml = () => `
-      <div class="cover__bg bg--img" style="--img-url: url({{thumbnail}})"></div>
-      <div class="cover__txt col container--m gap--m tc--white">
-        <div class="cover__topic">
-          <a href="#" class="topic--white ts--btn">{{topic}}</a>
-        </div>
-        <div class="cover__headline">
-          <h1 href="#" class="serif hover--txt">
-            {{title}}
-          </h1>
-        </div>
-      </div>          
-    `;
+      const coverTopicHtml = () =>
+        document.getElementById("coverTopicTemplate").innerHTML;
+
+      const coverThumbnailHtml = () =>
+        document.getElementById("coverThumbnailTemplate").innerHTML;
+
+      const coverTitleHtml = () =>
+        document.getElementById("coverTitleTemplate").innerHTML;
 
       const parentEl = document.getElementById("cover");
 
@@ -41,10 +36,24 @@ fetch("/data/insights/data.json")
         .then((coverData) => {
           const coverId = coverData.insightsCover[0].id;
           const matchedData = insightsData.find((el) => el.id === coverId);
-          insertFirstChild(parentEl, render(newHtml, matchedData));
+
+          insertFirstChild(
+            document.querySelector(".cover__topic .topic--white"),
+            render(coverTopicHtml, matchedData)
+          );
+
+          insertFirstChild(
+            document.querySelector("#cover"),
+            render(coverThumbnailHtml, matchedData)
+          );
+
+          insertFirstChild(
+            document.querySelector(".cover__headline h1"),
+            render(coverTitleHtml, matchedData)
+          );
         })
         .catch((error) => {
-          console.error("error: ", err);
+          console.error("error: ", error);
         });
     }
 

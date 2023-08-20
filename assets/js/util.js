@@ -22,6 +22,7 @@ function insertFirstChild(el, html) {
   el.insertAdjacentHTML("afterbegin", html);
 }
 
+// Util Functions ----------------------------------
 function printDateDifference(startedAt) {
   const now = new Date();
   const difference = now - startedAt;

@@ -4,17 +4,10 @@
 -------------------------------- */
 
 // Fetch the template file -----------------
-fetch("../../index.html")
+fetch("/index.html")
   .then((res) => res.text())
   .then((html) => {
-    const newHtml = () => `
-    <a href="#" class="viewAll">
-      <p class="ts--btn">view all</p>
-      <div class="btn--circle-m">
-        <i class="fa-solid fa-chevron-right"></i>
-      </div>
-    </a>
-  `;
+    const newHtml = () => document.getElementById("viewAllTemplate").innerHTML;
 
     const parentEls = document.getElementsByClassName("component-viewAll");
 

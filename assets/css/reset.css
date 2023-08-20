@@ -191,7 +191,7 @@ h6 {
 - Author: Hyunjung Joun
 -------------------------------- */
 body {
-  font-family: "Figtree", "DM Sans", Helvetica, Arial, sans-serif;
+  font-family: "Figtree", Helvetica, Arial, sans-serif;
   color: var(--color-secondary);
 }
 
