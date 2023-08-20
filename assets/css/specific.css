@@ -436,6 +436,12 @@
   width: 66.6666%;
 }
 
+.author__avatar {
+  border-radius: 50%;
+  width: var(--size-l);
+  height: var(--size-l);
+}
+
 /* Featured Authors -------------------- */
 .featured-authors__icon {
   border-radius: 50%;

@@ -10,8 +10,14 @@ fetch("/data/authors/data.json")
       .sort((a, b) => b.id - a.id)
       .slice(0, 4)
       .map((el) => {
-        el.topicsOneline = el.topics.join("&nbsp;·&nbsp;");
-        return el;
+        mappedEl = {
+          id: el.id,
+          name: el.name,
+          topicsOneline: el.topics.join("&nbsp;·&nbsp;"),
+          avatar: el.avatar,
+        };
+
+        return mappedEl;
       });
 
     insertAfterTemplate("featuredAuthorsTemplate", { data: authors });
