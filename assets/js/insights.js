@@ -20,16 +20,11 @@ fetch("/data/insights/data.json")
 
     // public functions --------------------------
     function renderCover() {
-      const coverTopicHtml = () =>
-        document.getElementById("coverTopicTemplate").innerHTML;
-
-      const coverThumbnailHtml = () =>
-        document.getElementById("coverThumbnailTemplate").innerHTML;
-
-      const coverTitleHtml = () =>
-        document.getElementById("coverTitleTemplate").innerHTML;
-
-      const parentEl = document.getElementById("cover");
+      const coverTopicEl = document.getElementById("coverTopicTemplate");
+      const coverThumbnailEl = document.getElementById(
+        "coverThumbnailTemplate"
+      );
+      const coverTitleEl = document.getElementById("coverTitleTemplate");
 
       fetch("/data/insights/data-cover.json")
         .then((res) => res.json())
@@ -37,19 +32,19 @@ fetch("/data/insights/data.json")
           const coverId = coverData.insightsCover[0].id;
           const matchedData = insightsData.find((el) => el.id === coverId);
 
-          insertFirstChild(
-            document.querySelector(".cover__topic .topic--white"),
-            render(coverTopicHtml, matchedData)
+          insertAfter(
+            coverTopicEl,
+            render(() => coverTopicEl.innerHTML, matchedData)
           );
 
-          insertFirstChild(
-            document.querySelector("#cover"),
-            render(coverThumbnailHtml, matchedData)
+          insertAfter(
+            coverThumbnailEl,
+            render(() => coverThumbnailEl.innerHTML, matchedData)
           );
 
-          insertFirstChild(
-            document.querySelector(".cover__headline h1"),
-            render(coverTitleHtml, matchedData)
+          insertAfter(
+            coverTitleEl,
+            render(() => coverTitleEl.innerHTML, matchedData)
           );
         })
         .catch((error) => {
@@ -61,24 +56,16 @@ fetch("/data/insights/data.json")
       fetch("/data/insights/data-editorsPick.json")
         .then((res) => res.json())
         .then((editorsPickData) => {
-          const coverId = editorsPickData.insightsEditorsPick?.cover ?? 1;
-          const sub1Id = editorsPickData.insightsEditorsPick?.sub1 ?? 1;
-          const sub2Id = editorsPickData.insightsEditorsPick?.sub2 ?? 1;
-          const sub3Id = editorsPickData.insightsEditorsPick?.sub3 ?? 1;
+          const list = [];
 
-          const editorsPick = {
-            cover: insightsData.find((el) => el.id === coverId),
-            list: [
-              insightsData.find((el) => el.id === sub1Id),
-              insightsData.find((el) => el.id === sub2Id),
-              insightsData.find((el) => el.id === sub3Id),
-            ],
-          };
+          for (const item of editorsPickData.insightsEditorsPick) {
+            list.push(insightsData.find((el) => el.id === item.id));
+          }
 
-          editorsPickCoverImg(editorsPick.cover);
-          editorsPickTopic(editorsPick.cover);
-          editorsPickTitle(editorsPick.cover);
-          eidtorsPickList(editorsPick.list);
+          editorsPickCoverImg(list[0]);
+          editorsPickTopic(list[0]);
+          editorsPickTitle(list[0]);
+          eidtorsPickList(list.slice(1, 4));
         })
         .catch((err) => console.error("error: " + err));
     }

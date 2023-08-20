@@ -1,3 +1,3 @@
 {
-  "insightsEditorsPick": { "cover": 2, "sub1": 3, "sub2": 4, "sub3": 5 }
+  "insightsEditorsPick": [{ "id": 2 }, { "id": 3 }, { "id": 4 }, { "id": 5 }]
 }
