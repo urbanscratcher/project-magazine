@@ -65,9 +65,7 @@
 
     <!-- Load JS files -->
     <script src="/assets/js/util.js"></script>
-
     <script src="/assets/js/topics.js"></script>
-    <script src="/assets/js/authors.js"></script>
     <script src="/assets/js/insights.js"></script>
     <script src="/assets/js/awards.js"></script>
 
@@ -230,19 +228,18 @@
             <!-- main -->
             <div class="editorsPick__main col gap--m">
               <div class="editorsPick__img section__img">
-                <!-- [editorsPick__img] -->
-                <template id="editorsPickCoverImg">
+                <template id="editorsPickImgTemplate">
                   <img src="{{thumbnail}}" class="img--ratio-169" />
                 </template>
                 <div class="component-bookmark-add"></div>
               </div>
               <div class="editorsPick__topic">
-                <template id="editorsPickTopic"
+                <template id="editorsPickTopicTemplate"
                   ><a href="#" class="topic ts--btn">{{topic}}</a>
                 </template>
               </div>
               <div class="editorsPick__title">
-                <template id="editorsPickTitle">
+                <template id="editorsPickTitleTemplate">
                   <a class="serif hover--txt ts--h3" href="#">{{title}}</a>
                 </template>
               </div>
@@ -250,7 +247,7 @@
             <!-- list -->
             <div class="editorsPick__list-wrapper col gap--m">
               <ul class="editorsPick__list col gap--m">
-                <template id="editorsPickList">
+                <template id="editorsPickListTemplate">
                   {{#each insights}}
                   <li class="editorsPick__list-item ts--h4 serif">
                     <a href="#" class="editorsPick__list-txt hover--txt"
@@ -341,17 +338,21 @@
           <div class="section__content row gap--m">
             <div class="trending__main col gap--m">
               <div class="section__img">
-                <!-- [main__img] -->
+                <template id="trendingMainImgTemplate">
+                  <img src="{{thumbnail}}" class="img--ratio-169" />
+                </template>
                 <div class="component-bookmark-add"></div>
               </div>
               <div class="topic__wrapper">
-                <!-- [main topic] -->
+                <template id="trendingMainTopicTemplate">
+                  <a href="#" class="topic ts--btn">{{topic}}</a>
+                </template>
               </div>
               <h2 class="main__title serif hover--txt">
-                <!-- [main title] -->
+                <template id="trendingMainTitle">{{title}}</template>
               </h2>
               <p class="main__summary">
-                <!-- [main summary] -->
+                <template id="trendingMainSummary">{{summary}}</template>
               </p>
               <div class="time__wrapper row gap--s v-center">
                 <h4 class="icon__time-wrapper">
@@ -363,7 +364,7 @@
                 <p class="separator">·</p>
                 <p class="ttr__box">
                   <span class="ttr">
-                    <!-- [main ttr] -->
+                    <template id="trendingMainTtrTemplate"> {{ttr}} </template>
                   </span>
                   read
                 </p>
@@ -373,11 +374,35 @@
                   <i class="icon__avatar fa-regular fa-circle-user"></i>
                 </h4>
                 <p class="author__name">
-                  <!-- [main author name] -->
+                  <template id="trendingMainAuthorTemplate">
+                    {{name}}
+                  </template>
                 </p>
               </div>
             </div>
-            <ul class="trending__list col gap--l"></ul>
+            <ul class="trending__list col gap--l">
+              <!-- [trending list] -->
+              <template id="trendingListTemplate">
+                {{#each data}}
+                <li class="trending__item col gap--s">
+                  <div class="topic__wrapper">
+                    <a href="#" class="topic ts--btn">{{topic}}</a>
+                  </div>
+                  <div class="title-row row gap--s">
+                    <h4 class="title-row__txt hover--txt serif">{{title}}</h4>
+                    <div class="title-row__img section__img">
+                      <img src="{{thumbnail}}" />
+                      <div class="component-bookmark-add"></div>
+                    </div>
+                  </div>
+                  <p class="author-row ts--body-s text-gray row gap--s">
+                    By
+                    <span class="author__name">{{author.name}}</span>
+                  </p>
+                </li>
+                {{/each}}
+              </template>
+            </ul>
           </div>
         </section>
 
