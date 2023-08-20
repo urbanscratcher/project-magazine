@@ -20,32 +20,15 @@ fetch("/data/insights/data.json")
 
     // public functions --------------------------
     function renderCover() {
-      const coverTopicEl = document.getElementById("coverTopicTemplate");
-      const coverThumbnailEl = document.getElementById(
-        "coverThumbnailTemplate"
-      );
-      const coverTitleEl = document.getElementById("coverTitleTemplate");
-
       fetch("/data/insights/data-cover.json")
         .then((res) => res.json())
         .then((coverData) => {
           const coverId = coverData.insightsCover[0].id;
           const matchedData = insightsData.find((el) => el.id === coverId);
 
-          insertAfter(
-            coverTopicEl,
-            render(() => coverTopicEl.innerHTML, matchedData)
-          );
-
-          insertAfter(
-            coverThumbnailEl,
-            render(() => coverThumbnailEl.innerHTML, matchedData)
-          );
-
-          insertAfter(
-            coverTitleEl,
-            render(() => coverTitleEl.innerHTML, matchedData)
-          );
+          insertAfterTemplate("coverTopicTemplate", matchedData);
+          insertAfterTemplate("coverThumbnailTemplate", matchedData);
+          insertAfterTemplate("coverTitleTemplate", matchedData);
         })
         .catch((error) => {
           console.error("error: ", error);
@@ -62,10 +45,10 @@ fetch("/data/insights/data.json")
             list.push(insightsData.find((el) => el.id === item.id));
           }
 
-          editorsPickCoverImg(list[0]);
-          editorsPickTopic(list[0]);
-          editorsPickTitle(list[0]);
-          eidtorsPickList(list.slice(1, 4));
+          insertAfterTemplate("editorsPickCoverImg", list[0]);
+          insertAfterTemplate("editorsPickTopic", list[0]);
+          insertAfterTemplate("editorsPickTitle", list[0]);
+          eidtorsPickList(list.slice(1, 5));
         })
         .catch((err) => console.error("error: " + err));
     }
@@ -218,44 +201,17 @@ fetch("/data/insights/data.json")
     }
 
     function editorsPickCoverImg(data) {
-      const newHtml = () => `
-      <img
-        src="{{thumbnail}}"
-        class="img--ratio-169"
-      />         
-    `;
-
-      const parentEl = document.querySelector(".editorsPick__img");
-
-      insertFirstChild(parentEl, render(newHtml, data));
-    }
-
-    function editorsPickTopic(data) {
-      const newHtml = () => `
-      <a href="#" class="topic ts--btn">{{topic}}</a>
-      `;
-
-      const parentEl = document.querySelector(".editorsPick__topic");
-
-      insertFirstChild(parentEl, render(newHtml, data));
-    }
-
-    function editorsPickTitle(data) {
-      const newHtml = () => `
-      <a class="serif hover--txt ts--h3" href="#">{{title}}</a>
-      `;
-      const parentEl = document.querySelector(".editorsPick__title");
-      insertFirstChild(parentEl, render(newHtml, data));
+      const editorsPickImg = document.getElementById("editorsPickImg");
+      insertAfter(
+        editorsPickImg,
+        render(() => editorsPickImg.innerHTML, data)
+      );
     }
 
     function eidtorsPickList(list) {
-      const newHtml = () => `
-      {{#each insights}}
-      <li class="editorsPick__list-item ts--h4 serif">
-        <a href="#" class="editorsPick__list-txt hover--txt">{{title}}</a>
-      </li>
-      {{/each}}      
-      `;
+      const newHtml = () =>
+        document.getElementById("editorsPickList").innerHTML;
+
       const parentEl = document.querySelector(".editorsPick__list");
       insert(
         parentEl,

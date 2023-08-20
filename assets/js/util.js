@@ -26,6 +26,14 @@ function insertAfter(el, html) {
   el.insertAdjacentHTML("afterend", html);
 }
 
+function insertAfterTemplate(templateId, data) {
+  const el = document.getElementById(templateId);
+  insertAfter(
+    el,
+    render(() => el.innerHTML, data)
+  );
+}
+
 // Util Functions ----------------------------------
 function printDateDifference(startedAt) {
   const now = new Date();

@@ -231,20 +231,37 @@
             <div class="editorsPick__main col gap--m">
               <div class="editorsPick__img section__img">
                 <!-- [editorsPick__img] -->
+                <template id="editorsPickCoverImg">
+                  <img src="{{thumbnail}}" class="img--ratio-169" />
+                </template>
                 <div class="component-bookmark-add"></div>
               </div>
               <div class="editorsPick__topic">
-                <!-- [editorsPick__topic] -->
+                <template id="editorsPickTopic"
+                  ><a href="#" class="topic ts--btn">{{topic}}</a>
+                </template>
               </div>
               <div class="editorsPick__title">
-                <!-- [editorsPick__title] -->
+                <template id="editorsPickTitle">
+                  <a class="serif hover--txt ts--h3" href="#">{{title}}</a>
+                </template>
               </div>
             </div>
             <!-- list -->
             <div class="editorsPick__list-wrapper col gap--m">
               <ul class="editorsPick__list col gap--m">
+                <template id="editorsPickList">
+                  {{#each insights}}
+                  <li class="editorsPick__list-item ts--h4 serif">
+                    <a href="#" class="editorsPick__list-txt hover--txt"
+                      >{{title}}</a
+                    >
+                  </li>
+                  {{/each}}
+                </template>
                 <!-- [editorsPick__list-item] -->
               </ul>
+
               <div class="editorsPick__viewAll component-viewAll row end"></div>
             </div>
           </div>
