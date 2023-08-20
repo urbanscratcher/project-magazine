@@ -7,6 +7,11 @@
 fetch("/data/insights/data.json")
   .then((res) => res.json())
   .then((data) => {
+    // inspirations
+    const shuffledArr = shuffle(data.insights, 6);
+    insertAfterTemplate("inspirationsTemplate", { data: shuffledArr });
+
+    // cover, editorspick, trending, the latest, featured authors
     fetch("/data/authors/data.json")
       .then((res) => res.json())
       .then((authorsData) => {

@@ -540,66 +540,17 @@
             </div>
           </div>
           <ul class="inspirations__list">
-            <li class="inspirations__img section__img">
-              <img
-                class="inspirations__img"
-                src="./data/insights/thumbnail/test.jpg"
-              />
-              <label
-                class="inspirations__topic topic topic--white ts--btn tc--white"
-                >topic</label
-              >
-            </li>
-            <li class="inspirations__img section__img">
-              <img
-                class="inspirations__img"
-                src="./data/insights/thumbnail/test.jpg"
-              />
-              <label
-                class="inspirations__topic topic topic--white ts--btn tc--white"
-                >topic</label
-              >
-            </li>
-            <li class="inspirations__img section__img">
-              <img
-                class="inspirations__img"
-                src="./data/insights/thumbnail/test.jpg"
-              />
-              <label
-                class="inspirations__topic topic topic--white ts--btn tc--white"
-                >topic</label
-              >
-            </li>
-            <li class="inspirations__img section__img">
-              <img
-                class="inspirations__img"
-                src="./data/insights/thumbnail/test.jpg"
-              />
-              <label
-                class="inspirations__topic topic topic--white ts--btn tc--white"
-                >topic</label
-              >
-            </li>
-            <li class="inspirations__img section__img">
-              <img
-                class="inspirations__img"
-                src="./data/insights/thumbnail/test.jpg"
-              />
-              <label
-                class="inspirations__topic topic topic--white ts--btn tc--white"
-                >topic</label
-              >
-            </li>
-            <li class="inspirations__img section__img">
-              <img
-                class="inspirations__img"
-                src="./data/insights/thumbnail/test.jpg"
-              />
-              <label
-                class="inspirations__topic topic topic--white ts--btn tc--white"
-                >topic</label
-              >
-            </li>
+            <template id="inspirationsTemplate">
+              {{#each data}}
+              <li class="inspirations__img section__img">
+                <img class="inspirations__img" src="{{thumbnail}}" />
+                <label
+                  class="inspirations__topic topic topic--white ts--btn tc--white"
+                  >topic</label
+                >
+              </li>
+              {{/each}}
+            </template>
           </ul>
         </div>
 
