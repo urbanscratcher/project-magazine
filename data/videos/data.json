@@ -5,6 +5,7 @@
       "topic": "narrative",
       "title": "Frank Gehry Teaches Design and Architecture",
       "summary": "Frank Gehry, one of the most expressive and creative architects in the world, teaches his unconventional philosophy on architecture, design, and art.",
+      "thumbnail": "/data/videos/thumbnail/1.webp",
       "url": "/data/videos/media/1.webm",
       "createdAt": "2023-08-16T18:25:43.511Z"
     },
@@ -13,6 +14,7 @@
       "topic": "narrative",
       "title": "In Loco With Atelier Peclat&Chow: Interview With Architects",
       "summary": "Atelier Peclat&Chow is a Brazilian architectural studio, focused on an essentialist approach, where every element is crucial and plays a fundamental role in the harmonious outcome. Their studio, located in São Paulo, Brazil, brings out their philosophy of achieving a nature of presence and permanence, evoking emotions and the user’s perception of oneself. Dive into In Loco With Atelier Peclat&Chow!",
+      "thumbnail": "/data/videos/thumbnail/2.webp",
       "url": "/data/videos/media/2.webm",
       "createdAt": "2023-08-16T18:25:43.511Z"
     },
@@ -21,6 +23,7 @@
       "topic": "cultural",
       "title": "HISTORY OF PREHISTORIC ARCHITECTURE",
       "summary": "Atelier",
+      "thumbnail": "/data/videos/thumbnail/3.webp",
       "url": "/data/videos/media/3.webm",
       "createdAt": "2023-08-16T18:25:43.511Z"
     },
@@ -29,6 +32,7 @@
       "topic": "cultural",
       "title": "The Nature And Concrete Ambiance In Rio de Janeiro: Architectural Tour",
       "summary": "Immersed in nature, Casa DA is located in the iconic city of Rio de Janeiro, Brazil. With the architectural project of Pedro Coimbra and the design of Zanini de Zanine, the concrete ambiance celebrates Brazilian furniture throughout breezy surroundings. This 2018 residence was the winner of Zissou's Prêmio Cultural de Arquitetura in partnership with Architecture Hunter. Dive into the Panorama Of Casa DA!",
+      "thumbnail": "/data/videos/thumbnail/4.webp",
       "url": "/data/videos/media/4.webm",
       "createdAt": "2023-08-16T18:25:43.511Z"
     },
@@ -37,6 +41,7 @@
       "topic": "cultural",
       "title": "Lyndon Neri on the design of the Tsingpu Yangzhou Retreat",
       "summary": "Neri&Hu cofounder Lyndon Neri explains how the studio referenced traditional Chinese courtyard homes in its design for a hotel, in this interview Dezeen filmed at the AHEAD Asia awards ceremony.",
+      "thumbnail": "/data/videos/thumbnail/5.webp",
       "url": "/data/videos/media/5.webm",
       "createdAt": "2023-08-16T18:25:43.511Z"
     }

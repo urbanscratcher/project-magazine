@@ -63,6 +63,7 @@
     <script type="text/javascript" src="/assets/js/saved.js"></script>
     <script type="text/javascript" src="/assets/js/awards.js"></script>
     <script type="text/javascript" src="/assets/js/authors.js"></script>
+    <script type="text/javascript" src="/assets/js/videos.js"></script>
 
     <script
       defer
@@ -638,103 +639,50 @@
           <p class="section__title">Video</p>
         </div>
         <div class="section__content col gap--l">
-          <div
-            class="video__bg bg--img col"
-            style="--img-url: url(../../data/insights/thumbnail/test.webp)"
-          >
-            <div class="video__content col gap--m tc--white">
-              <div class="topic__wrapper">
-                <label class="topic topic--white ts--btn">topic</label>
-              </div>
-              <h2 class="video__headline serif">
-                Headline level 1 text for cover title ideally up to three lines
-              </h2>
-              <p class="video__summary">
-                Body small text summary text goes here up to three lines, body
-                small text summary text goes here up to three lines...
-              </p>
-              <a href="#" class="video__play">
-                <div
-                  class="video__play-icon-wrapper video__play-outline ts--h4"
-                >
-                  <i class="video__play-icon fa-solid fa-play"></i>
+          <template id="videoCoverTemplate">
+            <div
+              class="video__bg bg--img col"
+              style="--img-url: url({{thumbnail}})"
+            >
+              <div class="video__content col gap--m tc--white">
+                <div class="topic__wrapper">
+                  <label class="topic topic--white ts--btn">{{topic}}</label>
                 </div>
-              </a>
+                <h2 class="video__headline serif">{{title}}</h2>
+                <p class="video__summary">{{summary}}</p>
+                <a href="#" class="video__play">
+                  <div
+                    class="video__play-icon-wrapper video__play-outline ts--h4"
+                  >
+                    <i class="video__play-icon fa-solid fa-play"></i>
+                  </div>
+                </a>
+              </div>
             </div>
-          </div>
+          </template>
           <ul class="video__list row gap--m">
-            <li class="video__item row gap--s">
-              <div class="video__txt-wrapper col gap--s">
-                <div class="topic__wrapper">
-                  <label class="topic">topic</label>
+            <template id="videoListTemplate">
+              {{#each data}}
+              <li class="video__item row gap--s">
+                <div class="video__txt-wrapper col gap--s">
+                  <div class="topic__wrapper">
+                    <label class="topic">{{topic}}</label>
+                  </div>
+                  <h4 class="video__txt serif">{{title}}</h4>
                 </div>
-                <h4 class="video__txt serif">
-                  Headline level 4 text similar to body
-                </h4>
-              </div>
-              <div
-                class="video__thumbnail bg--img"
-                style="--img-url: url(../../data/insights/thumbnail/test.webp)"
-              >
-                <div class="video__float-wrapper video__play-outline ts--h4">
-                  <i class="video__play-icon fa-solid fa-play"></i>
+                <div
+                  class="video__thumbnail bg--img"
+                  style="
+                    --img-url: url({{thumbnail}})
+                  "
+                >
+                  <div class="video__float-wrapper video__play-outline ts--h4">
+                    <i class="video__play-icon fa-solid fa-play"></i>
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li class="video__item row gap--s">
-              <div class="video__txt-wrapper col gap--s">
-                <div class="topic__wrapper">
-                  <label class="topic">topic</label>
-                </div>
-                <h4 class="video__txt serif">
-                  Headline level 4 text similar to body
-                </h4>
-              </div>
-              <div
-                class="video__thumbnail bg--img"
-                style="--img-url: url(../../data/insights/thumbnail/test.webp)"
-              >
-                <div class="video__float-wrapper video__play-outline ts--h4">
-                  <i class="video__play-icon fa-solid fa-play"></i>
-                </div>
-              </div>
-            </li>
-            <li class="video__item row gap--s">
-              <div class="video__txt-wrapper col gap--s">
-                <div class="topic__wrapper">
-                  <label class="topic">topic</label>
-                </div>
-                <h4 class="video__txt serif">
-                  Headline level 4 text similar to body
-                </h4>
-              </div>
-              <div
-                class="video__thumbnail bg--img"
-                style="--img-url: url(../../data/insights/thumbnail/test.webp)"
-              >
-                <div class="video__float-wrapper video__play-outline ts--h4">
-                  <i class="video__play-icon fa-solid fa-play"></i>
-                </div>
-              </div>
-            </li>
-            <li class="video__item row gap--s">
-              <div class="video__txt-wrapper col gap--s">
-                <div class="topic__wrapper">
-                  <label class="topic">topic</label>
-                </div>
-                <h4 class="video__txt serif">
-                  Headline level 4 text similar to body
-                </h4>
-              </div>
-              <div
-                class="video__thumbnail bg--img"
-                style="--img-url: url(../../data/insights/thumbnail/test.webp)"
-              >
-                <div class="video__float-wrapper video__play-outline ts--h4">
-                  <i class="video__play-icon fa-solid fa-play"></i>
-                </div>
-              </div>
-            </li>
+              </li>
+              {{/each}}
+            </template>
           </ul>
         </div>
       </section>
