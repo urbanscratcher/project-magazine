@@ -92,26 +92,54 @@ fetch("/data/insights/data.json")
       }
     }
 
-    function renderTrending() {
-      fetch("/data/insights/data-trending.json")
-        .then((res) => res.json())
-        .then((trendingData) => {
-          const trendingIds = trendingData?.insightsTrending ?? [{ id: 1 }];
-          const trendings = [];
+    function renderTrendings() {
+      const msOf7Days = 1000 * 60 * 60 * 24 * 7;
+      const trendings = [...insightsData]
+        .filter(
+          (el) =>
+            el.createdAt <= Date.now() && el.createdAt > Date.now() - msOf7Days
+        )
+        .sort((a, b) => b.viewCount - a.viewCount);
 
-          for (trendingId of trendingIds) {
-            const trending = insightsData.find((el) => el.id === trendingId.id);
-            trendings.push(trending);
-          }
+      for (let idx = 0; idx < trendings.length; idx++) {
+        if (idx !== 0) {
+          trendingList(trendings[idx]);
+          continue;
+        }
 
-          trendings.sort((a, b) => b.createdAt - a.createdAt);
-
-          trendingMain(trendings[0]);
-        })
-        .catch((err) => console.error("error: " + err));
+        trendingMain(trendings[idx]);
+      }
     }
 
     // private functions --------------------------
+    function trendingList(data) {
+      const newHtml = () => `
+        <li class="trending__item col gap--s">
+          <div class="topic__wrapper">
+            <a href="#" class="topic ts--btn">{{topic}}</a>
+          </div>
+          <div class="title-row row gap--s">
+            <h4 class="title-row__txt hover--txt serif">{{title}}</h4>
+            <div class="title-row__img section__img">
+              <img src="{{thumbnail}}" />
+              <div class="component-bookmark-add"></div>
+            </div>
+          </div>
+          <p class="author-row ts--body-s text-gray row gap--s">
+            By
+            <span class="author__name">{{author.name}}</span>
+          </p>
+        </li>
+      `;
+
+      const parentEl = document.querySelector(".trending__list");
+
+      getAuthor(data.author.id).then((author) => {
+        data.author.name = author ? author.name : "Anonymous";
+        insertFirstChild(parentEl, render(newHtml, data));
+      });
+    }
+
     function trendingMain(data) {
       trendingMainImg(data);
       trendingMainTopic(data);
@@ -266,7 +294,7 @@ fetch("/data/insights/data.json")
         renderCover();
         renderEditorsPick();
         renderTopicCounts();
-        renderTrending();
+        renderTrendings();
       })
 
       .catch((err) => {

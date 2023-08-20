@@ -4,7 +4,7 @@
 -------------------------------- */
 
 // Fetch the template file -----------------
-fetch("../../index.html")
+fetch("/index.html")
   .then((res) => res.text())
   .then((html) => {
     const newHtml = () => `
