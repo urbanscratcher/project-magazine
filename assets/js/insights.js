@@ -93,6 +93,18 @@ fetch("/data/insights/data.json")
           trendingList(trendings.slice(1, trendings.length));
         }
 
+        function renderLatest() {
+          const latestList = [...insightsData]
+            .sort((a, b) => b.createdAt - a.createdAt)
+            .slice(0, 4);
+
+          latestList.map(
+            (el) => (el.createdAt = printDateDifference(el.createdAt))
+          );
+
+          insertAfterTemplate("latestTemplate", { data: latestList });
+        }
+
         // private functions --------------------------
         function trendingList(list) {
           insertAfterTemplate("trendingListTemplate", { data: list });
@@ -168,6 +180,7 @@ fetch("/data/insights/data.json")
             renderEditorsPick();
             renderTopicCounts();
             renderTrendings();
+            renderLatest();
 
             loadBookmark();
           })

@@ -561,118 +561,38 @@
             <div class="component-viewAll"></div>
           </div>
           <ul class="latest__list col gap--m">
-            <li class="latest__item row gap--m">
-              <div class="latest__img section__img">
-                <img src="./data/insights/thumbnail/test.jpg" />
-                <div class="component-bookmark-add"></div>
-                <label class="topic topic--white tc--white ts--btn"
-                  >topic</label
-                >
-              </div>
-              <div class="latest__txt col gap--s">
-                <p class="latest__title serif ts--h3">
-                  Headline level 3 text for editor’s pick title
-                </p>
-                <div class="time-row row gap--s v-center">
-                  <p class="icon__time-wrapper">
-                    <i class="icon__time fa-regular fa-clock"></i>
-                  </p>
-                  <p class="createdAt">1 day ago</p>
-                  <p class="separator">·</p>
-                  <p class="ttr__box"><span class="ttr">1 min</span> read</p>
+            <template id="latestTemplate">
+              {{#each data}}
+              <li class="latest__item row gap--m">
+                <div class="latest__img section__img">
+                  <img src="{{thumbnail}}" class="img--ratio-169" />
+                  <div class="component-bookmark-add"></div>
+                  <label class="topic topic--white tc--white ts--btn"
+                    >{{topic}}</label
+                  >
                 </div>
-                <div class="author-row--icon v-center row gap--s">
-                  <p class="icon__avatar-wrapper">
-                    <i class="icon__avatar fa-regular fa-circle-user"></i>
-                  </p>
-                  <p class="author__name">Eleanor Montgomery</p>
+                <div class="latest__txt col gap--s">
+                  <h3 class="latest__title serif hover--txt">{{title}}</h3>
+                  <div class="time-row row gap--s v-center">
+                    <p class="icon__time-wrapper">
+                      <i class="icon__time fa-regular fa-clock"></i>
+                    </p>
+                    <p class="createdAt">{{createdAt}}</p>
+                    <p class="separator">·</p>
+                    <p class="ttr__box">
+                      <span class="ttr">{{ttr}}</span> read
+                    </p>
+                  </div>
+                  <div class="author-row--icon v-center row gap--s">
+                    <p class="icon__avatar-wrapper">
+                      <i class="icon__avatar fa-regular fa-circle-user"></i>
+                    </p>
+                    <p class="author__name">{{author.name}}</p>
+                  </div>
                 </div>
-              </div>
-            </li>
-            <li class="latest__item row gap--m">
-              <div class="latest__img section__img">
-                <img src="./data/insights/thumbnail/test.jpg" />
-                <div class="component-bookmark-add"></div>
-                <label class="topic topic--white tc--white ts--btn"
-                  >topic</label
-                >
-              </div>
-              <div class="latest__txt col gap--s">
-                <p class="latest__title serif ts--h3">
-                  Headline level 3 text for editor’s pick title
-                </p>
-                <div class="time-row row gap--s v-center">
-                  <p class="icon__time-wrapper">
-                    <i class="icon__time fa-regular fa-clock"></i>
-                  </p>
-                  <p class="createdAt">1 day ago</p>
-                  <p class="separator">·</p>
-                  <p class="ttr__box"><span class="ttr">1 min</span> read</p>
-                </div>
-                <div class="author-row--icon v-center row gap--s">
-                  <p class="icon__avatar-wrapper">
-                    <i class="icon__avatar fa-regular fa-circle-user"></i>
-                  </p>
-                  <p class="author__name">Eleanor Montgomery</p>
-                </div>
-              </div>
-            </li>
-            <li class="latest__item row gap--m">
-              <div class="latest__img section__img">
-                <img src="./data/insights/thumbnail/test.jpg" />
-                <div class="component-bookmark-add"></div>
-                <label class="topic topic--white tc--white ts--btn"
-                  >topic</label
-                >
-              </div>
-              <div class="latest__txt col gap--s">
-                <p class="latest__title serif ts--h3">
-                  Headline level 3 text for editor’s pick title
-                </p>
-                <div class="time-row row gap--s v-center">
-                  <p class="icon__time-wrapper">
-                    <i class="icon__time fa-regular fa-clock"></i>
-                  </p>
-                  <p class="createdAt">1 day ago</p>
-                  <p class="separator">·</p>
-                  <p class="ttr__box"><span class="ttr">1 min</span> read</p>
-                </div>
-                <div class="author-row--icon v-center row gap--s">
-                  <p class="icon__avatar-wrapper">
-                    <i class="icon__avatar fa-regular fa-circle-user"></i>
-                  </p>
-                  <p class="author__name">Eleanor Montgomery</p>
-                </div>
-              </div>
-            </li>
-            <li class="latest__item row gap--m">
-              <div class="latest__img section__img">
-                <img src="./data/insights/thumbnail/test.jpg" />
-                <div class="component-bookmark-add"></div>
-                <label class="topic topic--white tc--white ts--btn"
-                  >topic</label
-                >
-              </div>
-              <div class="latest__txt col gap--s">
-                <p class="latest__title serif ts--h3">
-                  Headline level 3 text for editor’s pick title
-                </p>
-                <div class="time-row row gap--s v-center">
-                  <p class="icon__time-wrapper">
-                    <i class="icon__time fa-regular fa-clock"></i>
-                  </p>
-                  <p class="createdAt">1 day ago</p>
-                  <p class="separator">·</p>
-                  <p class="ttr__box"><span class="ttr">1 min</span> read</p>
-                </div>
-                <div class="author-row--icon v-center row gap--s">
-                  <p class="icon__avatar-wrapper">
-                    <i class="icon__avatar fa-regular fa-circle-user"></i>
-                  </p>
-                  <p class="author__name">Eleanor Montgomery</p>
-                </div>
-              </div>
-            </li>
+              </li>
+              {{/each}}
+            </template>
           </ul>
         </div>
 
