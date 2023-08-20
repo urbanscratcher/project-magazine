@@ -259,7 +259,6 @@
                   </li>
                   {{/each}}
                 </template>
-                <!-- [editorsPick__list-item] -->
               </ul>
 
               <div class="editorsPick__viewAll component-viewAll row end"></div>
@@ -275,7 +274,7 @@
         </div>
         <div class="section__content">
           <ul class="topTopics__list topics__list">
-            <!-- [topics__list] -->
+            <!-- [topics] -->
           </ul>
         </div>
       </section>
@@ -287,7 +286,46 @@
         </div>
         <div class="section__content">
           <ul class="awards__list">
-            <!-- [awards__list] -->
+            <template id="awardsListTemplate">
+              {{#each awards}}
+              <li class="awards__item col tc--white">
+                <div
+                  class="awards__bg bg--img"
+                  style="--img-url: url({{thumbnail}})"
+                ></div>
+                <div class="awards__wrapper col gap--m">
+                  <div class="awards__name-box">
+                    <label class="awards__name">{{awardName}}</label>
+                  </div>
+                  <h3 class="awards__project serif">{{project}}</h3>
+                  <h4 class="awards__receiver">{{architect}}</h4>
+                  <div
+                    class="awards__score donutChart"
+                    style="--donutChart-content: 8.8"
+                  >
+                    <svg class="donutChart__circle-box">
+                      <circle
+                        class="donutChart__circle"
+                        cx="43"
+                        cy="43"
+                        r="43"
+                      ></circle>
+                      <circle
+                        class="donutChart__circle"
+                        cx="43"
+                        cy="43"
+                        r="43"
+                      ></circle>
+                    </svg>
+                    <div class="donutChart__content-box">
+                      <h4 class="donutChart__content">{{averageRating}}</h4>
+                    </div>
+                  </div>
+                  <q class="awards__comment italic"> "{{comment}}" </q>
+                </div>
+              </li>
+              {{/each}}
+            </template>
           </ul>
         </div>
       </section>
