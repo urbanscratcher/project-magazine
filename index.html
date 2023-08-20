@@ -69,6 +69,7 @@
     <script src="/assets/js/topics.js"></script>
     <script src="/assets/js/insights.js"></script>
     <script src="/assets/js/awards.js"></script>
+    <script src="/assets/js/saved.js"></script>
     <script defer src="/assets/js/components.js"></script>
   </head>
 
@@ -496,106 +497,34 @@
         </div>
         <div class="seciton__content">
           <ul class="savedForLater__list row gap--m">
-            <li class="savedForLater__item col gap--m tc--white">
-              <div
-                class="savedForLater__bg bg--img"
-                style="--img-url: url(/data/insights/thumbnail/test.jpg)"
-              ></div>
-              <div class="savedForLater__content col between gap--m">
-                <div class="topic__wrapper">
-                  <label class="topic--white ts--btn">topic</label>
-                </div>
-                <div class="savedForLater__txt col gap--m">
-                  <a
-                    href="#"
-                    class="savedForLater__title serif ts--h3 hover--txt"
-                  >
-                    List Headline level 2 text for title up to 2 lines
-                  </a>
-                  <div class="savedForLater__author avatar row gap--s">
-                    <i
-                      class="author__icon ts--body fa-regular fa-circle-user"
-                    ></i>
-                    <p class="author__name">Eleanor Montgomery</p>
+            <template id="savedTemplate">
+              {{#each data}}
+              <li class="savedForLater__item col gap--m tc--white">
+                <div
+                  class="savedForLater__bg bg--img"
+                  style="--img-url: url({{thumbnail}})"
+                ></div>
+                <div class="savedForLater__content col between gap--m">
+                  <div class="topic__wrapper">
+                    <label class="topic--white ts--btn">{{topic}}</label>
+                  </div>
+                  <div class="savedForLater__txt col gap--m">
+                    <a
+                      href="#"
+                      class="savedForLater__title serif ts--h3 hover--txt"
+                      >{{title}}</a
+                    >
+                    <div class="savedForLater__author avatar row gap--s">
+                      <i
+                        class="author__icon ts--body fa-regular fa-circle-user"
+                      ></i>
+                      <p class="author__name">{{author.name}}</p>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </li>
-            <li class="savedForLater__item col gap--m tc--white">
-              <div
-                class="savedForLater__bg bg--img"
-                style="--img-url: url(/data/insights/thumbnail/test.jpg)"
-              ></div>
-              <div class="savedForLater__content col between gap--m">
-                <div class="topic__wrapper">
-                  <label class="topic--white ts--btn">topic</label>
-                </div>
-                <div class="savedForLater__txt col gap--m">
-                  <a
-                    href="#"
-                    class="savedForLater__title serif ts--h3 hover--txt"
-                  >
-                    List Headline level 2 text for title up to 2 lines
-                  </a>
-                  <div class="savedForLater__author avatar row gap--s">
-                    <i
-                      class="author__icon ts--body fa-regular fa-circle-user"
-                    ></i>
-                    <p class="author__name">Eleanor Montgomery</p>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="savedForLater__item col gap--m tc--white">
-              <div
-                class="savedForLater__bg bg--img"
-                style="--img-url: url(/data/insights/thumbnail/test.jpg)"
-              ></div>
-              <div class="savedForLater__content col between gap--m">
-                <div class="topic__wrapper">
-                  <label class="topic--white ts--btn">topic</label>
-                </div>
-                <div class="savedForLater__txt col gap--m">
-                  <a
-                    href="#"
-                    class="savedForLater__title serif ts--h3 hover--txt"
-                  >
-                    List Headline level 2 text for title up to 2 lines
-                  </a>
-                  <div class="savedForLater__author avatar row gap--s">
-                    <i
-                      class="author__icon ts--body fa-regular fa-circle-user"
-                    ></i>
-                    <p class="author__name">Eleanor Montgomery</p>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li class="savedForLater__item col gap--m tc--white">
-              <div
-                class="savedForLater__bg bg--img"
-                style="--img-url: url(/data/insights/thumbnail/test.jpg)"
-              ></div>
-              <div class="savedForLater__content col between gap--m">
-                <div class="topic__wrapper">
-                  <label class="topic--white ts--btn">topic</label>
-                </div>
-                <div class="savedForLater__txt col gap--m">
-                  <a
-                    href="#"
-                    class="savedForLater__title serif ts--h3 hover--txt"
-                  >
-                    List Headline level 2 text for title up to 2 lines
-                  </a>
-                  <div class="savedForLater__author avatar row gap--s">
-                    <i
-                      class="author__icon ts--body fa-regular fa-circle-user"
-                    ></i>
-                    <p class="author__name">Eleanor Montgomery</p>
-                  </div>
-                </div>
-              </div>
-            </li>
+              </li>
+              {{/each}}
+            </template>
           </ul>
         </div>
       </section>

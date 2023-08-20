@@ -373,6 +373,7 @@
   border-radius: var(--rad-img);
   overflow: hidden;
   position: relative;
+  width: 25%;
 }
 
 .savedForLater__bg {
