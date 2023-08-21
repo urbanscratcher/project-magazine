@@ -5,28 +5,52 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function handleRouteChange(route) {
-  const mainEl = document.getElementById("main");
-
   switch (route) {
     case "/":
-      document
-        .getElementById("external__main")
-        .addEventListener("load", (e) => {
-          const mainDocument =
-            document.getElementById("external__main").contentDocument;
-          const mEl = mainDocument.getElementById("m");
-          document.getElementById("main").innerHTML = mEl.innerHTML;
-        });
-
+      const createDoc = document.createElement("object");
+      createDoc.data = "main.html";
+      createDoc.id = "external__main";
+      document.body.appendChild(createDoc);
+      onLoadMainHtml();
+      observeLoadChildren(loadScriptsForMain);
       break;
     default:
-      main.innerHTML = "<p> default </p>";
+      console.log("aaaa");
   }
-
-  loadScripts();
 }
 
-function loadScripts() {
+function observeLoadChildren(fn) {
+  const mainEl = document.getElementById("main");
+  const observer = new MutationObserver(function (mutationsList) {
+    for (let m of mutationsList) {
+      console.log(m);
+      if (m.type === "childList") {
+        fn();
+      }
+    }
+  });
+  observer.observe(mainEl, { childList: true });
+}
+
+function onLoadMainHtml() {
+  document
+    .getElementById("external__main")
+    .addEventListener("load", (e) => loadMainHtmlHandler(e));
+  document.removeEventListener("load", onLoadMainHtml);
+}
+
+function loadMainHtmlHandler(e) {
+  const mainDocument =
+    document.getElementById("external__main").contentDocument;
+
+  if (mainDocument) {
+    mainDocument.body.style.display = "none";
+    const mEl = mainDocument.body;
+    document.getElementById("main").innerHTML = mEl.innerHTML;
+  }
+}
+
+function loadScriptsForMain() {
   const util = document.createElement("script");
   util.src = "/assets/js/util.js";
   document.head.appendChild(util);
@@ -43,10 +67,18 @@ function loadScripts() {
     topics.src = "/assets/js/topics.js";
     insights.src = "/assets/js/insights.js";
     saved.src = "/assets/js/saved.js";
+
     awards.src = "/assets/js/awards.js";
+    awards.async = true;
+
     authors.src = "/assets/js/authors.js";
+    authors.async = true;
+
     videos.src = "/assets/js/videos.js";
+    videos.async = true;
+
     components.src = "/assets/js/components.js";
+    components.defer = true;
 
     document.head.appendChild(insights);
     document.head.appendChild(topics);
