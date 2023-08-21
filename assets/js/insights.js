@@ -173,12 +173,17 @@ fetch("/data/insights/data.json")
         fetch("/index.html")
           .then((res) => res.text())
           .then((html) => {
+            // events
+            onClickShuffle(data);
+
+            // render
             renderCover();
             renderEditorsPick();
             renderTopicCounts();
             renderTrendings();
             renderLatest();
 
+            // components
             loadBookmark();
           })
           .catch((err) => {
@@ -189,3 +194,17 @@ fetch("/data/insights/data.json")
   .catch((err) => {
     console.error("error: ", err);
   });
+
+function onClickShuffle(data) {
+  const button = document.getElementById("shuffleImage");
+  button.addEventListener("click", function (e) {
+    e.preventDefault();
+    const imgList = document.getElementsByClassName("inspirations__list");
+    const imgItems = document.querySelectorAll(".inspirations__list > li");
+    const shuffledArr = shuffle(data.insights, 6);
+    for (i of imgItems) {
+      imgList[0].removeChild(i);
+    }
+    insertAfterTemplate("inspirationsTemplate", { data: shuffledArr });
+  });
+}
