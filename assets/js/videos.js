@@ -32,33 +32,38 @@ function onClickVideo() {
   const buttons = document.getElementsByClassName("btn-video");
 
   for (const button of buttons) {
-    button.addEventListener("click", (e) => {
-      e.preventDefault();
-      const parentEl = e.currentTarget.parentNode.parentNode;
-      const id = +parentEl.getAttribute("data-id");
-      const overlay = document.getElementsByClassName("modal__overlay")[0];
-      const video = document.getElementsByClassName("modal__video")[0];
-      console.log(video);
-      video.style.display = "initial";
-      overlay.style.display = "initial";
-      video.src = `/data/videos/media/${id}.webm`;
-      video.autoplay = true;
-    });
+    button.addEventListener("click", (e) => videoPlayHandler(e));
+    document.removeEventListener("click", onClickVideo);
   }
+}
+
+function videoPlayHandler(e) {
+  e.preventDefault();
+  const parentEl = e.currentTarget.parentNode.parentNode;
+  const id = +parentEl.getAttribute("data-id");
+  const overlay = document.getElementsByClassName("modal__overlay")[0];
+  const video = document.getElementsByClassName("modal__video")[0];
+  video.style.display = "initial";
+  overlay.style.display = "initial";
+  video.src = `/data/videos/media/${id}.webm`;
+  video.autoplay = true;
 }
 
 function onClickOverlay() {
   const overlay = document.getElementsByClassName("modal__overlay")[0];
 
-  overlay.addEventListener("click", (e) => {
-    e.preventDefault();
-    if (e.target === overlay) {
-      const video = document.getElementsByClassName("modal__video")[0];
-      video.pause();
-      video.src = "";
-      video.autoplay = false;
-      video.style.display = "none";
-      overlay.style.display = "none";
-    }
-  });
+  overlay.addEventListener("click", (e) => overlayCloseHandler(e));
+  document.removeEventListener("click", onClickOverlay);
+}
+
+function overlayCloseHandler(e) {
+  e.preventDefault();
+  if (e.target === e.currentTarget) {
+    const video = document.getElementsByClassName("modal__video")[0];
+    video.pause();
+    video.src = "";
+    video.autoplay = false;
+    video.style.display = "none";
+    e.target.style.display = "none";
+  }
 }

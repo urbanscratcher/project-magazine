@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main id="m">
+      <template id="coverTemplate">
+        <div
+          class="cover__bg bg--img"
+          style="--img-url: url({{thumbnail}})"
+        ></div>
+        <div class="cover__txt col container--m gap--m tc--white">
+          <div class="cover__topic">
+            <a href="#" class="topic--white ts--btn">{{topic}}</a>
+          </div>
+          <div class="cover__headline">
+            <h1 href="#" class="serif hover--txt">{{title}}</h1>
+          </div>
+        </div>
+      </template>
+
+      <!-- highlights -->
+      <div id="highlights">
+        <!-- Section: Cover -->
+        <section id="cover" class="col">
+          <template id="coverThumbnailTemplate">
+            <div
+              class="cover__bg bg--img"
+              style="--img-url: url({{thumbnail}})"
+            ></div>
+          </template>
+          <div class="cover__txt col container--m gap--m tc--white">
+            <div class="cover__topic">
+              <a href="#" class="topic--white ts--btn">
+                <template id="coverTopicTemplate"> {{topic}} </template>
+              </a>
+            </div>
+            <div class="cover__headline">
+              <h1 href="#" class="serif hover--txt">
+                <template id="coverTitleTemplate"> {{title}} </template>
+              </h1>
+            </div>
+          </div>
+          <div class="cover__slide-controller slide-controller row gap--m">
+            <button class="slide-controller__btn btn--prev btn--circle-l">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <button
+              href="#"
+              class="slide-controller__btn btn--next btn--circle-l"
+            >
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+        </section>
+
+        <!-- Section: Editor's Pick -->
+        <section id="editorsPick" class="col gap--m container--m">
+          <div class="section__title-wrapper">
+            <p class="section__title">Editor's pick</p>
+          </div>
+          <div class="section__content">
+            <!-- main -->
+            <div class="editorsPick__main col gap--m">
+              <div class="editorsPick__img section__img">
+                <template id="editorsPickImgTemplate">
+                  <img
+                    src="{{thumbnail}}"
+                    class="img--ratio-169"
+                    crossorigin="anonymous"
+                  />
+                </template>
+                <div class="component-bookmark-add"></div>
+              </div>
+              <div class="editorsPick__topic">
+                <template id="editorsPickTopicTemplate"
+                  ><a href="#" class="topic ts--btn">{{topic}}</a>
+                </template>
+              </div>
+              <div class="editorsPick__title">
+                <template id="editorsPickTitleTemplate">
+                  <h3 class="serif hover--txt">{{title}}</h3>
+                </template>
+              </div>
+            </div>
+            <!-- list -->
+            <div class="editorsPick__list-wrapper col gap--m">
+              <ul class="editorsPick__list col gap--m">
+                <template id="editorsPickListTemplate">
+                  {{#each insights}}
+                  <li class="editorsPick__item serif row gap--s">
+                    <p class="editorsPick__marker">✦</p>
+                    <h4 class="editorsPick__item-txt hover--txt">{{title}}</h4>
+                  </li>
+                  {{/each}}
+                </template>
+              </ul>
+
+              <div class="editorsPick__viewAll component-viewAll row end"></div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- Section: Top Topics -->
+      <section id="topTopics" class="col gap--m container--m">
+        <div class="section__title-wrapper">
+          <p class="section__title">Top Topics</p>
+        </div>
+        <div class="section__content">
+          <ul class="topTopics__list topics__list">
+            <!-- [topics] -->
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section: Monthly Awards -->
+      <section id="awards" class="col gap--m container--m">
+        <div class="section__title-wrapper">
+          <p class="section__title">Monthly Awards</p>
+        </div>
+        <div class="section__content">
+          <ul class="awards__list">
+            <template id="awardsListTemplate">
+              {{#each awards}}
+              <li class="awards__item col tc--white">
+                <div
+                  class="awards__bg bg--img"
+                  style="--img-url: url({{thumbnail}})"
+                ></div>
+                <div class="awards__wrapper col gap--m">
+                  <div class="awards__name-box">
+                    <label class="awards__name">{{awardName}}</label>
+                  </div>
+                  <h3 class="awards__project serif">{{project}}</h3>
+                  <h4 class="awards__receiver">{{architect}}</h4>
+                  <div
+                    class="awards__score donutChart"
+                    style="--donutChart-content: 8.8"
+                  >
+                    <svg class="donutChart__circle-box">
+                      <circle
+                        class="donutChart__circle"
+                        cx="43"
+                        cy="43"
+                        r="43"
+                      ></circle>
+                      <circle
+                        class="donutChart__circle"
+                        cx="43"
+                        cy="43"
+                        r="43"
+                      ></circle>
+                    </svg>
+                    <div class="donutChart__content-box">
+                      <h4 class="donutChart__content">{{averageRating}}</h4>
+                    </div>
+                  </div>
+                  <q class="awards__comment italic"> "{{comment}}" </q>
+                </div>
+              </li>
+              {{/each}}
+            </template>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section: What's Trending -->
+      <div id="trending__layout" class="container--m gap--m">
+        <!-- What's Trending -->
+        <section id="trending" class="col gap--m">
+          <div class="section__title-wrapper row between">
+            <p class="section__title">What's Trending</p>
+            <div class="component-viewAll"></div>
+          </div>
+          <div class="section__content row gap--m">
+            <div class="trending__main col gap--m">
+              <div class="section__img">
+                <template id="trendingMainImgTemplate">
+                  <img src="{{thumbnail}}" class="img--ratio-169" />
+                </template>
+                <div class="component-bookmark-add"></div>
+              </div>
+              <div class="topic__wrapper">
+                <template id="trendingMainTopicTemplate">
+                  <a href="#" class="topic ts--btn">{{topic}}</a>
+                </template>
+              </div>
+              <h2 class="main__title serif hover--txt">
+                <template id="trendingMainTitle">{{title}}</template>
+              </h2>
+              <p class="main__summary">
+                <template id="trendingMainSummary">{{summary}}</template>
+              </p>
+              <div class="time__wrapper row gap--s v-center">
+                <h4 class="icon__time-wrapper">
+                  <i class="icon__time fa-regular fa-clock"></i>
+                </h4>
+                <p class="createdAt">
+                  <!-- [main createdAt] -->
+                </p>
+                <p class="separator">·</p>
+                <p class="ttr__box">
+                  <span class="ttr">
+                    <template id="trendingMainTtrTemplate"> {{ttr}} </template>
+                  </span>
+                  read
+                </p>
+              </div>
+              <div class="author-row--icon v-center row gap--s">
+                <template id="trendingMainAuthor">
+                  <img src="{{avatar}}" class="author__avatar" />
+                  <p class="author__name">{{name}}</p>
+                </template>
+              </div>
+            </div>
+            <ul class="trending__list col gap--l">
+              <!-- [trending list] -->
+              <template id="trendingListTemplate">
+                {{#each data}}
+                <li class="trending__item col gap--s">
+                  <div class="topic__wrapper">
+                    <a href="#" class="topic ts--btn">{{topic}}</a>
+                  </div>
+                  <div class="title-row row gap--s">
+                    <h4 class="title-row__txt hover--txt serif">{{title}}</h4>
+                    <div class="title-row__img section__img">
+                      <img src="{{thumbnail}}" />
+                      <div class="component-bookmark-add"></div>
+                    </div>
+                  </div>
+                  <p class="author-row ts--body-s text-gray row gap--s">
+                    By
+                    <span class="author__name">{{author.name}}</span>
+                  </p>
+                </li>
+                {{/each}}
+              </template>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Stay Connected -->
+        <section id="connected" class="col gap--m container--s aside__box">
+          <div class="section__title-wrapper">
+            <p class="section__title">stay connected</p>
+          </div>
+          <div class="section__content">
+            <ul class="connected__list col gap--s">
+              <li class="connected__item">
+                <a
+                  href="#"
+                  class="connected__item-link row between hover--darker"
+                >
+                  <div class="social row gap--m">
+                    <p class="social__icon">
+                      <i class="fa-brands fa-facebook"></i>
+                    </p>
+                    <p class="social__txt">Facebook</p>
+                  </div>
+                  <p class="social__follower">
+                    <span class="social__follower-count">57K</span> Followers
+                  </p>
+                </a>
+              </li>
+              <li class="connected__item">
+                <a
+                  class="connected__item-link row between hover--darker"
+                  href="#"
+                >
+                  <div class="social row gap--m">
+                    <p class="social__icon">
+                      <i class="fa-brands fa-pinterest"></i>
+                    </p>
+                    <p class="social__txt">Pinterest</p>
+                  </div>
+                  <p class="social__follower">
+                    <span class="social__follower-count">57K</span> Followers
+                  </p>
+                </a>
+              </li>
+              <li class="connected__item">
+                <a
+                  class="connected__item-link row between hover--darker"
+                  href="#"
+                >
+                  <div class="social row gap--m">
+                    <p class="social__icon">
+                      <i class="fa-brands fa-twitter"></i>
+                    </p>
+                    <p class="social__txt">Twitter</p>
+                  </div>
+                  <p class="social__follower">
+                    <span class="social__follower-count">57K</span> Followers
+                  </p>
+                </a>
+              </li>
+              <li class="connected__item">
+                <a
+                  class="connected__item-link row between hover--darker"
+                  href="#"
+                >
+                  <div class="social row gap--m">
+                    <p class="social__icon">
+                      <i class="fa-brands fa-instagram"></i>
+                    </p>
+                    <p class="social__txt">Instagram</p>
+                  </div>
+                  <p class="social__follower">
+                    <span class="social__follower-count">57K</span> Followers
+                  </p>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section id="newsletter" class="col gap--m container--s aside__box">
+          <div class="section__title-wrapper">
+            <p class="section__title">newsletter</p>
+          </div>
+          <div class="component-newsletter"></div>
+        </section>
+      </div>
+
+      <!-- Section: Saved For Later -->
+      <section id="savedForLater" class="col gap--m container--m">
+        <div class="section__title-wrapper row between">
+          <p class="section__title">Saved For Later</p>
+          <div class="component-viewAll"></div>
+        </div>
+        <div class="seciton__content">
+          <ul class="savedForLater__list row gap--m">
+            <template id="savedTemplate">
+              {{#each data}}
+              <li class="savedForLater__item col gap--m tc--white">
+                <div
+                  class="savedForLater__bg bg--img"
+                  style="--img-url: url({{thumbnail}})"
+                ></div>
+                <div class="savedForLater__content col between gap--m">
+                  <div class="topic__wrapper">
+                    <label class="topic--white ts--btn">{{topic}}</label>
+                  </div>
+                  <div class="savedForLater__txt col gap--m">
+                    <h3 class="savedForLater__title serif hover--txt">
+                      {{title}}
+                    </h3>
+                    <div
+                      class="savedForLater__author avatar row v-center gap--s"
+                    >
+                      <img src="{{author.avatar}}" class="author__avatar" />
+                      <p class="author__name">{{author.name}}</p>
+                    </div>
+                  </div>
+                </div>
+              </li>
+              {{/each}}
+            </template>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Section: explore -->
+      <section id="explore" class="container--m row gap--m">
+        <!-- Inspirations -->
+        <div id="inspirations" class="aside__box col gap--m container--s">
+          <div class="section__title-wrapper row between">
+            <p class="section__title">inspirations</p>
+            <button
+              id="shuffleImage"
+              class="icon__wrapper ts--body hover--lighter"
+            >
+              <i class="fa-solid fa-shuffle"></i>
+            </button>
+          </div>
+          <ul class="inspirations__list">
+            <template id="inspirationsTemplate">
+              {{#each data}}
+              <li class="inspirations__item section__img">
+                <img class="inspirations__img" src="{{thumbnail}}" />
+                <label
+                  class="inspirations__topic topic topic--white ts--btn tc--white"
+                  >topic</label
+                >
+              </li>
+              {{/each}}
+            </template>
+          </ul>
+        </div>
+
+        <!-- The latest -->
+        <div id="latest" class="aside__box col gap--m container--s">
+          <div class="section__title-wrapper row between">
+            <p class="section__title">the latest</p>
+            <div class="component-viewAll"></div>
+          </div>
+          <ul class="latest__list col gap--m">
+            <template id="latestTemplate">
+              {{#each data}}
+              <li class="latest__item row gap--m">
+                <div class="latest__img section__img">
+                  <img src="{{thumbnail}}" class="img--ratio-169" />
+                  <div class="component-bookmark-add"></div>
+                  <label class="topic topic--white tc--white ts--btn"
+                    >{{topic}}</label
+                  >
+                </div>
+                <div class="latest__txt col gap--s">
+                  <h3 class="latest__title serif hover--txt">{{title}}</h3>
+                  <div class="time-row row gap--s v-center">
+                    <p class="icon__time-wrapper">
+                      <i class="icon__time fa-regular fa-clock"></i>
+                    </p>
+                    <p class="createdAt">{{createdAt}}</p>
+                    <p class="separator">·</p>
+                    <p class="ttr__box">
+                      <span class="ttr">{{ttr}}</span> read
+                    </p>
+                  </div>
+                  <div class="author-row--icon v-center row gap--s">
+                    <img src="{{author.avatar}}" class="author__avatar" />
+                    <p class="author__name">{{author.name}}</p>
+                  </div>
+                </div>
+              </li>
+              {{/each}}
+            </template>
+          </ul>
+        </div>
+
+        <!-- Aside -->
+        <div class="explore__aside col gap--m">
+          <!-- Fatured Authors -->
+          <div id="featured-authors" class="aside__box col gap--m container--s">
+            <div class="section__title-wrapper">
+              <p class="section__title">featured authors</p>
+            </div>
+            <ul class="section__content featured-authors__list col gap--m">
+              <script
+                id="featuredAuthorsTemplate"
+                type="text/x-handlebars-template"
+              >
+                {{#each data}}
+                  <li class="featured-authors__item row gap--m">
+                    <img src="{{avatar}}" class="featured-authors__avatar"></img>
+                    <div class="featured-authors__txt col">
+                      <p class="featured-authors__name bold">{{name}}</p>
+                      <ul class="fatured-authors__row row">
+                        <span class="featured-authors__topic ts--body-s">
+                          {{{topicsOneline}}}
+                        </span>
+                      </ul>
+                    </div>
+                  </li>
+                {{/each}}
+              </script>
+            </ul>
+            <div class="component-viewAll row end"></div>
+          </div>
+
+          <!-- Ad -->
+          <div id="ad" class="aside__box col gap--m container--s">
+            <div class="section__title-wrapper">
+              <p class="section__title">ad</p>
+            </div>
+            <a href="#" class="section__img">
+              <img src="./data/insights/thumbnail/test.webp" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section: Video -->
+      <section id="video" class="col gap--m container--m">
+        <div class="section__title-wrapper">
+          <p class="section__title">Video</p>
+        </div>
+        <div class="section__content col gap--l">
+          <template id="videoCoverTemplate">
+            <div
+              class="video__bg bg--img col"
+              style="--img-url: url({{thumbnail}})"
+              data-id="{{id}}"
+            >
+              <div class="video__content col gap--m tc--white">
+                <div class="topic__wrapper">
+                  <label class="topic topic--white ts--btn">{{topic}}</label>
+                </div>
+                <h2 class="video__headline serif">{{title}}</h2>
+                <p class="video__summary">{{summary}}</p>
+                <button class="btn-video ts--h4">
+                  <i class="video__play-icon fa-solid fa-play"></i>
+                </button>
+              </div>
+            </div>
+          </template>
+          <ul class="video__list row gap--m">
+            <template id="videoListTemplate">
+              {{#each data}}
+              <li class="video__item row gap--s" data-id="{{id}}">
+                <div class="video__txt-wrapper col gap--s">
+                  <div class="topic__wrapper">
+                    <label class="topic">{{topic}}</label>
+                  </div>
+                  <h4 class="video__txt serif">{{title}}</h4>
+                </div>
+                <div
+                  class="video__thumbnail bg--img"
+                  style="
+                    --img-url: url({{thumbnail}})
+                  "
+                >
+                  <button class="video__float-wrapper btn-video ts--h4">
+                    <i class="video__play-icon fa-solid fa-play"></i>
+                  </button>
+                </div>
+              </li>
+              {{/each}}
+            </template>
+          </ul>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
