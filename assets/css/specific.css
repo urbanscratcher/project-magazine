@@ -132,13 +132,8 @@
   margin-bottom: 3.2rem;
 }
 
-.editorsPick__list {
-  list-style: disc;
-  margin-left: 1.6rem;
-}
-
-.editorsPick__list-txt {
-  font: inherit;
+.editorsPick__marker {
+  padding-top: 1.5%;
 }
 
 /* Top Topics ----------------------------*/
@@ -492,26 +487,6 @@
   width: 40%;
   border-radius: var(--rad-img);
   position: relative;
-}
-
-.video__play-outline {
-  width: 5.6rem;
-  height: 5.6rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--color-white);
-  color: var(--color-secondary);
-  opacity: 0.5;
-  transition: all 0.1s ease;
-}
-
-.video__play-outline:hover {
-  cursor: pointer;
-  background-color: var(--color-secondary);
-  color: var(--color-white);
-  opacity: 1;
 }
 
 .video__float-wrapper {

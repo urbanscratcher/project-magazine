@@ -215,11 +215,6 @@
   display: flex;
   gap: 1.2rem;
   align-items: center;
-  transition: opacity 0.1s ease;
-}
-
-.viewAll:hover {
-  opacity: 0.7;
 }
 
 /* Component: Topic */
@@ -303,12 +298,12 @@
 
 .hover--lighter {
   opacity: 1;
-  transition: all 0.1s ease-out;
+  transition: opacity 0.1s ease-out;
 }
 
 .hover--lighter:hover {
   cursor: pointer;
-  filter: brightness(1.2);
+  opacity: 0.7;
 }
 
 /* Button Primary */
@@ -326,6 +321,26 @@
 .btn-primary:hover {
   cursor: pointer;
   background-color: var(--color-secondary-dark);
+}
+
+/* Video Button */
+.btn-video {
+  width: 5.6rem;
+  height: 5.6rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-white);
+  color: var(--color-secondary);
+  opacity: 0.5;
+  transition: all 0.1s ease;
+}
+
+.btn-video:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-white);
+  opacity: 1;
 }
 
 /* Button icon hover */
