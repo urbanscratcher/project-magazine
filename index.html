@@ -143,9 +143,16 @@ c0,9.8-7.9,17.7-17.7,17.7s-17.7-7.9-17.7-17.7V88.7z"
     <!-- Navigation Bar-->
     <header id="header">
       <nav class="navbar__wrapper">
-        <img class="navbar__logo logo--white" src="/assets/image/logo.png" />
+        <a href="/" onclick="handleRouteChange('/'); return false;">
+          <img class="navbar__logo logo--white" src="/assets/image/logo.png" />
+        </a>
         <div class="navbar__menu row gap--l tc--white">
-          <a class="menu__item" href="/insight">Insights</a>
+          <a
+            class="menu__item"
+            href="/insight"
+            onclick="handleRouteChange('/insight'); return false;"
+            >Insights</a
+          >
           <a class="menu__item" href="#">Quiz</a>
           <a class="menu__item" href="#">Authors</a>
           <a class="menu__item" href="#">Report</a>

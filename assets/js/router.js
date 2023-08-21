@@ -1,30 +1,67 @@
+/* --------------------------------
+- Purpose: Routing
+- Author: Hyunjung Joun
+-------------------------------- */
+
 document.addEventListener("DOMContentLoaded", () => {
-  const currentRoute = window.location.pathname;
-  console.log("current path: ", currentRoute);
-  handleRouteChange(currentRoute);
+  const initialRoute = window.location.pathname;
+  handleRouteChange(initialRoute);
 });
 
 function handleRouteChange(route) {
+  history.pushState(null, null, route);
+
+  // remove external obj
+  if (document.getElementById("external")) {
+    document
+      .getElementById("external")
+      .parentNode.removeChild(document.getElementById("external"));
+  }
+
+  unloadScript("/assets/js/insights.js");
+  unloadScript("/assets/js/topics.js");
+  unloadScript("/assets/js/saved.js");
+  unloadScript("/assets/js/awards.js");
+  unloadScript("/assets/js/authors.js");
+  unloadScript("/assets/js/videos.js");
+  unloadScript("/assets/js/components.js");
+
+  // (re)create external obj
+  const createDoc = document.createElement("object");
+  createDoc.id = "external";
+  document.body.appendChild(createDoc);
+  let externalEl = document.getElementById("external");
+
+  // (re)load html & js
+
   switch (route) {
     case "/":
-      const createDoc = document.createElement("object");
-      createDoc.data = "main.html";
-      createDoc.id = "external__main";
-      document.body.appendChild(createDoc);
-
-      const externalMainEl = document.getElementById("external__main");
-      externalMainEl.addEventListener("load", (e) => loadMainHtmlHandler(e));
-      observeLoadChildren(loadScriptsForMain);
+      externalEl.setAttribute("data", "main.html");
+      externalEl.addEventListener("load", (e) =>
+        loadHtmlHandler(e, loadScriptsForMain)
+      );
       break;
     case "/insight":
-      console.log("i");
+      externalEl.setAttribute("data", "insight.html");
+      externalEl.addEventListener("load", loadHtmlHandler);
+      break;
     default:
       console.log("aaaa");
+      break;
   }
 }
 
-function observeLoadChildren(fn) {
-  const mainEl = document.getElementById("main");
+function loadScriptsForMain() {
+  const insights = loadScript("/assets/js/insights.js", null, "defer");
+  const topics = loadScript("/assets/js/topics.js", null, "defer");
+  const saved = loadScript("/assets/js/saved.js", null, "defer");
+  const awards = loadScript("/assets/js/awards.js", null, "defer");
+  const authors = loadScript("/assets/js/authors.js", null, "defer");
+  const videos = loadScript("/assets/js/videos.js", null, "defer");
+  const components = loadScript("/assets/js/components.js", null, "async");
+}
+
+function observeLoadChildren(targetEl, fn) {
   const observer = new MutationObserver(function (mutationsList) {
     for (let m of mutationsList) {
       if (m.type === "childList") {
@@ -32,54 +69,47 @@ function observeLoadChildren(fn) {
       }
     }
   });
-  observer.observe(mainEl, { childList: true });
+  observer.observe(targetEl, { childList: true });
 }
 
-function loadMainHtmlHandler(e) {
-  const externalMainEl = document.getElementById("external__main");
-  const mainDocument = externalMainEl.contentDocument;
+function loadHtmlHandler(e, fn) {
+  const externalEl = e.target;
+  const mainEl = document.getElementById("main");
+  const mainDocument = externalEl.contentDocument;
 
   mainDocument.body.style.display = "none";
   const mEl = mainDocument.body;
-  document.getElementById("main").innerHTML = mEl.innerHTML;
+  mainEl.innerHTML = mEl.innerHTML;
 
-  externalMainEl.removeEventListener("load", loadMainHtmlHandler);
+  if (fn) {
+    fn();
+  }
+
+  externalEl.removeEventListener("load", loadHtmlHandler);
 }
 
-function loadScriptsForMain() {
-  const insights = document.createElement("script");
-  insights.src = "/assets/js/insights.js";
-  insights.defer = true;
+function loadScript(scriptSrc, callback, mode) {
+  const script = document.createElement("script");
+  script.src = scriptSrc;
 
-  const topics = document.createElement("script");
-  topics.src = "/assets/js/topics.js";
-  topics.defer = true;
+  if (callback) {
+    script.onload = callback;
+  }
 
-  const saved = document.createElement("script");
-  saved.src = "/assets/js/saved.js";
-  saved.defer = true;
+  if (mode) {
+    script[mode] = true;
+  }
 
-  const awards = document.createElement("script");
-  awards.src = "/assets/js/awards.js";
-  awards.defer = true;
+  document.head.appendChild(script);
 
-  const authors = document.createElement("script");
-  authors.src = "/assets/js/authors.js";
-  authors.defer = true;
+  return script;
+}
 
-  const videos = document.createElement("script");
-  videos.src = "/assets/js/videos.js";
-  videos.defer = true;
-
-  const components = document.createElement("script");
-  components.src = "/assets/js/components.js";
-  components.defer = true;
-
-  document.head.appendChild(insights);
-  document.head.appendChild(topics);
-  document.head.appendChild(saved);
-  document.head.appendChild(awards);
-  document.head.appendChild(authors);
-  document.head.appendChild(videos);
-  document.head.appendChild(components);
+function unloadScript(scriptSrc) {
+  const scriptElements = document.querySelectorAll(
+    `script[src="${scriptSrc}"]`
+  );
+  scriptElements.forEach((script) => {
+    script.parentNode.removeChild(script);
+  });
 }

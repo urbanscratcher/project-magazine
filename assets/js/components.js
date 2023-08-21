@@ -6,8 +6,8 @@
 loadComponents();
 
 function loadComponents() {
-  loadNewletter();
   loadViewAll();
+  loadNewletter();
 }
 
 function loadBookmark() {
@@ -22,7 +22,7 @@ function loadNewletter() {
   const newHtml = () => document.getElementById("newsletterTemplate").innerHTML;
   const parentEls = document.getElementsByClassName("component-newsletter");
   for (p of parentEls) {
-    insertFirstChild(p, render(newHtml, {}));
+    insert(p, render(newHtml, {}));
   }
 }
 
