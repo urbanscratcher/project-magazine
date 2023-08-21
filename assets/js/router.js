@@ -11,7 +11,9 @@ function handleRouteChange(route) {
       createDoc.data = "main.html";
       createDoc.id = "external__main";
       document.body.appendChild(createDoc);
-      onLoadMainHtml();
+
+      const externalMainEl = document.getElementById("external__main");
+      externalMainEl.addEventListener("load", (e) => loadMainHtmlHandler(e));
       observeLoadChildren(loadScriptsForMain);
       break;
     default:
@@ -32,22 +34,15 @@ function observeLoadChildren(fn) {
   observer.observe(mainEl, { childList: true });
 }
 
-function onLoadMainHtml() {
-  document
-    .getElementById("external__main")
-    .addEventListener("load", (e) => loadMainHtmlHandler(e));
-  document.removeEventListener("load", onLoadMainHtml);
-}
-
 function loadMainHtmlHandler(e) {
-  const mainDocument =
-    document.getElementById("external__main").contentDocument;
+  const externalMainEl = document.getElementById("external__main");
+  const mainDocument = externalMainEl.contentDocument;
 
-  if (mainDocument) {
-    mainDocument.body.style.display = "none";
-    const mEl = mainDocument.body;
-    document.getElementById("main").innerHTML = mEl.innerHTML;
-  }
+  mainDocument.body.style.display = "none";
+  const mEl = mainDocument.body;
+  document.getElementById("main").innerHTML = mEl.innerHTML;
+
+  externalMainEl.removeEventListener("load", onLoadMainHtml);
 }
 
 function loadScriptsForMain() {
