@@ -16,6 +16,8 @@ function handleRouteChange(route) {
       externalMainEl.addEventListener("load", (e) => loadMainHtmlHandler(e));
       observeLoadChildren(loadScriptsForMain);
       break;
+    case "/insight":
+      console.log("i");
     default:
       console.log("aaaa");
   }
@@ -25,7 +27,6 @@ function observeLoadChildren(fn) {
   const mainEl = document.getElementById("main");
   const observer = new MutationObserver(function (mutationsList) {
     for (let m of mutationsList) {
-      console.log(m);
       if (m.type === "childList") {
         fn();
       }
@@ -42,45 +43,43 @@ function loadMainHtmlHandler(e) {
   const mEl = mainDocument.body;
   document.getElementById("main").innerHTML = mEl.innerHTML;
 
-  externalMainEl.removeEventListener("load", onLoadMainHtml);
+  externalMainEl.removeEventListener("load", loadMainHtmlHandler);
 }
 
 function loadScriptsForMain() {
-  const util = document.createElement("script");
-  util.src = "/assets/js/util.js";
-  document.head.appendChild(util);
+  const insights = document.createElement("script");
+  insights.src = "/assets/js/insights.js";
+  insights.defer = true;
 
-  util.onload = function () {
-    const topics = document.createElement("script");
-    const insights = document.createElement("script");
-    const saved = document.createElement("script");
-    const awards = document.createElement("script");
-    const authors = document.createElement("script");
-    const videos = document.createElement("script");
-    const components = document.createElement("script");
+  const topics = document.createElement("script");
+  topics.src = "/assets/js/topics.js";
+  topics.defer = true;
 
-    topics.src = "/assets/js/topics.js";
-    insights.src = "/assets/js/insights.js";
-    saved.src = "/assets/js/saved.js";
+  const saved = document.createElement("script");
+  saved.src = "/assets/js/saved.js";
+  saved.defer = true;
 
-    awards.src = "/assets/js/awards.js";
-    awards.async = true;
+  const awards = document.createElement("script");
+  awards.src = "/assets/js/awards.js";
+  awards.defer = true;
 
-    authors.src = "/assets/js/authors.js";
-    authors.async = true;
+  const authors = document.createElement("script");
+  authors.src = "/assets/js/authors.js";
+  authors.defer = true;
 
-    videos.src = "/assets/js/videos.js";
-    videos.async = true;
+  const videos = document.createElement("script");
+  videos.src = "/assets/js/videos.js";
+  videos.defer = true;
 
-    components.src = "/assets/js/components.js";
-    components.defer = true;
+  const components = document.createElement("script");
+  components.src = "/assets/js/components.js";
+  components.defer = true;
 
-    document.head.appendChild(insights);
-    document.head.appendChild(topics);
-    document.head.appendChild(saved);
-    document.head.appendChild(awards);
-    document.head.appendChild(authors);
-    document.head.appendChild(videos);
-    document.head.appendChild(components);
-  };
+  document.head.appendChild(insights);
+  document.head.appendChild(topics);
+  document.head.appendChild(saved);
+  document.head.appendChild(awards);
+  document.head.appendChild(authors);
+  document.head.appendChild(videos);
+  document.head.appendChild(components);
 }
