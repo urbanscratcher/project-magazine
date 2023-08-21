@@ -38,8 +38,9 @@ function onClickVideo() {
       const id = +parentEl.getAttribute("data-id");
       const overlay = document.getElementsByClassName("modal__overlay")[0];
       const video = document.getElementsByClassName("modal__video")[0];
-      video.style.display = "";
-      overlay.style.display = "";
+      console.log(video);
+      video.style.display = "initial";
+      overlay.style.display = "initial";
       video.src = `/data/videos/media/${id}.webm`;
       video.autoplay = true;
     });
@@ -54,9 +55,9 @@ function onClickOverlay() {
     if (e.target === overlay) {
       const video = document.getElementsByClassName("modal__video")[0];
       video.pause();
-      video.style.display = "none";
       video.src = "";
       video.autoplay = false;
+      video.style.display = "none";
       overlay.style.display = "none";
     }
   });
