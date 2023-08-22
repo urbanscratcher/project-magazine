@@ -223,7 +223,7 @@
   padding: 0.4rem 1.6rem;
   border-radius: 1.6rem;
   font-weight: 600;
-  outline: 0.2rem solid var(--color-secondary);
+  border: 0.2rem solid var(--color-secondary);
 }
 
 .topic--white {
@@ -231,14 +231,14 @@
   padding: 0.4rem 1.6rem;
   border-radius: 1.6rem;
   font-weight: 600;
-  outline: 0.2rem solid var(--color-white);
+  border: 0.2rem solid var(--color-white);
 }
 
 .topic:hover,
 .topic--white:hover {
   cursor: pointer;
   background-color: var(--color-secondary);
-  outline-color: var(--color-secondary);
+  border-color: var(--color-secondary);
   color: var(--color-white);
 }
 

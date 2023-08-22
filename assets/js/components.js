@@ -2,6 +2,7 @@
 - Purpose: Load Component
 - Author: Hyunjung Joun
 -------------------------------- */
+console.log(`Loading ${document.currentScript.src.split("/js")[1]}`);
 
 loadComponents();
 
@@ -11,9 +12,13 @@ function loadComponents() {
   loadBookmark();
 }
 
-function loadBookmark() {
+function loadBookmark(higherClass) {
   const newHtml = () => document.getElementById("bookmarkTemplate").innerHTML;
-  const parentEls = document.getElementsByClassName("component-bookmark-add");
+  const parentEls = document.querySelectorAll(
+    `${higherClass ? higherClass : ""} .component-bookmark-add`
+  );
+
+  console.log(parentEls);
   for (const b of parentEls) {
     insert(b, render(newHtml, {}));
   }

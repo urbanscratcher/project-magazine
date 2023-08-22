@@ -25,17 +25,13 @@
 //     console.error("error: ", err);
 //   });
 
-function getAuthor(authorsData, id) {
+function getAuthorSimple(authorsData, id) {
   return authorsData.authors.find((el) => el.id === id);
 }
 
 function renderAllInsights(data, insightsData, authorsData) {
-  renderTopicCounts(data);
   renderTrendings(authorsData, insightsData);
   renderLatest();
-
-  // components
-  loadBookmark();
 }
 
 // public functions --------------------------
@@ -48,9 +44,6 @@ function renderTrendings(authorsData, insightsData) {
         el.createdAt <= Date.now() && el.createdAt > Date.now() - msOf7Days
     )
     .sort((a, b) => b.viewCount - a.viewCount);
-
-  trendingMain(trendings[0], getAuthor(authorsData, trendings[0].author.id));
-  trendingList(trendings.slice(1, trendings.length));
 }
 
 function renderLatest() {
@@ -61,40 +54,4 @@ function renderLatest() {
   latestList.map((el) => (el.createdAt = printDateDifference(el.createdAt)));
 
   insertAfterTemplate("latestTemplate", { data: latestList });
-}
-
-// private functions --------------------------
-function trendingList(list) {
-  insertAfterTemplate("trendingListTemplate", { data: list });
-}
-
-function trendingMain(data, authorsData) {
-  insertAfterTemplate("trendingMainImgTemplate", data);
-  insertAfterTemplate("trendingMainTopicTemplate", data);
-  insertAfterTemplate("trendingMainTitle", data);
-  insertAfterTemplate("trendingMainSummary", data);
-  insertAfterTemplate("trendingMainTtrTemplate", data);
-  trendingMainCreatedAt(data);
-
-  insertAfterTemplate(
-    "trendingMainAuthor",
-    getAuthor(authorsData, data.author.id)
-  );
-}
-
-function trendingMainCreatedAt(data) {
-  const dateDifference = printDateDifference(data.createdAt);
-  const newHtml = () => `
-       ${printDateDifference(data.createdAt)}
-      `;
-  const parentEl = document.querySelector(".trending__main .createdAt");
-  insert(parentEl, render(newHtml, {}));
-}
-
-function editorsPickImgTemplate(data) {
-  const editorsPickImg = document.getElementById("editorsPickImg");
-  insertAfter(
-    editorsPickImg,
-    render(() => editorsPickImg.innerHTML, data)
-  );
 }

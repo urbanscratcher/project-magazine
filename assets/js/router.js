@@ -53,7 +53,7 @@ function handleRouteChange(route) {
 }
 
 function loadScriptsForMain() {
-  // const insights = loadScript("/assets/js/insights.js");
+  const insightsTrending = loadScript("/assets/js/insights-trending.js", true);
   const insightsCover = loadScript("/assets/js/insights-cover.js", true);
   const insightsEditorsPick = loadScript(
     "/assets/js/insights-editorsPick.js",
@@ -68,18 +68,7 @@ function loadScriptsForMain() {
   const components = loadScript("/assets/js/components.js", true);
 }
 
-function observeLoadChildren(targetEl, fn) {
-  const observer = new MutationObserver(function (mutationsList) {
-    for (let m of mutationsList) {
-      if (m.type === "childList") {
-        fn();
-      }
-    }
-  });
-  observer.observe(targetEl, { childList: true });
-}
-
-function loadHtmlHandler(e, fn) {
+function loadHtmlHandler(e, loadJsFn) {
   const externalEl = e.target;
   const mainEl = document.getElementById("main");
   const mainDocument = externalEl.contentDocument;
@@ -88,8 +77,8 @@ function loadHtmlHandler(e, fn) {
   const mEl = mainDocument.body;
   mainEl.innerHTML = mEl.innerHTML;
 
-  if (fn) {
-    fn();
+  if (loadJsFn) {
+    loadJsFn();
   }
 
   externalEl.removeEventListener("load", loadHtmlHandler);
