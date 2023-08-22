@@ -50,7 +50,7 @@ function handleRouteChange(route) {
     case "/":
       externalEl.setAttribute("data", "main.html");
       externalEl.addEventListener("load", (e) =>
-        loadHtmlHandler(e, [...commonScriptList, ...mainScriptList])
+        loadHtmlHandler(e, [...mainScriptList, ...commonScriptList])
       );
       break;
     case "/insights":
@@ -94,6 +94,7 @@ function loadScript(scriptSrc, isAsync = false, callback) {
     script.async = true;
   } else {
     script.async = false;
+    script.defer = true;
   }
 
   if (callback) {

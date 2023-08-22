@@ -308,9 +308,12 @@
   border-bottom: none;
 }
 
-.title-row {
-  display: grid;
-  grid-template-columns: 3fr 2fr;
+.trending__txt {
+  width: 60%;
+}
+
+.trending__img {
+  width: 40%;
 }
 
 /* Stay Connected ----------------------------- */
@@ -419,16 +422,16 @@
   border-bottom: solid 1px var(--color-secondary-light);
 }
 
-.latest__item:last-child {
-  border-bottom: none;
-}
-
 .latest__img {
   width: 33.3333%;
 }
 
 .latest__txt {
   width: 66.6666%;
+}
+
+.latest__item:last-child {
+  border-bottom: none;
 }
 
 .author__avatar {

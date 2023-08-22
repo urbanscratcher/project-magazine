@@ -177,9 +177,9 @@
         </div>
         <div class="section__content row gap--m">
           <div class="trending__main col gap--m">
-            <div class="section__img">
+            <div class="section__img img--ratio-64">
               <template id="trendingMainImgTemplate">
-                <img src="{{thumbnail}}" class="img--ratio-169" />
+                <img src="{{thumbnail}}" />
               </template>
               <div class="component-bookmark-add"></div>
             </div>
@@ -218,24 +218,23 @@
             </div>
           </div>
           <ul class="trending__list col gap--l">
-            <!-- [trending list] -->
             <template id="trendingListTemplate">
               {{#each data}}
-              <li class="trending__item col gap--s">
-                <div class="topic__wrapper">
-                  <a href="#" class="topic ts--btn">{{topic}}</a>
-                </div>
-                <div class="title-row row gap--s">
-                  <h4 class="title-row__txt hover--txt serif">{{title}}</h4>
-                  <div class="title-row__img section__img">
-                    <img src="{{thumbnail}}" />
-                    <div class="component-bookmark-add"></div>
+              <li class="trending__item row gap--s">
+                <div class="trending__txt col gap--s">
+                  <div class="topic__wrapper">
+                    <a href="#" class="topic ts--btn">{{topic}}</a>
                   </div>
+                  <h4 class="title-row__txt hover--txt serif">{{title}}</h4>
+                  <p class="author-row ts--body-s text-gray row gap--s">
+                    By
+                    <span class="author__name">{{author.name}}</span>
+                  </p>
                 </div>
-                <p class="author-row ts--body-s text-gray row gap--s">
-                  By
-                  <span class="author__name">{{author.name}}</span>
-                </p>
+                <div class="trending__img section__img img--ratio-64">
+                  <img src="{{thumbnail}}" />
+                  <div class="component-bookmark-add"></div>
+                </div>
               </li>
               {{/each}}
             </template>
@@ -401,14 +400,14 @@
           <template id="latestTemplate">
             {{#each data}}
             <li class="latest__item row gap--m">
-              <div class="latest__img section__img">
-                <img src="{{thumbnail}}" class="img--ratio-169" />
+              <div class="latest__img section__img img--ratio-64">
+                <img src="{{thumbnail}}" />
                 <div class="component-bookmark-add"></div>
-                <label class="topic topic--white tc--white ts--btn"
-                  >{{topic}}</label
-                >
               </div>
               <div class="latest__txt col gap--s">
+                <div class="latest__topic">
+                  <button class="topic ts--btn">{{topic}}</button>
+                </div>
                 <h3 class="latest__title serif hover--txt">{{title}}</h3>
                 <div class="time-row row gap--s v-center">
                   <p class="icon__time-wrapper">
