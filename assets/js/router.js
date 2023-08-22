@@ -2,6 +2,9 @@
 - Purpose: Routing
 - Author: Hyunjung Joun
 -------------------------------- */
+const commonScriptList = ["topics", "components"].map(
+  (el) => `/assets/js/${el}.js`
+);
 const mainScriptList = [
   "insights-trending",
   "insights-cover",
@@ -31,7 +34,8 @@ function handleRouteChange(route) {
   }
 
   // Remove scripts for reset
-  for (m of mainScriptList) {
+  const scriptList = [...commonScriptList, ...mainScriptList];
+  for (m of scriptList) {
     unloadScript(m);
   }
 
@@ -46,28 +50,27 @@ function handleRouteChange(route) {
     case "/":
       externalEl.setAttribute("data", "main.html");
       externalEl.addEventListener("load", (e) =>
-        loadHtmlHandler(e, loadScriptsForMain)
+        loadHtmlHandler(e, [...commonScriptList, ...mainScriptList])
       );
       break;
-    case "/insight":
-      externalEl.setAttribute("data", "insight.html");
-      externalEl.addEventListener("load", loadHtmlHandler);
+    case "/insights":
+      externalEl.setAttribute("data", "insights.html");
+      externalEl.addEventListener("load", (e) =>
+        loadHtmlHandler(e, [...commonScriptList])
+      );
       break;
     default:
       break;
   }
 }
 
-function loadScriptsForMain() {
-  for (const m of mainScriptList) {
+function loadScripts(list) {
+  for (const m of list) {
     loadScript(m, true);
   }
-
-  const topics = loadScript("/assets/js/topics.js", true);
-  const components = loadScript("/assets/js/components.js", true);
 }
 
-function loadHtmlHandler(e, loadJsFn) {
+function loadHtmlHandler(e, list) {
   const externalEl = e.target;
   const mainEl = document.getElementById("main");
   const mainDocument = externalEl.contentDocument;
@@ -76,8 +79,8 @@ function loadHtmlHandler(e, loadJsFn) {
   const mEl = mainDocument.body;
   mainEl.innerHTML = mEl.innerHTML;
 
-  if (loadJsFn) {
-    loadJsFn();
+  if (list && list.length > 0) {
+    loadScripts(list);
   }
 
   externalEl.removeEventListener("load", loadHtmlHandler);
