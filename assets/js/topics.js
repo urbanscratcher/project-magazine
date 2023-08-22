@@ -5,37 +5,6 @@
 console.log(`Loading ${document.currentScript.src.split("/js")[1]}`);
 
 // Fetch the template file -----------------
-const topicList = {
-  topTopics: [
-    {
-      name: "Design",
-    },
-    {
-      name: "Technology",
-    },
-    {
-      name: "Residential",
-    },
-    {
-      name: "Interior",
-    },
-    {
-      name: "Landscape",
-    },
-    {
-      name: "Urban",
-    },
-    {
-      name: "Cultural",
-    },
-    {
-      name: "Exhibition",
-    },
-    {
-      name: "Narrative",
-    },
-  ],
-};
 
 presentTopics();
 renderTopicCountLabel();

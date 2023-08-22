@@ -2,6 +2,17 @@
 - Purpose: Routing
 - Author: Hyunjung Joun
 -------------------------------- */
+const mainScriptList = [
+  "insights-trending",
+  "insights-cover",
+  "insights-editorsPick",
+  "insights-latest",
+  "saved",
+  "awards",
+  "authors",
+  "videos",
+  "inspirations",
+];
 
 // After the DOM tree loaded
 document.addEventListener("DOMContentLoaded", () => {
@@ -52,19 +63,13 @@ function handleRouteChange(route) {
 }
 
 function loadScriptsForMain() {
-  const insightsTrending = loadScript("/assets/js/insights-trending.js", true);
-  const insightsCover = loadScript("/assets/js/insights-cover.js", true);
-  const insightsEditorsPick = loadScript(
-    "/assets/js/insights-editorsPick.js",
-    true
-  );
-  const insightsLatest = loadScript("/assets/js/insights-latest.js", true);
+  const mains = mainScriptList.map((el) => `/assets/js/main/${el}.js`);
+
+  for (const m of mains) {
+    loadScript(m, true);
+  }
+
   const topics = loadScript("/assets/js/topics.js", true);
-  const saved = loadScript("/assets/js/saved.js", true);
-  const awards = loadScript("/assets/js/awards.js", true);
-  const authors = loadScript("/assets/js/authors.js", true);
-  const videos = loadScript("/assets/js/videos.js", true);
-  const inspirations = loadScript("/assets/js/inspirations.js", true);
   const components = loadScript("/assets/js/components.js", true);
 }
 

@@ -4,6 +4,38 @@
 -------------------------------- */
 console.log(`Loading ${document.currentScript.src.split("/js")[1]}`);
 
+const topicList = {
+  topTopics: [
+    {
+      name: "Design",
+    },
+    {
+      name: "Technology",
+    },
+    {
+      name: "Residential",
+    },
+    {
+      name: "Interior",
+    },
+    {
+      name: "Landscape",
+    },
+    {
+      name: "Urban",
+    },
+    {
+      name: "Cultural",
+    },
+    {
+      name: "Exhibition",
+    },
+    {
+      name: "Narrative",
+    },
+  ],
+};
+
 async function getInsightList() {
   return await fetch("/data/insights/data.json")
     .then((res) => res.json())
