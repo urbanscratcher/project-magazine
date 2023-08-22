@@ -12,7 +12,7 @@ const mainScriptList = [
   "authors",
   "videos",
   "inspirations",
-];
+].map((el) => `/assets/js/main/${el}.js`);
 
 // After the DOM tree loaded
 document.addEventListener("DOMContentLoaded", () => {
@@ -31,13 +31,9 @@ function handleRouteChange(route) {
   }
 
   // Remove scripts for reset
-  unloadScript("/assets/js/insights.js");
-  unloadScript("/assets/js/topics.js");
-  unloadScript("/assets/js/saved.js");
-  unloadScript("/assets/js/awards.js");
-  unloadScript("/assets/js/authors.js");
-  unloadScript("/assets/js/videos.js");
-  unloadScript("/assets/js/components.js");
+  for (m of mainScriptList) {
+    unloadScript(m);
+  }
 
   // (re)create external obj for reset
   const createDoc = document.createElement("object");
@@ -63,9 +59,7 @@ function handleRouteChange(route) {
 }
 
 function loadScriptsForMain() {
-  const mains = mainScriptList.map((el) => `/assets/js/main/${el}.js`);
-
-  for (const m of mains) {
+  for (const m of mainScriptList) {
     loadScript(m, true);
   }
 
