@@ -8,13 +8,14 @@ loadComponents();
 function loadComponents() {
   loadViewAll();
   loadNewletter();
+  loadBookmark();
 }
 
 function loadBookmark() {
   const newHtml = () => document.getElementById("bookmarkTemplate").innerHTML;
   const parentEls = document.getElementsByClassName("component-bookmark-add");
-  for (let i = 0; i < parentEls.length; i++) {
-    insert(parentEls[i], render(newHtml, {}));
+  for (const b of parentEls) {
+    insert(b, render(newHtml, {}));
   }
 }
 

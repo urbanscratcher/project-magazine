@@ -3,6 +3,7 @@
 - Author: Hyunjung Joun
 -------------------------------- */
 
+// After the DOM tree loaded
 document.addEventListener("DOMContentLoaded", () => {
   const initialRoute = window.location.pathname;
   handleRouteChange(initialRoute);
@@ -11,13 +12,14 @@ document.addEventListener("DOMContentLoaded", () => {
 function handleRouteChange(route) {
   history.pushState(null, null, route);
 
-  // remove external obj
+  // Remove external obj for reset
   if (document.getElementById("external")) {
     document
       .getElementById("external")
       .parentNode.removeChild(document.getElementById("external"));
   }
 
+  // Remove scripts for reset
   unloadScript("/assets/js/insights.js");
   unloadScript("/assets/js/topics.js");
   unloadScript("/assets/js/saved.js");
@@ -26,14 +28,13 @@ function handleRouteChange(route) {
   unloadScript("/assets/js/videos.js");
   unloadScript("/assets/js/components.js");
 
-  // (re)create external obj
+  // (re)create external obj for reset
   const createDoc = document.createElement("object");
   createDoc.id = "external";
   document.body.appendChild(createDoc);
   let externalEl = document.getElementById("external");
 
-  // (re)load html & js
-
+  // (re)load html & js by routes for reset
   switch (route) {
     case "/":
       externalEl.setAttribute("data", "main.html");
@@ -52,13 +53,19 @@ function handleRouteChange(route) {
 }
 
 function loadScriptsForMain() {
-  const insights = loadScript("/assets/js/insights.js", null, "defer");
-  const topics = loadScript("/assets/js/topics.js", null, "defer");
-  const saved = loadScript("/assets/js/saved.js", null, "defer");
-  const awards = loadScript("/assets/js/awards.js", null, "defer");
-  const authors = loadScript("/assets/js/authors.js", null, "defer");
-  const videos = loadScript("/assets/js/videos.js", null, "defer");
-  const components = loadScript("/assets/js/components.js", null, "async");
+  // const insights = loadScript("/assets/js/insights.js");
+  const insightsCover = loadScript("/assets/js/insights-cover.js", true);
+  const insightsEditorsPick = loadScript(
+    "/assets/js/insights-editorsPick.js",
+    true
+  );
+  const topics = loadScript("/assets/js/topics.js", true);
+  const saved = loadScript("/assets/js/saved.js", true);
+  const awards = loadScript("/assets/js/awards.js", true);
+  const authors = loadScript("/assets/js/authors.js", true);
+  const videos = loadScript("/assets/js/videos.js", true);
+  const inspirations = loadScript("/assets/js/inspirations.js", true);
+  const components = loadScript("/assets/js/components.js", true);
 }
 
 function observeLoadChildren(targetEl, fn) {
@@ -88,16 +95,18 @@ function loadHtmlHandler(e, fn) {
   externalEl.removeEventListener("load", loadHtmlHandler);
 }
 
-function loadScript(scriptSrc, callback, mode) {
+function loadScript(scriptSrc, isAsync = false, callback) {
   const script = document.createElement("script");
   script.src = scriptSrc;
 
-  if (callback) {
-    script.onload = callback;
+  if (isAsync) {
+    script.async = true;
+  } else {
+    script.async = false;
   }
 
-  if (mode) {
-    script[mode] = true;
+  if (callback) {
+    script.onload = callback;
   }
 
   document.head.appendChild(script);
