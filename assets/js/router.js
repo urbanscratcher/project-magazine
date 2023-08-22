@@ -27,10 +27,9 @@ function handleRouteChange(route) {
   history.pushState(null, null, route);
 
   // Remove external obj for reset
-  if (document.getElementById("external")) {
-    document
-      .getElementById("external")
-      .parentNode.removeChild(document.getElementById("external"));
+  let externalEl = document.getElementById("external");
+  if (externalEl) {
+    externalEl.parentNode.removeChild(externalEl);
   }
 
   // Remove scripts for reset
@@ -43,21 +42,24 @@ function handleRouteChange(route) {
   const createDoc = document.createElement("object");
   createDoc.id = "external";
   document.body.appendChild(createDoc);
-  let externalEl = document.getElementById("external");
+  externalEl = document.getElementById("external");
 
   // (re)load html & js by routes for reset
   switch (route) {
     case "/":
-      externalEl.setAttribute("data", "main.html");
+      externalEl.setAttribute("data", "/main.html");
       externalEl.addEventListener("load", (e) =>
-        loadHtmlHandler(e, [...mainScriptList, ...commonScriptList])
+        loadHtmlHandler([...mainScriptList, ...commonScriptList])
+      );
+      break;
+    case "/insights/1":
+      externalEl.setAttribute("data", "/insight.html");
+      externalEl.addEventListener("load", (e) =>
+        loadHtmlHandler([...commonScriptList])
       );
       break;
     case "/insights":
-      externalEl.setAttribute("data", "insights.html");
-      externalEl.addEventListener("load", (e) =>
-        loadHtmlHandler(e, [...commonScriptList])
-      );
+      externalEl.setAttribute("data", "/insights.html");
       break;
     default:
       break;
@@ -70,14 +72,14 @@ function loadScripts(list) {
   }
 }
 
-function loadHtmlHandler(e, list) {
-  const externalEl = e.target;
+function loadHtmlHandler(list) {
+  const externalEl = document.getElementById("external");
   const mainEl = document.getElementById("main");
-  const mainDocument = externalEl.contentDocument;
 
-  mainDocument.body.style.display = "none";
-  const mEl = mainDocument.body;
-  mainEl.innerHTML = mEl.innerHTML;
+  const externalDoc = externalEl.contentDocument;
+
+  externalDoc.body.style.display = "none";
+  mainEl.innerHTML = externalDoc.body.innerHTML;
 
   if (list && list.length > 0) {
     loadScripts(list);
