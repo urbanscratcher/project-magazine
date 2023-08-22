@@ -29,14 +29,3 @@ function renderAllInsights(data, insightsData, authorsData) {
   renderTrendings(authorsData, insightsData);
   renderLatest();
 }
-
-// public functions --------------------------
-function renderLatest() {
-  const latestList = [...insightsData]
-    .sort((a, b) => b.createdAt - a.createdAt)
-    .slice(0, 4);
-
-  latestList.map((el) => (el.createdAt = printDateDifference(el.createdAt)));
-
-  insertAfterTemplate("latestTemplate", { data: latestList });
-}

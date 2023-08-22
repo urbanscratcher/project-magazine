@@ -58,6 +58,7 @@ function loadScriptsForMain() {
     "/assets/js/insights-editorsPick.js",
     true
   );
+  const insightsLatest = loadScript("/assets/js/insights-latest.js", true);
   const topics = loadScript("/assets/js/topics.js", true);
   const saved = loadScript("/assets/js/saved.js", true);
   const awards = loadScript("/assets/js/awards.js", true);

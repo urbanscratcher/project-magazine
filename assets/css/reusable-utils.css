@@ -117,7 +117,7 @@
     var(--color-secondary-filter)
   );
   opacity: 0;
-  transition: all 0.15s ease;
+  transition: opacity 0.15s ease;
 }
 
 .section__img:hover::before {
@@ -128,7 +128,6 @@
   object-fit: cover;
   object-position: center;
   height: 100%;
-  transition: all 0.2s ease;
 }
 
 .img--ratio-64 {
@@ -138,18 +137,14 @@
   aspect-ratio: 16 / 9;
 }
 
-.section__img:hover img {
-  transform: scale(103%);
-}
-
 .section__img .component-bookmark-add {
   position: absolute;
   z-index: 2;
   right: 0;
-  bottom: 0;
+  top: 0;
   margin: 0.8rem;
   opacity: 0;
-  transition: opacity 0.1s ease;
+  transition: opacity 0.15s ease;
 }
 
 .section__img .component-bookmark-add svg {

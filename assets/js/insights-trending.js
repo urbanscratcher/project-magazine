@@ -14,6 +14,7 @@ async function renderTrending() {
 
     for (t of trendings) {
       t.author = await getAuthorSimple(t.author.id);
+      t.createdAt = await printDateDifference(t.createdAt);
     }
 
     await renderTrendingMain(trendings[0]);
@@ -70,19 +71,10 @@ async function renderTrendingMain(main) {
   insertAfterTemplate("trendingMainTopicTemplate", main);
   insertAfterTemplate("trendingMainTitle", main);
   insertAfterTemplate("trendingMainSummary", main);
-  trendingMainCreatedAt(main);
+  insertAfterTemplate("trendingMainCreatedAt", main);
   insertAfterTemplate("trendingMainTtrTemplate", main);
   insertAfterTemplate(
     "trendingMainAuthor",
     await getAuthorSimple(main.author.id)
   );
-}
-
-function trendingMainCreatedAt(data) {
-  const dateDifference = printDateDifference(data.createdAt);
-  const newHtml = () => `
-       ${printDateDifference(data.createdAt)}
-      `;
-  const parentEl = document.querySelector(".trending__main .createdAt");
-  insert(parentEl, render(newHtml, {}));
 }
