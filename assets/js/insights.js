@@ -25,27 +25,12 @@
 //     console.error("error: ", err);
 //   });
 
-function getAuthorSimple(authorsData, id) {
-  return authorsData.authors.find((el) => el.id === id);
-}
-
 function renderAllInsights(data, insightsData, authorsData) {
   renderTrendings(authorsData, insightsData);
   renderLatest();
 }
 
 // public functions --------------------------
-
-function renderTrendings(authorsData, insightsData) {
-  const msOf7Days = 1000 * 60 * 60 * 24 * 7;
-  const trendings = [...insightsData]
-    .filter(
-      (el) =>
-        el.createdAt <= Date.now() && el.createdAt > Date.now() - msOf7Days
-    )
-    .sort((a, b) => b.viewCount - a.viewCount);
-}
-
 function renderLatest() {
   const latestList = [...insightsData]
     .sort((a, b) => b.createdAt - a.createdAt)

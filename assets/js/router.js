@@ -47,7 +47,6 @@ function handleRouteChange(route) {
       externalEl.addEventListener("load", loadHtmlHandler);
       break;
     default:
-      console.log("aaaa");
       break;
   }
 }

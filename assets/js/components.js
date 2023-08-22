@@ -18,7 +18,6 @@ function loadBookmark(higherClass) {
     `${higherClass ? higherClass : ""} .component-bookmark-add`
   );
 
-  console.log(parentEls);
   for (const b of parentEls) {
     insert(b, render(newHtml, {}));
   }
