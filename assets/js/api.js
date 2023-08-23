@@ -89,3 +89,21 @@ async function getAuthorSimple(id) {
     }))
     .catch((err) => console.error("error: ", err));
 }
+
+async function getAuthor(id) {
+  return await fetch("/data/authors/data.json")
+    .then((res) => res.json())
+    .then((data) => data.authors.find((el) => el.id === id))
+    .then((el) => ({
+      ...el,
+      topicsOneline: el.topics.join("&nbsp;·&nbsp;"),
+    }))
+    .catch((err) => console.error("error: ", err));
+}
+
+async function getInsightDetail(id) {
+  return await fetch("/data/insights/data-detail.json")
+    .then((res) => res.json())
+    .then((data) => data.insightsDetail.find((el) => el.id === id))
+    .catch((err) => console.error("error: ", err));
+}

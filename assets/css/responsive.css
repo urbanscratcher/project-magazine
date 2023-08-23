@@ -146,6 +146,10 @@
 
   /* Column gap -------------- */
   /* Row gap */
+  .gap--xl {
+    gap: 4.8rem;
+  }
+
   .gap--l {
     gap: 3.2rem;
   }

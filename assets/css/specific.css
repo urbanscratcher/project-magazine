@@ -3,6 +3,57 @@
 - Author: Hyunjung Joun
 -------------------------------- */
 
+/* -----------------------------------------
+ARTICLE PAGE
+----------------------------------------- */
+/* article ----------------------------*/
+.article__header {
+  max-width: 96rem;
+  margin-top: 6.4rem;
+  padding: var(--size-2xl) var(--size-l);
+}
+
+.article__summary {
+  text-align: left;
+}
+
+.article__thumbnail-wrapper {
+  max-width: 96rem;
+  overflow: hidden;
+  border-radius: var(--size-m);
+}
+
+.article__thumbnail {
+  object-fit: cover;
+  object-position: center;
+  height: 100%;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.article__content-wrapper {
+  padding: var(--size-2xl) var(--size-l);
+}
+
+.article__content {
+  max-width: 68.8rem;
+}
+
+.article__aside {
+  width: 33.3333%;
+}
+
+.article__link {
+  border-bottom: solid 1px var(--color-gray-light);
+  width: 100%;
+  padding-bottom: var(--size-xl);
+}
+
+.btn-link {
+  border-color: var(--color-gray);
+  color: var(--color-gray);
+}
+
 /* Nav ----------------------------*/
 #header {
   color: var(--color-secondary-dark);

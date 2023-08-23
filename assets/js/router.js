@@ -16,6 +16,9 @@ const mainScriptList = [
   "videos",
   "inspirations",
 ].map((el) => `/assets/js/main/${el}.js`);
+const insightScriptList = ["insights-article"].map(
+  (el) => `/assets/js/insight/${el}.js`
+);
 
 // when go backward and forward
 window.addEventListener("popstate", (e) => {
@@ -56,16 +59,16 @@ function handleRouteChange(route) {
 
   // (re)load html & js by routes for reset
   switch (route) {
-    case "/":
+    case "/insights/1":
       externalEl.setAttribute("data", "/main.html");
       externalEl.addEventListener("load", (e) =>
         loadHtmlHandler([...mainScriptList, ...commonScriptList])
       );
       break;
-    case "/insights/1":
+    case "/":
       externalEl.setAttribute("data", "/insight.html");
       externalEl.addEventListener("load", (e) =>
-        loadHtmlHandler([...commonScriptList])
+        loadHtmlHandler([...commonScriptList, ...insightScriptList])
       );
       break;
     case "/insights":

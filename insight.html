@@ -6,12 +6,63 @@
     <title>insight</title>
   </head>
   <body>
-    <section id="detail">
-      <div>topic</div>
-      <h1>title</h1>
-      <p>summary</p>
-      <p>By Grace Bennett</p>
-      <div></div>
+    <section id="article" class="col h-center">
+      <div class="article__header col h-center gap--xl">
+        <template id="articleHeaderTemplate">
+          <div class="article__title col gap--s ta-center">
+            <div class="article__topic">            
+              <button class="topic ts--btn">{{topic}}</button>
+            </div>
+            <h2 class="serif">{{title}}</h2>
+          </div>
+          <p class="article__summary">{{summary}}</p>
+          <div class="article__info row gap--s tc--gray">
+            <p class="icon__time-wrapper ts--body-s">
+              <i class="icon__time fa-regular fa-clock"></i>
+            </p>
+            <p class="createdAt ts--body-s">{{createdAt}}</p>
+            <p class="separator ts--body-s">·</p>
+            <p class="ttr__box ts--body-s"><span class="ttr ts--body-s">{{ttr}}</span> read</p>
+          </div>
+        </template>
+      </div>
+      <div class="article__thumbnail-wrapper">
+        <img src="/data/insights/thumbnail/1.webp" class="article__thumbnail" />
+      </div>
+      <div class="article__content-wrapper row gap--l">
+        <div class="article__content col gap--xl h-center">
+          <p class="article__txt">
+            <!-- [body] -->
+          </p>
+          <div class="article__link col h-center">
+            <button class="btn-link ts--btn btn--circle-l hover--darker">
+              <i class="fa-solid fa-link"></i>
+            </button>
+          </div>
+          <div class="author__profile col gap--m">
+            <template id="authorProfileTemplate">
+              <div class="author__profile-row row gap--m">
+                <img src="{{avatar}}" class="featured-authors__avatar"></img>
+                <div class="featured-authors__txt col gap--s">
+                  <p class="featured-authors__name bold">{{name}}</p>
+                  <span class="ts--body-s">
+                    {{{topicsOneline}}}
+                  </span>
+                </div>
+              </div>
+              <p class="author__description ts--body-s tc--gray">{{description}}</p>
+            </template>
+          </div>
+        </div>
+        <aside class="article__aside">
+          <div class="aside__trending">
+            what's trending
+          </div>
+        </aside>
+      </div>
+    </section>
+    <section id="related">
+
     </section>
   </body>
 </html>

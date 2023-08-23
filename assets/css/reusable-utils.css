@@ -19,12 +19,20 @@
   color: var(--color-white);
 }
 
+.tc--gray {
+  color: var(--color-gray);
+}
+
 .uppercase {
   text-transform: uppercase;
 }
 
 .bold {
   font-weight: bold;
+}
+
+.ta-center {
+  text-align: center;
 }
 
 /* Basic Utils - Display --------------*/
@@ -247,7 +255,7 @@
   width: 2.4rem;
   height: 2.4rem;
   border-radius: 50%;
-  outline: solid 0.2rem var(--color-secondary-dark);
+  border: solid 1.5px var(--color-secondary-dark);
 
   display: flex;
   align-items: center;
@@ -259,7 +267,7 @@
   width: 3.2rem;
   height: 3.2rem;
   border-radius: 50%;
-  outline: solid 0.2rem var(--color-secondary-dark);
+  border: solid 1.5px var(--color-secondary-dark);
 
   display: flex;
   align-items: center;
