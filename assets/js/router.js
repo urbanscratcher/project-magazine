@@ -17,15 +17,25 @@ const mainScriptList = [
   "inspirations",
 ].map((el) => `/assets/js/main/${el}.js`);
 
+// when go backward and forward
+window.addEventListener("popstate", (e) => {
+  handleRouteChange(window.location.pathname);
+});
+
 // After the DOM tree loaded
 document.addEventListener("DOMContentLoaded", () => {
   const initialRoute = window.location.pathname;
   handleRouteChange(initialRoute);
 });
 
-function handleRouteChange(route) {
+// Go to the route
+function navigateTo(route) {
   history.pushState(null, null, route);
+  handleRouteChange(route);
+}
 
+// When the route changes
+function handleRouteChange(route) {
   // Remove external obj for reset
   let externalEl = document.getElementById("external");
   if (externalEl) {
