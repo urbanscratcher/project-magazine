@@ -40,7 +40,8 @@ ARTICLE PAGE
 }
 
 .article__aside {
-  width: 33.3333%;
+  max-width: 36rem;
+  align-self: center;
 }
 
 .article__link {
@@ -52,6 +53,32 @@ ARTICLE PAGE
 .btn-link {
   border-color: var(--color-gray);
   color: var(--color-gray);
+}
+
+.article__txt * {
+  font-size: var(--h4-xl);
+  letter-spacing: var(--h4-spacing-xl);
+  line-height: 1.27;
+}
+
+.aside__trending {
+  padding: var(--size-l) 0 var(--size-l) var(--size-l);
+  border-left: solid 1px var(--color-secondary-light);
+}
+
+.article__aside .trending__txt {
+  width: 100%;
+}
+
+.article__aside .topic {
+  border-color: var(--color-gray);
+  color: var(--color-gray);
+}
+
+.article__aside .topic:hover {
+  border-color: var(--color-gray);
+  background-color: var(--color-gray);
+  color: var(--color-white);
 }
 
 /* Nav ----------------------------*/
@@ -367,7 +394,7 @@ ARTICLE PAGE
   width: 40%;
 }
 
-/* Stay Connected ----------------------------- */
+/* Trending Aside ----------------------------- */
 
 /* Newsletter --------------------------------- */
 .newsletter__input {

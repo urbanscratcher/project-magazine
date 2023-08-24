@@ -15,9 +15,9 @@ const mainScriptList = [
   "authors",
   "videos",
   "inspirations",
-].map((el) => `/assets/js/main/${el}.js`);
-const insightScriptList = ["insights-article"].map(
-  (el) => `/assets/js/insight/${el}.js`
+].map((el) => `/assets/js/binding/${el}.js`);
+const insightScriptList = ["insights-article", "insights-trending-aside"].map(
+  (el) => `/assets/js/binding/${el}.js`
 );
 
 // when go backward and forward

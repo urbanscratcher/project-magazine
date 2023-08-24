@@ -23,6 +23,10 @@
   color: var(--color-gray);
 }
 
+.tc--gray-dark {
+  color: var(--color-gray-dark);
+}
+
 .uppercase {
   text-transform: uppercase;
 }

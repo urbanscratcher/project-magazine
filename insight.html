@@ -29,9 +29,9 @@
       <div class="article__thumbnail-wrapper">
         <img src="/data/insights/thumbnail/1.webp" class="article__thumbnail" />
       </div>
-      <div class="article__content-wrapper row gap--l">
-        <div class="article__content col gap--xl h-center">
-          <p class="article__txt">
+      <div class="article__content-wrapper row gap--xl h-center">
+        <div class="article__content col gap--l h-center">
+          <p class="article__txt col gap--l">
             <!-- [body] -->
           </p>
           <div class="article__link col h-center">
@@ -54,10 +54,29 @@
             </template>
           </div>
         </div>
-        <aside class="article__aside">
-          <div class="aside__trending">
-            what's trending
-          </div>
+        <aside class="article__aside">          
+          <section class="aside__trending col gap--l">
+            <div class="section__title-wrapper row between">
+              <p class="section__title">What's Trending</p>
+              <div class="component-viewAll"></div>
+            </div>
+            <ul class="section__content col gap--m">
+              <template id="trendingListTemplate">
+                {{#each data}}
+                <li class="trending__item row gap--s">
+                  <div class="trending__txt col gap--s">
+                   
+                    <p class="hover--txt tc--gray bold">{{title}}</p>
+                    <p class="author-row ts--body-s tc--gray row gap--s">
+                      By
+                      <span class="author__name">{{author.name}}</span>
+                    </p>
+                  </div>
+                </li>
+                {{/each}}
+              </template>
+            </ul>
+          </section>
         </aside>
       </div>
     </section>
