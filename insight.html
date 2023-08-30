@@ -28,8 +28,10 @@
             </div>
           </template>
         </div>
-        <div class="article__thumbnail-wrapper">
-          <img src="/data/insights/thumbnail/1.webp" class="article__thumbnail" />
+        <div class="article__img">
+          <template id="articleThumbnailTemplate">
+            <img src="{{thumbnail}}" class="article__thumbnail" />
+          </template>
         </div>
       </div>
       <div class="col gap--m h-center">
@@ -80,11 +82,13 @@
         <template id="relatedTemplate">
           {{#each data}}
           <li class="related__item col gap--m">
-            <img class="related__thumbnail img--ratio-64" src="{{thumbnail}}" />
+            <div class="related__img section__img">
+              <img src="{{thumbnail}}" />
+            </div>
             <div class="topic__wrapper">
                 <a href="#" class="topic ts--btn">{{topic}}</a>
             </div>
-            <h4 class="serif">{{title}}</h4>
+            <h4 class="serif hover--txt" onclick="navigateTo(`/insights/{{id}}`); return false;">{{title}}</h4>
             <div class="time-row row gap--s v-center">
               <p class="icon__time-wrapper">
                 <i class="icon__time fa-regular fa-clock"></i>

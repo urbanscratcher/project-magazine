@@ -16,7 +16,12 @@
           <a href="#" class="topic--white ts--btn">{{topic}}</a>
         </div>
         <div class="cover__headline">
-          <h1 class="serif hover--txt">{{title}}</h1>
+          <h1
+            class="serif hover--txt"
+            onclick="navigateTo(`/insights/{{id}}`); return false;"
+          >
+            {{title}}
+          </h1>
         </div>
       </div>
     </template>
@@ -38,9 +43,14 @@
             </a>
           </div>
           <div class="cover__headline">
-            <h1 href="#" class="serif hover--txt">
-              <template id="coverTitleTemplate"> {{title}} </template>
-            </h1>
+            <template id="coverTitleTemplate">
+              <h1
+                class="serif hover--txt"
+                onclick="navigateTo(`/insights/{{id}}`); return false;"
+              >
+                {{title}}
+              </h1>
+            </template>
           </div>
         </div>
         <div class="cover__slide-controller slide-controller row gap--m">
@@ -81,7 +91,12 @@
             </div>
             <div class="editorsPick__title">
               <template id="editorsPickTitleTemplate">
-                <h3 class="serif hover--txt">{{title}}</h3>
+                <h3
+                  class="serif hover--txt"
+                  onclick="navigateTo(`/insights/{{id}}`); return false;"
+                >
+                  {{title}}
+                </h3>
               </template>
             </div>
           </div>
@@ -92,7 +107,12 @@
                 {{#each insights}}
                 <li class="editorsPick__item serif row gap--s">
                   <p class="editorsPick__marker">✦</p>
-                  <h4 class="editorsPick__item-txt hover--txt">{{title}}</h4>
+                  <h4
+                    class="editorsPick__item-txt hover--txt"
+                    onclick="navigateTo(`/insights/{{id}}`); return false;"
+                  >
+                    {{title}}
+                  </h4>
                 </li>
                 {{/each}}
               </template>
@@ -188,9 +208,16 @@
                 <a href="#" class="topic ts--btn">{{topic}}</a>
               </template>
             </div>
-            <h2 class="main__title serif hover--txt">
-              <template id="trendingMainTitle">{{title}}</template>
-            </h2>
+
+            <template id="trendingMainTitle">
+              <h2
+                class="main__title serif hover--txt"
+                onclick="navigateTo(`/insights/{{id}}`); return false;"
+              >
+                {{title}}
+              </h2>
+            </template>
+
             <p class="main__summary">
               <template id="trendingMainSummary">{{summary}}</template>
             </p>
@@ -225,7 +252,12 @@
                   <div class="topic__wrapper">
                     <a href="#" class="topic ts--btn">{{topic}}</a>
                   </div>
-                  <h4 class="title-row__txt hover--txt serif">{{title}}</h4>
+                  <h4
+                    class="title-row__txt hover--txt serif"
+                    onclick="navigateTo(`/insights/{{id}}`); return false;"
+                  >
+                    {{title}}
+                  </h4>
                   <p class="author-row ts--body-s tc--gray row gap--s">
                     By
                     <span class="author__name">{{author.name}}</span>
@@ -346,7 +378,10 @@
                   <label class="topic--white ts--btn">{{topic}}</label>
                 </div>
                 <div class="savedForLater__txt col gap--m">
-                  <h3 class="savedForLater__title serif hover--txt">
+                  <h3
+                    class="savedForLater__title serif hover--txt"
+                    onclick="navigateTo(`/insights/{{id}}`); return false;"
+                  >
                     {{title}}
                   </h3>
                   <div class="savedForLater__author avatar row v-center gap--s">
@@ -408,7 +443,12 @@
                 <div class="latest__topic">
                   <button class="topic ts--btn">{{topic}}</button>
                 </div>
-                <h3 class="latest__title serif hover--txt">{{title}}</h3>
+                <h3
+                  class="latest__title serif hover--txt"
+                  onclick="navigateTo(`/insights/{{id}}`); return false;"
+                >
+                  {{title}}
+                </h3>
                 <div class="time-row row gap--s v-center">
                   <p class="icon__time-wrapper">
                     <i class="icon__time fa-regular fa-clock"></i>
@@ -487,7 +527,12 @@
               <div class="topic__wrapper">
                 <label class="topic topic--white ts--btn">{{topic}}</label>
               </div>
-              <h2 class="video__headline serif">{{title}}</h2>
+              <h2
+                class="video__headline serif"
+                onclick="navigateTo(`/insights/{{id}}`); return false;"
+              >
+                {{title}}
+              </h2>
               <p class="video__summary">{{summary}}</p>
               <button class="btn-video ts--h4">
                 <i class="video__play-icon fa-solid fa-play"></i>
@@ -503,7 +548,12 @@
                 <div class="topic__wrapper">
                   <label class="topic">{{topic}}</label>
                 </div>
-                <h4 class="video__txt serif">{{title}}</h4>
+                <h4
+                  class="video__txt serif"
+                  onclick="navigateTo(`/insights/{{id}}`); return false;"
+                >
+                  {{title}}
+                </h4>
               </div>
               <div
                 class="video__thumbnail bg--img"

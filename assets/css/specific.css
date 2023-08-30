@@ -25,7 +25,7 @@ ARTICLE PAGE
   text-align: left;
 }
 
-.article__thumbnail-wrapper {
+.article__img {
   max-width: 144rem;
   overflow: hidden;
 }
@@ -129,17 +129,21 @@ ARTICLE PAGE
   position: relative;
 }
 
+/* related -------------------------- */
 #related {
   background-color: #fff;
-
   position: absolute;
+  width: 100%;
 }
 
-.related__thumbnail {
-  border-radius: var(--rad-img);
-  max-height: 25rem;
+.related__item {
+  width: 25%;
+}
+
+.related__img {
   object-fit: cover;
   object-position: center;
+  height: 25rem;
 }
 
 /* Nav ----------------------------*/

@@ -4,30 +4,27 @@
 -------------------------------- */
 console.log(`Loading ${document.currentScript.src.split("/js")[1]}`);
 
-renderArticle(1);
+function r(id) {
+  renderArticle(id);
+}
 
 async function renderArticle(id) {
   try {
-    // insight
+    window.scrollTo(0, 0);
+
+    // 1. render detailed article content
     const insight = await getInsight(id);
     insight.createdAt = printDateDifference(insight.createdAt);
     const detail = await getInsightDetail(insight.id);
     const body = detail.body;
     insertAfterTemplate("articleHeaderTemplate", insight);
+    insertAfterTemplate("articleThumbnailTemplate", insight);
 
-    // adjust position;
-    const headerGroupEl = document.querySelector(".article__header-group");
-    const headerGroupHeight = headerGroupEl.clientHeight;
-    const contentWrapperEl = document.querySelector(
-      ".article__content-wrapper"
-    );
-    contentWrapperEl.style.top = `${headerGroupHeight}px`;
-
-    // outline
+    // 2. render outline
     const articleTxtEl = document.getElementsByClassName("article__txt")[0];
     articleTxtEl.innerHTML = body;
 
-    // change h2 title to h1 for root
+    // 2-1. change h2 title to h1 to set in the outline root, because tree structure should have one root
     const titleEl = document.querySelector(".article__title h2");
     const newTitleEl = document.createElement("h1");
     for (const attr of titleEl.attributes) {
@@ -35,51 +32,65 @@ async function renderArticle(id) {
     }
     newTitleEl.innerHTML = titleEl.innerHTML;
 
-    // make a tree
+    // 2-2. make an outline tree
     const headings = articleTxtEl.querySelectorAll("h2, h3, h4");
     const headingsArr = [newTitleEl, ...headings];
     const outlineRoot = buildTree(headingsArr, 0);
 
-    // render outline
+    // 2-3. render the outline tree
     let outline = getOutline(outlineRoot);
     const outlineEl = document.getElementsByClassName("outline__content");
     insert(outlineEl[0], outline);
 
-    // scroll event
-    for (let i = 0; i < headings.length; i++) {
-      document
-        .getElementById(`ol_${headings[i].id}`)
-        .addEventListener("click", function () {
-          const el = document.getElementById(headings[i].id);
-          el.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
-        });
+    // 2-4. add scrolling events of the outline
+    function outlineScrollEvent(e, el) {
+      el.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
     }
 
-    // author
+    for (let i = 0; i < headings.length; i++) {
+      const outlineTextEl = document.getElementById(`ol_${headings[i].id}`);
+      outlineTextEl.addEventListener("click", (e) => {
+        const el = document.getElementById(headings[i].id);
+        outlineScrollEvent(e, el);
+        el.removeEventListener("click", outlineScrollEvent(e, el));
+      });
+    }
+
+    // 3. render author
     const author = await getAuthor(insight.author.id);
     insertAfterTemplate("authorProfileTemplate", author);
 
-    // related
+    // 4. render related articles
     const related = await getInsightsByTopic(insight.topic);
     for (const r of related) {
       r.author = await getAuthorSimple(r.author.id);
     }
     insertAfterTemplate("relatedTemplate", { data: related });
 
-    // adjust related position
+    // 5. styling: adjust article content position;
+    const headerGroupEl = document.querySelector(".article__header-group");
+    const headerGroupHeight = headerGroupEl.clientHeight;
+    const contentWrapperEl = document.querySelector(
+      ".article__content-wrapper"
+    );
+    contentWrapperEl.style.top = `${headerGroupHeight}px`;
+
+    // 6. styling: adjust related articles position
     const contentEl = document.querySelector(".article__content");
     const contentHeight = contentEl.clientHeight;
     const relatedEl = document.getElementById("related");
     relatedEl.style.top = `${contentHeight + headerGroupHeight}px`;
 
-    // adjust footer position
+    // 7. styling: adjust footer position
     const footerEl = document.querySelector("#footer");
     const relatedHeight = relatedEl.clientHeight;
     footer.style.position = "absolute";
-    footer.style.top = `${contentHeight + headerGroupHeight + relatedHeight}px`;
+    footer.style.top = `${
+      contentHeight + headerGroupHeight + relatedHeight - 64
+    }px`;
     footer.style.zIndex = "999";
   } catch (err) {
     console.error("error: ", err);

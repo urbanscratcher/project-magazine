@@ -2,7 +2,7 @@
 - Purpose: Routing
 - Author: Hyunjung Joun
 -------------------------------- */
-const commonScriptList = ["topics", "components"].map(
+const commonScriptList = ["topics", "components", "insights-article"].map(
   (el) => `/assets/js/${el}.js`
 );
 const mainScriptList = [
@@ -16,9 +16,6 @@ const mainScriptList = [
   "videos",
   "inspirations",
 ].map((el) => `/assets/js/binding/${el}.js`);
-const articleScriptList = ["insights-article"].map(
-  (el) => `/assets/js/binding/${el}.js`
-);
 
 // when go backward and forward
 window.addEventListener("popstate", (e) => {
@@ -56,35 +53,45 @@ function handleRouteChange(route) {
   document.body.appendChild(createDoc);
   externalEl = document.getElementById("external");
 
+  // initialize
+  const footerEl = document.querySelector("#footer");
+  footer.style.position = "";
+  footer.style.top = "";
+  footer.style.zIndex = "";
+
   // (re)load html & js by routes for reset
-  switch (route) {
-    case "/":
-      externalEl.setAttribute("data", "/main.html");
-      externalEl.addEventListener("load", (e) =>
-        loadHtmlHandler([...mainScriptList, ...commonScriptList])
-      );
-      break;
-    case "/insights/1":
-      externalEl.setAttribute("data", "/insight.html");
-      externalEl.addEventListener("load", (e) =>
-        loadHtmlHandler([...commonScriptList, ...articleScriptList])
-      );
-      break;
-    case "/insights":
-      externalEl.setAttribute("data", "/insights.html");
-      break;
-    default:
-      break;
+  if (route === "/") {
+    externalEl.setAttribute("data", "/main.html");
+    externalEl.addEventListener("load", (e) =>
+      loadHtmlHandler([...mainScriptList, ...commonScriptList])
+    );
+    return;
+  }
+
+  const routes = route.split("/");
+
+  if (routes.length === 3 && routes[1] === "insights") {
+    externalEl.setAttribute("data", "/insight.html");
+    externalEl.addEventListener("load", (e) => {
+      loadHtmlHandler([...commonScriptList]);
+      renderArticle(+routes[2]);
+    });
+    return;
+  }
+
+  if (routes.length === 2 && routes[1] === "insights") {
+    externalEl.setAttribute("data", "/insights.html");
+    return;
   }
 }
 
-function loadScripts(list) {
+function loadScripts(list, isAsync = false) {
   for (const m of list) {
-    loadScript(m, true);
+    loadScript(m, isAsync);
   }
 }
 
-function loadHtmlHandler(list) {
+function loadHtmlHandler(list, isAsync = false) {
   const externalEl = document.getElementById("external");
   const mainEl = document.getElementById("main");
 
@@ -94,7 +101,7 @@ function loadHtmlHandler(list) {
   mainEl.innerHTML = externalDoc.body.innerHTML;
 
   if (list && list.length > 0) {
-    loadScripts(list);
+    loadScripts(list, isAsync);
   }
 
   externalEl.removeEventListener("load", loadHtmlHandler);
