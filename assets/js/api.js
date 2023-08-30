@@ -48,6 +48,16 @@ async function getInsightList() {
     .catch((err) => console.error("error: ", err));
 }
 
+async function getInsightsByTopic(topic) {
+  const insights = await getInsightList();
+  return insights
+    .filter((el) => el.topic === topic)
+    .map((el) => ({
+      ...el,
+      createdAt: printDateDifference(el.createdAt),
+    }));
+}
+
 async function getInsight(id) {
   return await fetch("/data/insights/data.json")
     .then((res) => res.json())

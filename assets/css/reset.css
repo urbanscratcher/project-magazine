@@ -240,3 +240,23 @@ button {
 button:hover {
   cursor: pointer;
 }
+
+/* scroll bar */
+/* Webkit Browser (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ddd; /* 스크롤바 썸의 색상 */
+  border-radius: 10px; /* 스크롤바 썸의 모서리 반지름 */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #bbb; /* 마우스 호버 시 썸의 색상 */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #fff; /* 스크롤바 트랙 배경색 */
+}

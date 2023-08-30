@@ -7,6 +7,14 @@
 ARTICLE PAGE
 ----------------------------------------- */
 /* article ----------------------------*/
+.article__header-group {
+  background-color: #fff;
+
+  position: absolute;
+  z-index: 1;
+  top: 0;
+}
+
 .article__header {
   max-width: 96rem;
   margin-top: 6.4rem;
@@ -18,9 +26,8 @@ ARTICLE PAGE
 }
 
 .article__thumbnail-wrapper {
-  max-width: 96rem;
+  max-width: 144rem;
   overflow: hidden;
-  border-radius: var(--size-m);
 }
 
 .article__thumbnail {
@@ -32,16 +39,35 @@ ARTICLE PAGE
 }
 
 .article__content-wrapper {
-  padding: var(--size-2xl) var(--size-l);
+  position: absolute;
 }
 
 .article__content {
-  max-width: 68.8rem;
+  padding: var(--size-2xl) var(--size-l);
+  width: 72rem;
+}
+
+.article__content * {
+  scroll-margin-top: 7.2rem;
+}
+
+.article__aside-bg {
+  margin-top: 6.4rem;
+  width: 32rem;
+  padding-right: var(--size-l);
 }
 
 .article__aside {
-  max-width: 36rem;
-  align-self: center;
+  max-width: 32rem;
+  align-self: flex-start;
+  padding-right: var(--size-l);
+  position: fixed;
+  top: 6.4rem;
+  left: 50%;
+  transform: translateX(50%);
+
+  overflow: auto;
+  height: 100vh;
 }
 
 .article__link {
@@ -55,15 +81,33 @@ ARTICLE PAGE
   color: var(--color-gray);
 }
 
-.article__txt * {
+.article__txt p,
+.article__txt li {
   font-size: var(--h4-xl);
   letter-spacing: var(--h4-spacing-xl);
   line-height: 1.27;
+  margin-bottom: var(--size-l);
 }
 
-.aside__trending {
+.article__txt h1,
+.article__txt h2,
+.article__txt h3,
+.article__txt h4 {
+  font-weight: bold;
+  margin-bottom: var(--size-l);
+}
+
+.article__txt a {
+  font: inherit;
+}
+
+.article__aside > * {
   padding: var(--size-l) 0 var(--size-l) var(--size-l);
   border-left: solid 1px var(--color-secondary-light);
+}
+
+.article__aside .trending__item {
+  border: none;
 }
 
 .article__aside .trending__txt {
@@ -79,6 +123,23 @@ ARTICLE PAGE
   border-color: var(--color-gray);
   background-color: var(--color-gray);
   color: var(--color-white);
+}
+
+.article__content-wrapper {
+  position: relative;
+}
+
+#related {
+  background-color: #fff;
+
+  position: absolute;
+}
+
+.related__thumbnail {
+  border-radius: var(--rad-img);
+  max-height: 25rem;
+  object-fit: cover;
+  object-position: center;
 }
 
 /* Nav ----------------------------*/
@@ -590,6 +651,10 @@ ARTICLE PAGE
 }
 
 /* Footer --------------------- */
+#footer {
+  background-color: #fff;
+}
+
 .footer__sitemap {
   color: var(--color-gray);
   display: grid;

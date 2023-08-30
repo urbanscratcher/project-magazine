@@ -6,82 +6,104 @@
     <title>insight</title>
   </head>
   <body>
+ 
     <section id="article" class="col h-center">
-      <div class="article__header col h-center gap--xl">
-        <template id="articleHeaderTemplate">
-          <div class="article__title col gap--s ta-center">
-            <div class="article__topic">            
-              <button class="topic ts--btn">{{topic}}</button>
-            </div>
-            <h2 class="serif">{{title}}</h2>
-          </div>
-          <p class="article__summary">{{summary}}</p>
-          <div class="article__info row gap--s tc--gray">
-            <p class="icon__time-wrapper ts--body-s">
-              <i class="icon__time fa-regular fa-clock"></i>
-            </p>
-            <p class="createdAt ts--body-s">{{createdAt}}</p>
-            <p class="separator ts--body-s">·</p>
-            <p class="ttr__box ts--body-s"><span class="ttr ts--body-s">{{ttr}}</span> read</p>
-          </div>
-        </template>
-      </div>
-      <div class="article__thumbnail-wrapper">
-        <img src="/data/insights/thumbnail/1.webp" class="article__thumbnail" />
-      </div>
-      <div class="article__content-wrapper row gap--xl h-center">
-        <div class="article__content col gap--l h-center">
-          <p class="article__txt col gap--l">
-            <!-- [body] -->
-          </p>
-          <div class="article__link col h-center">
-            <button class="btn-link ts--btn btn--circle-l hover--darker">
-              <i class="fa-solid fa-link"></i>
-            </button>
-          </div>
-          <div class="author__profile col gap--m">
-            <template id="authorProfileTemplate">
-              <div class="author__profile-row row gap--m">
-                <img src="{{avatar}}" class="featured-authors__avatar"></img>
-                <div class="featured-authors__txt col gap--s">
-                  <p class="featured-authors__name bold">{{name}}</p>
-                  <span class="ts--body-s">
-                    {{{topicsOneline}}}
-                  </span>
-                </div>
+      <div class="article__header-group col h-center gap--xl">
+        <div class="article__header col h-center gap--xl">
+          <template id="articleHeaderTemplate">
+            <div class="article__title col gap--s ta-center">
+              <div class="article__topic">            
+                <button class="topic ts--btn">{{topic}}</button>
               </div>
-              <p class="author__description ts--body-s tc--gray">{{description}}</p>
-            </template>
+              <h2 class="serif">{{title}}</h2>
+            </div>
+            <p class="article__summary">{{summary}}</p>
+            <div class="article__info row gap--s tc--gray">
+              <p class="icon__time-wrapper ts--body-s">
+                <i class="icon__time fa-regular fa-clock"></i>
+              </p>
+              <p class="createdAt ts--body-s">{{createdAt}}</p>
+              <p class="separator ts--body-s">·</p>
+              <p class="ttr__box ts--body-s"><span class="ttr ts--body-s">{{ttr}}</span> read</p>
+            </div>
+          </template>
+        </div>
+        <div class="article__thumbnail-wrapper">
+          <img src="/data/insights/thumbnail/1.webp" class="article__thumbnail" />
+        </div>
+      </div>
+      <div class="col gap--m h-center">
+        <div class="article__content-wrapper row gap--xl h-center">
+          <div class="article__content col gap--l h-center">
+            <p class="article__txt col gap--l">
+              <!-- [body] -->
+            </p>
+            <div class="article__link col h-center">
+              <button class="btn-link ts--btn btn--circle-l hover--darker">
+                <i class="fa-solid fa-link"></i>
+              </button>
+            </div>
+            <div class="author__profile col gap--m">
+              <template id="authorProfileTemplate">
+                <div class="author__profile-row row gap--m">
+                  <img src="{{avatar}}" class="featured-authors__avatar"></img>
+                  <div class="featured-authors__txt col gap--s">
+                    <p class="featured-authors__name bold">{{name}}</p>
+                    <span class="ts--body-s">
+                      {{{topicsOneline}}}
+                    </span>
+                  </div>
+                </div>
+                <p class="author__description ts--body-s tc--gray">{{description}}</p>
+              </template>
+            </div>
+          </div>
+          <div class="article__aside-bg">
+            <aside class="article__aside">
+              <section class="aside__outline col gap--m">
+                <div class="section__title-wrapper row">
+                  <p class="section__title">Outline</p>              
+                </div>
+                <ul class="outline__content col gap--s"></ul>
+              </section>
+            </aside>
           </div>
         </div>
-        <aside class="article__aside">          
-          <section class="aside__trending col gap--l">
-            <div class="section__title-wrapper row between">
-              <p class="section__title">What's Trending</p>
-              <div class="component-viewAll"></div>
-            </div>
-            <ul class="section__content col gap--m">
-              <template id="trendingListTemplate">
-                {{#each data}}
-                <li class="trending__item row gap--s">
-                  <div class="trending__txt col gap--s">
-                   
-                    <p class="hover--txt tc--gray bold">{{title}}</p>
-                    <p class="author-row ts--body-s tc--gray row gap--s">
-                      By
-                      <span class="author__name">{{author.name}}</span>
-                    </p>
-                  </div>
-                </li>
-                {{/each}}
-              </template>
-            </ul>
-          </section>
-        </aside>
       </div>
     </section>
-    <section id="related">
-
+    <section id="related" class="col gap--m container--m">
+      <div class="section__title-wrapper">
+        <p class="section__title">related</p>
+        <div class="component-viewAll row end"></div>
+      </div>
+      <ul class="section__content row gap--m">
+        <template id="relatedTemplate">
+          {{#each data}}
+          <li class="related__item col gap--m">
+            <img class="related__thumbnail img--ratio-64" src="{{thumbnail}}" />
+            <div class="topic__wrapper">
+                <a href="#" class="topic ts--btn">{{topic}}</a>
+            </div>
+            <h4 class="serif">{{title}}</h4>
+            <div class="time-row row gap--s v-center">
+              <p class="icon__time-wrapper">
+                <i class="icon__time fa-regular fa-clock"></i>
+              </p>
+              <p class="createdAt">{{createdAt}}</p>
+              <p class="separator">·</p>
+              <p class="ttr__box"><span class="ttr">{{ttr}}</span> read</p>
+            </div>
+            <div class="author-row--icon v-center row gap--s">
+              <img src="{{author.avatar}}" class="author__avatar" />
+              <p class="author__name">{{author.name}}</p>
+            </div>
+          </li>
+          {{/each}}
+        </template>
+      </ul>
     </section>
+
+    
+   
   </body>
 </html>

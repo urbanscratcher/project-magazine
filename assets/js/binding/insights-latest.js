@@ -14,7 +14,7 @@ async function renderLatest() {
       .sort((a, b) => b.createdAt - a.createdAt)
       .slice(0, 4);
 
-    for (l of latestList) {
+    for (const l of latestList) {
       l.author = await getAuthorSimple(l.author.id);
       l.createdAt = printDateDifference(l.createdAt);
     }

@@ -16,7 +16,7 @@ const mainScriptList = [
   "videos",
   "inspirations",
 ].map((el) => `/assets/js/binding/${el}.js`);
-const insightScriptList = ["insights-article", "insights-trending-aside"].map(
+const articleScriptList = ["insights-article"].map(
   (el) => `/assets/js/binding/${el}.js`
 );
 
@@ -27,8 +27,7 @@ window.addEventListener("popstate", (e) => {
 
 // After the DOM tree loaded
 document.addEventListener("DOMContentLoaded", () => {
-  const initialRoute = window.location.pathname;
-  handleRouteChange(initialRoute);
+  handleRouteChange(window.location.pathname);
 });
 
 // Go to the route
@@ -59,16 +58,16 @@ function handleRouteChange(route) {
 
   // (re)load html & js by routes for reset
   switch (route) {
-    case "/insights/1":
+    case "/":
       externalEl.setAttribute("data", "/main.html");
       externalEl.addEventListener("load", (e) =>
         loadHtmlHandler([...mainScriptList, ...commonScriptList])
       );
       break;
-    case "/":
+    case "/insights/1":
       externalEl.setAttribute("data", "/insight.html");
       externalEl.addEventListener("load", (e) =>
-        loadHtmlHandler([...commonScriptList, ...insightScriptList])
+        loadHtmlHandler([...commonScriptList, ...articleScriptList])
       );
       break;
     case "/insights":
