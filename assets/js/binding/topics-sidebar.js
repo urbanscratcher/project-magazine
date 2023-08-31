@@ -23,8 +23,15 @@ async function topicCategories() {
     const filterItemEls = document.querySelectorAll(".filter__item");
     for (let i = 0; i < filterItemEls.length; i++) {
       filterItemEls.item(i).addEventListener("click", (e) => {
+        const selectedTopic = e.target.textContent;
+        const route = `?topic=${selectedTopic}`;
+        history.pushState(
+          { selectedTopic: selectedTopic, selectedSort: curIsLatest },
+          null,
+          route
+        );
         clearInsightsList();
-        renderArticlesByTopic(e.target.textContent, curIsLatest);
+        renderArticlesByTopic(selectedTopic, curIsLatest);
         selectCurrentTopic();
       });
     }
@@ -33,14 +40,21 @@ async function topicCategories() {
   }
 }
 
-function selectCurrentTopic() {
+function selectCurrentTopic(topic) {
+  if (!topic) {
+    topic = curTopic;
+  }
+
+  console.log(topic);
+
   const filterButtonEls = document.querySelectorAll(
     ".filter__item .filter__button"
   );
   let topicEls = [];
   for (let i = 0; i < filterButtonEls.length; i++) {
     const parentEl = filterButtonEls.item(i).parentElement;
-    if (filterButtonEls.item(i).innerHTML === curTopic) {
+
+    if (filterButtonEls.item(i).innerHTML === topic) {
       parentEl.classList.add("filter__current");
     } else {
       parentEl.classList.remove("filter__current");

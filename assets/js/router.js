@@ -29,7 +29,22 @@ const insightListScripts = [
 
 // When going backward and forward from history, router will work
 window.addEventListener("popstate", (e) => {
+  if (curTopic) {
+    if (!e.state) {
+      e.state = {
+        selectedTopic: "all",
+        selectedSort: true,
+      };
+    }
+
+    clearInsightsList();
+    renderArticlesByTopic(e.state.selectedTopic, e.state.selectedSort);
+    selectCurrentTopic(e.state.selectedTopic);
+    return;
+  }
+
   handleRouteChange(window.location.pathname);
+
   window.scrollTo(0, 0);
 });
 
