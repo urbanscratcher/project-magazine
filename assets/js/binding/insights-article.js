@@ -1,17 +1,11 @@
 /* --------------------------------
-- Purpose: insight article detail
+- Purpose: render one detailed article page
 - Author: Hyunjung Joun
 -------------------------------- */
 console.log(`Loading ${document.currentScript.src.split("/js")[1]}`);
 
-function r(id) {
-  renderArticle(id);
-}
-
 async function renderArticle(id) {
   try {
-    window.scrollTo(0, 0);
-
     // 1. render detailed article content
     const insight = await getInsight(id);
     insight.createdAt = printDateDifference(insight.createdAt);

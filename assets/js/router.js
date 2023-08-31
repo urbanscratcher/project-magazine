@@ -2,10 +2,12 @@
 - Purpose: Routing
 - Author: Hyunjung Joun
 -------------------------------- */
-const commonScriptList = ["topics", "components", "insights-article"].map(
+
+// Lists of scripts for each page to be loaded
+const commonScripts = ["topics", "components"].map(
   (el) => `/assets/js/${el}.js`
 );
-const mainScriptList = [
+const mainScripts = [
   "insights-trending",
   "insights-cover",
   "insights-editorsPick",
@@ -16,13 +18,19 @@ const mainScriptList = [
   "videos",
   "inspirations",
 ].map((el) => `/assets/js/binding/${el}.js`);
+const insightScripts = ["insights-article"].map(
+  (el) => `/assets/js/binding/${el}.js`
+);
+const insightListScripts = ["insights-list"].map(
+  (el) => `/assets/js/binding/${el}.js`
+);
 
-// when go backward and forward
+// When going backward and forward from history, router will work
 window.addEventListener("popstate", (e) => {
   handleRouteChange(window.location.pathname);
 });
 
-// After the DOM tree loaded
+// After the DOM tree loaded, router will work
 document.addEventListener("DOMContentLoaded", () => {
   handleRouteChange(window.location.pathname);
 });
@@ -42,7 +50,7 @@ function handleRouteChange(route) {
   }
 
   // Remove scripts for reset
-  const scriptList = [...commonScriptList, ...mainScriptList];
+  const scriptList = [...commonScripts, ...mainScripts];
   for (m of scriptList) {
     unloadScript(m);
   }
@@ -53,41 +61,51 @@ function handleRouteChange(route) {
   document.body.appendChild(createDoc);
   externalEl = document.getElementById("external");
 
-  // initialize
+  // initialize styling
   const footerEl = document.querySelector("#footer");
   footer.style.position = "";
   footer.style.top = "";
   footer.style.zIndex = "";
 
   // (re)load html & js by routes for reset
+  // Main : /
   if (route === "/") {
     externalEl.setAttribute("data", "/main.html");
     externalEl.addEventListener("load", (e) =>
-      loadHtmlHandler([...mainScriptList, ...commonScriptList])
+      loadHtmlHandler([...mainScripts, ...commonScripts], true)
     );
+    window.scrollTo(0, 0);
     return;
   }
 
+  // One article : /insights/1
   const routes = route.split("/");
-
   if (routes.length === 3 && routes[1] === "insights") {
     externalEl.setAttribute("data", "/insight.html");
     externalEl.addEventListener("load", (e) => {
-      loadHtmlHandler([...commonScriptList]);
-      renderArticle(+routes[2]);
+      loadHtmlHandler([...commonScripts], true);
+
+      // after loading the script, data will be rendered from the callback function
+      insightScripts.forEach((el) => {
+        loadScript(el, true, () => {
+          const articleId = +routes[2];
+          renderArticle(articleId);
+        });
+      });
     });
+    window.scrollTo(0, 0);
     return;
   }
 
+  // List of articles : /insights?topic=all&page=1
   if (routes.length === 2 && routes[1] === "insights") {
     externalEl.setAttribute("data", "/insights.html");
-    return;
-  }
-}
+    externalEl.addEventListener("load", (e) => {
+      loadHtmlHandler([...commonScripts, ...insightListScripts], true);
+    });
 
-function loadScripts(list, isAsync = false) {
-  for (const m of list) {
-    loadScript(m, isAsync);
+    window.scrollTo(0, 0);
+    return;
   }
 }
 
@@ -105,6 +123,12 @@ function loadHtmlHandler(list, isAsync = false) {
   }
 
   externalEl.removeEventListener("load", loadHtmlHandler);
+}
+
+function loadScripts(list, isAsync = false) {
+  for (const m of list) {
+    loadScript(m, isAsync);
+  }
 }
 
 function loadScript(scriptSrc, isAsync = false, callback) {
