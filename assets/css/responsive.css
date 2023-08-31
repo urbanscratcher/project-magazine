@@ -132,6 +132,7 @@
     line-height: 1.333;
   }
 
+  button,
   .ts--btn {
     font-size: var(--button-xl);
     letter-spacing: var(--button-spacing-xl);

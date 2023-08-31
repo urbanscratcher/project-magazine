@@ -17,7 +17,10 @@ async function renderTrending() {
       t.createdAt = await printDateDifference(t.createdAt);
     }
 
-    await renderTrendingMain(trendings[0]);
+    const trendingMain = document.querySelector("#trendingMainImgTemplate");
+    if (trendingMain) {
+      await renderTrendingMain(trendings[0]);
+    }
 
     insertAfterTemplate("trendingListTemplate", {
       data: trendings.slice(1, 5),

@@ -3,9 +3,135 @@
 - Author: Hyunjung Joun
 -------------------------------- */
 
-/* -----------------------------------------
-ARTICLE PAGE
------------------------------------------ */
+/* insights list page layout ---------------------- */
+.insights__content {
+  max-width: 144rem;
+  margin: 0 auto;
+}
+
+#insights {
+  width: 66.666%;
+}
+
+#side {
+  padding-top: 0;
+  margin-top: 11.2rem;
+  width: 33.333%;
+
+  border-left: solid 1px var(--color-secondary-light);
+}
+
+/* insights list ---------------------- */
+.insights__img {
+  object-fit: cover;
+  object-position: center;
+  width: 33.333%;
+}
+
+.insights__txt {
+  width: 66.666%;
+}
+
+.insights__item {
+  padding-bottom: var(--size-l);
+  border-bottom: solid 1px var(--color-secondary-light);
+}
+
+.insights__item:last-child {
+  border-bottom: none;
+}
+
+/* insights list - sidebar ------------- */
+.sidebar {
+  margin: var(--size-xl) 0;
+}
+
+.filter {
+  padding: 0 var(--size-s);
+  border-bottom: solid 1px var(--color-secondary-light);
+}
+
+.filter__list {
+  width: 38rem;
+  overflow-x: clip;
+
+  padding: 0 var(--size-l);
+}
+
+.filter {
+  position: relative;
+}
+
+.sort,
+.filter__button {
+  margin-bottom: 0.5px;
+  padding: var(--size-m) var(--size-s);
+  transition: opacity 0.1s ease;
+}
+
+.filter__left {
+  position: absolute;
+  left: 0;
+
+  padding-left: var(--size-s);
+  padding-right: var(--size-m);
+}
+
+.filter__right {
+  position: absolute;
+  right: 0;
+
+  padding-left: var(--size-m);
+  padding-right: var(--size-s);
+}
+
+.filter__left,
+.filter__right {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.85) 25%,
+    rgba(255, 255, 255, 0.95) 50%,
+    rgb(255, 255, 255) 75%
+  );
+}
+
+.filter__left:hover i,
+.filter__right:hover i,
+.sort:hover {
+  opacity: 0.75;
+}
+
+.filter__button:hover {
+  margin-bottom: -1.5px;
+  border-bottom: solid 2px var(--color-secondary);
+}
+
+.filter__current {
+  margin-bottom: -1.5px;
+  border-bottom: solid 2px var(--color-secondary);
+}
+
+/* insights list - trending side ------------- */
+.side__trending {
+  padding-top: var(--size-m);
+}
+
+.insights__trending {
+  width: 100%;
+}
+
+.insights__trending .trending__txt {
+  width: 100%;
+}
+
+.insights__trending .trendings__img {
+  object-fit: cover;
+  object-position: center;
+
+  width: 33.333%;
+}
+
 /* article ----------------------------*/
 .article__header-group {
   background-color: #fff;

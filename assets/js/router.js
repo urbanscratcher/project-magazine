@@ -21,24 +21,29 @@ const mainScripts = [
 const insightScripts = ["insights-article"].map(
   (el) => `/assets/js/binding/${el}.js`
 );
-const insightListScripts = ["insights-list"].map(
-  (el) => `/assets/js/binding/${el}.js`
-);
+const insightListScripts = [
+  "topics-sidebar",
+  "insights-trending",
+  "inspirations",
+].map((el) => `/assets/js/binding/${el}.js`);
 
 // When going backward and forward from history, router will work
 window.addEventListener("popstate", (e) => {
   handleRouteChange(window.location.pathname);
+  window.scrollTo(0, 0);
 });
 
 // After the DOM tree loaded, router will work
 document.addEventListener("DOMContentLoaded", () => {
   handleRouteChange(window.location.pathname);
+  window.scrollTo(0, 0);
 });
 
 // Go to the route
 function navigateTo(route) {
   history.pushState(null, null, route);
   handleRouteChange(route);
+  window.scrollTo(0, 0);
 }
 
 // When the route changes
@@ -67,17 +72,6 @@ function handleRouteChange(route) {
   footer.style.top = "";
   footer.style.zIndex = "";
 
-  // (re)load html & js by routes for reset
-  // Main : /
-  if (route === "/") {
-    externalEl.setAttribute("data", "/main.html");
-    externalEl.addEventListener("load", (e) =>
-      loadHtmlHandler([...mainScripts, ...commonScripts], true)
-    );
-    window.scrollTo(0, 0);
-    return;
-  }
-
   // One article : /insights/1
   const routes = route.split("/");
   if (routes.length === 3 && routes[1] === "insights") {
@@ -93,20 +87,38 @@ function handleRouteChange(route) {
         });
       });
     });
-    window.scrollTo(0, 0);
+
     return;
   }
 
   // List of articles : /insights?topic=all&page=1
-  if (routes.length === 2 && routes[1] === "insights") {
+  if (
+    routes.length === 2 &&
+    routes[1].match("^insights$|^insights\\?topic=*")
+  ) {
+    let filter = "all";
+
+    if (routes[1].match("^insights\\?topic=*")) {
+      filter = routes[1].split("?")[1].split("=")[1];
+    }
+
     externalEl.setAttribute("data", "/insights.html");
     externalEl.addEventListener("load", (e) => {
-      loadHtmlHandler([...commonScripts, ...insightListScripts], true);
-    });
+      loadHtmlHandler([...insightListScripts, ...commonScripts], true);
 
-    window.scrollTo(0, 0);
+      loadScript("/assets/js/binding/insights-list.js", true, () => {
+        renderArticlesByTopic(filter);
+      });
+    });
     return;
   }
+
+  // Default & Main : /
+  externalEl.setAttribute("data", "/main.html");
+  externalEl.addEventListener("load", (e) =>
+    loadHtmlHandler([...mainScripts, ...commonScripts], true)
+  );
+  return;
 }
 
 function loadHtmlHandler(list, isAsync = false) {

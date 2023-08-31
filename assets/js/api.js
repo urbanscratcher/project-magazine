@@ -36,6 +36,32 @@ const topicList = {
   ],
 };
 
+function countsByTopic(insights) {
+  const result = {};
+
+  for (const i of insights) {
+    const category = i.topic;
+    // If category doesn't exist in the object, initialize it with a count of 1
+    if (!result[category]) {
+      result[category] = 1;
+    } else {
+      // Increment the count if category already exists
+      result[category]++;
+    }
+  }
+  return result;
+}
+
+async function getTopicCounts() {
+  try {
+    const res = await fetch("/data/insights/data.json");
+    const data = await res.json();
+    return countsByTopic(data.insights);
+  } catch (err) {
+    console.error("error: ", err);
+  }
+}
+
 async function getInsightList() {
   return await fetch("/data/insights/data.json")
     .then((res) => res.json())
@@ -48,14 +74,33 @@ async function getInsightList() {
     .catch((err) => console.error("error: ", err));
 }
 
-async function getInsightsByTopic(topic) {
-  const insights = await getInsightList();
-  return insights
-    .filter((el) => el.topic === topic)
-    .map((el) => ({
-      ...el,
-      createdAt: printDateDifference(el.createdAt),
-    }));
+async function getInsightsByTopic(topic, isLatest = true) {
+  try {
+    const insights = await getInsightList();
+
+    if (topic === "all") {
+      return insights
+        .sort((a, b) =>
+          isLatest ? b.createdAt - a.createdAt : a.createdAt - b.createdAt
+        )
+        .map((el) => ({
+          ...el,
+          createdAt: printDateDifference(el.createdAt),
+        }));
+    }
+
+    return insights
+      .filter((el) => el.topic === topic)
+      .sort((a, b) =>
+        isLatest ? b.createdAt - a.createdAt : a.createdAt - b.createdAt
+      )
+      .map((el) => ({
+        ...el,
+        createdAt: printDateDifference(el.createdAt),
+      }));
+  } catch (err) {
+    console.error(err);
+  }
 }
 
 async function getInsight(id) {

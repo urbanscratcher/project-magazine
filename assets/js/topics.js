@@ -6,14 +6,14 @@ console.log(`Loading ${document.currentScript.src.split("/js")[1]}`);
 
 // Fetch the template file -----------------
 
-presentTopics();
+renderTopics();
 renderTopicCountLabel();
 
-function presentTopics() {
+function renderTopics() {
   const newHtml = () => `
       {{#each topTopics}}
         <li class="topics__item">
-          <div class="topics__item-wrapper">
+          <div class="topics__item-wrapper" onclick="navigateTo('/insights?topic={{name}}'.toLowerCase()); return false;">
             <h1 class="topics__name ts--h1">{{name}}</h1>
             <div class="topics__count-box">
               <p class="topics__count tc--white">0</p>
@@ -32,11 +32,10 @@ function presentTopics() {
 
 async function renderTopicCountLabel() {
   try {
-    const res = await fetch("/data/insights/data.json");
-    const data = await res.json();
-    renderTopicCounts(countsByTopic(data.insights));
+    const counts = await getTopicCounts();
+    renderTopicCounts(counts);
   } catch (err) {
-    console.error("error: ", err);
+    console.log(err);
   }
 }
 
@@ -55,22 +54,4 @@ function renderTopicCounts(counted) {
     const parentEl = t.nextElementSibling;
     insert(parentEl, render(newHtml, {}));
   }
-}
-
-function countsByTopic(insightList) {
-  // Create an object to store category counts
-  const result = {};
-
-  // Iterate through the array
-  for (const i of insightList) {
-    const category = i.topic;
-    // If category doesn't exist in the object, initialize it with a count of 1
-    if (!result[category]) {
-      result[category] = 1;
-    } else {
-      // Increment the count if category already exists
-      result[category]++;
-    }
-  }
-  return result;
 }

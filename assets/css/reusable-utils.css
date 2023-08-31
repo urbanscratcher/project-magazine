@@ -254,6 +254,24 @@
   cursor: pointer;
 }
 
+.topic--none-white {
+  cursor: text;
+  text-transform: uppercase;
+  padding: 0.4rem 1.6rem;
+  border-radius: 1.6rem;
+  font-weight: 600;
+  border: 0.2rem solid var(--color-white);
+}
+
+.topic--none {
+  cursor: text;
+  text-transform: uppercase;
+  padding: 0.4rem 1.6rem;
+  border-radius: 1.6rem;
+  font-weight: 600;
+  border: 0.2rem solid var(--color-secondary);
+}
+
 /* Button: An icon with circled button 24px */
 .btn--circle-m {
   width: 2.4rem;
@@ -279,6 +297,7 @@
 }
 
 /* Hover change bg */
+
 .hover--primary {
   background-color: transparent;
 }

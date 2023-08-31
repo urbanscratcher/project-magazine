@@ -12,8 +12,11 @@
         style="--img-url: url({{thumbnail}})"
       ></div>
       <div class="cover__txt col container--m gap--m tc--white">
-        <div class="cover__topic">
-          <a href="#" class="topic--white ts--btn">{{topic}}</a>
+        <div
+          class="cover__topic"
+          onclick="navigateTo(`/insights?topic={{topic}}`); return false;"
+        >
+          <button class="topic--white">{{topic}}</button>
         </div>
         <div class="cover__headline">
           <h1
@@ -37,11 +40,15 @@
           ></div>
         </template>
         <div class="cover__txt col container--m gap--m tc--white">
-          <div class="cover__topic">
-            <a href="#" class="topic--white ts--btn">
-              <template id="coverTopicTemplate"> {{topic}} </template>
-            </a>
-          </div>
+          <template id="coverTopicTemplate">
+            <div
+              class="cover__topic"
+              onclick="navigateTo(`/insights?topic={{topic}}`); return false;"
+            >
+              <button class="topic--white">{{topic}}</button>
+            </div></template
+          >
+
           <div class="cover__headline">
             <template id="coverTitleTemplate">
               <h1
@@ -84,11 +91,16 @@
               </template>
               <div class="component-bookmark-add"></div>
             </div>
-            <div class="editorsPick__topic">
-              <template id="editorsPickTopicTemplate"
-                ><a href="#" class="topic ts--btn">{{topic}}</a>
-              </template>
-            </div>
+
+            <template id="editorsPickTopicTemplate">
+              <div
+                class="editorsPick__topic"
+                onclick="navigateTo(`/insights?topic={{topic}}`); return false;"
+              >
+                <button class="topic">{{topic}}</button>
+              </div>
+            </template>
+
             <div class="editorsPick__title">
               <template id="editorsPickTitleTemplate">
                 <h3
@@ -203,11 +215,15 @@
               </template>
               <div class="component-bookmark-add"></div>
             </div>
-            <div class="topic__wrapper">
-              <template id="trendingMainTopicTemplate">
-                <a href="#" class="topic ts--btn">{{topic}}</a>
-              </template>
-            </div>
+
+            <template id="trendingMainTopicTemplate">
+              <div
+                class="topic__wrapper"
+                onclick="navigateTo(`/insights?topic={{topic}}`); return false;"
+              >
+                <button class="topic">{{topic}}</button>
+              </div>
+            </template>
 
             <template id="trendingMainTitle">
               <h2
@@ -249,8 +265,11 @@
               {{#each data}}
               <li class="trending__item row gap--s">
                 <div class="trending__txt col gap--s">
-                  <div class="topic__wrapper">
-                    <a href="#" class="topic ts--btn">{{topic}}</a>
+                  <div
+                    class="topic__wrapper"
+                    onclick="navigateTo(`/insights?topic={{topic}}`); return false;"
+                  >
+                    <button class="topic">{{topic}}</button>
                   </div>
                   <h4
                     class="title-row__txt hover--txt serif"
@@ -374,8 +393,11 @@
                 style="--img-url: url({{thumbnail}})"
               ></div>
               <div class="savedForLater__content col between gap--m">
-                <div class="topic__wrapper">
-                  <label class="topic--white ts--btn">{{topic}}</label>
+                <div
+                  class="topic__wrapper"
+                  onclick="navigateTo(`/insights?topic={{topic}}`); return false;"
+                >
+                  <button class="topic--white">{{topic}}</button>
                 </div>
                 <div class="savedForLater__txt col gap--m">
                   <h3
@@ -413,12 +435,11 @@
         <ul class="inspirations__list">
           <template id="inspirationsTemplate">
             {{#each data}}
-            <li class="inspirations__item section__img">
+            <li
+              class="inspirations__item section__img"
+              onclick="navigateTo(`/insights/{{id}}`); return false;"
+            >
               <img class="inspirations__img" src="{{thumbnail}}" />
-              <label
-                class="inspirations__topic topic topic--white ts--btn tc--white"
-                >topic</label
-              >
             </li>
             {{/each}}
           </template>
@@ -440,8 +461,11 @@
                 <div class="component-bookmark-add"></div>
               </div>
               <div class="latest__txt col gap--s">
-                <div class="latest__topic">
-                  <button class="topic ts--btn">{{topic}}</button>
+                <div
+                  class="latest__topic"
+                  onclick="navigateTo(`/insights?topic={{topic}}`); return false;"
+                >
+                  <button class="topic">{{topic}}</button>
                 </div>
                 <h3
                   class="latest__title serif hover--txt"
@@ -525,14 +549,9 @@
           >
             <div class="video__content col gap--m tc--white">
               <div class="topic__wrapper">
-                <label class="topic topic--white ts--btn">{{topic}}</label>
+                <label class="topic--none-white ts--btn">{{topic}}</label>
               </div>
-              <h2
-                class="video__headline serif"
-                onclick="navigateTo(`/insights/{{id}}`); return false;"
-              >
-                {{title}}
-              </h2>
+              <h2 class="video__headline serif">{{title}}</h2>
               <p class="video__summary">{{summary}}</p>
               <button class="btn-video ts--h4">
                 <i class="video__play-icon fa-solid fa-play"></i>
@@ -545,15 +564,10 @@
             {{#each data}}
             <li class="video__item row gap--s" data-id="{{id}}">
               <div class="video__txt-wrapper col gap--s">
-                <div class="topic__wrapper">
-                  <label class="topic">{{topic}}</label>
+                <div>
+                  <label class="topic--none ts--btn">{{topic}}</label>
                 </div>
-                <h4
-                  class="video__txt serif"
-                  onclick="navigateTo(`/insights/{{id}}`); return false;"
-                >
-                  {{title}}
-                </h4>
+                <h4 class="video__txt serif">{{title}}</h4>
               </div>
               <div
                 class="video__thumbnail bg--img"
