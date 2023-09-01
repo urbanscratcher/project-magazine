@@ -381,7 +381,7 @@
     <section id="savedForLater" class="col gap--m container--m">
       <div class="section__title-wrapper row between">
         <p class="section__title">Saved For Later</p>
-        <div class="component-viewAll"></div>
+        <div class="component-viewAllSaved"></div>
       </div>
       <div class="seciton__content">
         <ul class="savedForLater__list row gap--m">
@@ -393,10 +393,7 @@
                 style="--img-url: url({{thumbnail}})"
               ></div>
               <div class="savedForLater__content col between gap--m">
-                <div
-                  class="topic__wrapper"
-                  onclick="navigateTo(`/insights?topic={{topic}}`); return false;"
-                >
+                <div class="topic__wrapper">
                   <button class="topic--white">{{topic}}</button>
                 </div>
                 <div class="savedForLater__txt col gap--m">

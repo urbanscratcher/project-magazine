@@ -10,6 +10,7 @@ function loadComponents() {
   loadViewAll();
   loadNewletter();
   loadBookmark();
+  loadViewAllSaved();
 }
 
 function loadBookmark(higherClass) {
@@ -33,7 +34,20 @@ function loadNewletter() {
 
 function loadViewAll() {
   const newHtml = () => document.getElementById("viewAllTemplate").innerHTML;
+
   const parentEls = document.getElementsByClassName("component-viewAll");
+
+  for (let i = 0; i < parentEls.length; i++) {
+    insert(parentEls[i], render(newHtml, {}));
+  }
+}
+
+function loadViewAllSaved() {
+  const newHtml = () =>
+    document.getElementById("viewAllSavedTemplate").innerHTML;
+
+  const parentEls = document.getElementsByClassName("component-viewAllSaved");
+
   for (let i = 0; i < parentEls.length; i++) {
     insert(parentEls[i], render(newHtml, {}));
   }
