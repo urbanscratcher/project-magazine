@@ -10,7 +10,6 @@ function loadComponents() {
   loadViewAll();
   loadNewletter();
   loadBookmark();
-  loadViewAllSaved();
 }
 
 function loadBookmark(higherClass) {
@@ -33,22 +32,56 @@ function loadNewletter() {
 }
 
 function loadViewAll() {
-  const newHtml = () => document.getElementById("viewAllTemplate").innerHTML;
+  const templateEl = document.getElementById("viewAllTemplate");
 
-  const parentEls = document.getElementsByClassName("component-viewAll");
+  const newHtml = (path) => `<button
+  class="viewAll row gap--s hover--lighter"
+  onclick="navigateTo('${path}'); return false;"
+>
+  <p class="viewAll__txt ts--btn">view all</p>
+  <i class="fa-solid fa-chevron-right ts--body-s"></i>
+</button>`;
 
-  for (let i = 0; i < parentEls.length; i++) {
-    insert(parentEls[i], render(newHtml, {}));
+  const parentEls = document.getElementsByClassName(
+    "component-viewAll-insights"
+  );
+
+  const parentSavedEls = document.getElementsByClassName(
+    "component-viewAll-saved"
+  );
+
+  const parentAuthorsEls = document.getElementsByClassName(
+    "component-viewAll-authors"
+  );
+
+  const parentRelatedEls = document.getElementsByClassName(
+    "component-viewAll-related"
+  );
+
+  if (parentEls.length > 0) {
+    for (let i = 0; i < parentEls.length; i++) {
+      insert(
+        parentEls[i],
+        render(() => newHtml("/insights"), {})
+      );
+    }
   }
-}
 
-function loadViewAllSaved() {
-  const newHtml = () =>
-    document.getElementById("viewAllSavedTemplate").innerHTML;
+  if (parentSavedEls.length > 0) {
+    for (let i = 0; i < parentSavedEls.length; i++) {
+      insert(
+        parentSavedEls[i],
+        render(() => newHtml("/"), {})
+      );
+    }
+  }
 
-  const parentEls = document.getElementsByClassName("component-viewAllSaved");
-
-  for (let i = 0; i < parentEls.length; i++) {
-    insert(parentEls[i], render(newHtml, {}));
+  if (parentAuthorsEls.length > 0) {
+    for (let i = 0; i < parentAuthorsEls.length; i++) {
+      insert(
+        parentAuthorsEls[i],
+        render(() => newHtml("/"), {})
+      );
+    }
   }
 }

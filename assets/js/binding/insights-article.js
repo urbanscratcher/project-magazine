@@ -62,7 +62,10 @@ async function renderArticle(id) {
     for (const r of related) {
       r.author = await getAuthorSimple(r.author.id);
     }
+
     insertAfterTemplate("relatedTemplate", { data: related });
+
+    insertAfterTemplate("viewAll-related", related);
 
     // 5. styling: adjust article content position;
     const headerGroupEl = document.querySelector(".article__header-group");

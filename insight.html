@@ -12,7 +12,8 @@
         <div class="article__header col h-center gap--xl">
           <template id="articleHeaderTemplate">
             <div class="article__title col gap--s ta-center">
-              <div class="article__topic">            
+              <div class="article__topic"                    onclick="navigateTo(`/insights?topic={{topic}}`); return false;"
+              >            
                 <button class="topic ts--btn">{{topic}}</button>
               </div>
               <h2 class="serif">{{title}}</h2>
@@ -74,9 +75,15 @@
       </div>
     </section>
     <section id="related" class="col gap--m container--m">
-      <div class="section__title-wrapper">
+      <div class="section__title-wrapper row between">
         <p class="section__title">related</p>
-        <div class="component-viewAll row end"></div>
+        <template id="viewAll-related">
+          <button class="viewAll row gap--s hover--lighter" onclick="navigateTo(`/insights?topic={{topic}}`); return false;">
+            <p class="viewAll__txt ts--btn">view all</p>
+            <i class="fa-solid fa-chevron-right ts--body-s"></i>
+          </button>
+        </template>
+
       </div>
       <ul class="section__content row gap--m">
         <template id="relatedTemplate">
@@ -85,7 +92,8 @@
             <div class="related__img section__img">
               <img src="{{thumbnail}}" />
             </div>
-            <div class="topic__wrapper">
+            <div class="topic__wrapper"                    onclick="navigateTo(`/insights?topic={{topic}}`); return false;"
+            >
                 <a href="#" class="topic ts--btn">{{topic}}</a>
             </div>
             <h4 class="serif hover--txt" onclick="navigateTo(`/insights/{{id}}`); return false;">{{title}}</h4>
