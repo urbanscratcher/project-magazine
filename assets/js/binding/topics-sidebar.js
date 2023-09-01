@@ -24,14 +24,20 @@ async function topicCategories() {
     for (let i = 0; i < filterItemEls.length; i++) {
       filterItemEls.item(i).addEventListener("click", (e) => {
         const selectedTopic = e.target.textContent;
+
         const route = `?topic=${selectedTopic}`;
+
+        console.log("pushing curIsLatest", curIsLatest);
         history.pushState(
           { selectedTopic: selectedTopic, selectedSort: curIsLatest },
           null,
           route
         );
+
+        // initalize sorting
+        curIsLatest = true;
         clearInsightsList();
-        renderArticlesByTopic(selectedTopic, curIsLatest);
+        renderSortedInsights(selectedTopic, curIsLatest);
         selectCurrentTopic();
       });
     }
@@ -44,8 +50,6 @@ function selectCurrentTopic(topic) {
   if (!topic) {
     topic = curTopic;
   }
-
-  console.log(topic);
 
   const filterButtonEls = document.querySelectorAll(
     ".filter__item .filter__button"

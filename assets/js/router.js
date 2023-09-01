@@ -2,6 +2,9 @@
 - Purpose: Routing
 - Author: Hyunjung Joun
 -------------------------------- */
+// Declare global variable
+let curTopic;
+let curIsLatest;
 
 // Lists of scripts for each page to be loaded
 const commonScripts = ["topics", "components"].map(
@@ -29,22 +32,18 @@ const insightListScripts = [
 
 // When going backward and forward from history, router will work
 window.addEventListener("popstate", (e) => {
-  if (curTopic) {
-    if (!e.state) {
-      e.state = {
-        selectedTopic: "all",
-        selectedSort: true,
-      };
-    }
+  const route = window.location.pathname;
 
+  // to change only a part of the insights page
+  if (route === "/insights" && curTopic) {
     clearInsightsList();
-    renderArticlesByTopic(e.state.selectedTopic, e.state.selectedSort);
+    renderSortedInsights(e.state.selectedTopic, e.state.selectedSort);
     selectCurrentTopic(e.state.selectedTopic);
-    return;
+  } else if (route === "/insights" && !curTopic) {
+    loadPreviousListPage(e.state.selectedTopic, e.state.selectedSort);
+  } else {
+    handleRouteChange(route);
   }
-
-  handleRouteChange(window.location.pathname);
-
   window.scrollTo(0, 0);
 });
 
@@ -56,7 +55,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Go to the route
 function navigateTo(route) {
-  history.pushState(null, null, route);
   handleRouteChange(route);
   window.scrollTo(0, 0);
 }
@@ -81,11 +79,13 @@ function handleRouteChange(route) {
   document.body.appendChild(createDoc);
   externalEl = document.getElementById("external");
 
-  // initialize styling
+  // initialize
   const footerEl = document.querySelector("#footer");
   footer.style.position = "";
   footer.style.top = "";
   footer.style.zIndex = "";
+  curTopic = undefined;
+  curIsLatest = undefined;
 
   // One article : /insights/1
   const routes = route.split("/");
@@ -103,6 +103,7 @@ function handleRouteChange(route) {
       });
     });
 
+    history.pushState(null, null, route);
     return;
   }
 
@@ -111,29 +112,71 @@ function handleRouteChange(route) {
     routes.length === 2 &&
     routes[1].match("^insights$|^insights\\?topic=*")
   ) {
-    let filter = "all";
-
-    if (routes[1].match("^insights\\?topic=*")) {
-      filter = routes[1].split("?")[1].split("=")[1];
-    }
+    curTopic = routes[1].match("^insights\\?topic=*")
+      ? routes[1].split("?")[1].split("=")[1]
+      : "all";
+    curIsLatest = true;
 
     externalEl.setAttribute("data", "/insights.html");
     externalEl.addEventListener("load", (e) => {
       loadHtmlHandler([...insightListScripts, ...commonScripts], true);
-
       loadScript("/assets/js/binding/insights-list.js", true, () => {
-        renderArticlesByTopic(filter);
+        renderArticlesByTopic(curTopic, curIsLatest);
       });
+
+      history.pushState(
+        { selectedTopic: curTopic, selectedSort: curIsLatest },
+        null,
+        route
+      );
     });
+
     return;
   }
 
   // Default & Main : /
+  history.pushState(null, null, route);
   externalEl.setAttribute("data", "/main.html");
   externalEl.addEventListener("load", (e) =>
     loadHtmlHandler([...mainScripts, ...commonScripts], true)
   );
+
   return;
+}
+
+function loadPreviousListPage(previousTopic, previousSort) {
+  // Remove external obj for reset
+  let externalEl = document.getElementById("external");
+  if (externalEl) {
+    externalEl.parentNode.removeChild(externalEl);
+  }
+
+  // Remove scripts for reset
+  const scriptList = [...commonScripts, ...mainScripts];
+  for (m of scriptList) {
+    unloadScript(m);
+  }
+
+  // (re)create external obj for reset
+  const createDoc = document.createElement("object");
+  createDoc.id = "external";
+  document.body.appendChild(createDoc);
+  externalEl = document.getElementById("external");
+
+  // initialize
+  const footerEl = document.querySelector("#footer");
+  footer.style.position = "";
+  footer.style.top = "";
+  footer.style.zIndex = "";
+
+  externalEl = document.getElementById("external");
+  externalEl.setAttribute("data", "/insights.html");
+  externalEl.addEventListener("load", (e) => {
+    loadHtmlHandler([...insightListScripts, ...commonScripts], true);
+    loadScript("/assets/js/binding/insights-list.js", true, () => {
+      renderArticlesByTopic(previousTopic, previousSort);
+    });
+  });
 }
 
 function loadHtmlHandler(list, isAsync = false) {

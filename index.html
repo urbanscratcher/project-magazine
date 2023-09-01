@@ -73,10 +73,13 @@
 
     <!-- Template html texts (Global Component) -->
     <template id="viewAllTemplate">
-      <a href="#" class="viewAll row gap--s hover--lighter">
+      <button
+        class="viewAll row gap--s hover--lighter"
+        onclick="navigateTo(`/insights`); return false;"
+      >
         <p class="viewAll__txt ts--btn">view all</p>
         <i class="fa-solid fa-chevron-right ts--body-s"></i>
-      </a>
+      </button>
     </template>
 
     <template id="newsletterTemplate">

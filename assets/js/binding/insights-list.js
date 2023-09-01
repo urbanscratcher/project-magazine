@@ -4,8 +4,6 @@
 -------------------------------- */
 console.log(`Loading ${document.currentScript.src.split("/js")[1]}`);
 
-let curTopic;
-let curIsLatest;
 sortEvent();
 
 function sortEvent() {
@@ -13,7 +11,7 @@ function sortEvent() {
   sortEl.addEventListener("click", onToggleSort);
 }
 
-async function renderArticlesByTopic(topic, isLatest = true) {
+async function renderArticlesByTopic(topic, isLatest) {
   try {
     curTopic = topic;
     curIsLatest = isLatest;
@@ -45,10 +43,23 @@ function clearInsightsList() {
 
 function onToggleSort() {
   curIsLatest = !curIsLatest;
+  history.replaceState(
+    {
+      selectedTopic: curTopic,
+      selectedSort: curIsLatest,
+    },
+    null,
+    `${window.location.pathname}?topic=${curTopic}`
+  );
+  renderSortedInsights(curTopic, curIsLatest);
+}
+
+function renderSortedInsights(topic, isLatest) {
   const sortArrowEl = document.querySelector(".sort__arrow");
-  sortArrowEl.innerHTML = curIsLatest ? "&darr;" : "&uarr;";
+  sortArrowEl.innerHTML = isLatest ? "&darr;" : "&uarr;";
 
   clearInsightsList();
-  renderArticlesByTopic(curTopic, curIsLatest);
+  renderArticlesByTopic(topic, isLatest);
+
   const sortEl = document.querySelector(".sort");
 }
