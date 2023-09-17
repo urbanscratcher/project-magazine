@@ -113,7 +113,9 @@ function handleRouteChange(route) {
     externalEl.setAttribute("data", "/saved.html");
     externalEl.addEventListener("load", (e) => {
       loadHtmlHandler([...savedScripts, ...commonScripts], true);
-      // menuItemEls[2].classList.add("menu__item--current");
+
+      const iconSaved = document.querySelector(".icon__saved");
+      iconSaved.classList.add("fa-solid");
     });
 
     history.pushState(null, null, route);
