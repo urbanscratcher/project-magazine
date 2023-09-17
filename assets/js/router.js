@@ -20,6 +20,7 @@ const mainScripts = [
   "videos",
   "inspirations",
   "add-bookmark",
+  "saved-main",
 ].map((el) => completeBindingPath(el));
 const insightScripts = ["insights-article"].map((el) =>
   completeBindingPath(el)

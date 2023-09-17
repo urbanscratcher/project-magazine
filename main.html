@@ -405,8 +405,8 @@
         <div class="component-viewAll-saved"></div>
       </div>
       <div class="seciton__content">
-        <ul class="savedForLater__list row gap--m">
-          <template id="savedTemplate">
+        <template id="savedTemplate">
+          <ul class="savedForLater__list row gap--m">
             {{#each data}}
             <li class="savedForLater__item col gap--m tc--white">
               <div
@@ -446,8 +446,17 @@
               </div>
             </li>
             {{/each}}
-          </template>
-        </ul>
+          </ul>
+        </template>
+        <template id="savedNothingTemplate">
+          <div class="savedForLater__list--empty col gap--m v-center h-center">
+            <h3 class="container--m">
+              Your Collection is now empty.<br />Take a look at our
+              recommendations below :)
+            </h3>
+            <i class="fa-solid fa-chevron-down ts--h3"></i>
+          </div>
+        </template>
       </div>
     </section>
 

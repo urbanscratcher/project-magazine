@@ -79,6 +79,6 @@ function loadViewAllByClass(className, path) {
 
 function loadViewAll() {
   loadViewAllByClass("component-viewAll-insights", "/insights");
-  loadViewAllByClass("component-viewAll-saved", "/");
+  loadViewAllByClass("component-viewAll-saved", "/saved");
   loadViewAllByClass("component-viewAll-authors", "/authors");
 }
