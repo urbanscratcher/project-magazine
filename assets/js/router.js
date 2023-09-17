@@ -109,6 +109,16 @@ function handleRouteChange(route) {
   // routing
   const routes = route.split("/");
 
+  if (route === "/error") {
+    externalEl.setAttribute("data", "/error.html");
+    externalEl.addEventListener("load", (e) => {
+      loadHtmlHandler([...commonScripts], true);
+    });
+
+    history.pushState(null, null, route);
+    return;
+  }
+
   // Saved For Later List : /saved
   if (routes.length === 2 && routes[1] === "saved") {
     externalEl.setAttribute("data", "/saved.html");

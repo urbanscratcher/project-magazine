@@ -2,6 +2,13 @@
 - Purpose: to set specific custom styles through ids locally.
 - Author: Hyunjung Joun
 -------------------------------- */
+/* error ------------------------------------------ */
+#error {
+  padding-top: 12.8rem;
+  min-height: 50rem;
+  height: 50vh;
+}
+
 /* saved ----------------------------------------- */
 .saved__content {
   max-width: 144rem;
