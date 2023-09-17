@@ -29,6 +29,14 @@
   width: 60%;
 }
 
+.authors__name {
+  width: fit-content;
+}
+
+.authors__avatar:hover {
+  cursor: pointer;
+}
+
 /* insights list page layout ---------------------- */
 .insights__content {
   max-width: 144rem;

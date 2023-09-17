@@ -3,39 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>authors</title>
+    <title>author</title>
   </head>
   <body>
-    <div class="authors row">
-      <section id="authors__content" class="container--m col gap--l">
-        <h1 class="authors__title serif">
-          Meet Our <span class="authors__total ts--h1 serif">32</span> Awesome
-          Authors
-        </h1>
-        <ul class="authors__list col gap--xl">
-          <template id="authorsTemplate">
-            {{#each data}}
-            <li class="authors__item row gap--l v-center">
-              <img
-                src="{{avatar}}"
-                class="authors__avatar"
-                onclick="navigateTo(`/authors/{{id}}`); return false;"
-              />
-              <div class="authors__txt col gap--s">
-                <h3
-                  class="authors__name serif hover--txt"
-                  onclick="navigateTo(`/authors/{{id}}`); return false;"
-                >
-                  {{name}}
-                </h3>
-                <h4 class="authors__topic">{{{topicsOneline}}}</h4>
-                <h4 class="authors__jobTitle">{{jobTitle}}</h4>
+    <div class="author row">
+      <section id="author__content" class="container--m col gap--l">
+        <template id="authorDescriptionTemplate">
+          <div class="author__introduction col gap--l">
+            <div class="author__summary row gap--l v-center">
+              <img src="{{avatar}}" class="authors__avatar" />
+              <div class="author__txt">
+                <div class="author__name">
+                  <h2>author__name</h2>
+                  <div>email icon</div>
+                </div>
+                <h4 class="author__topic">topicsOneline</h4>
+                <h4 class="author__jobTitle">jobTitle</h4>
               </div>
-            </li>
-            {{/each}}
-          </template>
-        </ul>
-        <button class="more-authors btn-primary">see more authors</button>
+            </div>
+            <p class="author__description">description</p>
+          </div>
+        </template>
+        <div class="author__written">list</div>
       </section>
       <section class="side container--m col gap--xl">
         <div class="side__trending col gap--m">
