@@ -1,5 +1,5 @@
 /* --------------------------------
-- Purpose: Makae the main navigation bar sticky
+- Purpose: Makae the navigation bar sticky
 - Author: Hyunjung Joun
 -------------------------------- */
 console.log(`Loading ${document.currentScript.src.split("/js")[1]}`);
@@ -17,8 +17,6 @@ function stickyNavbar() {
       const navEl = document.querySelector(".navbar__wrapper");
       const menuItemEls = document.querySelectorAll(".menu__item");
       const logoEl = document.querySelector(".navbar__logo");
-
-      console.log(menuItemEls);
 
       if (entry.isIntersecting) {
         navEl.classList.add("navbar__wrapper--transparent");

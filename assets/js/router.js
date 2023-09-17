@@ -7,11 +7,10 @@ let curTopic;
 let curIsLatest;
 
 // Lists of scripts for each page to be loaded
-const commonScripts = ["topics", "components"].map(
+const commonScripts = ["topics", "components", "navbar"].map(
   (el) => `/assets/js/${el}.js`
 );
 const mainScripts = [
-  "navbar-main",
   "insights-trending",
   "insights-cover",
   "insights-editorsPick",
@@ -98,6 +97,9 @@ function handleRouteChange(route) {
   curTopic = undefined;
   curIsLatest = undefined;
 
+  const menuItemEls = document.querySelectorAll(".menu__item");
+  menuItemEls.forEach((el) => el.classList.remove("menu__item--current"));
+
   // routing
   const routes = route.split("/");
 
@@ -112,6 +114,8 @@ function handleRouteChange(route) {
         const authorId = +routes[2];
         renderAuthor(authorId);
       });
+
+      menuItemEls[2].classList.add("menu__item--current");
     });
 
     history.pushState(null, null, route);
@@ -123,6 +127,8 @@ function handleRouteChange(route) {
     externalEl.setAttribute("data", "/authors.html");
     externalEl.addEventListener("load", (e) => {
       loadHtmlHandler([...authorListScripts, ...commonScripts], true);
+
+      menuItemEls[2].classList.add("menu__item--current");
     });
 
     history.pushState(null, null, route);
@@ -142,6 +148,8 @@ function handleRouteChange(route) {
           renderArticle(articleId);
         });
       });
+
+      menuItemEls[0].classList.add("menu__item--current");
     });
 
     history.pushState(null, null, route);
@@ -164,6 +172,8 @@ function handleRouteChange(route) {
       loadScript("/assets/js/binding/insights-list.js", true, () => {
         renderArticlesByTopic(curTopic, curIsLatest);
       });
+
+      menuItemEls[0].classList.add("menu__item--current");
 
       history.pushState(
         { selectedTopic: curTopic, selectedSort: curIsLatest },
