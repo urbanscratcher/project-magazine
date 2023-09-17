@@ -16,7 +16,7 @@ fetch("/data/insights/data-saved.json")
               );
 
               insight.author = authorsData.authors.find(
-                (author) => author.id === insight.id
+                (author) => author.id === insight.author.id
               );
 
               const mappedEl = { ...el, ...insight };

@@ -12,11 +12,13 @@
         style="--img-url: url({{thumbnail}})"
       ></div>
       <div class="cover__txt col container--m gap--m tc--white">
-        <div
-          class="cover__topic"
-          onclick="navigateTo(`/insights?topic={{topic}}`); return false;"
-        >
-          <button class="topic--white">{{topic}}</button>
+        <div class="cover__topic">
+          <button
+            class="topic--white"
+            onclick="navigateTo(`/insights?topic={{topic}}`); return false;"
+          >
+            {{topic}}
+          </button>
         </div>
         <div class="cover__headline">
           <h1
@@ -41,11 +43,13 @@
         </template>
         <div class="cover__txt col container--m gap--m tc--white">
           <template id="coverTopicTemplate">
-            <div
-              class="cover__topic"
-              onclick="navigateTo(`/insights?topic={{topic}}`); return false;"
-            >
-              <button class="topic--white">{{topic}}</button>
+            <div class="cover__topic">
+              <button
+                class="topic--white"
+                onclick="navigateTo(`/insights?topic={{topic}}`); return false;"
+              >
+                {{topic}}
+              </button>
             </div></template
           >
 
@@ -96,11 +100,13 @@
             </template>
 
             <template id="editorsPickTopicTemplate">
-              <div
-                class="editorsPick__topic"
-                onclick="navigateTo(`/insights?topic={{topic}}`); return false;"
-              >
-                <button class="topic">{{topic}}</button>
+              <div class="editorsPick__topic">
+                <button
+                  class="topic"
+                  onclick="navigateTo(`/insights?topic={{topic}}`); return false;"
+                >
+                  {{topic}}
+                </button>
               </div>
             </template>
 
@@ -225,11 +231,13 @@
             </template>
 
             <template id="trendingMainTopicTemplate">
-              <div
-                class="topic__wrapper"
-                onclick="navigateTo(`/insights?topic={{topic}}`); return false;"
-              >
-                <button class="topic">{{topic}}</button>
+              <div class="topic__wrapper">
+                <button
+                  class="topic"
+                  onclick="navigateTo(`/insights?topic={{topic}}`); return false;"
+                >
+                  {{topic}}
+                </button>
               </div>
             </template>
 
@@ -263,8 +271,17 @@
             </div>
             <div class="author-row--icon v-center row gap--s">
               <template id="trendingMainAuthor">
-                <img src="{{avatar}}" class="author__avatar" />
-                <p class="author__name">{{name}}</p>
+                <img
+                  src="{{avatar}}"
+                  class="author__avatar hover--pointer"
+                  onclick="navigateTo(`/authors/{{id}}`); return false;"
+                />
+                <p
+                  class="author__name hover--pointer"
+                  onclick="navigateTo(`/authors/{{id}}`); return false;"
+                >
+                  {{name}}
+                </p>
               </template>
             </div>
           </div>
@@ -273,11 +290,13 @@
               {{#each data}}
               <li class="trending__item row gap--s">
                 <div class="trending__txt col gap--s">
-                  <div
-                    class="topic__wrapper"
-                    onclick="navigateTo(`/insights?topic={{topic}}`); return false;"
-                  >
-                    <button class="topic">{{topic}}</button>
+                  <div class="topic__wrapper">
+                    <button
+                      class="topic"
+                      onclick="navigateTo(`/insights?topic={{topic}}`); return false;"
+                    >
+                      {{topic}}
+                    </button>
                   </div>
                   <h4
                     class="title-row__txt hover--txt serif"
@@ -287,7 +306,11 @@
                   </h4>
                   <p class="author-row ts--body-s tc--gray row gap--s">
                     By
-                    <span class="author__name">{{author.name}}</span>
+                    <span
+                      class="author__name hover--darker"
+                      onclick="navigateTo(`/authors/{{author.id}}`); return false;"
+                      >{{author.name}}</span
+                    >
                   </p>
                 </div>
                 <div
@@ -405,7 +428,12 @@
               ></div>
               <div class="savedForLater__content col between gap--m">
                 <div class="topic__wrapper">
-                  <button class="topic--white">{{topic}}</button>
+                  <button
+                    class="topic--white"
+                    onclick="navigateTo(`/insights?topic={{topic}}`); return false;"
+                  >
+                    {{topic}}
+                  </button>
                 </div>
                 <div class="savedForLater__txt col gap--m">
                   <h3
@@ -415,8 +443,17 @@
                     {{title}}
                   </h3>
                   <div class="savedForLater__author avatar row v-center gap--s">
-                    <img src="{{author.avatar}}" class="author__avatar" />
-                    <p class="author__name">{{author.name}}</p>
+                    <img
+                      src="{{author.avatar}}"
+                      class="author__avatar hover--pointer"
+                      onclick="navigateTo(`/authors/{{author.id}}`); return false;"
+                    />
+                    <p
+                      class="author__name hover--pointer"
+                      onclick="navigateTo(`/authors/{{author.id}}`); return false;"
+                    >
+                      {{author.name}}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -472,11 +509,13 @@
                 <div class="component-bookmark-add"></div>
               </div>
               <div class="latest__txt col gap--s">
-                <div
-                  class="latest__topic"
-                  onclick="navigateTo(`/insights?topic={{topic}}`); return false;"
-                >
-                  <button class="topic">{{topic}}</button>
+                <div class="latest__topic">
+                  <button
+                    class="topic"
+                    onclick="navigateTo(`/insights?topic={{topic}}`); return false;"
+                  >
+                    {{topic}}
+                  </button>
                 </div>
                 <h3
                   class="latest__title serif hover--txt"
@@ -493,8 +532,17 @@
                   <p class="ttr__box"><span class="ttr">{{ttr}}</span> read</p>
                 </div>
                 <div class="author-row--icon v-center row gap--s">
-                  <img src="{{author.avatar}}" class="author__avatar" />
-                  <p class="author__name">{{author.name}}</p>
+                  <img
+                    src="{{author.avatar}}"
+                    class="author__avatar hover--pointer"
+                    onclick="navigateTo(`/authors/{{author.id}}`); return false;"
+                  />
+                  <p
+                    class="author__name hover--pointer"
+                    onclick="navigateTo(`/authors/{{author.id}}`); return false;"
+                  >
+                    {{author.name}}
+                  </p>
                 </div>
               </div>
             </li>
@@ -516,21 +564,33 @@
               type="text/x-handlebars-template"
             >
               {{#each data}}
-                <li class="featured-authors__item row gap--m">
-                  <img src="{{avatar}}" class="featured-authors__avatar"></img>
-                  <div class="featured-authors__txt col">
-                    <p class="featured-authors__name bold">{{name}}</p>
-                    <ul class="fatured-authors__row row">
-                      <span class="featured-authors__topic ts--body-s">
-                        {{{topicsOneline}}}
-                      </span>
-                    </ul>
-                  </div>
-                </li>
+              <li class="featured-authors__item row gap--m">
+                <img
+                  src="{{avatar}}"
+                  class="featured-authors__avatar hover--pointer"
+                  onclick="navigateTo(`/authors/{{id}}`); return false;"
+                />
+                <div class="featured-authors__txt col">
+                  <p
+                    class="featured-authors__name bold hover--pointer"
+                    onclick="navigateTo(`/authors/{{id}}`); return false;"
+                  >
+                    {{name}}
+                  </p>
+                  <ul class="fatured-authors__row row">
+                    <span class="featured-authors__topic ts--body-s">
+                      {{{topicsOneline}}}
+                    </span>
+                  </ul>
+                </div>
+              </li>
               {{/each}}
             </template>
           </ul>
-          <div class="component-viewAll-authors row end"></div>
+          <div
+            class="component-viewAll-authors row end"
+            onclick="navigateTo(`/authors`); return false;"
+          ></div>
         </div>
 
         <!-- Ad -->

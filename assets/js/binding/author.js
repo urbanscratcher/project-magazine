@@ -8,6 +8,7 @@ async function renderAuthor(id) {
   try {
     // render author info
     const author = await getAuthor(id);
+    console.log(author);
     insertAfterTemplate("authorDescriptionTemplate", author);
 
     // render title

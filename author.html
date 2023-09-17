@@ -8,18 +8,18 @@
   <body>
     <ul class="author row">
       <section id="author__content" class="container--m col gap--l">
-        <template id="authorDescriptionTemplate">
+        <template id="authorDescriptionTemplate" type="text/x-handlebars-template">
           <div class="author__introduction col gap--l h-center">
             <div class="author__summary row gap--l v-center">
               <img src="{{avatar}}" class="author__summary-avatar" />
               <div class="author__txt col gap--s">
-                <div class="author__name row gap--m v-center">
+                <div class="author__name row gap--m">
                   <h2 class="serif">{{name}}</h2>
-                  <button class="icon__wrapper ts--h3 hover--lighter">
+                  <button class="author__email icon__wrapper ts--h3 hover--lighter">
                     <i class="fa-regular fa-envelope"></i>
                   </button>
                 </div>
-                <h4 class="author__topic">{{topicsOneline}}</h4>
+                <h4 class="author__topic">{{{topicsOneline}}}</h4>
                 <h4 class="author__jobTitle">{{jobTitle}}</h4>
               </div>
             </div>
@@ -86,15 +86,15 @@
             <p class="section__title">featured authors</p>
           </div>
           <ul class="section__content featured-authors__list col gap--m">
-            <script
+            <template
               id="featuredAuthorsTemplate"
               type="text/x-handlebars-template"
             >
               {{#each data}}
                 <li class="featured-authors__item row gap--m">
-                  <img src="{{avatar}}" class="featured-authors__avatar"></img>
+                  <img src="{{avatar}}" class="featured-authors__avatar hover--pointer"  onclick="navigateTo(`/authors/{{id}}`); return false;"/>
                   <div class="featured-authors__txt col">
-                    <p class="featured-authors__name bold">{{name}}</p>
+                    <p class="featured-authors__name bold  hover--pointer"  onclick="navigateTo(`/authors/{{id}}`); return false;">{{name}}</p>
                     <ul class="fatured-authors__row row">
                       <span class="featured-authors__topic ts--body-s">
                         {{{topicsOneline}}}
@@ -103,9 +103,9 @@
                   </div>
                 </li>
               {{/each}}
-            </script>
+            </template>
           </ul>
-          <div class="component-viewAll-authors row end"></div>
+          <div class="component-viewAll-authors row end" onclick="navigateTo(`/authors`); return false;"></div>
         </div>
       </section>
     </div>

@@ -49,9 +49,9 @@
             <div class="author__profile col gap--m">
               <template id="authorProfileTemplate">
                 <div class="author__profile-row row gap--m">
-                  <img src="{{avatar}}" class="featured-authors__avatar"></img>
+                  <img src="{{avatar}}" class="featured-authors__avatar hover--pointer" onclick="navigateTo(`/authors/{{id}}`); return false;"></img>
                   <div class="featured-authors__txt col gap--s">
-                    <p class="featured-authors__name bold">{{name}}</p>
+                    <p class="featured-authors__name bold hover--pointer" onclick="navigateTo(`/authors/{{id}}`); return false;">{{name}}</p>
                     <span class="ts--body-s">
                       {{{topicsOneline}}}
                     </span>
@@ -92,9 +92,9 @@
           <div class="related__img section__img"  onclick="navigateTo(`/insights/{{id}}`); return false;">
             <img src="{{thumbnail}}" />
           </div>
-          <div class="topic__wrapper"                    onclick="navigateTo(`/insights?topic={{topic}}`); return false;"
+          <div class="topic__wrapper"                    
           >
-              <a href="#" class="topic ts--btn">{{topic}}</a>
+              <button class="topic" onclick="navigateTo(`/insights?topic={{topic}}`); return false;">{{topic}}</button>
           </div>
           <h4 class="serif hover--txt" onclick="navigateTo(`/insights/{{id}}`); return false;">{{title}}</h4>
           <div class="time-row row gap--s v-center">
@@ -106,8 +106,8 @@
             <p class="ttr__box"><span class="ttr">{{ttr}}</span> read</p>
           </div>
           <div class="author-row--icon v-center row gap--s">
-            <img src="{{author.avatar}}" class="author__avatar" />
-            <p class="author__name">{{author.name}}</p>
+            <img src="{{author.avatar}}" class="author__avatar hover--pointer" onclick="navigateTo(`/authors/{{author.id}}`); return false;"/>
+            <p class="author__name hover--pointer" onclick="navigateTo(`/authors/{{author.id}}`); return false;">{{author.name}}</p>
           </div>
         </li>
         {{/each}}

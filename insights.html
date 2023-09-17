@@ -44,11 +44,13 @@
                 <div class="component-bookmark-add"></div>
               </div>
               <div class="insights__txt col gap--s v-center">
-                <div
-                  class="insights__topic"
-                  onclick="navigateTo(`/insights?topic={{topic}}`); return false;"
-                >
-                  <button class="topic">{{topic}}</button>
+                <div class="insights__topic">
+                  <button
+                    class="topic"
+                    onclick="navigateTo(`/insights?topic={{topic}}`); return false;"
+                  >
+                    {{topic}}
+                  </button>
                 </div>
                 <h3
                   class="insights__title serif hover--txt"
@@ -66,8 +68,17 @@
                   <p class="ttr__box"><span class="ttr">{{ttr}}</span> read</p>
                 </div>
                 <div class="author-row--icon v-center row gap--s">
-                  <img src="{{author.avatar}}" class="author__avatar" />
-                  <p class="author__name">{{author.name}}</p>
+                  <img
+                    src="{{author.avatar}}"
+                    class="author__avatar hover--pointer"
+                    onclick="navigateTo(`/authors/{{author.id}}`); return false;"
+                  />
+                  <p
+                    class="author__name hover--pointer"
+                    onclick="navigateTo(`/authors/{{author.id}}`); return false;"
+                  >
+                    {{author.name}}
+                  </p>
                 </div>
               </div>
             </li>
@@ -94,7 +105,11 @@
                     </p>
                     <p class="author-row ts--body-s tc--gray row gap--s">
                       By
-                      <span class="author__name">{{author.name}}</span>
+                      <span
+                        class="author__name hover--darker"
+                        onclick="navigateTo(`/authors/{{author.id}}`); return false;"
+                        >{{author.name}}</span
+                      >
                     </p>
                   </div>
                   <div

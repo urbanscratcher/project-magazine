@@ -258,18 +258,17 @@
   cursor: text;
   text-transform: uppercase;
   padding: 0.4rem 1.6rem;
-  border-radius: 1.6rem;
   font-weight: 600;
-  border: 0.2rem solid var(--color-white);
+  border-top: solid 2px var(--color-white);
+  border-bottom: solid 2px var(--color-white);
 }
 
 .topic--none {
   cursor: text;
   text-transform: uppercase;
-  padding: 0.4rem 1.6rem;
-  border-radius: 1.6rem;
+  padding: 0.4rem 0;
   font-weight: 600;
-  border: 0.2rem solid var(--color-secondary);
+  color: var(--color-gray);
 }
 
 /* Button: An icon with circled button 24px */
@@ -297,6 +296,9 @@
 }
 
 /* Hover change bg */
+.hover--pointer {
+  cursor: pointer;
+}
 
 .hover--primary {
   background-color: transparent;

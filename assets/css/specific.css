@@ -112,6 +112,7 @@
 }
 
 .filter__list-container {
+  width: 100%;
   overflow-x: hidden;
   padding: 0 var(--size-l);
 }
@@ -171,12 +172,11 @@
 }
 
 .filter__button:hover {
-  margin-bottom: -1.5px;
+  margin-bottom: -2px;
   border-bottom: solid 2px var(--color-secondary);
 }
 
 .filter__current {
-  margin-bottom: -1.5px;
   border-bottom: solid 2px var(--color-secondary);
 }
 
