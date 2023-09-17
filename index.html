@@ -139,25 +139,27 @@ c0,9.8-7.9,17.7-17.7,17.7s-17.7-7.9-17.7-17.7V88.7z"
 
     <!-- Navigation Bar-->
     <header id="header">
-      <nav class="navbar__wrapper">
-        <a href="/" onclick="handleRouteChange('/'); return false;">
+      <nav class="navbar__wrapper navbar__wrapper--transparent">
+        <p onclick="handleRouteChange('/'); return true;">
           <img class="navbar__logo logo--white" src="/assets/image/logo.png" />
-        </a>
+        </p>
         <div class="navbar__menu row gap--l tc--white">
           <button
-            class="menu__item"
+            class="menu__item menu__item--transparent"
             onclick="navigateTo(`/insights`); return false;"
           >
             Insights
           </button>
-          <button class="menu__item" href="#">Quiz</button>
+          <button class="menu__item menu__item--transparent">Quiz</button>
           <button
-            class="menu__item"
+            class="menu__item menu__item--transparent"
             onclick="navigateTo(`/authors`); return false;"
           >
             Authors
           </button>
-          <button class="menu__item" href="#">Report</button>
+          <button class="menu__item menu__item--transparent" href="#">
+            Report
+          </button>
         </div>
         <div class="navbar__personal row gap--s ts--body">
           <button class="personal__item btn--circle-l hover--primary">

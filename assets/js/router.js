@@ -11,6 +11,7 @@ const commonScripts = ["topics", "components"].map(
   (el) => `/assets/js/${el}.js`
 );
 const mainScripts = [
+  "navbar-main",
   "insights-trending",
   "insights-cover",
   "insights-editorsPick",
