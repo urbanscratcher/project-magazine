@@ -6,26 +6,79 @@
     <title>author</title>
   </head>
   <body>
-    <div class="author row">
+    <ul class="author row">
       <section id="author__content" class="container--m col gap--l">
         <template id="authorDescriptionTemplate">
-          <div class="author__introduction col gap--l">
+          <div class="author__introduction col gap--l h-center">
             <div class="author__summary row gap--l v-center">
-              <img src="{{avatar}}" class="authors__avatar" />
-              <div class="author__txt">
-                <div class="author__name">
-                  <h2>author__name</h2>
-                  <div>email icon</div>
+              <img src="{{avatar}}" class="author__summary-avatar" />
+              <div class="author__txt col gap--s">
+                <div class="author__name row gap--m v-center">
+                  <h2 class="serif">{{name}}</h2>
+                  <button class="icon__wrapper ts--h3 hover--lighter">
+                    <i class="fa-regular fa-envelope"></i>
+                  </button>
                 </div>
-                <h4 class="author__topic">topicsOneline</h4>
-                <h4 class="author__jobTitle">jobTitle</h4>
+                <h4 class="author__topic">{{topicsOneline}}</h4>
+                <h4 class="author__jobTitle">{{jobTitle}}</h4>
               </div>
             </div>
-            <p class="author__description">description</p>
+            <p class="author__description">{{description}}</p>
+            <ul class="author__jobExperiences col tc--gray">
+              {{#each jobExperiences}}
+              <p>• {{this}}</p>
+              {{/each}}
+            </ul>
           </div>
         </template>
-        <div class="author__written">list</div>
+
+       <template id="authorTitleTemplate">
+          <div class="section__title-wrapper">
+            <p class="section__title">Written By {{name}}</p>
+          </div>
+        </template>
+        <ul class="author__works col gap--l">
+          <template id="authorWorksTemplate">
+            {{#each data}}
+            <li class="insights__item row gap--m">
+              <div
+                class="insights__img section__img img--ratio-64"
+                onclick="navigateTo(`/insights/{{id}}`); return false;"
+              >
+                <img src="{{thumbnail}}" />
+                <div class="component-bookmark-add"></div>
+              </div>
+              <div class="insights__txt col gap--s v-center">
+                <div class="insights__topic">
+                  <button class="topic">{{topic}}</button>
+                </div>
+                <h3
+                  class="insights__title serif hover--txt"
+                  onclick="navigateTo(`/insights/{{id}}`); return false;"
+                >
+                  {{title}}
+                </h3>
+                <p class="insights__summary">{{summary}}</p>
+                <div class="time-row row gap--s v-center">
+                  <p class="icon__time-wrapper">
+                    <i class="icon__time fa-regular fa-clock"></i>
+                  </p>
+                  <p class="createdAt">{{createdAt}}</p>
+                  <p class="separator">·</p>
+                  <p class="ttr__box"><span class="ttr">{{ttr}}</span> read</p>
+                </div>
+                <div class="author-row--icon v-center row gap--s">
+                  <img src="{{author.avatar}}" class="author__avatar" />
+                  <p class="author__name">{{author.name}}</p>
+                </div>
+              </div>
+            </li>
+            {{/each}}
+          </template>
+        </ul>
+     
       </section>
+
       <section class="side container--m col gap--xl">
         <div class="side__trending col gap--m">
           <div class="section__title-wrapper row between">

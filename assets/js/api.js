@@ -103,6 +103,21 @@ async function getInsightsByTopic(topic, isLatest = true) {
   }
 }
 
+async function getInsightsByAuthor(authorId) {
+  try {
+    const insights = await getInsightList();
+    return insights
+      .filter((el) => el.author.id === authorId)
+      .sort((a, b) => b.createdAt - a.createdAt)
+      .map((el) => ({
+        ...el,
+        createdAt: printDateDifference(el.createdAt),
+      }));
+  } catch (err) {
+    console.error(err);
+  }
+}
+
 async function getInsight(id) {
   return await fetch("/data/insights/data.json")
     .then((res) => res.json())

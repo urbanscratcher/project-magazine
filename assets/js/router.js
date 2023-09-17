@@ -32,6 +32,7 @@ const insightListScripts = [
 const authorListScripts = ["authors", "insights-trending", "inspirations"].map(
   (el) => `/assets/js/binding/${el}.js`
 );
+const authorScripts = ["author"].map((el) => `/assets/js/binding/${el}.js`);
 
 // When going backward and forward from history, router will work
 window.addEventListener("popstate", (e) => {
@@ -93,9 +94,30 @@ function handleRouteChange(route) {
   // routing
   const routes = route.split("/");
 
+  // One author : /authors/1
+  // if (routes.length === 3 && routes[1] === "authors") {
+  if (route === "/") {
+    routes[2] = 9;
+
+    externalEl.setAttribute("data", "/author.html");
+    externalEl.addEventListener("load", (e) => {
+      loadHtmlHandler([...commonScripts], true);
+
+      // after loading the script, data will be rendered from the callback function
+      authorScripts.forEach((el) => {
+        loadScript(el, true, () => {
+          const authorId = +routes[2];
+          renderAuthor(authorId);
+        });
+      });
+    });
+
+    history.pushState(null, null, route);
+    return;
+  }
+
   // List of Authors : /authors
   if (routes.length === 2 && routes[1] === "authors") {
-    console.log("authors");
     externalEl.setAttribute("data", "/authors.html");
     externalEl.addEventListener("load", (e) => {
       loadHtmlHandler([...authorListScripts, ...commonScripts], true);
@@ -107,7 +129,6 @@ function handleRouteChange(route) {
 
   // One article : /insights/1
   if (routes.length === 3 && routes[1] === "insights") {
-    console.log("main");
     externalEl.setAttribute("data", "/insight.html");
     externalEl.addEventListener("load", (e) => {
       loadHtmlHandler([...commonScripts], true);
@@ -130,7 +151,6 @@ function handleRouteChange(route) {
     routes.length === 2 &&
     routes[1].match("^insights$|^insights\\?topic=*")
   ) {
-    console.log("insights");
     curTopic = routes[1].match("^insights\\?topic=*")
       ? routes[1].split("?")[1].split("=")[1]
       : "all";

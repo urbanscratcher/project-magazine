@@ -99,8 +99,12 @@
     {
       "id": 9,
       "name": "Olivia Bennett",
-      "jobTitle": "Architecture Intern",
-      "jobExperiences": ["Assistant to Lead Architect at UrbanScape Designs"],
+      "jobTitle": "Researcher",
+      "jobExperiences": [
+        "Researcher at GreenBuild Innovations",
+        "Former Assistant to Lead Architect at UrbanScape Designs",
+        "Former Urban Planning Assistant at CityVibe Studios"
+      ],
       "topics": ["Urban"],
       "description": "Olivia Bennett, a talented young architecture intern, draws inspiration from her role as an assistant to the lead architect at UrbanScape Designs. With a passion for sustainable architecture and urban planning, her writing navigates the exciting realm of environmentally-conscious design and the shaping of urban landscapes. Olivia's narratives offer fresh perspectives on sustainable building practices and innovative approaches to creating livable, vibrant cities. Join her in exploring the intersection of architecture and sustainability, as she uncovers the impactful ways design choices can influence our environment and communities for the better.",
       "avatar": "/data/authors/avatar/9.webp"

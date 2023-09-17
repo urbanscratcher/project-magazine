@@ -2,8 +2,33 @@
 - Purpose: to set specific custom styles through ids locally.
 - Author: Hyunjung Joun
 -------------------------------- */
+/* author detail --------------------------------- */
+.author {
+  max-width: 144rem;
+  margin: 0 auto;
+}
 
-/* authors list page layout ---------------------- */
+#author__content {
+  margin-top: 3.2rem;
+  width: 66.666%;
+}
+
+.author__summary-avatar {
+  border-radius: 50%;
+  width: 22%;
+  aspect-ratio: 1/1;
+  outline: solid 1px var(--color-secondary);
+}
+
+.author__jobExperiences {
+  width: 100%;
+}
+
+.author__introduction {
+  margin-bottom: var(--size-2xl);
+}
+
+/* authors list ------------------------------------ */
 .authors {
   max-width: 144rem;
   margin: 0 auto;
@@ -37,7 +62,7 @@
   cursor: pointer;
 }
 
-/* insights list page layout ---------------------- */
+/* insights list ---------------------- */
 .insights__content {
   max-width: 144rem;
   margin: 0 auto;
@@ -55,7 +80,6 @@
   border-left: solid 1px var(--color-secondary-light);
 }
 
-/* insights list ---------------------- */
 .insights__img {
   object-fit: cover;
   object-position: center;
