@@ -36,7 +36,10 @@
           <template id="insightsItemThumbnail">
             {{#each data}}
             <li class="insights__item row gap--m">
-              <div class="insights__img section__img img--ratio-64">
+              <div
+                class="insights__img section__img img--ratio-64"
+                onclick="navigateTo(`/insights/{{id}}`); return false;"
+              >
                 <img src="{{thumbnail}}" />
                 <div class="component-bookmark-add"></div>
               </div>

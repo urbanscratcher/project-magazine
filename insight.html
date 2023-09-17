@@ -75,44 +75,45 @@
       </div>
     </section>
     <section id="related" class="col gap--m container--m">
-      <div class="section__title-wrapper row between">
+      <template id="viewAll-related">
+        <div class="section__title-wrapper row between">
         <p class="section__title">related</p>
-        <template id="viewAll-related">
-          <button class="viewAll row gap--s hover--lighter" onclick="navigateTo(`/insights?topic={{topic}}`); return false;">
-            <p class="viewAll__txt ts--btn">view all</p>
-            <i class="fa-solid fa-chevron-right ts--body-s"></i>
-          </button>
-        </template>
-
-      </div>
-      <ul class="section__content row gap--m">
-        <template id="relatedTemplate">
-          {{#each data}}
-          <li class="related__item col gap--m">
-            <div class="related__img section__img">
-              <img src="{{thumbnail}}" />
-            </div>
-            <div class="topic__wrapper"                    onclick="navigateTo(`/insights?topic={{topic}}`); return false;"
-            >
-                <a href="#" class="topic ts--btn">{{topic}}</a>
-            </div>
-            <h4 class="serif hover--txt" onclick="navigateTo(`/insights/{{id}}`); return false;">{{title}}</h4>
-            <div class="time-row row gap--s v-center">
-              <p class="icon__time-wrapper">
-                <i class="icon__time fa-regular fa-clock"></i>
-              </p>
-              <p class="createdAt">{{createdAt}}</p>
-              <p class="separator">·</p>
-              <p class="ttr__box"><span class="ttr">{{ttr}}</span> read</p>
-            </div>
-            <div class="author-row--icon v-center row gap--s">
-              <img src="{{author.avatar}}" class="author__avatar" />
-              <p class="author__name">{{author.name}}</p>
-            </div>
-          </li>
-          {{/each}}
-        </template>
+        <button class="viewAll row gap--s hover--lighter" onclick="navigateTo(`/insights?topic={{topic}}`); return false;">
+          <p class="viewAll__txt ts--btn">view all</p>
+          <i class="fa-solid fa-chevron-right ts--body-s"></i>
+        </button>
+        </div>
+      </template>
+      
+      <template id="relatedTemplate">
+        <ul class="section__content row gap--m">
+        {{#each data}}
+        <li class="related__item col gap--m">
+          <div class="related__img section__img"  onclick="navigateTo(`/insights/{{id}}`); return false;">
+            <img src="{{thumbnail}}" />
+          </div>
+          <div class="topic__wrapper"                    onclick="navigateTo(`/insights?topic={{topic}}`); return false;"
+          >
+              <a href="#" class="topic ts--btn">{{topic}}</a>
+          </div>
+          <h4 class="serif hover--txt" onclick="navigateTo(`/insights/{{id}}`); return false;">{{title}}</h4>
+          <div class="time-row row gap--s v-center">
+            <p class="icon__time-wrapper">
+              <i class="icon__time fa-regular fa-clock"></i>
+            </p>
+            <p class="createdAt">{{createdAt}}</p>
+            <p class="separator">·</p>
+            <p class="ttr__box"><span class="ttr">{{ttr}}</span> read</p>
+          </div>
+          <div class="author-row--icon v-center row gap--s">
+            <img src="{{author.avatar}}" class="author__avatar" />
+            <p class="author__name">{{author.name}}</p>
+          </div>
+        </li>
+        {{/each}}
       </ul>
+      </template>
+     
     </section>
 
     

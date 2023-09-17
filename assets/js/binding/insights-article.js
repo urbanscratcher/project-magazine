@@ -59,13 +59,15 @@ async function renderArticle(id) {
 
     // 4. render related articles
     const related = await getInsightsByTopic(insight.topic);
-    for (const r of related) {
-      r.author = await getAuthorSimple(r.author.id);
+    const relatedExcludedSelf = related.filter((e) => e.id !== id);
+
+    if (relatedExcludedSelf.length > 0) {
+      for (const r of relatedExcludedSelf) {
+        r.author = await getAuthorSimple(r.author.id);
+      }
+      insertAfterTemplate("relatedTemplate", { data: relatedExcludedSelf });
+      insertAfterTemplate("viewAll-related", related);
     }
-
-    insertAfterTemplate("relatedTemplate", { data: related });
-
-    insertAfterTemplate("viewAll-related", related);
 
     // 5. styling: adjust article content position;
     const headerGroupEl = document.querySelector(".article__header-group");

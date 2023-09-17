@@ -81,16 +81,19 @@
         <div class="section__content">
           <!-- main -->
           <div class="editorsPick__main col gap--m">
-            <div class="editorsPick__img section__img">
-              <template id="editorsPickImgTemplate">
+            <template id="editorsPickImgTemplate">
+              <div
+                class="editorsPick__img section__img"
+                onclick="navigateTo(`/insights/{{id}}`); return false;"
+              >
                 <img
                   src="{{thumbnail}}"
                   class="img--ratio-169"
                   crossorigin="anonymous"
                 />
-              </template>
-              <div class="component-bookmark-add"></div>
-            </div>
+                <div class="component-bookmark-add"></div>
+              </div>
+            </template>
 
             <template id="editorsPickTopicTemplate">
               <div
@@ -211,12 +214,15 @@
         </div>
         <div class="section__content row gap--m">
           <div class="trending__main col gap--m">
-            <div class="section__img img--ratio-64">
-              <template id="trendingMainImgTemplate">
+            <template id="trendingMainImgTemplate">
+              <div
+                class="section__img img--ratio-64"
+                onclick="navigateTo(`/insights/{{id}}`); return false;"
+              >
                 <img src="{{thumbnail}}" />
-              </template>
-              <div class="component-bookmark-add"></div>
-            </div>
+                <div class="component-bookmark-add"></div>
+              </div>
+            </template>
 
             <template id="trendingMainTopicTemplate">
               <div
@@ -284,7 +290,10 @@
                     <span class="author__name">{{author.name}}</span>
                   </p>
                 </div>
-                <div class="trending__img section__img img--ratio-64">
+                <div
+                  class="trending__img section__img img--ratio-64"
+                  onclick="navigateTo(`/insights/{{id}}`); return false;"
+                >
                   <img src="{{thumbnail}}" />
                   <div class="component-bookmark-add"></div>
                 </div>
@@ -455,7 +464,10 @@
           <template id="latestTemplate">
             {{#each data}}
             <li class="latest__item row gap--m">
-              <div class="latest__img section__img img--ratio-64">
+              <div
+                class="latest__img section__img img--ratio-64"
+                onclick="navigateTo(`/insights/{{id}}`); return false;"
+              >
                 <img src="{{thumbnail}}" />
                 <div class="component-bookmark-add"></div>
               </div>
