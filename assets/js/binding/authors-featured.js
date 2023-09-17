@@ -7,8 +7,8 @@ renderFeaturedAuthors();
 
 async function renderFeaturedAuthors() {
   try {
-    const allAuthors = await getAuthorList();
-    const data = allAuthors.slice(0, 4);
+    const data = await getAuthorList(0, 4);
+
     insertAfterTemplate("featuredAuthorsTemplate", { data: data });
   } catch (err) {
     console.error(err);

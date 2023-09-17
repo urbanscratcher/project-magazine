@@ -34,6 +34,13 @@ function insertAfterTemplate(templateId, data) {
   );
 }
 
+function insertAfterElementTemplate(el, templateId, data) {
+  insertAfter(
+    el,
+    render(() => document.getElementById(templateId).innerHTML, data)
+  );
+}
+
 // Util Functions ----------------------------------
 function printDateDifference(startedAt) {
   const now = new Date();
