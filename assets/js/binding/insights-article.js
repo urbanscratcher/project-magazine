@@ -96,6 +96,19 @@ async function renderArticle(id) {
       contentHeight + headerGroupHeight + relatedHeight - 64
     }px`;
     footer.style.zIndex = "999";
+
+    // 8. copy link event
+    const linkBtn = document.querySelector(".btn-link");
+    linkBtn.addEventListener("click", (e) => {
+      navigator.clipboard
+        .writeText(window.location.href)
+        .then(() => {
+          alert(`This article's link is copied!\n${window.location.href}`);
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    });
   } catch (err) {
     console.error("error: ", err);
   }
