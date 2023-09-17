@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>insight</title>
+  </head>
+  <body>
+    <div class="authors__list row">
+      <section id="authors__content" class="container--m">
+        <h2>Meet <span class="authors__total">32</span> Awesome Authors</h2>
+        <ul class="authors__list col gap--l">
+          <template id="authorsTemplate">
+            {{#each data}}
+            <li class="authors__item row gap--m">
+              <img src="{{avatar}}" class="authors__avatar"></img>
+              <div class="author__txt col">
+                <p class="author__name bold">{{name}}</p>
+                <ul class="author__row row">
+                  <span class="author__topic ts--body-s">
+                    {{{topicsOneline}}}
+                  </span>
+                </ul>
+                <p class="author__jobTitle">{{jobTitle}}</p>                
+              </div>
+            </li>
+            {{/each}}
+          </template>
+        </ul>
+      </section>
+      <section id="authors__side" class="container--m col gap--xl">
+        <div class="side__trending col gap--m">
+          <div class="section__title-wrapper row between">
+            <p class="section__title">What's Trending</p>
+          </div>
+          <ul class="insights__trending col gap--m">
+            <template id="trendingListTemplate">
+              {{#each data}}
+              <li class="trending__item row gap--s">
+                <div class="row v-center">
+                  <div class="trending__txt col gap--s">
+                    <p
+                      class="title-row__txt tc--gray hover--txt bold"
+                      onclick="navigateTo(`/insights/{{id}}`); return false;"
+                    >
+                      {{title}}
+                    </p>
+                    <p class="author-row ts--body-s tc--gray row gap--s">
+                      By
+                      <span class="author__name">{{author.name}}</span>
+                    </p>
+                  </div>
+                  <div
+                    class="trendings__img section__img img--ratio-64"
+                    onclick="navigateTo(`/insights/{{id}}`); return false;"
+                  >
+                    <img src="{{thumbnail}}" />
+                  </div>
+                </div>
+              </li>
+              {{/each}}
+            </template>
+          </ul>
+          <div class="component-viewAll row end"></div>
+        </div>
+        <div class="side__inspirations col gap--m">
+          <div class="section__title-wrapper row between">
+            <p class="section__title">inspirations</p>
+            <button
+              id="shuffleImage"
+              class="icon__wrapper ts--body hover--lighter"
+            >
+              <i class="fa-solid fa-shuffle"></i>
+            </button>
+          </div>
+          <ul class="inspirations__list">
+            <template id="inspirationsTemplate">
+              {{#each data}}
+              <li
+                class="inspirations__item section__img"
+                onclick="navigateTo(`/insights/{{id}}`); return false;"
+              >
+                <img class="inspirations__img" src="{{thumbnail}}" />
+              </li>
+              {{/each}}
+            </template>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
