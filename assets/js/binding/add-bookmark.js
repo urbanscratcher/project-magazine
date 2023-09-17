@@ -14,6 +14,13 @@ async function addBookmark(upperClassName) {
     bookmarkEls.forEach((el) =>
       el.addEventListener("click", (e) => {
         e.stopPropagation();
+
+        const savedBtn = document.querySelector(".btn__saved");
+        savedBtn.classList.add("btn__saved--moving");
+        setTimeout(function () {
+          savedBtn.classList.remove("btn__saved--moving");
+        }, 500);
+
         const storedInsights = localStorage.getItem("myInsights");
         if (!storedInsights) {
           localStorage.setItem("myInsights", JSON.stringify([]));

@@ -16,6 +16,12 @@ async function renderSaved() {
 }
 
 async function removeSavedItemHandler(e) {
+  const savedBtn = document.querySelector(".btn__saved");
+  savedBtn.classList.add("btn__saved--removing");
+  setTimeout(function () {
+    savedBtn.classList.remove("btn__saved--removing");
+  }, 500);
+
   const removeTargetId = +e.currentTarget.dataset.id;
   const storedInsights = JSON.parse(localStorage.getItem("myInsights"));
 

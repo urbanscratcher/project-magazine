@@ -464,6 +464,46 @@
   border: none;
 }
 
+.btn__saved--moving {
+  animation: movingUp 0.5s ease forwards;
+  transform-origin: bottom center;
+}
+
+.btn__saved--removing {
+  animation: movingDown 0.5s ease forwards;
+  transform-origin: bottom center;
+}
+
+@keyframes movingDown {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  20% {
+    transform: translateY(1.6rem);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes movingUp {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  20% {
+    transform: translateY(-1.6rem);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 /* Highlight -------------------------- */
 #highlights {
   display: grid;

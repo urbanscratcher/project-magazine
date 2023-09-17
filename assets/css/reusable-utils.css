@@ -217,6 +217,14 @@
   width: 2.4rem;
 }
 
+.component-bookmark-add:hover {
+  background-color: var(--color-secondary);
+}
+
+.component-bookmark-add:hover svg {
+  fill: var(--color-white);
+}
+
 /* Component: View All */
 .viewAll {
   color: var(--color-secondary-dark);
