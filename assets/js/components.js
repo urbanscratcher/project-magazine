@@ -53,57 +53,30 @@ function loadNewletter() {
   forms.forEach((el) => el.addEventListener("submit", (e) => submitHandler(e)));
 }
 
-function loadViewAll() {
-  const templateEl = document.getElementById("viewAllTemplate");
-
-  const newHtml = (path) => `<button
+function viewAllHtml(path) {
+  return `<button
   class="viewAll row gap--s hover--lighter"
   onclick="navigateTo('${path}'); return false;"
 >
   <p class="viewAll__txt ts--btn">view all</p>
   <i class="fa-solid fa-chevron-right ts--body-s"></i>
 </button>`;
+}
 
-  const parentEls = document.getElementsByClassName(
-    "component-viewAll-insights"
-  );
-
-  const parentSavedEls = document.getElementsByClassName(
-    "component-viewAll-saved"
-  );
-
-  const parentAuthorsEls = document.getElementsByClassName(
-    "component-viewAll-authors"
-  );
-
-  const parentRelatedEls = document.getElementsByClassName(
-    "component-viewAll-related"
-  );
-
-  if (parentEls.length > 0) {
-    for (let i = 0; i < parentEls.length; i++) {
+function loadViewAllByClass(className, path) {
+  const els = document.getElementsByClassName(className);
+  if (els.length > 0) {
+    for (let i = 0; i < els.length; i++) {
       insert(
-        parentEls[i],
-        render(() => newHtml("/insights"), {})
+        els[i],
+        render(() => viewAllHtml(path), {})
       );
     }
   }
+}
 
-  if (parentSavedEls.length > 0) {
-    for (let i = 0; i < parentSavedEls.length; i++) {
-      insert(
-        parentSavedEls[i],
-        render(() => newHtml("/"), {})
-      );
-    }
-  }
-
-  if (parentAuthorsEls.length > 0) {
-    for (let i = 0; i < parentAuthorsEls.length; i++) {
-      insert(
-        parentAuthorsEls[i],
-        render(() => newHtml("/"), {})
-      );
-    }
-  }
+function loadViewAll() {
+  loadViewAllByClass("component-viewAll-insights", "/insights");
+  loadViewAllByClass("component-viewAll-saved", "/");
+  loadViewAllByClass("component-viewAll-authors", "/authors");
 }

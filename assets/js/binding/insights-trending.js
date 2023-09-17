@@ -22,6 +22,7 @@ async function renderTrending() {
     if (trendingMain) {
       await renderTrendingMain(trendings[0]);
       loadBookmark(".trending__main");
+      addBookmark(".trending__main");
     }
 
     // render trending list
@@ -29,6 +30,7 @@ async function renderTrending() {
       data: trendings.slice(1, 5),
     });
     loadBookmark(".trending__item");
+    addBookmark(".trending__item");
   } catch (err) {
     console.error("error: ", err);
   }

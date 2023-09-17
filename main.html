@@ -84,7 +84,7 @@
                   class="img--ratio-169"
                   crossorigin="anonymous"
                 />
-                <div class="component-bookmark-add"></div>
+                <div class="component-bookmark-add" data-id="{{id}}"></div>
               </div>
             </template>
 
@@ -114,7 +114,7 @@
           <div class="editorsPick__list-wrapper col gap--m">
             <ul class="editorsPick__list col gap--m">
               <template id="editorsPickListTemplate">
-                {{#each insights}}
+                {{#each data}}
                 <li class="editorsPick__item serif row gap--s">
                   <p class="editorsPick__marker">✦</p>
                   <h4
@@ -128,9 +128,7 @@
               </template>
             </ul>
 
-            <div
-              class="editorsPick__viewAll component-viewAll-insights row end"
-            ></div>
+            <div class="component-viewAll-editorsPick row end"></div>
           </div>
         </div>
       </section>
@@ -215,7 +213,7 @@
                 onclick="navigateTo(`/insights/{{id}}`); return false;"
               >
                 <img src="{{thumbnail}}" />
-                <div class="component-bookmark-add"></div>
+                <div class="component-bookmark-add" data-id="{{id}}"></div>
               </div>
             </template>
 
@@ -307,7 +305,7 @@
                   onclick="navigateTo(`/insights/{{id}}`); return false;"
                 >
                   <img src="{{thumbnail}}" />
-                  <div class="component-bookmark-add"></div>
+                  <div class="component-bookmark-add" data-id="{{id}}"></div>
                 </div>
               </li>
               {{/each}}
@@ -495,7 +493,7 @@
                 onclick="navigateTo(`/insights/{{id}}`); return false;"
               >
                 <img src="{{thumbnail}}" />
-                <div class="component-bookmark-add"></div>
+                <div class="component-bookmark-add" data-id="{{id}}"></div>
               </div>
               <div class="latest__txt col gap--s">
                 <div class="latest__topic">

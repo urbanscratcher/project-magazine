@@ -23,21 +23,15 @@ async function renderEditorsPick() {
     insertAfterTemplate("editorsPickTitleTemplate", list[0]);
 
     // render editor's pick list
-    eidtorsPickList(list.slice(1, 5));
+    insertAfterTemplate("editorsPickListTemplate", { data: list.slice(1, 5) });
+    loadViewAllByClass(
+      "component-viewAll-editorsPick",
+      `/insights?topic=${list[0].topic}`
+    );
+
+    // add bookmark
+    addBookmark(".editorsPick__img");
   } catch (err) {
     console.error("error: ", err);
   }
-}
-
-function eidtorsPickList(list) {
-  const newHtml = () =>
-    document.getElementById("editorsPickListTemplate").innerHTML;
-
-  const parentEl = document.querySelector(".editorsPick__list");
-  insert(
-    parentEl,
-    render(newHtml, {
-      insights: list,
-    })
-  );
 }

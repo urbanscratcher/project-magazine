@@ -20,6 +20,7 @@ const mainScripts = [
   "authors-featured",
   "videos",
   "inspirations",
+  "add-bookmark",
 ].map((el) => `/assets/js/binding/${el}.js`);
 const insightScripts = ["insights-article"].map(
   (el) => `/assets/js/binding/${el}.js`
@@ -187,9 +188,9 @@ function handleRouteChange(route) {
   // Default & Main : /
   history.pushState(null, null, route);
   externalEl.setAttribute("data", "/main.html");
-  externalEl.addEventListener("load", (e) =>
-    loadHtmlHandler([...mainScripts, ...commonScripts], true)
-  );
+  externalEl.addEventListener("load", (e) => {
+    loadHtmlHandler([...mainScripts, ...commonScripts], true);
+  });
 
   return;
 }

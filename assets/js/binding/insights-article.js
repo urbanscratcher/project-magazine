@@ -67,6 +67,11 @@ async function renderArticle(id) {
       }
       insertAfterTemplate("relatedTemplate", { data: relatedExcludedSelf });
       insertAfterTemplate("viewAll-related", related);
+
+      loadViewAllByClass(
+        "component-viewAll-related",
+        `/insights?topic=${insight.topic}`
+      );
     }
 
     // 5. styling: adjust article content position;

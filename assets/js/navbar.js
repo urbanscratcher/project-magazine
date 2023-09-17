@@ -36,5 +36,7 @@ function stickyNavbar() {
     });
   });
 
-  observer.observe(section);
+  if (section) {
+    observer.observe(section);
+  }
 }
