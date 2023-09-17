@@ -21,8 +21,6 @@ async function renderAuthor(id) {
       el.author.avatar = author.avatar;
     });
     insertAfterTemplate("authorWorksTemplate", { data: insights });
-
-    console.log(insights);
   } catch (err) {
     console.error(err);
   }

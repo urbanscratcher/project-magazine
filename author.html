@@ -37,6 +37,7 @@
             <p class="section__title">Written By {{name}}</p>
           </div>
         </template>
+
         <ul class="author__works col gap--l">
           <template id="authorWorksTemplate">
             {{#each data}}
@@ -49,7 +50,7 @@
                 <div class="component-bookmark-add"></div>
               </div>
               <div class="insights__txt col gap--s v-center">
-                <div class="insights__topic">
+                <div class="insights__topic" onclick="navigateTo(`/insights?topic={{topic}}`); return false;">
                   <button class="topic">{{topic}}</button>
                 </div>
                 <h3
@@ -80,62 +81,31 @@
       </section>
 
       <section class="side container--m col gap--xl">
-        <div class="side__trending col gap--m">
-          <div class="section__title-wrapper row between">
-            <p class="section__title">What's Trending</p>
+        <div class="side__featured-authors col gap--m">
+          <div class="section__title-wrapper">
+            <p class="section__title">featured authors</p>
           </div>
-          <ul class="insights__trending col gap--m">
-            <template id="trendingListTemplate">
-              {{#each data}}
-              <li class="trending__item row gap--s">
-                <div class="row v-center">
-                  <div class="trending__txt col gap--s">
-                    <p
-                      class="title-row__txt tc--gray hover--txt bold"
-                      onclick="navigateTo(`/insights/{{id}}`); return false;"
-                    >
-                      {{title}}
-                    </p>
-                    <p class="author-row ts--body-s tc--gray row gap--s">
-                      By
-                      <span class="author__name">{{author.name}}</span>
-                    </p>
-                  </div>
-                  <div
-                    class="trendings__img section__img img--ratio-64"
-                    onclick="navigateTo(`/insights/{{id}}`); return false;"
-                  >
-                    <img src="{{thumbnail}}" />
-                  </div>
-                </div>
-              </li>
-              {{/each}}
-            </template>
-          </ul>
-          <div class="component-viewAll row end"></div>
-        </div>
-        <div class="side__inspirations col gap--m">
-          <div class="section__title-wrapper row between">
-            <p class="section__title">inspirations</p>
-            <button
-              id="shuffleImage"
-              class="icon__wrapper ts--body hover--lighter"
+          <ul class="section__content featured-authors__list col gap--m">
+            <script
+              id="featuredAuthorsTemplate"
+              type="text/x-handlebars-template"
             >
-              <i class="fa-solid fa-shuffle"></i>
-            </button>
-          </div>
-          <ul class="inspirations__list">
-            <template id="inspirationsTemplate">
               {{#each data}}
-              <li
-                class="inspirations__item section__img"
-                onclick="navigateTo(`/insights/{{id}}`); return false;"
-              >
-                <img class="inspirations__img" src="{{thumbnail}}" />
-              </li>
+                <li class="featured-authors__item row gap--m">
+                  <img src="{{avatar}}" class="featured-authors__avatar"></img>
+                  <div class="featured-authors__txt col">
+                    <p class="featured-authors__name bold">{{name}}</p>
+                    <ul class="fatured-authors__row row">
+                      <span class="featured-authors__topic ts--body-s">
+                        {{{topicsOneline}}}
+                      </span>
+                    </ul>
+                  </div>
+                </li>
               {{/each}}
-            </template>
+            </script>
           </ul>
+          <div class="component-viewAll-authors row end"></div>
         </div>
       </section>
     </div>

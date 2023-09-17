@@ -44,7 +44,10 @@
                 <div class="component-bookmark-add"></div>
               </div>
               <div class="insights__txt col gap--s v-center">
-                <div class="insights__topic">
+                <div
+                  class="insights__topic"
+                  onclick="navigateTo(`/insights?topic={{topic}}`); return false;"
+                >
                   <button class="topic">{{topic}}</button>
                 </div>
                 <h3
