@@ -42,11 +42,13 @@ function loadNewletter() {
     if (name && email) {
       if (isConsent) {
         alert(
-          `${name}, you successfully subscribed :)\nOur weekly newsletter will be sent to < ${email} >`
+          `${name}, you successfully subscribed :)\nOur weekly newsletter will be sent to your email - ${email}`
         );
       } else {
-        alert(`You need to agree to our terms`);
+        alert(`You need to agree to our terms and privacy policy.`);
       }
+    } else {
+      alert(`Please enter your name and email.`);
     }
   }
   const forms = document.querySelectorAll(".newsletter__form");

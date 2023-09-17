@@ -97,6 +97,10 @@ function handleRouteChange(route) {
   footer.style.zIndex = "";
   curTopic = undefined;
   curIsLatest = undefined;
+  const iconSaved = document.querySelector(".icon__saved");
+  const iconAccess = document.querySelector(".icon__access");
+  iconSaved.classList.remove("fa-solid");
+  iconAccess.classList.remove("fa-solid");
 
   const menuItemEls = document.querySelectorAll(".menu__item");
   menuItemEls.forEach((el) => el.classList.remove("menu__item--current"));
