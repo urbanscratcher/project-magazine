@@ -13,15 +13,17 @@
             <button class="filter__left">
               <i class="fa-solid fa-chevron-left"></i>
             </button>
-            <ul class="filter__list row gap--m">
-              <template id="filterTemplate">
-                {{#each data}}
-                <li class="filter__item">
-                  <button class="filter__button">{{topic}}</button>
-                </li>
-                {{/each}}
-              </template>
-            </ul>
+            <div class="filter__list-container">
+              <ul class="filter__list row gap--m">
+                <template id="filterTemplate">
+                  {{#each data}}
+                  <li class="filter__item">
+                    <button class="filter__button">{{topic}}</button>
+                  </li>
+                  {{/each}}
+                </template>
+              </ul>
+            </div>
             <button class="filter__right">
               <i class="fa-solid fa-chevron-right"></i>
             </button>

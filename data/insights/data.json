@@ -2,7 +2,7 @@
   "insights": [
     {
       "id": 1,
-      "topic": "urban",
+      "topic": "landscape",
       "title": "A Shared Kitchen Seamlessly Blending into the Urban Fabric, Crafting a Community Oasis",
       "summary": "Amid the bustling urban landscape, a shared kitchen space has unveiled a captivating blend of architectural innovation and community synergy, organically extending itself into the fabric of the street and evolving into a spirited hub for the neighborhood. Beyond culinary creations, this inventive kitchen nurtures a sense of unity among locals and newcomers alike.",
       "ttr": "2 min",
@@ -13,7 +13,7 @@
     },
     {
       "id": 2,
-      "topic": "technology",
+      "topic": "narrative",
       "title": "The Passive Cooling Strategy of a Brick Office in Taiwan for climate control",
       "summary": "As sustainable architecture takes center stage, a remarkable brick office in Taiwan has emerged as a shining example of a brilliant passive cooling design strategy.",
       "ttr": "2 min",
@@ -46,7 +46,7 @@
     },
     {
       "id": 5,
-      "topic": "urban",
+      "topic": "design",
       "title": "Designing The Future: Innovative Architecture Redefining Urban Landscapes",
       "summary": "In a world marked by fleeting trends and rapid transformations, one element stands as a testament to enduring artistry: architecture.",
       "ttr": "2 min",

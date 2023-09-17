@@ -4,30 +4,63 @@
 -------------------------------- */
 console.log(`Loading ${document.currentScript.src.split("/js")[1]}`);
 
-topicCategories();
+topicsInSidebar();
 
-async function topicCategories() {
+async function topicsInSidebar() {
   try {
+    // render topic categories in the sidebar
     const topicsObj = await getTopicCounts();
     let topics = [{ topic: "all" }];
     for (const key in topicsObj) {
       topics.push({ topic: key, count: topicsObj[key] });
     }
-
     insertAfterTemplate("filterTemplate", { data: topics });
 
-    // select current topic
-    selectCurrentTopic();
+    // render current topic selection
+    renderCurrentTopic();
+
+    // next and prev slider
+    const prevBtnEl = document.querySelector(".filter__left");
+    const nextBtnEl = document.querySelector(".filter__right");
+    const containerEl = document.querySelector(".filter__list-container");
+    const containerWidth =
+      +getComputedStyle(containerEl).getPropertyValue("width").split("px")[0] -
+      +getComputedStyle(containerEl)
+        .getPropertyValue("padding-left")
+        .split("px")[0] -
+      +getComputedStyle(containerEl)
+        .getPropertyValue("padding-right")
+        .split("px")[0];
+    const listEl = document.querySelector(".filter__list");
+
+    const slideAmount = (containerWidth / topics.length) * 2;
+
+    let scrollPosition = 0;
+    prevBtnEl.addEventListener("click", (e) => {
+      if (scrollPosition < 0) {
+        scrollPosition += slideAmount;
+        listEl.style.transform = `translateX(${scrollPosition}px)`;
+      }
+    });
+
+    nextBtnEl.addEventListener("click", (e) => {
+      const arrowX = nextBtnEl.getBoundingClientRect().x;
+      const lastItemEl = document.querySelector(".filter__item:last-child");
+      const lastItemX =
+        lastItemEl.getBoundingClientRect().x +
+        lastItemEl.getBoundingClientRect().width;
+      if (lastItemX > arrowX) {
+        scrollPosition -= slideAmount;
+      }
+      listEl.style.transform = `translateX(${scrollPosition}px)`;
+    });
 
     // filter event
     const filterItemEls = document.querySelectorAll(".filter__item");
     for (let i = 0; i < filterItemEls.length; i++) {
       filterItemEls.item(i).addEventListener("click", (e) => {
         const selectedTopic = e.target.textContent;
-
         const route = `?topic=${selectedTopic}`;
-
-        console.log("pushing curIsLatest", curIsLatest);
         history.pushState(
           { selectedTopic: selectedTopic, selectedSort: curIsLatest },
           null,
@@ -38,7 +71,7 @@ async function topicCategories() {
         curIsLatest = true;
         clearInsightsList();
         renderSortedInsights(selectedTopic, curIsLatest);
-        selectCurrentTopic();
+        renderCurrentTopic();
       });
     }
   } catch (err) {
@@ -46,7 +79,7 @@ async function topicCategories() {
   }
 }
 
-function selectCurrentTopic(topic) {
+function renderCurrentTopic(topic) {
   if (!topic) {
     topic = curTopic;
   }

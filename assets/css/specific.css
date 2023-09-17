@@ -47,19 +47,19 @@
 }
 
 .filter {
+  width: 85%;
   padding: 0 var(--size-s);
   border-bottom: solid 1px var(--color-secondary-light);
+  position: relative;
 }
 
-.filter__list {
-  width: 38rem;
-  overflow-x: clip;
-
+.filter__list-container {
+  overflow-x: hidden;
   padding: 0 var(--size-l);
 }
 
-.filter {
-  position: relative;
+.filter__list {
+  transition: transform 0.1s ease;
 }
 
 .sort,
@@ -69,12 +69,26 @@
   transition: opacity 0.1s ease;
 }
 
+.filter__right,
+.filter__left {
+  height: 100%;
+  z-index: 10;
+}
+
 .filter__left {
   position: absolute;
   left: 0;
 
   padding-left: var(--size-s);
   padding-right: var(--size-m);
+  background-color: white;
+  background: linear-gradient(
+    270deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.85) 25%,
+    rgba(255, 255, 255, 0.95) 50%,
+    rgb(255, 255, 255) 75%
+  );
 }
 
 .filter__right {
@@ -83,10 +97,6 @@
 
   padding-left: var(--size-m);
   padding-right: var(--size-s);
-}
-
-.filter__left,
-.filter__right {
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0) 0%,

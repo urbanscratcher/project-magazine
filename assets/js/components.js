@@ -1,5 +1,5 @@
 /* --------------------------------
-- Purpose: Load Component
+- Purpose: Load Reusable UI Components
 - Author: Hyunjung Joun
 -------------------------------- */
 console.log(`Loading ${document.currentScript.src.split("/js")[1]}`);

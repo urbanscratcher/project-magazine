@@ -38,7 +38,7 @@ window.addEventListener("popstate", (e) => {
   if (route === "/insights" && curTopic) {
     clearInsightsList();
     renderSortedInsights(e.state.selectedTopic, e.state.selectedSort);
-    selectCurrentTopic(e.state.selectedTopic);
+    renderCurrentTopic(e.state.selectedTopic);
   } else if (route === "/insights" && !curTopic) {
     loadPreviousListPage(e.state.selectedTopic, e.state.selectedSort);
   } else {
