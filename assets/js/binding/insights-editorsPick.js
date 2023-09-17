@@ -16,9 +16,13 @@ async function renderEditorsPick() {
       list.push(await getInsight(item.id));
     }
 
+    // render editor's pick cover
     insertAfterTemplate("editorsPickImgTemplate", list[0]);
+    loadBookmark(".editorsPick__main");
     insertAfterTemplate("editorsPickTopicTemplate", list[0]);
     insertAfterTemplate("editorsPickTitleTemplate", list[0]);
+
+    // render editor's pick list
     eidtorsPickList(list.slice(1, 5));
   } catch (err) {
     console.error("error: ", err);

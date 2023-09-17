@@ -22,6 +22,7 @@ async function renderAuthor(id) {
       el.author.avatar = author.avatar;
     });
     insertAfterTemplate("authorWorksTemplate", { data: insights });
+    loadBookmark(".author__works");
 
     // email copy event
     const emailEl = document.querySelector(".author__email");

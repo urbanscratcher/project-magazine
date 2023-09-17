@@ -17,17 +17,17 @@ async function renderTrending() {
       t.createdAt = await printDateDifference(t.createdAt);
     }
 
+    // render trending main
     const trendingMain = document.querySelector("#trendingMainImgTemplate");
     if (trendingMain) {
       await renderTrendingMain(trendings[0]);
+      loadBookmark(".trending__main");
     }
 
+    // render trending list
     insertAfterTemplate("trendingListTemplate", {
       data: trendings.slice(1, 5),
     });
-
-    // After {{each}} is looped, the dependent component rendering should be executed for each item
-    // I do this here because a mutation observer wasn't able to detect the added elements
     loadBookmark(".trending__item");
   } catch (err) {
     console.error("error: ", err);
