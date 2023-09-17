@@ -2,6 +2,27 @@
 - Purpose: to set specific custom styles through ids locally.
 - Author: Hyunjung Joun
 -------------------------------- */
+/* saved ----------------------------------------- */
+.saved__content {
+  max-width: 144rem;
+  margin: 0 auto;
+}
+
+#saved {
+  margin-top: 3.2rem;
+  width: 66.666%;
+}
+
+.saved__item {
+  position: relative;
+}
+
+.insights__bookmark {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
 /* author detail --------------------------------- */
 .author {
   max-width: 144rem;

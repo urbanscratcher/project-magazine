@@ -2,8 +2,6 @@
 - Purpose: topics sidebar
 - Author: Hyunjung Joun
 -------------------------------- */
-console.log(`Loading ${document.currentScript.src.split("/js")[1]}`);
-
 topicsInSidebar();
 
 async function topicsInSidebar() {

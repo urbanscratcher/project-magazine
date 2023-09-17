@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>saved</title>
+  </head>
+  <body>
+    <div class="saved__content row">
+      <section id="saved" class="container--m col gap--l">
+        <h1 class="saved__title serif">
+          You have <span class="saved__total ts--h1 serif">0</span> Saved
+          Insights
+        </h1>
+        <ul class="saved__list col gap--l">
+          <template id="savedItemTemplate">
+            {{#each data}}
+            <li class="saved__item row gap--m">
+              <div
+                class="insights__img section__img img--ratio-64"
+                onclick="navigateTo(`/insights/{{id}}`); return false;"
+              >
+                <img src="{{thumbnail}}" />
+              </div>
+              <div class="insights__txt col gap--s v-center">
+                <div class="insights__topic">
+                  <button
+                    class="topic"
+                    onclick="navigateTo(`/insights?topic={{topic}}`); return false;"
+                  >
+                    {{topic}}
+                  </button>
+                </div>
+                <h3
+                  class="insights__title serif hover--txt"
+                  onclick="navigateTo(`/insights/{{id}}`); return false;"
+                >
+                  {{title}}
+                </h3>
+                <p class="insights__summary">{{summary}}</p>
+                <div class="time-row row gap--s v-center">
+                  <p class="icon__time-wrapper">
+                    <i class="icon__time fa-regular fa-clock"></i>
+                  </p>
+                  <p class="createdAt">{{createdAt}}</p>
+                  <p class="separator">·</p>
+                  <p class="ttr__box"><span class="ttr">{{ttr}}</span> read</p>
+                </div>
+                <div class="author-row--icon v-center row gap--s">
+                  <img
+                    src="{{author.avatar}}"
+                    class="author__avatar hover--pointer"
+                    onclick="navigateTo(`/authors/{{author.id}}`); return false;"
+                  />
+                  <p
+                    class="author__name hover--pointer"
+                    onclick="navigateTo(`/authors/{{author.id}}`); return false;"
+                  >
+                    {{author.name}}
+                  </p>
+                </div>
+              </div>
+              <button
+                class="insights__bookmark ts--h4 hover--darker"
+                data-id="{{id}}"
+              >
+                <i class="fa-solid fa-bookmark"></i>
+              </button>
+            </li>
+            {{/each}}
+          </template>
+        </ul>
+      </section>
+      <section class="side container--m col gap--xl">
+        <div class="side__trending col gap--m">
+          <div class="section__title-wrapper row between">
+            <p class="section__title">What's Trending</p>
+          </div>
+          <ul class="insights__trending col gap--m">
+            <template id="trendingListTemplate">
+              {{#each data}}
+              <li class="trending__item row gap--s">
+                <div class="row v-center">
+                  <div class="trending__txt col gap--s">
+                    <p
+                      class="title-row__txt tc--gray hover--txt bold"
+                      onclick="navigateTo(`/insights/{{id}}`); return false;"
+                    >
+                      {{title}}
+                    </p>
+                    <p class="author-row ts--body-s tc--gray row gap--s">
+                      By
+                      <span
+                        class="author__name hover--darker"
+                        onclick="navigateTo(`/authors/{{author.id}}`); return false;"
+                        >{{author.name}}</span
+                      >
+                    </p>
+                  </div>
+                  <div
+                    class="trendings__img section__img img--ratio-64"
+                    onclick="navigateTo(`/insights/{{id}}`); return false;"
+                  >
+                    <img src="{{thumbnail}}" />
+                  </div>
+                </div>
+              </li>
+              {{/each}}
+            </template>
+          </ul>
+          <div class="component-viewAll row end"></div>
+        </div>
+        <div class="side__inspirations col gap--m">
+          <div class="section__title-wrapper row between">
+            <p class="section__title">inspirations</p>
+            <button
+              id="shuffleImage"
+              class="icon__wrapper ts--body hover--lighter"
+            >
+              <i class="fa-solid fa-shuffle"></i>
+            </button>
+          </div>
+          <ul class="inspirations__list">
+            <template id="inspirationsTemplate">
+              {{#each data}}
+              <li
+                class="inspirations__item section__img"
+                onclick="navigateTo(`/insights/{{id}}`); return false;"
+              >
+                <img class="inspirations__img" src="{{thumbnail}}" />
+              </li>
+              {{/each}}
+            </template>
+          </ul>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>

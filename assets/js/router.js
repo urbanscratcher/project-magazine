@@ -15,26 +15,26 @@ const mainScripts = [
   "insights-cover",
   "insights-editorsPick",
   "insights-latest",
-  "saved",
   "awards",
   "authors-featured",
   "videos",
   "inspirations",
   "add-bookmark",
-].map((el) => `/assets/js/binding/${el}.js`);
-const insightScripts = ["insights-article"].map(
-  (el) => `/assets/js/binding/${el}.js`
+].map((el) => completeBindingPath(el));
+const insightScripts = ["insights-article"].map((el) =>
+  completeBindingPath(el)
 );
 const insightListScripts = [
   "topics-sidebar",
   "insights-trending",
   "inspirations",
-].map((el) => `/assets/js/binding/${el}.js`);
+].map((el) => completeBindingPath(el));
 const authorListScripts = ["authors", "insights-trending", "inspirations"].map(
-  (el) => `/assets/js/binding/${el}.js`
+  (el) => completeBindingPath(el)
 );
-const authorScripts = ["authors-featured"].map(
-  (el) => `/assets/js/binding/${el}.js`
+const authorScripts = ["authors-featured"].map((el) => completeBindingPath(el));
+const savedScripts = ["saved", "insights-trending", "inspirations"].map((el) =>
+  completeBindingPath(el)
 );
 
 function completeBindingPath(fileName) {
@@ -103,6 +103,18 @@ function handleRouteChange(route) {
 
   // routing
   const routes = route.split("/");
+
+  // Saved For Later List : /saved
+  if (routes.length === 2 && routes[1] === "saved") {
+    externalEl.setAttribute("data", "/saved.html");
+    externalEl.addEventListener("load", (e) => {
+      loadHtmlHandler([...savedScripts, ...commonScripts], true);
+      // menuItemEls[2].classList.add("menu__item--current");
+    });
+
+    history.pushState(null, null, route);
+    return;
+  }
 
   // One author : /authors/1
   if (routes.length === 3 && routes[1] === "authors") {

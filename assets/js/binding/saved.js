@@ -1,30 +1,68 @@
-fetch("/data/insights/data-saved.json")
-  .then((res) => res.json())
-  .then((data) => {
-    fetch("/data/insights/data.json")
-      .then((res) => res.json())
-      .then((insightsData) => {
-        fetch("/data/authors/data.json")
-          .then((res) => res.json())
-          .then((authorsData) => {
-            const list = data.insightsSaved
-              .sort((a, b) => new Date(b.savedAt) - new Date(a.savedAt))
-              .slice(0, 4);
-            const savedList = list.map((el) => {
-              const insight = insightsData.insights.find(
-                (insight) => insight.id === el.id
-              );
+/* --------------------------------
+- Purpose: Render saved list
+- Author: Hyunjung Joun
+-------------------------------- */
+console.log(`Loading ${document.currentScript.src.split("/js")[1]}`);
 
-              insight.author = authorsData.authors.find(
-                (author) => author.id === insight.author.id
-              );
+renderSaved();
 
-              const mappedEl = { ...el, ...insight };
+async function renderSaved() {
+  try {
+    await renderSavedList();
+    await renderSavedTotal();
+  } catch (err) {
+    console.error(err);
+  }
+}
 
-              return mappedEl;
-            });
+async function removeSavedItemHandler(e) {
+  const removeTargetId = +e.currentTarget.dataset.id;
+  const storedInsights = JSON.parse(localStorage.getItem("myInsights"));
 
-            insertAfterTemplate("savedTemplate", { data: savedList });
-          });
-      });
-  });
+  const filteredInsights = storedInsights.filter((el) => el !== removeTargetId);
+  localStorage.setItem("myInsights", JSON.stringify(filteredInsights));
+
+  await renderSavedList();
+  await renderSavedTotal();
+}
+
+async function renderSavedTotal() {
+  const storedInsights = JSON.parse(localStorage.getItem("myInsights"));
+  const savedTotal = storedInsights.length;
+
+  const totalEl = document.querySelector(".saved__total");
+  totalEl.textContent = savedTotal;
+}
+
+async function renderSavedList() {
+  // reset list (empty)
+  const itemEls = document.querySelectorAll(".saved__item");
+  itemEls.forEach((el) => el.remove());
+
+  // get total
+  const storedInsights = JSON.parse(localStorage.getItem("myInsights"));
+  const savedTotal = storedInsights.length;
+
+  // render list
+  if (savedTotal > 0) {
+    const allInsights = await getInsightList();
+    let savedInsights = [];
+    for (const storedId of storedInsights) {
+      const insight = await getInsight(storedId);
+      savedInsights.push(insight);
+    }
+    for (const saved of savedInsights) {
+      const author = await getAuthorSimple(saved.author.id);
+      saved.author = author;
+      saved.createdAt = printDateDifference(saved.createdAt);
+    }
+    insertAfterTemplate("savedItemTemplate", { data: savedInsights });
+
+    // remove event
+    const bookmarkEls = document.querySelectorAll(".insights__bookmark");
+
+    bookmarkEls.forEach((el) => {
+      el.addEventListener("click", (e) => removeSavedItemHandler(e));
+    });
+  }
+}

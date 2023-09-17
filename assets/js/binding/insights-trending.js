@@ -29,8 +29,15 @@ async function renderTrending() {
     insertAfterTemplate("trendingListTemplate", {
       data: trendings.slice(1, 5),
     });
-    loadBookmark(".trending__item");
-    addBookmark(".trending__item");
+
+    const existBookmarkEls = document.querySelectorAll(
+      ".trending__item .component-bookmark-add"
+    );
+
+    if (existBookmarkEls.length > 0) {
+      loadBookmark(".trending__item");
+      addBookmark(".trending__item");
+    }
   } catch (err) {
     console.error("error: ", err);
   }
