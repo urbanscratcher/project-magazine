@@ -431,32 +431,6 @@
   bottom: 0;
 }
 
-.cover__slide-controller {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  margin: 3.2rem;
-}
-
-.slide-controller {
-  color: var(--color-secondary-dark);
-}
-
-.slide-controller__btn {
-  background-color: var(--color-white);
-  outline-style: none;
-  font-size: 1.6rem;
-  opacity: 0.5;
-
-  transition: all 0.1s ease;
-}
-
-.slide-controller__btn:hover {
-  opacity: 1;
-  background-color: var(--color-secondary);
-  color: var(--color-white);
-}
-
 /* Editor's Pick ----------------------------*/
 #editorsPick {
   padding-bottom: 3.2rem;

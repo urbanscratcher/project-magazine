@@ -24,11 +24,33 @@ function loadBookmark(higherClass) {
 }
 
 function loadNewletter() {
+  // render newsletter form
   const newHtml = () => document.getElementById("newsletterTemplate").innerHTML;
   const parentEls = document.getElementsByClassName("component-newsletter");
   for (p of parentEls) {
     insert(p, render(newHtml, {}));
   }
+
+  // submit event (main)
+  function submitHandler(e) {
+    e.preventDefault();
+
+    const name = e.target.children[0].children[0].value;
+    const email = e.target.children[0].children[1].value;
+    const isConsent = e.target.children[1].children[0].checked;
+
+    if (name && email) {
+      if (isConsent) {
+        alert(
+          `${name}, you successfully subscribed :)\nOur weekly newsletter will be sent to < ${email} >`
+        );
+      } else {
+        alert(`You need to agree to our terms`);
+      }
+    }
+  }
+  const forms = document.querySelectorAll(".newsletter__form");
+  forms.forEach((el) => el.addEventListener("submit", (e) => submitHandler(e)));
 }
 
 function loadViewAll() {
