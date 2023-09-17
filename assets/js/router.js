@@ -17,7 +17,7 @@ const mainScripts = [
   "insights-latest",
   "saved",
   "awards",
-  "authors",
+  "authors-featured",
   "videos",
   "inspirations",
 ].map((el) => `/assets/js/binding/${el}.js`);
@@ -29,6 +29,9 @@ const insightListScripts = [
   "insights-trending",
   "inspirations",
 ].map((el) => `/assets/js/binding/${el}.js`);
+const authorListScripts = ["authors", "insights-trending", "inspirations"].map(
+  (el) => `/assets/js/binding/${el}.js`
+);
 
 // When going backward and forward from history, router will work
 window.addEventListener("popstate", (e) => {
@@ -79,7 +82,7 @@ function handleRouteChange(route) {
   document.body.appendChild(createDoc);
   externalEl = document.getElementById("external");
 
-  // initialize
+  // initialize styles
   const footerEl = document.querySelector("#footer");
   footer.style.position = "";
   footer.style.top = "";
@@ -87,9 +90,24 @@ function handleRouteChange(route) {
   curTopic = undefined;
   curIsLatest = undefined;
 
-  // One article : /insights/1
+  // routing
   const routes = route.split("/");
+
+  // List of Authors : /authors
+  if (routes.length === 2 && routes[1] === "authors") {
+    console.log("authors");
+    externalEl.setAttribute("data", "/authors.html");
+    externalEl.addEventListener("load", (e) => {
+      loadHtmlHandler([...authorListScripts, ...commonScripts], true);
+    });
+
+    history.pushState(null, null, route);
+    return;
+  }
+
+  // One article : /insights/1
   if (routes.length === 3 && routes[1] === "insights") {
+    console.log("main");
     externalEl.setAttribute("data", "/insight.html");
     externalEl.addEventListener("load", (e) => {
       loadHtmlHandler([...commonScripts], true);
@@ -112,6 +130,7 @@ function handleRouteChange(route) {
     routes.length === 2 &&
     routes[1].match("^insights$|^insights\\?topic=*")
   ) {
+    console.log("insights");
     curTopic = routes[1].match("^insights\\?topic=*")
       ? routes[1].split("?")[1].split("=")[1]
       : "all";
@@ -130,7 +149,6 @@ function handleRouteChange(route) {
         route
       );
     });
-
     return;
   }
 

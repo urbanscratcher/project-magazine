@@ -142,14 +142,19 @@ c0,9.8-7.9,17.7-17.7,17.7s-17.7-7.9-17.7-17.7V88.7z"
         </a>
         <div class="navbar__menu row gap--l tc--white">
           <button
-            class="menu__item ts--body"
+            class="menu__item"
             onclick="navigateTo(`/insights`); return false;"
           >
             Insights
           </button>
-          <a class="menu__item" href="#">Quiz</a>
-          <a class="menu__item" href="#">Authors</a>
-          <a class="menu__item" href="#">Report</a>
+          <button class="menu__item" href="#">Quiz</button>
+          <button
+            class="menu__item"
+            onclick="navigateTo(`/authors`); return false;"
+          >
+            Authors
+          </button>
+          <button class="menu__item" href="#">Report</button>
         </div>
         <div class="navbar__personal row gap--s ts--body">
           <button class="personal__item btn--circle-l hover--primary">

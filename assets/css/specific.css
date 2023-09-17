@@ -3,6 +3,32 @@
 - Author: Hyunjung Joun
 -------------------------------- */
 
+/* authors list page layout ---------------------- */
+.authors {
+  max-width: 144rem;
+  margin: 0 auto;
+}
+
+#authors__content {
+  margin-top: 3.2rem;
+  width: 66.666%;
+}
+
+.authors__item {
+  width: 100%;
+}
+
+.authors__avatar {
+  width: 16%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  outline: solid 1px var(--color-secondary);
+}
+
+.authors__txt {
+  width: 60%;
+}
+
 /* insights list page layout ---------------------- */
 .insights__content {
   max-width: 144rem;
@@ -13,7 +39,7 @@
   width: 66.666%;
 }
 
-#side {
+.side {
   padding-top: 0;
   margin-top: 11.2rem;
   width: 33.333%;

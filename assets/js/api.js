@@ -120,13 +120,16 @@ async function getAuthorList() {
   return await fetch("/data/authors/data.json")
     .then((res) => res.json())
     .then((data) =>
-      data.authors.map((el) => ({
-        id: el.id,
-        name: el.name,
-        topics: el.topics,
-        avatar: el.avatar,
-        topicsOneline: el.topics.join("&nbsp;·&nbsp;"),
-      }))
+      data.authors
+        .map((el) => ({
+          id: el.id,
+          name: el.name,
+          topics: el.topics,
+          avatar: el.avatar,
+          topicsOneline: el.topics.join("&nbsp;·&nbsp;"),
+          jobTitle: el.jobTitle,
+        }))
+        .sort((a, b) => b.id - a.id)
     )
     .catch((err) => console.error("error: ", err));
 }

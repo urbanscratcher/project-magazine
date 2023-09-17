@@ -3,32 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>insight</title>
+    <title>authors</title>
   </head>
   <body>
-    <div class="authors__list row">
-      <section id="authors__content" class="container--m">
-        <h2>Meet <span class="authors__total">32</span> Awesome Authors</h2>
-        <ul class="authors__list col gap--l">
+    <div class="authors row">
+      <section id="authors__content" class="container--m col gap--l">
+        <h1 class="authors__title serif">
+          Meet Our <span class="authors__total ts--h1 serif">32</span> Awesome
+          Authors
+        </h1>
+        <ul class="authors__list col gap--xl">
           <template id="authorsTemplate">
             {{#each data}}
-            <li class="authors__item row gap--m">
-              <img src="{{avatar}}" class="authors__avatar"></img>
-              <div class="author__txt col">
-                <p class="author__name bold">{{name}}</p>
-                <ul class="author__row row">
-                  <span class="author__topic ts--body-s">
-                    {{{topicsOneline}}}
-                  </span>
-                </ul>
-                <p class="author__jobTitle">{{jobTitle}}</p>                
+            <li class="authors__item row gap--l v-center">
+              <img src="{{avatar}}" class="authors__avatar" />
+              <div class="authors__txt col gap--s">
+                <h3 class="authors__name bold">{{name}}</h3>
+                <h4 class="authors__topic">{{{topicsOneline}}}</h4>
+                <h4 class="authors__jobTitle">{{jobTitle}}</h4>
               </div>
             </li>
             {{/each}}
           </template>
         </ul>
       </section>
-      <section id="authors__side" class="container--m col gap--xl">
+      <section class="side container--m col gap--xl">
         <div class="side__trending col gap--m">
           <div class="section__title-wrapper row between">
             <p class="section__title">What's Trending</p>

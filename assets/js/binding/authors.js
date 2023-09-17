@@ -3,23 +3,19 @@
 - Author: Hyunjung Joun
 -------------------------------- */
 
-fetch("/data/authors/data.json")
-  .then((res) => res.json())
-  .then((data) => {
-    const authors = [...data.authors]
-      .sort((a, b) => b.id - a.id)
-      .slice(0, 4)
-      .map((el) => {
-        mappedEl = {
-          id: el.id,
-          name: el.name,
-          topicsOneline: el.topics.join("&nbsp;·&nbsp;"),
-          avatar: el.avatar,
-        };
+renderAuthors();
 
-        return mappedEl;
-      });
+async function renderAuthors() {
+  try {
+    const authors = await getAuthorList();
 
-    insertAfterTemplate("featuredAuthorsTemplate", { data: authors });
-  })
-  .catch((err) => console.error("error: ", err));
+    // render total authors
+    const totalEl = document.querySelector(".authors__total");
+    totalEl.textContent = authors.length;
+
+    // render list
+    insertAfterTemplate("authorsTemplate", { data: authors });
+  } catch (err) {
+    console.error(err);
+  }
+}
