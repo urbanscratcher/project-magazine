@@ -22,7 +22,9 @@ async function renderArticlesByTopic(topic, isLatest) {
     }
 
     insertAfterTemplate("insightsItemThumbnail", { data: insights });
+
     loadBookmark(".insights__item");
+    addBookmark(".insights__item");
   } catch (err) {
     console.error(err);
   }

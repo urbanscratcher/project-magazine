@@ -2,8 +2,6 @@
 - Purpose: Add bookmark event
 - Author: Hyunjung Joun
 -------------------------------- */
-console.log(`Loading ${document.currentScript.src.split("/js")[1]}`);
-
 async function addBookmark(upperClassName) {
   try {
     const className = `${
