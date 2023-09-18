@@ -317,8 +317,6 @@ function unloadScript(scriptSrc) {
 }
 
 function removeEventListeners() {
-  console.log("removing event listners");
-
   // remove saved button styling event
   const btnSaved = document.querySelector(".btn__saved");
   btnSaved.removeEventListener("mouseenter", hoverSavedBtnHandler);

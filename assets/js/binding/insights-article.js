@@ -2,7 +2,6 @@
 - Purpose: render one detailed article page
 - Author: Hyunjung Joun
 -------------------------------- */
-console.log(`Loading ${document.currentScript.src.split("/js")[1]}`);
 
 async function renderArticle(id) {
   try {

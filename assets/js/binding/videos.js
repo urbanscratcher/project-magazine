@@ -3,28 +3,21 @@
 - Author: Hyunjung Joun
 -------------------------------- */
 
-fetch("/data/videos/data.json")
-  .then((res) => res.json())
-  .then((data) => {
-    const lowerCasedData = data.videos.map((el) => {
-      el.title = el.title.toLowerCase();
-      return el;
-    });
+renderVideos();
 
+async function renderVideos() {
+  try {
+    // get data
+    const lowerCasedData = await getVideoList();
     const list = lowerCasedData.slice(1, 5);
 
-    // rendering
+    // render
     insertAfterTemplate("videoCoverTemplate", lowerCasedData[0]);
     insertAfterTemplate("videoListTemplate", { data: list });
 
-    // events
+    // add click events
     onClickVideo();
     onClickOverlay();
-  })
-  .catch((err) => console.error("error: ", err));
-
-async function renderVideo() {
-  try {
   } catch (err) {
     console.error(err);
   }
@@ -40,7 +33,7 @@ function onClickVideo() {
 }
 
 function onClickOverlay() {
-  const overlay = document.getElementsByClassName("modal__overlay")[0];
-  overlay.addEventListener("click", overlayCloseHandler);
+  const overlayEl = document.querySelector(".modal__overlay");
+  overlayEl.addEventListener("click", overlayCloseHandler);
   document.removeEventListener("click", onClickOverlay);
 }

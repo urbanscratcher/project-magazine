@@ -2,9 +2,6 @@
 - Purpose: Loop data and render
 - Author: Hyunjung Joun
 -------------------------------- */
-console.log(`Loading ${document.currentScript.src.split("/js")[1]}`);
-
-// Fetch the template file -----------------
 
 renderTopics();
 renderTopicCountLabel();
@@ -35,7 +32,7 @@ async function renderTopicCountLabel() {
     const counts = await getTopicCounts();
     renderTopicCounts(counts);
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 }
 

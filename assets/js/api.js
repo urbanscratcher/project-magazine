@@ -2,8 +2,6 @@
 - Purpose: Fake API
 - Author: Hyunjung Joun
 -------------------------------- */
-console.log(`Loading ${document.currentScript.src.split("/js")[1]}`);
-
 const topicList = {
   topTopics: [
     {
@@ -50,6 +48,29 @@ function countsByTopic(insights) {
     }
   }
   return result;
+}
+
+async function getAwardList() {
+  try {
+    const res = await fetch("/data/awards/data.json");
+    const data = await res.json();
+    return data;
+  } catch (err) {
+    console.error("error: ", err);
+  }
+}
+
+async function getVideoList() {
+  try {
+    const res = await fetch("/data/videos/data.json");
+    const data = await res.json();
+    return data.videos.map((el) => {
+      el.title = el.title.toLowerCase();
+      return el;
+    });
+  } catch (err) {
+    console.error("error: ", err);
+  }
 }
 
 async function getTopicCounts() {

@@ -2,8 +2,6 @@
 - Purpose: Render saved list
 - Author: Hyunjung Joun
 -------------------------------- */
-console.log(`Loading ${document.currentScript.src.split("/js")[1]}`);
-
 renderSavedMain();
 
 async function renderSavedMain() {

@@ -2,7 +2,6 @@
 - Purpose: Render latest
 - Author: Hyunjung Joun
 -------------------------------- */
-console.log(`Loading ${document.currentScript.src.split("/js")[1]}`);
 
 renderLatest();
 
