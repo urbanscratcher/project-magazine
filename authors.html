@@ -46,7 +46,7 @@
             <template id="trendingListTemplate">
               {{#each data}}
               <li class="trending__item row gap--s">
-                <div class="row v-center">
+                <div class="row v-center gap--m">
                   <div class="trending__txt col gap--s">
                     <p
                       class="title-row__txt tc--gray hover--txt bold"
@@ -56,7 +56,11 @@
                     </p>
                     <p class="author-row ts--body-s tc--gray row gap--s">
                       By
-                      <span class="author__name">{{author.name}}</span>
+                      <span
+                        class="author__name hover--darker"
+                        onclick="navigateTo(`/authors/{{author.id}}`); return false;"
+                        >{{author.name}}</span
+                      >
                     </p>
                   </div>
                   <div
@@ -64,6 +68,7 @@
                     onclick="navigateTo(`/insights/{{id}}`); return false;"
                   >
                     <img src="{{thumbnail}}" />
+                    <div class="component-bookmark-add" data-id="{{id}}"></div>
                   </div>
                 </div>
               </li>
