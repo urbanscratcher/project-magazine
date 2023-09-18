@@ -3,6 +3,34 @@
 - Author: Hyunjung Joun
 -------------------------------- */
 
+async function shuffleHandler(e) {
+  e.preventDefault();
+
+  const imgList = document.getElementsByClassName("inspirations__list");
+  const imgItems = document.querySelectorAll(".inspirations__list > li");
+  const insights = await getInsightList();
+  const shuffledArr = shuffle(insights, 6);
+  for (i of imgItems) {
+    imgList[0].removeChild(i);
+  }
+  insertAfterTemplate("inspirationsTemplate", { data: shuffledArr });
+
+  e.target.removeEventListener("click", shuffleHandler);
+}
+
+function toggleSortHandler(e) {
+  curIsLatest = !curIsLatest;
+  history.replaceState(
+    {
+      selectedTopic: curTopic,
+      selectedSort: curIsLatest,
+    },
+    null,
+    `${window.location.pathname}?topic=${curTopic}`
+  );
+  renderSortedInsights(curTopic, curIsLatest);
+}
+
 async function copyArticleLinkHandler(e) {
   try {
     await navigator.clipboard.writeText(window.location.href);

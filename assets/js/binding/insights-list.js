@@ -2,13 +2,12 @@
 - Purpose: render insight list
 - Author: Hyunjung Joun
 -------------------------------- */
-console.log(`Loading ${document.currentScript.src.split("/js")[1]}`);
 
 sortEvent();
 
 function sortEvent() {
   const sortEl = document.querySelector(".sort");
-  sortEl.addEventListener("click", onToggleSort);
+  sortEl.addEventListener("click", toggleSortHandler);
 }
 
 async function renderArticlesByTopic(topic, isLatest) {
@@ -41,19 +40,6 @@ function clearInsightsList() {
       listsEl.removeChild(child);
     }
   }
-}
-
-function onToggleSort() {
-  curIsLatest = !curIsLatest;
-  history.replaceState(
-    {
-      selectedTopic: curTopic,
-      selectedSort: curIsLatest,
-    },
-    null,
-    `${window.location.pathname}?topic=${curTopic}`
-  );
-  renderSortedInsights(curTopic, curIsLatest);
 }
 
 function renderSortedInsights(topic, isLatest) {
