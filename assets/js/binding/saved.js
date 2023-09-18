@@ -64,11 +64,10 @@ async function renderSavedList() {
     }
     insertAfterTemplate("savedItemTemplate", { data: savedInsights });
 
-    // remove event
+    // exclude article event
     const bookmarkEls = document.querySelectorAll(".insights__bookmark");
-
     bookmarkEls.forEach((el) => {
-      el.addEventListener("click", (e) => removeSavedItemHandler(e));
+      el.addEventListener("click", removeSavedItemHandler);
     });
   }
 }
