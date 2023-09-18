@@ -26,16 +26,10 @@ async function renderAuthor(id) {
 
     // email copy event
     const emailEl = document.querySelector(".author__email");
-    emailEl.addEventListener("click", (e) => {
-      navigator.clipboard
-        .writeText(author.email)
-        .then(() => {
-          alert(`${author.name}'s email< ${author.email} > is copied!`);
-        })
-        .catch((err) => {
-          console.error(err);
-        });
-    });
+    emailEl.addEventListener(
+      "click",
+      async (e) => await copyArticleLinkHandler(author)
+    );
   } catch (err) {
     console.error(err);
   }

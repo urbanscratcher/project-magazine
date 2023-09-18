@@ -23,17 +23,8 @@ async function renderAuthors() {
     // render more authors
     const moreAuthorsBtn = document.querySelector(".more-authors");
     moreAuthorsBtn.addEventListener("click", async (e) => {
-      const lastItemEl = document.querySelector(".authors__item:last-child");
-      authorsOffset = authorsLimit + authorsOffset;
-      const nextAuthors = await getAuthorList(authorsOffset, authorsLimit);
-      insertAfterElementTemplate(lastItemEl, "authorsTemplate", {
-        data: nextAuthors,
-      });
-
-      const itemEls = document.querySelectorAll(".authors__item");
-      if (itemEls.length === allAuthors.length) {
-        e.target.style = `display:none`;
-      }
+      await moreAuthorsHandler(e, authorsOffset, authorsLimit, allAuthors);
+      authorsOffset = authorsOffset + authorsLimit;
     });
   } catch (err) {
     console.error(err);
