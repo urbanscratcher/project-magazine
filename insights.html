@@ -95,7 +95,7 @@
             <template id="trendingListTemplate">
               {{#each data}}
               <li class="trending__item row gap--s">
-                <div class="row v-center">
+                <div class="row v-center gap--m">
                   <div class="trending__txt col gap--s">
                     <p
                       class="title-row__txt tc--gray hover--txt bold"
@@ -117,6 +117,7 @@
                     onclick="navigateTo(`/insights/{{id}}`); return false;"
                   >
                     <img src="{{thumbnail}}" />
+                    <div class="component-bookmark-add" data-id="{{id}}"></div>
                   </div>
                 </div>
               </li>

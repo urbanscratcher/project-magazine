@@ -256,15 +256,14 @@
   width: 100%;
 }
 
-.insights__trending .trending__txt {
-  width: 100%;
+.insights__trending .trendings__img {
+  width: 36%;
+  aspect-ratio: 6 / 4;
 }
 
-.insights__trending .trendings__img {
+.insights__trending .trendings__img img {
   object-fit: cover;
   object-position: center;
-
-  width: 33.333%;
 }
 
 /* article ----------------------------*/
