@@ -102,3 +102,188 @@ function shuffle(originalArray, cnt) {
     return arr.slice(0, cnt);
   }
 }
+
+// change css theme ------------------------
+function changeGrayscale() {
+  const root = document.documentElement;
+  root.style.setProperty("--color-primary", "#b9b9b9");
+  root.style.setProperty("--color-primary-light", "#d7d7d7");
+  root.style.setProperty("--color-primary-lightest", "#ececec");
+  root.style.setProperty("--color-primary-filter", "#53535393");
+
+  root.style.setProperty("--color-secondary-light", "#e7e7e7");
+  root.style.setProperty("--color-secondary", "#636363");
+  root.style.setProperty("--color-secondary-dark", "#454545");
+
+  root.style.setProperty("--color-mint-light", "#ececec");
+
+  const logoEls = document.querySelectorAll(".navbar__logo, .footer__logo-img");
+  logoEls.forEach((el) => el.classList.add("img--gray"));
+}
+
+function defaultTheme() {
+  const root = document.documentElement;
+  root.style.setProperty("--color-primary", "#d4ef69");
+  root.style.setProperty("--color-primary-light", "#edf4a5");
+  root.style.setProperty("--color-primary-lightest", "#f0f5e0");
+  root.style.setProperty("--color-primary-filter", "#606d2b93");
+
+  root.style.setProperty("--color-secondary-light", "#dfe3f3");
+  root.style.setProperty("--color-secondary", "#1743d1");
+  root.style.setProperty("--color-secondary-dark", "#28396e");
+
+  root.style.setProperty("--color-mint-light", "#e0f5ef");
+
+  const logoEls = document.querySelectorAll(".navbar__logo, .footer__logo-img");
+  logoEls.forEach((el) => el.classList.remove("img--gray"));
+}
+
+// event handlers ---------------------------------------------------
+
+// remove accessibility button styling event
+function hoverAccessBtnHandler(e) {
+  const iconAccess = document.querySelector(".icon__access");
+  iconAccess.classList.add("fa-solid");
+}
+
+function leaveAccessBtnHandler(e) {
+  const iconAccess = document.querySelector(".icon__access");
+  if (window.location.pathname === "/access") {
+    iconSaved.classList.add("fa-solid");
+  } else {
+    iconAccess.classList.remove("fa-solid");
+  }
+}
+
+// remove saved button styling event
+function hoverSavedBtnHandler(e) {
+  const iconSaved = document.querySelector(".icon__saved");
+  iconSaved.classList.add("fa-solid");
+}
+
+function leaveSavedBtnHandler(e) {
+  const iconSaved = document.querySelector(".icon__saved");
+  if (window.location.pathname === "/saved") {
+    iconSaved.classList.add("fa-solid");
+  } else {
+    iconSaved.classList.remove("fa-solid");
+  }
+}
+
+function accessibilityHandler(e) {
+  const modalAccessibility = document.querySelector(".modal__accessibility");
+  const modalOverlay = document.querySelector(".modal__overlay");
+
+  modalOverlay.classList.remove("invisible");
+  modalAccessibility.classList.remove("invisible");
+
+  // add grayscale event
+  const switchGrayEl = document.querySelector(".switch__grayscale");
+  switchGrayEl.addEventListener("click", switchGrayscaleHandler);
+
+  // add font size decrease event
+  const decSizeBtn = document.querySelector(".decrement__size");
+  decSizeBtn.addEventListener("click", decreaseFontSizeHandler);
+
+  // add font size increase event
+  const incSizeBtn = document.querySelector(".increment__size");
+  incSizeBtn.addEventListener("click", increaseFontSizeHandler);
+
+  // add font size default event
+  const defaultSizeBtn = document.querySelector(".btn__default--size");
+  defaultSizeBtn.addEventListener("click", defaultFontSizeHandler);
+
+  // add line height decrease event
+  const decHeightBtn = document.querySelector(".decrement__height");
+  decHeightBtn.addEventListener("click", decreaseLineHeightHandler);
+
+  // add line height increase event
+  const incHeightBtn = document.querySelector(".increment__height");
+  incHeightBtn.addEventListener("click", increaseLineHeightHandler);
+
+  // add line height default event
+  const defaultHeightBtn = document.querySelector(".btn__default--height");
+  defaultHeightBtn.addEventListener("click", defaultLineHeightHandler);
+}
+
+function switchGrayscaleHandler(e) {
+  const switchBoxEl = document.querySelector(".switch__grayscale .switch__box");
+
+  switchBoxEl.checked = !isGrayscale;
+  isGrayscale = !isGrayscale;
+  if (isGrayscale) {
+    changeGrayscale();
+  } else {
+    defaultTheme();
+  }
+}
+
+function decreaseFontSizeHandler(e) {
+  const htmlEl = document.querySelector("html");
+  const sizeValueEl = document.querySelector(".size__value");
+  fontSizePercentage -= 62.5 * 0.08;
+  htmlEl.style.fontSize = `${fontSizePercentage}%`;
+  sizeValueEl.textContent -= 5;
+}
+
+function increaseFontSizeHandler(e) {
+  const htmlEl = document.querySelector("html");
+  const sizeValueEl = document.querySelector(".size__value");
+  fontSizePercentage += 62.5 * 0.08;
+  htmlEl.style.fontSize = `${fontSizePercentage}%`;
+  sizeValueEl.textContent = +sizeValueEl.textContent + 5;
+}
+
+function defaultFontSizeHandler(e) {
+  const htmlEl = document.querySelector("html");
+  const sizeValueEl = document.querySelector(".size__value");
+  fontSizePercentage = 62.5;
+  htmlEl.style.fontSize = `${fontSizePercentage}%`;
+  sizeValueEl.textContent = 100;
+}
+
+function decreaseLineHeightHandler(e) {
+  const targetEls = document.querySelectorAll(
+    "body, h1, h2, h3, h4, p, a, i, button, label, span, q"
+  );
+  const heightValueEl = document.querySelector(".height__value");
+  targetEls.forEach((el) => {
+    const computedStyle = getComputedStyle(el);
+    const currentLineHeight = parseFloat(computedStyle.lineHeight);
+    if (!isNaN(currentLineHeight)) {
+      el.style.lineHeight = currentLineHeight * 0.95 + "px";
+    }
+  });
+  heightValueEl.textContent = +heightValueEl.textContent - 5;
+}
+
+function increaseLineHeightHandler(e) {
+  const targetEls = document.querySelectorAll(
+    "body, h1, h2, h3, h4, p, a, i, button, label, span, q"
+  );
+  const heightValueEl = document.querySelector(".height__value");
+  targetEls.forEach((el) => {
+    const computedStyle = getComputedStyle(el);
+    const currentLineHeight = parseFloat(computedStyle.lineHeight);
+    if (!isNaN(currentLineHeight)) {
+      el.style.lineHeight = currentLineHeight * 1.05 + "px";
+    }
+  });
+  heightValueEl.textContent = +heightValueEl.textContent + 5;
+}
+
+function defaultLineHeightHandler(e) {
+  const heightValueEl = document.querySelector(".height__value");
+  const offset = +heightValueEl.textContent - 100;
+  if (offset > 0) {
+    const count = Math.round(offset / 5);
+    for (let i = 0; i < count; i++) {
+      decreaseLineHeightHandler();
+    }
+  } else if (offset < 0) {
+    const count = -Math.round(offset / 5);
+    for (let i = 0; i < count; i++) {
+      increaseLineHeightHandler();
+    }
+  }
+}

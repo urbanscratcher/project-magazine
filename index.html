@@ -67,8 +67,60 @@
 
   <body>
     <!-- Modal -->
-    <div class="modal__overlay">
-      <video class="modal__video" controls></video>
+    <div class="modal__overlay invisible">
+      <video class="modal__video invisible" controls></video>
+      <div class="modal__accessibility col gap--m container--m invisible">
+        <div class="section__title-wrapper">
+          <p class="section__title">Accessibility</p>
+        </div>
+        <ul class="access__list col gap--l">
+          <li class="access__item row v-center">
+            <div class="access__label row gap--s v-center">
+              <p>Font Size</p>
+              <button class="btn__default--size ts--body">
+                <i class="fa-solid fa-rotate-left hover--lighter"></i>
+              </button>
+            </div>
+            <div class="row gap--s access__controller">
+              <button class="decrement__size hover--lighter">
+                <i class="fa-solid fa-minus"></i>
+              </button>
+              <p class="access__size"><span class="size__value">100</span>%</p>
+              <button class="increment__size hover--lighter">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+          </li>
+          <li class="access__item row v-center">
+            <div class="access__label row gap--s v-center">
+              <p>Line Height</p>
+              <button class="btn__default--height ts--body hover--lighter">
+                <i class="fa-solid fa-rotate-left"></i>
+              </button>
+            </div>
+            <div class="row gap--s access__controller">
+              <button class="decrement__height hover--lighter">
+                <i class="fa-solid fa-minus"></i>
+              </button>
+              <p class="access__size">
+                <span class="height__value">100</span>%
+              </p>
+              <button class="increment__height hover--lighter">
+                <i class="fa-solid fa-plus"></i>
+              </button>
+            </div>
+          </li>
+          <li class="access__item row v-center">
+            <p class="access__label">Grayscale Mode</p>
+            <div class="row access__controller">
+              <div class="switch switch__grayscale">
+                <input type="checkbox" class="switch__box" />
+                <span class="slider round"></span>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <!-- Template html texts (Global Component) -->
@@ -79,13 +131,13 @@
           architecture
         </p>
         <form class="newsletter__form col gap--m">
-          <div class="newsletter__inputs col gap--s">
+          <div class="input__fields col gap--s">
             <input
-              class="newsletter__name newsletter__input"
+              class="newsletter__name input__field"
               placeholder="Enter your full name"
             />
             <input
-              class="newsletter__email newsletter__input"
+              class="newsletter__email input__field"
               placeholder="Enter your email"
             />
           </div>

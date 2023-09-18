@@ -2,6 +2,45 @@
 - Purpose: to set specific custom styles through ids locally.
 - Author: Hyunjung Joun
 -------------------------------- */
+/* accessibility ------------------------------------------- */
+.access__list {
+  padding: 1.6rem 0;
+}
+
+.access__size {
+  border: none;
+  background-color: transparent;
+  color: var(--color-secondary);
+  text-align: center;
+  width: fit-content;
+  min-width: 5rem;
+}
+
+.access__label {
+  width: 70%;
+}
+
+.access__controller {
+  width: 30%;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.modal__accessibility {
+  position: absolute;
+  border-radius: 1.6rem;
+  min-width: 35rem;
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+
+  background-color: #ffffffe7;
+  box-shadow: 0 1px 1.6rem #86868654;
+  backdrop-filter: saturate(1.8) blur(5px);
+}
+
 /* error ------------------------------------------ */
 #error {
   padding-top: 12.8rem;
@@ -725,22 +764,6 @@
 /* Trending Aside ----------------------------- */
 
 /* Newsletter --------------------------------- */
-.newsletter__input {
-  padding: 0.4rem;
-  border: solid 0.1rem var(--color-secondary);
-  border-radius: 0.5rem;
-  color: var(--color-secondary);
-  background-color: transparent;
-}
-
-.newsletter__input::placeholder {
-  color: var(--color-gray);
-}
-
-.newsletter__input:focus {
-  outline: solid 0.3rem var(--color-primary);
-}
-
 .newsletter__checkbox {
   border-radius: 0.3rem;
   appearance: none;

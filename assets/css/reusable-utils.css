@@ -397,6 +397,10 @@
   filter: brightness(0) invert(1);
 }
 
+.img--gray {
+  filter: grayscale(100%);
+}
+
 /* Ovelay */
 .modal__overlay {
   width: 100%;
@@ -406,7 +410,6 @@
   left: 0px;
   top: 0px;
   z-index: 99;
-  display: none;
 }
 
 .modal__video {
@@ -417,5 +420,90 @@
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: 999;
+}
+
+.invisible {
   display: none;
+}
+
+/* Toggle box */
+/* W3School(https://www.w3schools.com/howto/howto_css_switch.asp) */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 5.4rem;
+  height: 3rem;
+}
+
+.switch__box {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--color-gray-light);
+  -webkit-transition: 0.15s;
+  transition: 0.15s;
+}
+
+.slider:hover {
+  background-color: var(--color-gray);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 2.2rem;
+  width: 2.2rem;
+  left: 0.4rem;
+  bottom: 0.4rem;
+  background-color: white;
+  -webkit-transition: 0.15s;
+  transition: 0.15s;
+}
+
+input:checked + .slider {
+  background-color: var(--color-secondary);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--color-secondary);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(2.4rem);
+  -ms-transform: translateX(2.4rem);
+  transform: translateX(2.4rem);
+}
+
+.slider.round {
+  border-radius: 3.2rem;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* input field */
+.input__field {
+  padding: 0.4rem;
+  border: solid 0.1rem var(--color-secondary);
+  border-radius: 0.5rem;
+  color: var(--color-secondary);
+  background-color: transparent;
+}
+
+.input__field::placeholder {
+  color: var(--color-gray);
+}
+
+.input__field:focus {
+  outline: solid 0.3rem var(--color-primary);
 }

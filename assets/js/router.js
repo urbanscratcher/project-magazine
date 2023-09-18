@@ -5,6 +5,8 @@
 // Declare global variable
 let curTopic;
 let curIsLatest;
+let fontSizePercentage = 62.5;
+let isGrayscale = false;
 
 // Lists of scripts for each page to be loaded
 const commonScripts = ["topics", "components", "navbar"].map(
@@ -73,6 +75,9 @@ function navigateTo(route) {
 
 // When the route changes
 function handleRouteChange(route) {
+  // Remove event listeners
+  removeEventListeners();
+
   // Remove external obj for reset
   let externalEl = document.getElementById("external");
   if (externalEl) {
@@ -109,6 +114,7 @@ function handleRouteChange(route) {
   // routing
   const routes = route.split("/");
 
+  // Error : /error
   if (route === "/error") {
     externalEl.setAttribute("data", "/error.html");
     externalEl.addEventListener("load", (e) => {
@@ -157,10 +163,8 @@ function handleRouteChange(route) {
     externalEl.setAttribute("data", "/authors.html");
     externalEl.addEventListener("load", (e) => {
       loadHtmlHandler([...authorListScripts, ...commonScripts], true);
-
       menuItemEls[2].classList.add("menu__item--current");
     });
-
     history.pushState(null, null, route);
     return;
   }
@@ -215,13 +219,15 @@ function handleRouteChange(route) {
   }
 
   // Default & Main : /
-  history.pushState(null, null, route);
-  externalEl.setAttribute("data", "/main.html");
-  externalEl.addEventListener("load", (e) => {
-    loadHtmlHandler([...mainScripts, ...commonScripts], true);
-  });
+  if (routes.length === 2 && (routes[1] === "/" || routes[1] === "")) {
+    externalEl.setAttribute("data", "/main.html");
+    externalEl.addEventListener("load", (e) => {
+      loadHtmlHandler([...mainScripts, ...commonScripts], true);
+    });
 
-  return;
+    history.pushState(null, null, route);
+    return;
+  }
 }
 
 function loadPreviousListPage(previousTopic, previousSort) {
@@ -259,7 +265,7 @@ function loadPreviousListPage(previousTopic, previousSort) {
   });
 }
 
-function loadHtmlHandler(list, isAsync = false) {
+function loadHtmlHandler(list, isAsync = false, callback) {
   const externalEl = document.getElementById("external");
   const mainEl = document.getElementById("main");
 
@@ -269,15 +275,15 @@ function loadHtmlHandler(list, isAsync = false) {
   mainEl.innerHTML = externalDoc.body.innerHTML;
 
   if (list && list.length > 0) {
-    loadScripts(list, isAsync);
+    loadScripts(list, isAsync, callback);
   }
 
   externalEl.removeEventListener("load", loadHtmlHandler);
 }
 
-function loadScripts(list, isAsync = false) {
+function loadScripts(list, isAsync = false, callback) {
   for (const m of list) {
-    loadScript(m, isAsync);
+    loadScript(m, isAsync, callback);
   }
 }
 
@@ -308,4 +314,17 @@ function unloadScript(scriptSrc) {
   scriptElements.forEach((script) => {
     script.parentNode.removeChild(script);
   });
+}
+
+function removeEventListeners() {
+  console.log("removing event listners");
+
+  // remove saved button styling event
+  const btnSaved = document.querySelector(".btn__saved");
+  btnSaved.removeEventListener("mouseenter", hoverSavedBtnHandler);
+  btnSaved.removeEventListener("mouseleave", leaveSavedBtnHandler);
+
+  // remove accessibility event
+  const btnAccess = document.querySelector(".btn__access");
+  btnAccess.removeEventListener("click", accessibilityHandler);
 }
