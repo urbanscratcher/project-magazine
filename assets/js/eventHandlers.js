@@ -3,6 +3,15 @@
 - Author: Hyunjung Joun
 -------------------------------- */
 
+async function copyArticleLinkHandler(e) {
+  try {
+    await navigator.clipboard.writeText(window.location.href);
+    alert(`This article's link is copied!\n${window.location.href}`);
+  } catch (err) {
+    console.error(err);
+  }
+}
+
 async function moreAuthorsHandler(e, offset, limit, allAuthors) {
   const lastItemEl = document.querySelector(".authors__item:last-child");
 
@@ -19,9 +28,8 @@ async function moreAuthorsHandler(e, offset, limit, allAuthors) {
   }
 }
 
-async function copyArticleLinkHandler(author) {
+async function copyAuthorEmailHandler(author) {
   try {
-    console.log("copied");
     await navigator.clipboard.writeText(author.email);
     alert(`${author.name}'s email< ${author.email} > is copied!`);
   } catch (err) {

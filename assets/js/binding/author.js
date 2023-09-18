@@ -2,7 +2,6 @@
 - Purpose: render one detailed author page
 - Author: Hyunjung Joun
 -------------------------------- */
-console.log(`Loading ${document.currentScript.src.split("/js")[1]}`);
 
 async function renderAuthor(id) {
   try {
@@ -28,7 +27,7 @@ async function renderAuthor(id) {
     const emailEl = document.querySelector(".author__email");
     emailEl.addEventListener(
       "click",
-      async (e) => await copyArticleLinkHandler(author)
+      async (e) => await copyAuthorEmailHandler(author)
     );
   } catch (err) {
     console.error(err);

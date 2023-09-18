@@ -2,7 +2,6 @@
 - Purpose: Load data
 - Author: Hyunjung Joun
 -------------------------------- */
-
 renderAuthors();
 
 async function renderAuthors() {

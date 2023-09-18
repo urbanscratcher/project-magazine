@@ -72,8 +72,8 @@ async function renderArticle(id) {
         "component-viewAll-related",
         `/insights?topic=${insight.topic}`
       );
-      loadBookmark(".related__item");
-      addBookmark(".related__item");
+      loadBookmark(".latest__item");
+      addBookmark(".latest__item");
     }
 
     // 5. styling: adjust article content position;
@@ -101,16 +101,7 @@ async function renderArticle(id) {
 
     // 8. copy link event
     const linkBtn = document.querySelector(".btn-link");
-    linkBtn.addEventListener("click", (e) => {
-      navigator.clipboard
-        .writeText(window.location.href)
-        .then(() => {
-          alert(`This article's link is copied!\n${window.location.href}`);
-        })
-        .catch((err) => {
-          console.error(err);
-        });
-    });
+    linkBtn.addEventListener("click", copyArticleLinkHandler);
   } catch (err) {
     console.error("error: ", err);
   }
