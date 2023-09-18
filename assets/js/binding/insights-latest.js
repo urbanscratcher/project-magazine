@@ -21,8 +21,6 @@ async function renderLatest() {
 
     insertAfterTemplate("latestTemplate", { data: latestList });
 
-    // After {{each}} is looped, the dependent component rendering should be executed for each item
-    // I do this here because a mutation observer wasn't able to detect the added elements
     loadBookmark(".latest__item");
     addBookmark(".latest__item");
   } catch (err) {

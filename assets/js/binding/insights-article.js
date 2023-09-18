@@ -72,6 +72,8 @@ async function renderArticle(id) {
         "component-viewAll-related",
         `/insights?topic=${insight.topic}`
       );
+      loadBookmark(".related__item");
+      addBookmark(".related__item");
     }
 
     // 5. styling: adjust article content position;

@@ -78,10 +78,6 @@
       <template id="viewAll-related">
         <div class="section__title-wrapper row between">
         <p class="section__title">related</p>
-        <!-- <button class="viewAll row gap--s hover--lighter" onclick="navigateTo(`/insights?topic={{topic}}`); return false;">
-          <p class="viewAll__txt ts--btn">view all</p>
-          <i class="fa-solid fa-chevron-right ts--body-s"></i>
-        </button> -->
         <div class="component-viewAll-related"></div>
         </div>
       </template>
@@ -92,6 +88,7 @@
         <li class="related__item col gap--m">
           <div class="related__img section__img"  onclick="navigateTo(`/insights/{{id}}`); return false;">
             <img src="{{thumbnail}}" />
+            <div class="component-bookmark-add" data-id="{{id}}"></div>
           </div>
           <div class="topic__wrapper"                    
           >
