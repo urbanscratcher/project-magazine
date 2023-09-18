@@ -139,8 +139,35 @@ function defaultTheme() {
 }
 
 // event handlers ---------------------------------------------------
+function submitNewsletterHandler(e) {
+  e.preventDefault();
 
-// remove accessibility button styling event
+  const name = e.target.children[0].children[0].value;
+  const email = e.target.children[0].children[1].value;
+  const isConsent = e.target.children[1].children[0].checked;
+  let messsage;
+
+  switch (true) {
+    case !name || !email:
+      messsage = `Please enter your name and email.`;
+      break;
+    case name && email && isConsent:
+      messsage = `${name}, you successfully subscribed :)\nOur weekly newsletter will be sent to your email < ${email} >`;
+      e.target.children[0].children[0].value = "";
+      e.target.children[0].children[1].value = "";
+      e.target.children[1].children[0].checked = false;
+      break;
+    case name && email && !isConsent:
+      messsage = `You need to agree to our terms and privacy policy.`;
+      break;
+    default:
+      messsage = "";
+      break;
+  }
+
+  alert(messsage);
+}
+
 function hoverAccessBtnHandler(e) {
   const iconAccess = document.querySelector(".icon__access");
   iconAccess.classList.add("fa-solid");
@@ -155,7 +182,6 @@ function leaveAccessBtnHandler(e) {
   }
 }
 
-// remove saved button styling event
 function hoverSavedBtnHandler(e) {
   const iconSaved = document.querySelector(".icon__saved");
   iconSaved.classList.add("fa-solid");

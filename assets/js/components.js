@@ -2,8 +2,6 @@
 - Purpose: Load Reusable UI Components
 - Author: Hyunjung Joun
 -------------------------------- */
-console.log(`Loading ${document.currentScript.src.split("/js")[1]}`);
-
 loadComponents();
 
 function loadComponents() {
@@ -31,28 +29,15 @@ function loadNewletter() {
     insert(p, render(newHtml, {}));
   }
 
-  // submit event (main)
-  function submitHandler(e) {
-    e.preventDefault();
-
-    const name = e.target.children[0].children[0].value;
-    const email = e.target.children[0].children[1].value;
-    const isConsent = e.target.children[1].children[0].checked;
-
-    if (name && email) {
-      if (isConsent) {
-        alert(
-          `${name}, you successfully subscribed :)\nOur weekly newsletter will be sent to your email - ${email}`
-        );
-      } else {
-        alert(`You need to agree to our terms and privacy policy.`);
-      }
-    } else {
-      alert(`Please enter your name and email.`);
-    }
-  }
+  // add submit event to all newsletter forms
   const forms = document.querySelectorAll(".newsletter__form");
-  forms.forEach((el) => el.addEventListener("submit", (e) => submitHandler(e)));
+  forms.forEach((el) => el.addEventListener("submit", submitNewsletterHandler));
+}
+
+function loadViewAll() {
+  loadViewAllByClass("component-viewAll-insights", "/insights");
+  loadViewAllByClass("component-viewAll-saved", "/saved");
+  loadViewAllByClass("component-viewAll-authors", "/authors");
 }
 
 function viewAllHtml(path) {
@@ -75,10 +60,4 @@ function loadViewAllByClass(className, path) {
       );
     }
   }
-}
-
-function loadViewAll() {
-  loadViewAllByClass("component-viewAll-insights", "/insights");
-  loadViewAllByClass("component-viewAll-saved", "/saved");
-  loadViewAllByClass("component-viewAll-authors", "/authors");
 }

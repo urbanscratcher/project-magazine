@@ -1,5 +1,5 @@
 /* --------------------------------
-- Purpose: Makae the navigation bar sticky
+- Purpose: sticky nav bar, acccess & saved menu event
 - Author: Hyunjung Joun
 -------------------------------- */
 stickyNavbar();
