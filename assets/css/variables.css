@@ -24,36 +24,51 @@
   --color-white: #fbfcf6;
 
   /* Font Sizes */
-  --h0-xs: 5rem;
-  --h1-xs: 2.5rem;
-  --h2-xs: 1.9rem;
-  --h3-xs: 1.7rem;
-  --body-m-xs: 1.4rem;
+  --h0-xs: 2.8rem;
+  --h1-xs: 2.1rem;
+  --h2-xs: 1.6rem;
+  --h3-xs: 1.4rem;
+  --body-m-xs: 1.3rem;
   --body-s-xs: 1.2rem;
   --body-xs-xs: 1.1rem;
 
   --h1-xl: 6.6rem;
+  --h1-m: 4.4rem;
+  --h1-s: 3rem;
   --h1-spacing-xl: -0.05rem;
   --h2-xl: 5.3rem;
+  --h2-m: 3.533rem;
+  --h2-s: 2.35rem;
   --h2-spacing-xl: 0px;
   --h3-xl: 3.8rem;
+  --h3-m: 2.8rem;
+  --h3-s: 1.8666rem;
   --h3-spacing-xl: 0.025rem;
   --h4-xl: 2.6rem;
+  --h4-m: 2.1rem;
+  --h4-s: 1.5rem;
   --h4-spacing-xl: 0px;
 
   --body1-xl: 1.7rem;
+  --body1-m: 1.5rem;
+  --body1-s: 1.3rem;
   --body1-spacing-xl: 0.05rem;
   --body2-xl: 1.5rem;
+  --body2-m: 1.3rem;
+  --body2-s: 1.2rem;
   --body2-spacing-xl: 0.025rem;
+  --body2-spacing-m: 0.01rem;
 
   --button-xl: 1.5rem;
+  --button-m: 1.3rem;
+  --button-s: 1.1rem;
   --button-spacing-xl: 0.125rem;
+  --button-spacing-s: 0.08rem;
 
   --caption-xl: 1.3rem;
+  --caption-m: 1.2rem;
+  --caption-s: 1.1rem;
   --caption-spacing-xl: 0.04rem;
-
-  --overline-xl: 1.1rem;
-  --overline-spacing-xl: 0.15rem;
 
   /* Sizes */
   --size-xs: 0.4rem;

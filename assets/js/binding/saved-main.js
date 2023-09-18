@@ -15,7 +15,7 @@ async function renderSavedMain() {
         insight.author = await getAuthorSimple(insight.author.id);
         insights.push(insight);
       }
-      insertAfterTemplate("savedTemplate", { data: insights });
+      insertAfterTemplate("savedTemplate", { data: insights.slice(0, 4) });
     } else {
       insertAfterTemplate("savedNothingTemplate", {});
     }

@@ -114,17 +114,6 @@ function handleRouteChange(route) {
   // routing
   const routes = route.split("/");
 
-  // Error : /error
-  if (route === "/error") {
-    externalEl.setAttribute("data", "/error.html");
-    externalEl.addEventListener("load", (e) => {
-      loadHtmlHandler([...commonScripts], true);
-    });
-
-    history.pushState(null, null, route);
-    return;
-  }
-
   // Saved For Later List : /saved
   if (routes.length === 2 && routes[1] === "saved") {
     externalEl.setAttribute("data", "/saved.html");
@@ -151,7 +140,7 @@ function handleRouteChange(route) {
         renderAuthor(authorId);
       });
 
-      menuItemEls[2].classList.add("menu__item--current");
+      menuItemEls[1].classList.add("menu__item--current");
     });
 
     history.pushState(null, null, route);
@@ -163,7 +152,7 @@ function handleRouteChange(route) {
     externalEl.setAttribute("data", "/authors.html");
     externalEl.addEventListener("load", (e) => {
       loadHtmlHandler([...authorListScripts, ...commonScripts], true);
-      menuItemEls[2].classList.add("menu__item--current");
+      menuItemEls[1].classList.add("menu__item--current");
     });
     history.pushState(null, null, route);
     return;
@@ -228,6 +217,15 @@ function handleRouteChange(route) {
     history.pushState(null, null, route);
     return;
   }
+
+  // error
+  externalEl.setAttribute("data", "/error.html");
+  externalEl.addEventListener("load", (e) => {
+    loadHtmlHandler([...commonScripts], true);
+  });
+
+  history.pushState(null, null, route);
+  return;
 }
 
 function loadPreviousListPage(previousTopic, previousSort) {
