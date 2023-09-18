@@ -114,6 +114,18 @@ function handleRouteChange(route) {
   // routing
   const routes = route.split("/");
 
+  // report : /report
+  if (routes.length === 2 && routes[1] === "report") {
+    externalEl.setAttribute("data", "/report.html");
+    externalEl.addEventListener("load", (e) => {
+      loadHtmlHandler([...commonScripts], true);
+    });
+
+    menuItemEls[2].classList.add("menu__item--current");
+    history.pushState(null, null, route);
+    return;
+  }
+
   // Saved For Later List : /saved
   if (routes.length === 2 && routes[1] === "saved") {
     externalEl.setAttribute("data", "/saved.html");
