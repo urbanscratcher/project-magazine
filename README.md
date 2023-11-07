@@ -22,4 +22,5 @@ https://www.figma.com/file/ulgZLkRfIVWfg6Hpi1Xmt3/%5BProject%5D-WD-Magazine?type
 - script 로딩 (async, defer..) 순서에 대한 공부
 - 디자인에 공을 꽤 많이 들이긴 했지만, 뒤에는 시간이 없어서 반응형 디자인은 미완성
 - 디자인에 공을 들인 만큼 CSS도 BEM + 유틸리티 클래스로 구현해서 꽤 방대하다
-- 할 때는 몰랐는데 코드를 다시 보니까 새삼 광기가 느껴지는 프로젝트
+- 할 때는 몰랐는데 코드를 다시 보니까 ...아니 이렇게까지 했다고.. 새삼 광기가 느껴지는 프로젝트
+  
