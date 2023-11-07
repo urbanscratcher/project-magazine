@@ -28,4 +28,4 @@ https://www.figma.com/file/ulgZLkRfIVWfg6Hpi1Xmt3/%5BProject%5D-WD-Magazine?type
 
 ## 개인 기여도
 100%
-- 애초에 이렇게 구현하는 사람이 없어서 그냥 함수 설명들만 참고한,,,
+(애초에 이렇게 구현하는 사람이 없어서 그냥 함수 설명들만 참고했다는 슬픈 이야기)
