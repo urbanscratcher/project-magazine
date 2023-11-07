@@ -25,4 +25,6 @@ https://www.figma.com/file/ulgZLkRfIVWfg6Hpi1Xmt3/%5BProject%5D-WD-Magazine?type
   - CSS도 BEM + 유틸리티 클래스로 구현해서 꽤 방대하다
   - 시간이 없어서 반응형 디자인은 미완성
 - 할 때는 몰랐는데 코드를 다시 보니까 ...아니 이렇게까지 했다고.. 새삼 광기가 느껴지는 프로젝트
-  
+
+## 개인 기여도
+100%
