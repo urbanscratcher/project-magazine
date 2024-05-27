@@ -18,8 +18,8 @@
 - BEM 방법론과 유틸리티 클래스를 활용한 CSS 모듈화
 
 ## Snapshot
+[archon_v1.webm](https://github.com/urbanscratcher/project-magazine/assets/17016494/e9d06acd-5d7b-40b5-9f36-3b90bd3378cc)
 
-[archon_v1.webm](https://prod-files-secure.s3.us-west-2.amazonaws.com/948c4e5b-3d9c-4aaf-a479-ce4f43da36bb/3c635bc7-a549-47a3-a017-4cf5038cd018/archon_v1.webm)
 
 ## Reflection
 
