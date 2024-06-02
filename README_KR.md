@@ -1,25 +1,40 @@
-# Archon
+# Archon v1
 
-2023년 5월 ~ 2023년 8월 (4개월)
+2023년 7월 ~ 2023년 9월 (3개월)
 
-순수 JavaScript로 SPA를 구현한 개인 웹 개발 프로젝트로, 건축을 주제로 한 가상의 매거진 사이트
+순수 JavaScript로 SPA를 구현한 개인 웹 개발 프로젝트로, 건축을 주제로 한 가상의 매거진 사이트입니다.
 
 ## Features
 
-- 다양한 카테고리의 기사
-- 북마크 및 관리
-- 반응형 디자인
+- **카테고리별 기사**: 카테고리로 분류된 다양한 건축 관련 주제의 기사를 읽을 수 있습니다.
+- **네비게이션 및 접근성**:
+  - 사이드 네비게이션을 통해 사이트의 다양한 섹션을 손쉽게 탐색할 수 있습니다.
+  - 시각 장애 사용자를 위해 읽기 능력과 사용성을 향상시키는 그레이스케일 모드를 제공합니다.
+  - 기여자, 태그 및 날짜별로 기사를 필터링하고 정렬하는 기능을 통해 사용자가 관심 있는 콘텐츠를 쉽게 찾을 수 있도록 합니다.
+- **북마크**: 사용자가 나중에 읽기 위해 기사를 북마크할 수 있는 기능을 제공합니다.
+- **기사 추천**:
+  - 관련 기사 목록을 노출해 사용자가 관심사에 따라 더 많은 콘텐츠를 발견할 수 있도록 합니다.
+  - 하이라이트 기사와 최신 기사를 명확히 구분하여 가장 관련성 있고 최신 콘텐츠를 쉽게 탐색할 수 있도록 합니다.
+- **반응형 디자인**: 모바일 기기에서도 원활하게 볼 수 있도록 디자인을 조정했습니다.
 
 ## Technical Focus
 
-- JavaScript로 SPA 직접 구현
-- HistoryAPI를 통한 라우터 구현
-- HandlebarsJS, JSON 파일을 이용한 부분 동적 렌더링
-- BEM 방법론과 유틸리티 클래스를 활용한 CSS 모듈화
+- JavaScript로 SPA와 유사하고 동작하도록 개발했으며 History API를 통해 라우터를 구현해 보았습니다.
+- HandlebarsJS, JSON 파일을 이용해 데이터를 동적 렌더링했습니다.
+  - 비동기 데이터 로딩을 흉내내기 위해 가상의 데이터 API를 사용한다고 가정했습니다.
+- BEM 방식을 사용하고, 유틸리티 클래스를 정의해 스타일을 모듈화 했습니다.
 
-## Snapshot
-[archon_v1.webm](https://github.com/urbanscratcher/project-magazine/assets/17016494/e9d06acd-5d7b-40b5-9f36-3b90bd3378cc)
+## Demo
 
+<video src="https://github.com/urbanscratcher/project-magazine/assets/17016494/e9d06acd-5d7b-40b5-9f36-3b90bd3378cc" controls></video>
+
+[사이트 바로가기](https://project-archon.netlify.app/)
+
+## Design Process
+
+[피그마 바로가기](https://www.figma.com/file/ulgZLkRfIVWfg6Hpi1Xmt3/%5BProject%5D-WD-Magazine?type=design&node-id=0%3A1&mode=design&t=0T2BBnd8bvOGt5uh-1)
+
+---
 
 ## Reflection
 
@@ -34,9 +49,3 @@
 
 - 시간 제약으로 인해 반응형 디자인을 완성하지 못한 부분을 보완해야 할 것 같다.
 - 프레임워크나 라이브러리를 활용하여 코드의 효율성과 확장성을 높일 계획이다. (→ V2)
-
-## Links
-
-[사이트](https://project-archon.netlify.app/)
-
-[디자인 (Figma)](https://www.figma.com/file/ulgZLkRfIVWfg6Hpi1Xmt3/%5BProject%5D-WD-Magazine?type=design&node-id=0%3A1&mode=design&t=0T2BBnd8bvOGt5uh-1)
