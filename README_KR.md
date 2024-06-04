@@ -4,7 +4,7 @@
 
 순수 JavaScript로 SPA를 구현한 개인 웹 개발 프로젝트로, 건축을 주제로 한 가상의 매거진 사이트입니다.
 
-## Features
+## 주요 기능
 
 - **카테고리별 기사**: 카테고리로 분류된 다양한 건축 관련 주제의 기사를 읽을 수 있습니다.
 - **네비게이션 및 접근성**:
@@ -15,26 +15,26 @@
 - **기사 추천**: 관련 기사 목록을 노출해 사용자가 관심사에 따라 더 많은 콘텐츠를 발견할 수 있도록 합니다.
 - **반응형 디자인**: 모바일 기기에서도 원활하게 볼 수 있도록 디자인을 조정했습니다.
 
-## Technical Focus
+## 기술적 중점 사항
 
 - JavaScript로 SPA와 유사하고 동작하도록 개발했으며 History API를 통해 라우터를 구현해 보았습니다.
 - HandlebarsJS, JSON 파일을 이용해 데이터를 동적 렌더링했습니다.
   - 비동기 데이터 로딩을 흉내내기 위해 가상의 데이터 API를 사용한다고 가정했습니다.
 - BEM 방식을 사용하고, 유틸리티 클래스를 정의해 스타일을 모듈화 했습니다.
 
-## Demo
+## 시연
 
 <video src="https://github.com/urbanscratcher/project-magazine/assets/17016494/e9d06acd-5d7b-40b5-9f36-3b90bd3378cc" controls></video>
 
 [사이트 바로가기](https://project-archon.netlify.app/)
 
-## Design Process
+## 디자인 과정
 
 [피그마 바로가기](https://www.figma.com/file/ulgZLkRfIVWfg6Hpi1Xmt3/%5BProject%5D-WD-Magazine?type=design&node-id=0%3A1&mode=design&t=0T2BBnd8bvOGt5uh-1)
 
 ---
 
-## Reflection
+## 회고
 
 - 순수 JavaScript만으로 SPA 구조를 구현하는 과정에서 라이브러리와 프레임워크의 필요성과 가치에 대해 생각해 볼 수 있었다.
 - 라우터를 직접 구현해봄으로써 라이브러리 내 라우팅 기능이 SPA에서 차지하는 중요성과 역할에 대한 이해도를 높일 수 있었다.
@@ -43,7 +43,7 @@
 - 템플릿 엔진 사용 과정에서 부분 렌더링과 관련된 학습을 하였고, 이를 통해 성능 최적화의 중요성을 인지하게 됐다.
 - 스크립트 로딩 순서(async, defer)에 대해 깊이 공부하면서, 웹 페이지 로딩 성능 향상을 위한 방법들을 익힐 수 있었다.
 
-## Next
+## 다음에는...
 
 - 시간 제약으로 인해 반응형 디자인을 완성하지 못한 부분을 보완해야 할 것 같다.
 - 프레임워크나 라이브러리를 활용하여 코드의 효율성과 확장성을 높일 계획이다. (→ V2)
