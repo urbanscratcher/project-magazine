@@ -45,6 +45,7 @@
 - **호스팅 및 배포**: Netlify
 
 ## 디자인 과정
+<video src="https://github.com/urbanscratcher/project-magazine/assets/17016494/6e5ea662-5aa4-4c94-90c5-8c62e9011c41" controls></video>
 
 [피그마 바로가기](https://www.figma.com/file/ulgZLkRfIVWfg6Hpi1Xmt3/%5BProject%5D-WD-Magazine?type=design&node-id=0%3A1&mode=design&t=0T2BBnd8bvOGt5uh-1)
 
