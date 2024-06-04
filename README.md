@@ -45,6 +45,7 @@ This is a personal web development project where I implemented an SPA using pure
 - **Hosting and Deployment**: Netlify
 
 ## Design Process
+<video src="https://github.com/urbanscratcher/project-magazine/assets/17016494/6e5ea662-5aa4-4c94-90c5-8c62e9011c41" controls></video>
 
 [View on Figma](https://www.figma.com/file/ulgZLkRfIVWfg6Hpi1Xmt3/%5BProject%5D-WD-Magazine?type=design&node-id=0%3A1&mode=design&t=0T2BBnd8bvOGt5uh-1)
 
