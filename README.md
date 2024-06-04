@@ -2,50 +2,64 @@
 
 July 2023 ~ September 2023 (3 months)
 
-This is a personal web development project, where I created a fictional magazine site focused on architecture using pure JavaScript to implement a SPA.
+This is a personal web development project where I implemented an SPA using pure JavaScript. It is a fictional magazine site themed around architecture.
 
-## Features
+## Key Features
 
-- **Categorized Articles**: Users can read various articles on architecture, categorized by topics.
-- **Navigation and Accessibility**:
+- **Content Hierarchy Layout**: Articles are arranged based on their importance, such as headline articles and editor's picks.
+- **Category-based Articles**: Users can read a variety of architecture-related articles categorized by topics.
+- **Ease of Navigation**:
   - Side navigation allows users to easily explore different sections of the site.
   - Grayscale mode enhances readability and usability for visually impaired users.
-  - Users can filter and sort articles by contributors, tags, and dates to find content that matches their interests.
-- **Bookmarking**: Users can bookmark articles to read later.
-- **Article Recommendations**:
-  - Displays a list of related articles, helping users discover more content based on their interests.
-  - Clearly separates highlighted articles from the latest articles for easy navigation to the most relevant and recent content.
-- **Responsive Design**: The design is adjusted to ensure smooth viewing on mobile devices.
+  - Users can filter and sort articles by contributors, tags, and dates to find content of interest easily.
+- **Bookmark**: Users can bookmark articles to read later.
+- **Various Media**: Content includes various media such as videos and images.
+- **Article Recommendations**: Users can discover more content based on related or random article lists tailored to their interests.
 
-## Technical Focus
+## Technical Highlights
 
-- Developed to function similarly to a SPA using JavaScript, implementing a router with the History API.
-- Utilized HandlebarsJS and JSON files for dynamic data rendering.
-  - Assumed the use of a mock data API to simulate asynchronous data loading.
-- Used BEM methodology for CSS naming and defined utility classes to modularize styles.
+- Developed to function similarly to an SPA using JavaScript, implementing a router via the History API.
+- Rendered data using HandlebarsJS and JSON files (simulated data loading using a mock data API).
+- Used the BEM methodology and defined utility classes to modularize styles.
 
-## Demo
+## Demonstration
 
 <video src="https://github.com/urbanscratcher/project-magazine/assets/17016494/e9d06acd-5d7b-40b5-9f36-3b90bd3378cc" controls></video>
 
-[Visit the Site](https://project-archon.netlify.app/)
+[Visit Site](https://project-archon.netlify.app/)
+
+## Technical Stack
+### Frontend
+- **Partial Rendering**: Handlebars.js
+- **Language**: JavaScript
+- **Styling**: CSS
+
+### Backend
+- None
+
+### Development Environment
+- **Source Code**: GitHub
+- **Design**: Figma
+
+### Cloud Services and Deployment
+- **Hosting and Deployment**: Netlify
 
 ## Design Process
 
-[Figma Link](https://www.figma.com/file/ulgZLkRfIVWfg6Hpi1Xmt3/%5BProject%5D-WD-Magazine?type=design&node-id=0%3A1&mode=design&t=0T2BBnd8bvOGt5uh-1)
+[View on Figma](https://www.figma.com/file/ulgZLkRfIVWfg6Hpi1Xmt3/%5BProject%5D-WD-Magazine?type=design&node-id=0%3A1&mode=design&t=0T2BBnd8bvOGt5uh-1)
 
 ---
 
-## Reflection
+## Retrospective
 
-- Implementing a SPA structure using pure JavaScript allowed me to appreciate the necessity and value of libraries and frameworks.
-- By developing the router myself, I gained a deeper understanding of the importance and role of routing functionality in SPAs.
-- Experience with the History API for implementing back, forward, and address management enhanced my knowledge of browser navigation and state management.
-- Using Figma for the design process helped me realize the importance of design systems and componentization.
-- Learning about partial rendering while using a template engine highlighted the importance of performance optimization.
-- Studying the script loading order (async, defer) allowed me to learn methods to improve web page loading performance.
+- Implementing an SPA structure using pure JavaScript highlighted the necessity and value of frameworks.
+- Building a custom router helped me appreciate the importance of routing in React.
+- Using the History API to implement back, forward, and URL management enhanced my understanding of browser navigation and state management.
+- Designing with Figma underscored the importance of design systems and componentization.
+- The process of using a template engine for partial rendering taught me about performance optimization.
+- Studying script loading order (async, defer) provided insights into improving web page loading performance.
 
-## Next Steps
+## Next
 
-- Complete the responsive design aspect that was not fully realized due to time constraints.
-- Plan to use frameworks or libraries to enhance code efficiency and scalability. (→ V2)
+- Due to time constraints, I couldn't properly implement responsive design. I will ensure to include this in the next iteration.
+- I plan to utilize frameworks or libraries to improve the efficiency and scalability of the code (→ V2).
