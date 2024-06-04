@@ -24,7 +24,7 @@ This is a personal web development project where I implemented an SPA using pure
 
 ## Demonstration
 
-<video src="https://github.com/urbanscratcher/project-magazine/assets/17016494/e9d06acd-5d7b-40b5-9f36-3b90bd3378cc" controls></video>
+<video src="https://github.com/urbanscratcher/project-magazine/assets/17016494/dd6ddd01-09bf-4f91-9fcc-77cdfa224d3c" controls></video>
 
 [Visit Site](https://project-archon.netlify.app/)
 
