@@ -24,7 +24,8 @@
 
 ## 시연
 
-<video src="https://github.com/urbanscratcher/project-magazine/assets/17016494/e9d06acd-5d7b-40b5-9f36-3b90bd3378cc" controls></video>
+<video src="https://github.com/urbanscratcher/project-magazine/assets/17016494/8d12d014-9284-479f-bbe4-58cb97619e7f" controls></video>
+
 
 [사이트 바로가기](https://project-archon.netlify.app/)
 
